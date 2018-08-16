@@ -1,0 +1,13 @@
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+{% assign page_title = 'general.404.title' | t %}
+
+{% include 'settings' %}
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ 'general.404.message_html' | t }} Please head back to our <a href="/">homepage</a> to continue shopping!
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

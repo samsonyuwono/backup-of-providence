@@ -1,0 +1,46 @@
+{% include 'settings' %}
+{% assign video_ratio = settings.slides_video_ratio | times: 1000 %}
+
+<ul id="{{area}}-slides" class="bx-slider slides" data-autoplay="{{ settings.slides_autoplay? }}" data-transition="{{ settings.slides_transition }}" data-duration="{{ settings.slides_duration | times: 1000.0 }}" data-transition-duration="{{ settings.slides_transition_duration | times: 1000.0 }}">
+
+{% for i in (1..6) %}
+  {% assign display_slide = 'slides_display_0' | append: forloop.index | append: '?' %}
+  {% assign slide_image = 'index-slide-0' | append: forloop.index | append: '_1x1.jpg' %}
+  {% assign slide_link = 'slide_0' | append: forloop.index | append: '_link' %}
+  {% assign is_video = settings[slide_link] | divided_by: 1 %}
+
+{% if settings[display_slide] == 'true' %}
+
+    {% if is_video > 0 %}
+      <li class="slide video">
+        <iframe src="//player.vimeo.com/video/{{settings[slide_link]}}?html5=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color={{settings.color_accent | replace: '#', ''}}" width="{{video_ratio}}" height="1000"></iframe>
+      </li>
+    {% else %}
+      {% if settings[slide_link] != '' %}
+        <li class="slide">{{ slide_image | asset_url | img_tag | link_to: settings[slide_link] }}</li>
+      {% else %}
+        <li class="slide">{{ slide_image | asset_url | img_tag }}</li>
+      {% endif %}
+    {% endif %}
+{% endif %}
+{% endfor %}
+
+</ul>
+
+<style>
+  .bx-slider li {
+    min-height: 1px;
+    min-width: 1px;
+  }
+
+</style>
+
+<script>
+
+// makes banner slides tiny for mobile and large for desktop to increase page speed dh-edit 5/8/17
+if ( $(window).width() > 667) {
+$("li.slide img").each(function(){
+  $(this).attr('src', $(this).attr('src').replace('_1x1.jpg', '_1600x450.jpg'));
+});
+}
+</script>

@@ -1,0 +1,33 @@
+{% assign main_product = product %}
+{% assign related_products_title = 'products.related_products.title' | t %}
+
+<section class="related-products">
+  <div class="row">
+    <div class="large-12 columns">
+
+      {% if related_products_title != "" %}
+      <h3>{{ related_products_title }}</h3>
+      {% endif %}
+
+      <div class="products cards">
+        <ul class="block-grid small-block-grid-2 medium-block-grid-{{settings.collection_products_per_row_medium}} large-block-grid-{{settings.collection_products_per_row_large}}">
+
+        {% if collection %}
+          {% for product in collection.products limit: settings.product_related_limit %}
+            {% if main_product.handle != product.handle %}
+            <li>{% include 'product-small' %}</li>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for product in product.collections.first.products limit: settings.product_related_limit %}
+            {% if main_product.handle != product.handle %}
+            <li>{% include 'product-small' %}</li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

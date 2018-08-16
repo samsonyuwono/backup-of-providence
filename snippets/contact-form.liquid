@@ -1,0 +1,54 @@
+{% assign fields = settings.contact_form_fields %}
+{% assign fields = fields | replace: ', ', ',' | split: ',' %}
+
+<div id="contact-form">
+
+  <h3>{{ 'contact.contact_form.title' | t }}</h3>
+
+  {% form 'contact' %}
+
+  {% if form.posted_successfully? %}
+  <div class="alert-box success">
+    {{ 'contact.contact_form.submitted' | t }}
+  </div>
+  {% endif %}
+
+  {% include 'form-errors' %}
+
+  <fieldset>
+
+    {% for field in fields %}
+
+      {% assign required = false %}
+      {% assign field_title = field | replace: '!', '' %}
+      {% assign field_handle = field_title | handle %}
+      {% assign field_required = 'contact.contact_form.field_required' | t: field: field_title %}
+
+      {% if field contains '!' %}
+        {% assign required = true %}
+      {% endif %}
+
+      <div class="row">
+        <div class="large-12 columns{% if form.errors contains field_handle %} error{% endif %}">
+          <label for="{{field_handle}}">{{field_title}}</label>
+          <input type="text" id="{{field_handle}}" name="contact[{{field_handle}}]" {% if required == true %}data-required="true" data-required-message="{{ field_required }}"{% endif %}>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="row">
+      <div class="large-12 columns{% if form.errors contains 'body' %} error{% endif %}">
+        <label for="message">{{ 'contact.contact_form.message_label' | t }}</label>
+        <textarea id="message" name="contact[body]" data-required="true" data-required-message="{{ 'contact.contact_form.message_required' | t }}"></textarea>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <div class="form-actions">
+    <button type="submit" class="button">{{ 'contact.contact_form.submit' | t }}</button>
+  </div>
+
+  {% endform %}
+
+</div>

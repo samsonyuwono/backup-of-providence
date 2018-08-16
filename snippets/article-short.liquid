@@ -1,0 +1,24 @@
+{% include 'article-open' %}
+
+
+<div class="row">
+  <div class="columns small-6 large-12">
+  {% if article.image.src != blank %}
+    <a href="{{ article.url }}"><img class="bordered" src="{{ article.image.src | img_url: '1024x1024' }}"></a>
+  {% endif %}
+  </div>
+  <div class="columns small-6 large-12">
+    <header>
+      <h2 class="entry-title">
+        {{ article.title | escape | link_to: article.url }}
+        {% include 'article-meta' %}
+      </h2>
+    </header>
+    {% include 'article-body' %}
+  </div>
+</div>
+
+
+{% include 'article-close' %}
+
+

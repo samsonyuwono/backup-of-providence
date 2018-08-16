@@ -1,0 +1,76 @@
+      </div>
+
+    {% if has_sidebar %}
+<style>
+table {
+	display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+    border-radius: 5px;
+	border: 1px solid grey;
+	background-color: rgb(240, 240, 240);
+	text-align: center;
+	width: 80%;
+}
+table p {
+	font-size: 90%;	
+	text-align: left;
+}
+table h6 {
+	font-size: 110%;
+	margin-bottom: 0;
+}
+#sidebar-content {
+	border-radius: 5px;
+	border: 1px solid grey;
+	background-color: white; 
+}
+#sidebar-title {
+}
+</style>
+<div class="{{ sidebar_class }}">
+	<table>
+		<tbody>
+			<tr id="sidebar-title" >
+				<td id="sidebar-title">
+					<h6 style="margin: 0;">
+						<strong>Contact Information</strong>
+					</h6>
+				</td>	
+			</tr>
+			<tr>
+				<td id="sidebar-content">
+					<h6 style="color: rgb(0, 88, 168);">
+						<strong>Postal Address</strong>
+					</h6>
+					<p>
+						Delta Children's Products Corp.
+						<br>
+						114 West 26th Street
+						<br>
+						New York, NY 10001
+					</p>
+					<hr>
+					<h6 style="color: rgb(0, 88, 168);">
+						<strong>Telephone</strong>
+					</h6>
+					<p>
+						Delta Children Consumer Care is available Monday through Friday from 8:30 AM to 6:00 PM Eastern Time.  Please note the center is not available on Saturdays, Sundays, and holidays.
+						<br>
+						<br>
+						US: +1 (800) 377-3777 x 6221
+						<br>
+						INTL: +1 (212) 645-9033
+
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+    {% endif %}
+
+  </div>
+</div>
+<!-- /#content-wrap -->

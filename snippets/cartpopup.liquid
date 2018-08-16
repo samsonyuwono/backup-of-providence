@@ -1,0 +1,57 @@
+<!--EDGE CASE : INITAL ADD TO CART WILL KEEP ONLY THE FIRST PART OF IF STATMENT WHICH WAS ON LOAD (CART WAS EMPTY) SO HAD TO DUPLICATE AJAX/HEADER DIVS-->
+    <!--Cart Popup Module-->
+    <div class="nest" style="display:none">
+      {% if cart.item_count == 0 %}
+      <div class="shopping-cart">
+      <div class="shopping-cart-header edgeCartHeader" style="display:none">
+          <span class="header">Your Cart</span>
+          <div class="shopping-cart-total">
+            <span class="lighter-text">Total:</span>
+            <span class="main-color-text cartTotal" >{{ cart.total_price | money }}</span>
+          </div>
+        </div>
+      <div class="row">
+      <div class="shopping-cart-items no-dot edgeCartPopup">
+        <h5>Your Cart is Empty!</h5>
+      </div>
+    </div>
+  </div>
+      <script>
+      $('.nest').css('right','11%');
+      $('.nest').css('width','300px');
+      $('.nest').css('text-align','center');
+      </script>
+      {%else%}
+      <div class="shopping-cart">
+        <div class="shopping-cart-header">
+          <span class="header">Your Cart</span>
+          <div class="shopping-cart-total">
+            <span class="lighter-text">Total:</span>
+            <span class="main-color-text cartTotal">{{ cart.total_price | money }}</span>
+          </div>
+        </div> <!--end shopping-cart-header -->
+        <div class="row">  
+        <ul class="shopping-cart-items no-dot ajaxCartAppend">
+         {% for item in cart.items %}
+          <a href="{{item.product.url}}">
+          <li class="clearfix">
+            <div class="col-sm-3">
+              {{ item.image |  img_url: 'small' | img_tag }}
+            </div>
+            <div class="col-sm-9">
+              <span class="item-name">{{item.product.title}}</span>
+              <div>
+                <span class="item-price">Price: {{item.price | money}}</span>
+                <br>
+                <span class="item-quantity">Quantity: {{item.quantity}}</span>
+              </div>
+            </div>
+          </li>
+          </a>
+          {%endfor%}
+        </ul>
+        </div>
+        <a href="/cart" class="button" id="checkout">Checkout</a>
+        {%endif%}
+      </div><!--end shopping-cart -->
+    </div>

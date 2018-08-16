@@ -1,0 +1,150 @@
+   <meta http-equiv="refresh" content="7; URL='http://deltachildren.com/'" />
+<div id="redirectAlert">
+  <img src="{{ 'simmons-redirect-pop-up.png' | asset_url }}">
+</div>
+
+{% assign has_sidebar = false %}
+{% include 'settings' %}
+
+<!-- Slider -->
+{% if settings.slides_visible? %}
+  {% assign area = 'index' %}
+  <div style="margin:0; padding:0;" class="row show-for-large-up">
+    <div style="margin:0; padding:0;" class="large-12 columns">
+      <div style="margin:0; padding:0; z-index: -1; position: relative;" class="slides-wrap">
+        {% include 'slides' with area %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+
+ <!-- center content of homepage -->
+<div style="z-index: -1; position: relative;">
+  {% include 'home-middle' %}
+</div>
+<!-- mobile center links -->
+<div class="show-for-medium-down" id="mobile-middle">
+  {% include 'mobile-middle-links' %}
+</div>
+<!-- instagram grid -->
+{% include 'insta-footer' %}
+
+
+
+
+<!-- Page content -->
+{% if pages[settings.index_content_s1].content != '' %}
+  <div class="page-content">
+  {{ pages[settings.index_content_s1].content }}
+  </div>
+{% endif %}
+
+{% if settings.index_products != '' %}
+  {% include 'index-products' %}
+{% endif %}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<div id="redirectAlert">
+  <img src="{{ 'simmons-redirect-pop-up.png' | asset_url }}">
+</div>
+
+<style>
+#mobile-middle{
+  position: relative;
+  top: -17px;
+}
+
+.row .row:after {
+  margin: 10px 0;
+}
+
+/*div.privy.privy-popup-container{
+display: none;
+}*/
+
+
+/*mobile*/
+  @media only screen and (max-device-width: 679px){
+
+    #site-header, #header-actions, .promo-boxes {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .columns {
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+
+
+@media only screen and (min-device-width: 679px) and (max-width: 679px){
+
+  .columns {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+}
+
+ /*All excxept mobile*/
+  @media only screen and (min-width: 679px){
+
+    .columns {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+
+}
+
+@media screen and (min-width: 1599px){
+
+.bx-wrapper img {
+    width: 100%;
+    display: block;
+    margin: 0 !important;
+    padding: 0;
+}
+}
+
+
+.row, .padded-h, .bx-viewport, .bx-wrapper, .slide, .index {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+
+.row.padded-h {
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  padding: 0 !important;
+
+}
+ .index {
+  .slides-wrap {
+
+  }
+    .slide {
+       min-width: 100% !important;
+       max-width: 100% !important;
+      img {
+        min-width: 150% !important;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+      }
+
+  }
+</style>

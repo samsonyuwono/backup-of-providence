@@ -1,0 +1,219 @@
+<div class="row">
+  <div class="large-10 large-push-1 small-12 medium-11 medium-push-1 columns">
+	 <div id="header">
+	  <a href="/blogs/the-play-yard/"><img src="https://cdn.shopify.com/s/files/1/0911/1270/files/the-play-yard-title.png?14806450602141381922" alt="logo" /></a>
+	 </div>
+  </div>
+  <div class="large-6 large-pull-2 medium-12 medium-push-3 small-8 small-pull-1 columns">
+      <span class="sub-header" style="color: #8dabdd;">
+      	A Blog for Families by <a href="/">Delta Children</a>
+      </span>
+  </div>
+</div>
+
+<div class="row">
+	<div class="large-12 medium-12 columns hide-for-small hide-for-medium">
+		<ul class="blog-nav">
+			<li>
+				<a href="/blogs/the-play-yard/">Home</a>
+			</li>
+			<li>
+				<a href="/blogs/the-play-yard/tagged/safety">Safety</a>
+			</li>
+			<li>
+				<a href="/blogs/the-play-yard/tagged/nursery-inspiration">Nursery Inspiration</a>
+
+			</li>
+			<li>
+				<a href="/blogs/the-play-yard/tagged/parenting">Parenting</a>
+
+			</li>
+			<li>
+				<a href="/blogs/the-play-yard/tagged/diy">DIY</a>
+
+			</li>
+			<li>
+				<a href="/blogs/the-play-yard/tagged/resources">Parent Resources</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="mob-menu small-12 columns hide-for-large hide-for-xlarge hide-for-xxlarge">
+		{% include 'blog-mob-nav' %}
+	</div>
+</div>
+
+<style>
+/* Mobile */
+@media only screen and (max-width: 640px) {
+	.sub-header {
+		font-size: 9px;
+		font-weight: bold;
+	}
+}
+
+
+/*Global*/
+
+.blog-foot {
+	width: 100%;
+	margin: 50px auto 5px;
+	position: relative;
+	bottom: 0;
+	text-align: center;
+
+}
+.blog-nav {
+	bottom: 0;
+	margin: 0 auto;
+}
+.icons {
+	color: #8dabdd;
+	font-size: 30px;
+	margin: 0 5px;
+}
+html, body {
+	font-family: 'Montserrat', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+}
+
+.menu-li{
+  display: inline-block;
+}
+.blog-nav li{
+  display: inline-block;
+}
+.social-icons li{
+  display: inline-block;
+}
+.foot-nav li{
+  display: inline-block;
+}
+
+h1 {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+}
+.hfeed h2, #site-body h2.entry-title a {
+	color: #444 !important;
+	letter-spacing: 2px;
+	font-weight: light;
+}
+.light-blue {
+	color: #8dabdd !important;
+}
+.dark-blue {
+	color: #3743a1 !important;
+}
+.hfeed h5, #site-body h5 {
+	color: #8dabdd;
+	letter-spacing: 2px;
+	text-align: center;
+	font-weight: bold;
+}
+h6 {
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+/*.bordered {
+	border: 1px solid #487ed6;
+}*/
+.blog-nav {
+	border-bottom: 2px solid #777;
+	border-top: 2px solid #777;
+	letter-spacing: 2px;
+	line-height: 1;
+	padding: 0;
+	text-align: center;
+	margin-bottom: 45px;
+	margin-top: 10px;
+	display: block;
+	margin-left: -9px;
+}
+.blog-nav a {
+
+	font-weight: bold;
+    display: block;
+    padding: 20px 25px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: #4e4949 !important;
+
+}
+.blog-nav a:visited {
+	color: #4e4949 !important;
+}
+.social-icons img {
+	max-width: 42px;
+}
+#header {
+	margin-top: 20px;
+}
+.sub-header {
+	margin-bottom: 10px;
+	/*text-transform: uppercase;*/
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+
+}
+
+.menu-toggle, .sub-menu-toggle {
+    display: none;
+    visibility: hidden;
+}
+  .button {
+    margin-left: -5px;
+    background-color: #487ed6 !important;
+    padding: 14px;
+    max-height: 30px;
+    padding: 9px;
+    font-size: 10px;
+  }
+
+
+  @media only screen and (min-width: 1275px) {
+
+	.hfeed h5, #site-body h5 {
+		margin: 0 0 25px;
+	}
+	.sub-header{
+		font-weight: 100 !important;
+		font-size: 20px;
+	}
+
+  }
+
+/* Medium Small desktop (shopify 'medium' starts at 1000px)*/
+@media only screen and (min-width: 642px) and (max-width: 1025px) {
+	.hfeed h2, #site-body h2.entry-title a {
+		font-size: 24px;
+	}
+}
+
+/* Medium Big desktop */
+
+@media only screen and (min-width: 1026px) and (max-width: 1250px) {
+
+	.hfeed h5, #site-body h5 {
+		margin: 0 0 25px;
+	}
+
+	.hfeed h5, #site-body h5 {
+		font-size: 14px;
+	}
+	.blog-nav a {
+		padding: 20px 15px;
+	}
+	.hfeed h2, #site-body h2.entry-title a {
+	font-size: 24px;
+	}
+	.hfeed header {
+	margin-top: 10px;
+	}
+	.sub-header {
+		margin-top: -11px;
+	}
+
+}
+</style>

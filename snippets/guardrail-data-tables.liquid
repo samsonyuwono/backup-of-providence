@@ -1,0 +1,818 @@
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<style>
+
+
+
+/*Global Styles*/
+@font-face{
+  font-family: 'Gotham Black';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Gotham_Black.otf');
+}
+@font-face{
+  font-family: 'Gotham Medium';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/gotham-medium.otf');
+}
+@font-face{
+  font-family: 'Gotham Light';
+  src: url('//cdn.shopify.com/s/files/1/0578/7201/files/Gotham_Light_1.otf');
+}
+
+.gotham-medium{
+  font-family: 'Gotham Medium';
+}
+.gotham-black{
+  font-family: 'Gotham Black';
+}
+
+.light-blue{
+  color: #407cbe !important;
+}
+.dark-blue{
+  color: #124660 !important;
+}
+.dark-grey{
+  color: #606b82;
+}
+.light-grey{
+  color: #8e8e8e;
+}
+
+/*for changing the page to full screen*/
+
+#content-wrap .row:first-child div.primary:first-child{
+  width: 100%;
+  left: 0;
+}
+
+
+#content-wrap .row .sidebar{
+  display: none !important;
+}
+
+  header.page-header{
+    visibility: hidden;
+  }
+
+
+/*   moves convert your crib banner asset up to top of page  */
+  @media screen and (min-width: 800px) {
+
+    #content-wrap .row div.primary{
+     margin-top: -100px;
+
+    }
+
+  }
+  @media screen and (max-width: 642px) {
+
+    header.page-header{
+    display: none;
+  }
+    #banner-img-search{
+      padding-top: 6px;
+    }
+
+  }
+
+
+  #left-nav-container ul.dropdown{
+    display: block !important;
+  }
+#noFilterMainContainer{
+  top: 0;
+}
+#borderTest{
+  display: none;
+}
+#banner-img-search{
+  /*background-image:url('//cdn.shopify.com/s/files/1/0578/7201/files/guardrail-page-search-banner.jpg');*/
+  position: relative;
+  text-align: center;
+}
+
+  #banner-img-search video{
+    width: 960px;
+  }
+#banner-img-search #search-feature-title{
+  position: absolute;
+  top: 22%;
+  width: 100%;
+  font-family: 'Gotham Book';
+  text-transform: uppercase;
+  font-size: 130%;
+}
+#banner-img-search input.crib-input{
+  position: absolute;
+  top: 85%;
+  width: 35%;
+  left: 40%;
+  height: 30px;
+  font-family: "Gotham Light";
+  color: #124660 !important;
+  box-shadow:inset 0 0 1px 1px #d3d3d3;
+  border-radius: 6px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+#banner-img-search input.crib-input::-webkit-input-placeholder{
+  font-family: "Gotham Light";
+  color: #124660 !important;
+}
+
+#banner-img-search input.guardrail-input{
+  position: absolute;
+  top: 91%;
+  width: 35%;
+  left: 40%;
+  height: 30px;
+  font-family: "Gotham Light";
+  color: #124660 !important;
+  box-shadow:inset 0 0 1px 1px #d3d3d3;
+  border-radius: 6px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+#banner-img-search input.guardrail-input::-webkit-input-placeholder{
+  font-family: "Gotham Light";
+  color: #124660 !important;
+}
+#banner-img-search input.bedrail-input{
+  position: absolute;
+  top: 91%;
+  width: 35%;
+  left: 40%;
+  height: 30px;
+  font-family: "Gotham Light";
+  color: #124660 !important;
+  box-shadow:inset 0 0 1px 1px #d3d3d3;
+  border-radius: 6px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+#banner-img-search input.bedrail-input::-webkit-input-placeholder{
+  font-family: "Gotham Light";
+  color: #124660 !important;
+}
+
+#guardrails-table_wrapper{
+  padding-left: 0 !important;
+  padding-top: 20px;
+}
+#guardrails-table tbody tr td:nth-child(2){
+  min-width: 150px;
+}
+.dataTables_wrapper .dataTables_filter{
+  float: left;
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+}
+.dataTables_wrapper .dataTables_filter label{
+  text-align: left;
+}
+.dataTables_wrapper .dataTables_filter input{
+  margin-left: 0 !important;
+  margin-bottom: 0;
+}
+#search-feature-title{
+  text-align: center;
+}
+#guardrails-table tbody tr td:first-child{
+  width: 200px;
+  min-width: 100px;
+}
+#guardrails-table tbody tr td:nth-child(4){
+  width: 100px;
+}
+#guardrails-table tbody tr td:nth-child(6){
+ width: 100px;
+}
+
+#guardrails-table .head{
+  display: block;
+  color: #124660 !important;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100px;
+}
+#guardrails-table .sorting{
+  background-image: none;
+  box-sizing: border-box;
+  position: relative;
+}
+.arrow-down {
+  width: 0 !important;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-top: 10px solid #124660;
+  position: absolute;
+  bottom: 0;
+  left: 57px !important;
+}
+#only-guardrails-table tbody tr{
+  display: inline-block;
+  min-height: 200px;
+  width: 180px;
+  text-align: center;
+  position: relative;
+  margin: 20px;
+  background-color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+  #only-guardrails-table tbody tr td {
+    display: inline-block;
+    background-color: white;
+    font-size: 90%;
+    line-height: 1.4;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+#only-bedrail-table tbody tr{
+  display: inline-block;
+/*   min-height: 200px; */
+  width: 180px;
+  text-align: center;
+  position: relative;
+  margin: 20px;
+  background-color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+  #only-bedrail-table tbody tr td {
+    display: inline-block;
+    background-color: white;
+    font-size: 90%;
+    line-height: 1.4;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+#only-guardrails-table thead{
+  display: none;
+}
+#only-bedrail-table thead{
+  display: none;
+}
+#only-guardrails-table tbody tr td{
+  display: inline-block;
+  background-color: white;
+}
+#only-bedrail-table tbody tr td{
+  display: inline-block;
+  background-color: white;
+}
+#only-guardrails-table img.g-img{
+}
+#only-guardrails-table tbody{
+  text-align: center;
+}
+#only-bedrail-table tbody{
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  #guardrails-table_wrapper{
+    overflow-x: scroll;
+  }
+  #banner-img-search #search-feature-title{
+    font-size: 90%;
+  }
+   #banner-img-search video{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 641px) {
+  .hero_img_holder{
+    display: none !important;
+  }
+  #banner-img-search #search-feature-title{
+    font-size: 50%;
+  }
+  #banner-img-search input{
+    height: 30px;
+  }
+  #only-guardrails-table tbody tr{
+    min-height: 170px;
+    width: 150px;
+  }
+  #only-bedrail-table tbody tr{
+    min-height: 170px;
+    width: 150px;
+  }
+  #guardrails-table_wrapper{
+    overflow-x: scroll;
+  }
+  #guardrails-table tbody tr td:first-child{
+    min-width: 100px;
+  }
+  #guardrails-table tbody tr td:nth-child(4){
+    min-width: 100px;
+  }
+  #guardrails-table tbody tr td:nth-child(6){
+   min-width: 100px;
+  }
+}
+
+#know-crib{
+  position: absolute;
+  top: 84.5%;
+  left: 18%;
+  color: #124660 !important;
+}
+#guardrail-name{
+  position: absolute;
+  top: 90.5%;
+  left: 18%;
+  color: #124660 !important;
+}
+#crib-or{
+  display: block;
+  font-family: 'Gotham Light' !important;
+  line-height: .6;
+  text-align: center;
+  color: #124660 !important;
+}
+
+@media screen and (max-width: 1230px) {
+  #know-crib{
+    font-size: 100%;
+    top: 81%;
+    left: 23%;
+
+  }
+  #guardrail-name{
+    font-size: 100%;
+    top: 87%;
+    left: 23%;
+  }
+  #crib-or{
+    font-size: 95%;
+    line-height: 1.5;
+  }
+  #banner-img-search input.crib-input{
+    position: absolute;
+    top: 80%;
+    width: 30%;
+    left: 45%;
+    font-size: 90%;
+  }
+  #banner-img-search input.crib-input::-webkit-input-placeholder{
+    font-family: "Gotham Light";
+    color: #124660 !important;
+  }
+
+  #banner-img-search input.guardrail-input{
+    position: absolute;
+    top: 87%;
+    width: 30%;
+    left: 45%;
+    font-size: 90%;
+  }
+  #banner-img-search input.guardrail-input::-webkit-input-placeholder{
+    font-family: "Gotham Light";
+    color: #124660 !important;
+  }
+  #banner-img-search input.bedrail-input{
+    position: absolute;
+    top: 87%;
+    width: 30%;
+    left: 45%;
+    font-size: 90%;
+  }
+  #banner-img-search input.bedrail-input::-webkit-input-placeholder{
+    font-family: "Gotham Light";
+    color: #124660 !important;
+  }
+}
+@media screen and (max-width: 1025px) {
+  #crib-or{
+    line-height: 1.6;
+    font-size: 95%;
+  }
+  #banner-img-search input.crib-input{
+    height: 20px;
+      top: 80%;
+  }
+  #banner-img-search input.guardrail-input{
+    height: 20px;
+      top: 87%;
+  }
+  #banner-img-search input.bedrail-input{
+    height: 20px;
+      top: 87%;
+  }
+
+  #know-crib{
+    font-size: 100%;
+    top: 80%;
+    left: 20%;
+
+  }
+  #guardrail-name{
+    font-size: 100%;
+    top: 87%;
+    left: 20%;
+  }
+}
+@media screen and (max-width: 850px) {
+  #know-crib{
+  left: 15%;
+  }
+  #guardrail-name{
+  left: 15%;
+  }
+  #crib-or{
+  line-height: .5;
+  }
+}
+
+/*For Mobile*/
+@media screen and (max-width: 420px) {
+  #crib-or{
+    line-height: .7;
+    font-size: 95%;
+  }
+  #banner-img-search input.crib-input{
+    height: 20px;
+      top: 74%;
+      left: 50%;
+  }
+  #banner-img-search input.guardrail-input{
+    height: 20px;
+      top: 84%;
+      left: 50%;
+  }
+  #banner-img-search input.bedrail-input{
+    height: 20px;
+      top: 84%;
+      left: 50%;
+  }
+
+  #know-crib{
+    font-size: 100%;
+    top: 74%;
+    left: 10%;
+
+  }
+  #guardrail-name{
+    font-size: 100%;
+    top: 84%;
+    left: 10%;
+  }
+
+
+
+
+}
+
+
+
+
+
+</style>
+  <div class="row" id="banner-img-search">
+    {%if collection.handle == 'guardrails' %}
+    <video id="vid" autoplay="autoplay" muted >
+      <source src="https://cdn.shopify.com/s/files/1/0578/7201/files/Conversion_Banner_no_search.mp4" type="video/mp4" >
+      </video>
+    {%endif%}
+  {%if collection.handle == "full-size-bed-rails"%}
+  <video id="vid" autoplay="autoplay" muted >
+    <source src="https://cdn.shopify.com/s/files/1/0578/7201/files/Full_Bed-3.mp4" type="video/mp4">
+    </video>
+    {%endif%}
+    <h4 id="know-crib" class="gotham-medium">Know Your Crib?<span id="crib-or" class="gotham-light">-or-</span></h4>
+    <h4 id="guardrail-name" class="gotham-medium">Search by Guardrail</h4>
+  </div>
+
+{% include 'gr-data' %}
+{% include 'gr-data-2' %}
+
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+<script>
+
+
+//hides tables when page loads
+$('table#guardrails-table').hide();
+$('table#only-guardrails-table').hide();
+$('table#only-bedrail-table').hide();
+
+
+$(document).ready(function() {
+
+  //initialize all search bars
+  initializeGuardTable();
+  guardOnlyTable();
+  bedRailOnlyTable();
+  //end intialize all search bars
+
+  videoBanner();
+  document.getElementById('vid').play();
+
+
+  //hides tables if no text in search bar
+  startType();
+
+  //script for Search By Crib Table
+  varsCribSearch();
+  showImgAndLinkCrib();
+  showImgAndLinkGuard();
+  showImgAndLinkFull();
+  styleCribSearchTable();
+  //end script for Search by crib Table
+
+  //script for Search By guardrail Table
+  varsGuardSearch();
+  gImgLink();
+  // styleGSearchTable();
+
+  //script for Search By full size bed rail Table
+  varsBedRailSearch();
+  bImgLink();
+  // styleGSearchTable();
+
+
+  //All Functions Defined below for Search by Crib Name or Style # Search Bar
+  function initializeGuardTable(){
+    var table = $('#guardrails-table').DataTable({
+      paging: false
+    });
+    var data = table.columns([2, 3, 4]).data();
+    // $('#guardrails_wrapper').prependTo('#site-body');
+    $('#guardrails-table_info').insertBefore('#guardrails-table');
+  }
+
+  function startType(){
+    $('#guardrails-table_filter input').keyup(function(){
+      if($(this).val() == ''){
+        $('table#guardrails-table').hide();
+        $('#guardrails-table_info').hide();
+        $('.products.cards').show();
+        $('.pagination-wrap').show();
+        $('#only-guardrails-table_filter').show();
+        $('#only-bedrail-table_filter').show();
+
+      }else{
+        $('table#guardrails-table').show();
+        $('#guardrails-table_info').show();
+        $('.products.cards').hide();
+        $('.pagination-wrap').hide();
+        $('#only-guardrails-table_filter').hide();
+        $('#only-bedrail-table_filter').hide();
+
+        $('.crib-img').lazy();
+        $('.guard-img').lazy();
+        $('.full-img').lazy();
+      }
+    });
+    $('#only-guardrails-table_filter input').keyup(function(){
+      if($(this).val() == ''){
+        $('table#only-guardrails-table').hide();
+        $('#only-guardrails-table_info').hide();
+        $('.products.cards').show();
+        $('.pagination-wrap').show();
+        $('#guardrails-table_filter').show();
+      }else{
+        $('table#only-guardrails-table').show();
+        $('#only-guardrails-table_info').show();
+        $('.products.cards').hide();
+        $('.pagination-wrap').hide();
+        $('#guardrails-table_filter').hide();
+        $('.g-img').lazy();
+      }
+    });
+    $('#only-bedrail-table_filter input').keyup(function(){
+      if($(this).val() == ''){
+        $('table#only-bedrail-table').hide();
+        $('#only-bedrail-table_info').hide();
+        $('.products.cards').show();
+        $('.pagination-wrap').show();
+        $('#guardrails-table_filter').show();
+      }else{
+        $('table#only-bedrail-table').show();
+        $('#only-bedrail-table_info').show();
+        $('.products.cards').hide();
+        $('.pagination-wrap').hide();
+        $('#guardrails-table_filter').hide();
+        $('.b-img').lazy();
+      }
+    });
+  }
+
+  function varsCribSearch(){
+    //varibles for functionality to alter "search by crib" table content to display images and links
+    cribLink = $('#guardrails-table tbody tr td:first-child');
+    cribImg = $('#guardrails-table tbody tr td:nth-child(2)');
+    cribName = $('#guardrails-table tbody tr td:nth-child(3)');
+    cribSku = $('#guardrails-table tbody tr td:nth-child(4)');
+    // cribColorCode = $('#guardrails-table tbody tr td:nth-child(5)');
+    // cribConvInfo = $('#guardrails-table tbody tr td:nth-child(6)');
+    guardLink = $('#guardrails-table tbody tr td:nth-child(5)');
+    guardImg = $('#guardrails-table tbody tr td:nth-child(6)');
+    guardSKU = $('#guardrails-table tbody tr td:nth-child(7)');
+    // guardColorCode = $('#guardrails-table tbody tr td:nth-child(10)');
+    fullRailLink = $('#guardrails-table tbody tr td:nth-child(8)');
+    fullRailImg = $('#guardrails-table tbody tr td:nth-child(9)');
+    fullRailSku = $('#guardrails-table tbody tr td:nth-child(10)');
+    // fullRailConvInfo = $('#guardrails-table tbody tr td:nth-child(14)');
+  }
+
+  function styleCribSearchTable(){
+    $('#guardrails-table_filter label input').addClass('crib-input').appendTo('#banner-img-search');
+    $('#guardrails-table_filter label').remove();
+    $('.guard input[value="Search"]').hide();
+    $('.dataTables_info').hide();
+    $('form.guard').insertAfter('#guardrails-table_filter');
+//     $("<h2 id='search-feature-title'>Find the correct guardrail for your crib using our search tools!</h2>").appendTo('#banner-img-search');
+    $('#guardrails-table th:contains("Crib Image Link")').text('');
+    $('#guardrails-table th:contains("Guardrail Image Link")').text('');
+    $('#guardrails-table th:contains("Full Rail Image Link")').text('');
+    $('.crib-input').attr('placeholder', 'Crib name or Style #');
+
+        if(window.location.href === "https://www.deltachildren.com/collections/full-size-bed-rails"){
+          $('#guardrails-table tbody tr td:nth-child(4), #guardrails-table tbody tr td:nth-child(5)').each(function(){
+            $(this).remove();
+//             $('#search-feature-title').text('');
+          });
+          $('#guardrails-table thead th:nth-child(4), #guardrails-table thead th:nth-child(5)').remove();
+        }
+
+  }
+
+  function showImgAndLinkCrib(){
+    cribImg.each(function(){
+      cribImgSrc = $(this).text();
+      $(this).empty();
+      $("<img class='crib-img'>").attr('data-src', cribImgSrc).appendTo($(this));
+    });
+    cribLink.each(function(){
+      cribLinkHref = $(this).text();
+      $(this).next().children('.crib-img').wrap($("<a class='crib-link'></a>").attr('href', cribLinkHref));
+      $(this).remove();
+      $("th:contains('Crib Link')").remove();
+    });
+  }
+
+  function showImgAndLinkGuard(){
+    guardImg.each(function(){
+      guardImgSrc = $(this).text();
+      $(this).empty();
+      $("<img class='guard-img'>").attr('data-src', guardImgSrc).appendTo($(this));
+    });
+    guardLink.each(function(){
+      guardLinkHref = $(this).text();
+      $(this).next().children('.guard-img').wrap($("<a class='guard-link'></a>").attr('href', guardLinkHref));
+      $(this).remove();
+      $("th:contains('Guardrail Link')").remove();
+    });
+  }
+
+  function showImgAndLinkFull(){
+    fullRailImg.each(function(){
+      fullImgSrc = $(this).text();
+      $(this).empty();
+      $("<img class='full-img'>").attr('data-src', fullImgSrc).appendTo($(this));
+    });
+    fullRailLink.each(function(){
+      fullLinkHref = $(this).text();
+      $(this).next().children('.full-img').wrap($("<a class='full-link'></a>").attr('href', fullLinkHref));
+      $(this).remove();
+      $("th:contains('Full Rail Link')").remove();
+    });
+  }
+
+  //all functions listed below for "Search by Guardrail Name or Style #"" search bar
+  function guardOnlyTable(){
+    var table = $('#only-guardrails-table').DataTable({
+      paging: false
+    });
+    var data = table.columns([1,2, 3]).data();
+    // $('#guardrails_wrapper').prependTo('#site-body');
+    $('#only-guardrails-table_info').insertBefore('#only-guardrails-table');
+  }
+
+  function varsGuardSearch(){
+    //varibles for functionality to alter table content to display images and links
+    gGrid = $('#only-guardrails-table tbody tr');
+    gStyle = $('#only-guardrails-table tbody tr td:first-child');
+    gColor = $('#only-guardrails-table tbody tr td:nth-child(2)');
+    gLink = $('#only-guardrails-table tbody tr td:nth-child(3)');
+    gImg = $('#only-guardrails-table tbody tr td:nth-child(4)');
+  }
+
+  function gImgLink(){
+    gImg.each(function(){
+      gImgSrc = $(this).text();
+      $(this).empty();
+      $("<img class='g-img'>").attr('data-src', gImgSrc).appendTo($(this));
+    });
+    gLink.each(function(){
+      gLinkHref = $(this).text();
+      $(this).next().children('.g-img').wrap($("<a class='g-link'></a>").attr('href', gLinkHref));
+      $(this).remove();
+    });
+    gGrid.each(function(){
+      $(this).children('td:nth-child(3)').prependTo($(this));
+    });
+      $("th:contains('Guardrail Image Link')").remove();
+      $("th:contains('Guardrail color')").remove();
+      $("th:contains('Guardrail #')").remove();
+
+    //styling for guardrail search grid
+    if(window.location.href === "https://www.deltachildren.com/collections/guardrails"){
+      $('#only-guardrails-table_filter label input').addClass('guardrail-input').appendTo('#banner-img-search');
+      $('#only-guardrails-table_filter label').remove();
+      $('.guardrail-input').attr('placeholder', 'Guardrail name or Style #');
+
+
+    }
+  }
+
+  //all functions listed below for "Search by Full Bed Rail Name or Style #"" search bar
+  function bedRailOnlyTable(){
+    var table = $('#only-bedrail-table').DataTable({
+      paging: false
+    });
+    var data = table.columns([1,2, 3]).data();
+    // $('#guardrails_wrapper').prependTo('#site-body');
+    $('#only-bedrail-table_info').insertBefore('#only-bedrail-table');
+  }
+
+  function varsBedRailSearch(){
+    //varibles for functionality to alter table content to display images and links
+    bGrid = $('#only-bedrail-table tbody tr');
+    bStyle = $('#only-bedrail-table tbody tr td:first-child');
+    bColor = $('#only-bedrail-table tbody tr td:nth-child(2)');
+    bLink = $('#only-bedrail-table tbody tr td:nth-child(3)');
+    bImg = $('#only-bedrail-table tbody tr td:nth-child(4)');
+  }
+
+  function bImgLink(){
+    bImg.each(function(){
+      bImgSrc = $(this).text();
+      $(this).empty();
+      $("<img class='b-img'>").attr('data-src', bImgSrc).appendTo($(this));
+    });
+    bLink.each(function(){
+      bLinkHref = $(this).text();
+      $(this).next().children('.b-img').wrap($("<a class='b-link'></a>").attr('href', bLinkHref));
+      $(this).remove();
+    });
+    bGrid.each(function(){
+      $(this).children('td:nth-child(3)').prependTo($(this));
+    });
+      $("th:contains('Guardrail Image Link')").remove();
+      $("th:contains('Guardrail color')").remove();
+      $("th:contains('Guardrail #')").remove();
+
+    //styling for guardrail search grid
+    if(window.location.href === "https://www.deltachildren.com/collections/full-size-bed-rails"){
+      $('#only-bedrail-table_filter label input').addClass('bedrail-input').appendTo('#banner-img-search');
+      $('#only-bedrail-table_filter label').remove();
+      $('#guardrail-name').text('Search by Bed Rail');
+      $('.bedrail-input').attr('placeholder', 'Bed Rail name or Style #');
+
+    }
+  }
+
+  function videoBanner(){
+    if(window.location.href === "https://www.deltachildren.com/collections/guardrails"){
+      if ($(window).width() > 667) {
+        $('#banner-img-search video source').attr('src', 'https://cdn.shopify.com/s/files/1/0578/7201/files/Conversion_Banner_no_search.mp4');
+      }
+      else{
+        $('#banner-img-search video source').attr('src', 'https://cdn.shopify.com/s/files/1/0578/7201/files/Mobile-2-guardrails.mp4');
+      }
+    }
+    if(window.location.href === "https://www.deltachildren.com/collections/full-size-bed-rails"){
+      if ($(window).width() > 667) {
+        $('#banner-img-search video source').attr('src', 'https://cdn.shopify.com/s/files/1/0578/7201/files/Full_Bed-3.mp4');
+      }
+      else{
+        $('#banner-img-search video source').attr('src', 'https://cdn.shopify.com/s/files/1/0578/7201/files/Full_Bed_Mobile.mp4?9432959167196341215');
+      }
+    }
+
+    var iterations = 1;
+
+     var myVideo = document.getElementById('vid')
+
+    myVideo.addEventListener('ended', function () {
+
+    if (iterations < 3) {
+        this.currentTime = 0;
+        this.play();
+        iterations ++;
+    }
+    }, false);
+
+    document.getElementById('vid').play();
+
+  }
+
+});//end on document.ready
+
+</script>

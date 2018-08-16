@@ -1,0 +1,11 @@
+{% assign nav_area = 'primary' %}
+{% assign nav = linklists[settings.header_nav_primary_list] %}
+{% assign levels = 4 %}
+
+<nav class="top-bar show-for-medium-up" data-topbar data-options="mobile_show_parent_link: true" style="float:right;">
+  <section class="top-bar-section">
+    <ul class="right" id="{{blog.handle | handleize}}{{shop.name | handleize}}">
+      {% include 'nav-structure' %}
+    </ul>
+  </section>
+</nav>

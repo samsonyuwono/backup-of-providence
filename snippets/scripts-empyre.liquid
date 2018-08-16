@@ -1,0 +1,70 @@
+<script type="text/javascript">
+  var Empyre = Empyre || {};
+
+  Empyre.Theme = {
+    name: "{{ theme_name }}",
+    version: "{{ theme_version }}",
+    config: {
+      ajaxCartEnabled: {{ settings.ajax_cart_enabled }},
+      debugMode: {{ debug_mode }},
+      indexProductsLimit: {{ settings.index_products_limit }},
+      multicurrencyEnabled: {{ settings.multicurrency_enabled }},
+      productQtySelectMax: {{ product_qty_select_max }},
+      productFIZoomEnabled: {{ settings.product_fi_zoom_enabled? }},
+      productSetVariantFromSecondary: {{ product_set_variant_from_secondary }},
+      productUnavailablePriceStyle: "{{ settings.product_unavailable_price_style }}"
+    },
+    current: {
+      article: {{ article | json }},
+      product: {{ product | json }},
+      collection: {{ collection | json }},
+      customerLoggedIn: {{ customer_logged_in }}
+    },
+    shop: {
+      currency: "{{ shop.currency }}",
+      defaultCurrency: "{{ settings.default_currency }}" || "{{ shop.currency }}",
+      domain: "{{ shop.domain | escape }}",
+      moneyFormat: {{ shop.money_format | strip_html | json }},
+      moneyWithCurrencyFormat: {{ shop.money_with_currency_format | strip_html | json }},
+      name: "{{ shop.name | escape }}",
+      url: "{{ shop.url | escape }}"
+    },
+    locale: {
+      cart: {
+        ajax: {
+          addError: "{{ 'cart.ajax.add_error' | t | escape }}",
+          addSuccess: "{{ 'cart.ajax.add_success' | t | escape }}",
+          addWithVariants: "{{ 'cart.ajax.add_with_variants' | t | escape }}",
+          viewCartLink: "{{ 'cart.ajax.view_cart_link' | t | escape }}",
+          viewProductLink: "{{ 'cart.ajax.view_product_link' | t | escape }}"
+        },
+        item_count: {
+          zero: "{{ 'cart.item_count.zero' | t | escape }}",
+          one: "{{ 'cart.item_count.one' | t | escape }}",
+          other: "{{ 'cart.item_count.other' | t | escape }}"
+        },
+        removeItemPrompt: "{{ 'cart.remove_prompt' | t | escape }}"
+      },
+      orderNotes: {
+        add: "{{ 'cart.notes.add' | t | escape }}",
+        edit: "{{ 'cart.notes.edit' | t | escape }}",
+        save: "{{ 'cart.notes.save' | t | escape }}"
+      },
+      products: {
+        addToCart: "{{ 'products.add_to_cart' | t | escape }}",
+        addToCartAdding: "{{ 'products.add_to_cart_adding' | t | escape }}",
+        soldOut: "{{ 'products.sold_out' | t | escape }}",
+        unavailable: "{{ 'products.unavailable' | t | escape }}"
+      },
+      shippingCalculator: {
+        findRates: "{{ 'shipping_calculator.find_rates' | t | escape }}",
+        searching: "{{ 'shipping_calculator.searching' | t | escape }}",
+        rates: {
+          zero: "{{ 'shipping_calculator.rates.zero' | t | escape }}",
+          one: "{{ 'shipping_calculator.rates.one' | t | escape }}",
+          other: "{{ 'shipping_calculator.rates.other' | t | escape }}"
+        }
+      }
+    }
+  };
+</script>

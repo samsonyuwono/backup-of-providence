@@ -1,0 +1,10 @@
+{% if form.errors %}
+<div class="alert-box error">
+  <p>{{ 'general.forms.errors' | t }}</p>
+  <ul class="errors-list">
+    {% for field in form.errors %}
+      <li><strong>{{ field | capitalize }}</strong> {{ form.errors.messages[field] }}.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

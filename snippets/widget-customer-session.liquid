@@ -1,0 +1,7 @@
+{% if shop.customer_accounts_enabled %}
+  {% if customer %}
+    <p>{{ 'customer_accounts.sign_out' | t | customer_logout_link }}</p>
+  {% else %}
+    <p>{{ 'customer_accounts.sign_in' | t | customer_login_link }}</p>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,37 @@
+{% assign has_sidebar = false %}
+{% include 'settings' %}
+
+<!-- Slider -->
+{% if settings.slides_visible? %}
+  {% assign area = 'index' %}
+  <div syle="margin:0 !important; padding:0;" class="row margin-none">
+    <div syle="margin:0; padding:0;" class="large-12 columns">
+      <div syle="margin:0; padding:0;" class="slides-wrap">
+        {% include 'slides' with area %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+<!-- jeep popup -->
+ <!-- {% include 'mailchimp-popup' %} -->
+ <!-- center content of homepage -->
+{% include 'home-middle' %}
+<!-- instagram grid -->
+{% include 'insta-footer' %}
+<!-- Page content -->
+{% if pages[settings.index_content_s1].content != '' %}
+  <div class="page-content">
+  {{ pages[settings.index_content_s1].content }}
+  </div>
+{% endif %}
+
+{% if settings.index_products != '' %}
+  {% include 'index-products' %}
+{% endif %}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

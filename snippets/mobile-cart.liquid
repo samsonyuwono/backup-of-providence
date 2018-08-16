@@ -1,0 +1,140 @@
+<!-- <div id="cart-mobile" style="display:none;">
+  {% if cart.item_count == 0 %}
+  <span id="toggle-cart-mobile-close" style="color:white">X</span>
+  <div class="edgeCartHeader" id="shopping-cart-header-mobile" style="display:none">
+    <span class="header">Your Cart</span>
+    <div class="shopping-cart-total">
+      <span class="lighter-text">Total:</span>
+      <span class="main-color-text cartTotal">{{ cart.total_price | money }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="shopping-cart-items no-dot edgeCartPopup" id="cart-items-mobile">
+    </div>
+    <span id="cart-empty-message"><h5 style="color:white;margin-top:50%;">Your Cart is Empty!</h5></span>
+  </div>
+  {%else%}
+  <section id="cart-filled-wrapper">
+      <div id="shopping-cart-header-mobile">
+        <span id="toggle-cart-mobile-close" style="color:#112e53">X</span>
+        <span class="header">Your Cart</span>
+        <div class="shopping-cart-total">
+          <span class="lighter-text">Total:</span>
+          <span class="main-color-text cartTotal">{{ cart.total_price | money }}</span>
+        </div>
+      </div> <--end shopping-cart-header -->
+      <!-- <div class="row">
+        <ul class="shopping-cart-items no-dot ajaxCartAppend" id="cart-items-mobile">
+         {% for item in cart.items %}
+         <a href="{{item.product.url}}">
+          <li class="clearfix product-in-cart-mobile" id="why">
+            <div class="col-sm-3">
+              {{ item.image |  img_url: 'small' | img_tag }}
+            </div>
+            <div class="col-sm-9 items-wrapper">
+              <span class="item-name">{{item.product.title}}</span>
+              <div>
+                <span class="item-price">Price:   {{item.price | money}}</span>
+                <br>
+                <span class="item-quantity">Quantity:   {{item.quantity}}</span>
+              </div>
+            </div>
+          </li>
+        </a>
+        {%endfor%}
+      </ul>
+    </div>
+  </section>
+{%endif%}
+<a href="/cart" class="button special-cart-case" id="mobile-checkout-button" style="display:none;">Checkout</a>
+</div> -->
+
+
+<!-- new side cart mobile 12/08/16 -->
+<div id="cart-mobile" style="display:none;">
+  {% if cart.item_count == 0 %}
+  <span id="toggle-cart-mobile-close" style="color:white">X</span>
+  <div class="edgeCartHeader" id="shopping-cart-header-mobile" style="display:none;">
+    <span class="header">Your Cart</span>
+    <div class="shopping-cart-total">
+      <span class="lighter-text">Total:</span>
+      <span class="main-color-text cartTotal">{{ cart.total_price | money }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="shopping-cart-items no-dot edgeCartPopup" id="cart-items-mobile">
+    </div>
+    <span id="cart-empty-message"><h5 style="color:white;margin-top:50%;">Your Cart is Empty!</h5></span>
+  </div>
+  {%else%}
+  <section id="cart-filled-wrapper">
+      <div id="shopping-cart-header-mobile">
+        <span id="toggle-cart-mobile-close" style="color:#112e53">X</span>
+        <span class="header">Your Cart</span>
+        <div class="shopping-cart-total">
+          <span class="lighter-text">Total:</span>
+          <span class="main-color-text cartTotal">{{ cart.total_price | money }}</span>
+        </div>
+      </div> <!--end shopping-cart-header -->
+      <div class="row" style="height: 500px; overflow-y: scroll;">
+        <form id="cartform" class="s" action="/cart" method="post">
+        <ul class="shopping-cart-items no-dot ajaxCartAppend" id="cart-items-mobile">
+         {% for item in cart.items %}
+          <li class="clearfix product-in-cart-mobile" id="why">
+            <div class="col-sm-3">
+              <a href="{{item.product.url}}">{{ item.image |  img_url: 'small' | img_tag }}</a>
+            </div>
+            <div class="col-sm-9 items-wrapper">
+              <span class="item-name">{{item.product.title}}</span>
+
+              <!-- attempt to add quant and delete functionality 11/29 -->
+              <div class="actions medium-4 large-2 columns">
+                <span class="quantity" style="display: inline-block";>
+                <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" onfocus="this.select();" style="width: 50px" onkeydown="return true"/>
+                </span>
+                <input type="submit" class="button secondary small" id="update-cart" name="update" value="{{ 'cart.update' | t }}" />
+                <a class="remove-from-cart" data-variant-id="{{ item.variant.id }}" href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><i class="fa fa-trash-o" style="color: white;"></i></a>
+
+              </div>
+
+              <div class="pricing medium-3 large-2 columns">
+                <div class="price line-price" style="color: white;">{{ item.line_price | money }}</div>
+              </div>
+              <!-- <div class="form-actions medium-3 large-2 columns">
+                <input type="submit" class="button secondary small" id="update-cart" name="update" value="{{ 'cart.update' | t }}" />
+              </div> -->
+
+              <!-- end attempt -->
+
+              <!-- <div>
+                <span class="item-price">Price:   {{item.price | money}}</span>
+                <br>
+                <span class="item-quantity">Quantity:   {{item.quantity}}</span>
+              </div> -->
+            </div>
+          </li>
+        {%endfor%}
+      </ul>
+      <!-- attempt to add update cart button 11/29/16 -->
+
+      <!-- end attempt -->
+    </form>
+    <!-- added for element to whole container 11/2/16 -->
+    </div>
+  </section>
+{%endif%}
+
+<a href="/cart" class="button special-cart-case" id="mobile-checkout-button" style="display:none;">Checkout</a>
+</div>
+
+
+<style>
+@media only screen and (max-width: 420px) {
+
+
+form#cartform.s{
+  overflow-y: scroll;
+    height: 600px;
+}
+}
+</style>

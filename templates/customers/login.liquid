@@ -1,0 +1,24 @@
+{% layout settings.customer_layout %}
+
+{% assign has_sidebar = false %}
+{% assign has_crumbs = false %}
+{% assign page_title = 'customer_accounts.login.title' | t %}
+
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+<div class="row">
+  <div class="large-5 columns large-centered">
+    {% include 'customer-account-login' %}
+    {% include 'customer-account-recover-password' %}
+  </div>
+	<!-- Social Start -->
+<!--     <div data-hull-component="login/shopify@hull">Loading Social Login...</div> -->
+  <!--<center>SOCIAL INSERT</center>-->
+    <!-- End Social Login -->
+</div>
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

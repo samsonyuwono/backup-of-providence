@@ -1,0 +1,79 @@
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+<div class="help-center-wrapper">
+{{ page.content }}
+
+<div class="row row-links small-collapse">
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/product-registration"><img src="https://cdn.shopify.com/s/files/1/0578/7201/files/delta-site-icons-05.png?6311904295712527726"/> </a>
+		<p><a href="/pages/product-registration">Product Registration</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/faqs"> <img src="https://cdn.shopify.com/s/files/1/0578/7201/files/delta-site-icons-06.png?16996153025763190022" /> </a>
+		<p><a href="/pages/faqs">FAQs</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/returns-exchanges"> <img src="https://cdn.shopify.com/s/files/1/0578/7201/files/delta-site-icons-08.png?16996153025763190022" /> </a>
+		<p><a href="/pages/returns-exchanges">Returns &amp; Exchanges</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/instructions"> <img src="https://cdn.shopify.com/s/files/1/0578/7201/files/delta-site-icons-09.png?13218687952531299580" /> </a>
+		<p><a href="/pages/instructions">Assembly Instructions</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/contact-us"> <img src="https://cdn.shopify.com/s/files/1/0578/7201/files/delta-site-icons-10.png?16996153025763190022" /> </a>
+		<p><a href="/pages/contact-us">Contact Us</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns" id="recall-link" style="float: left;">
+		<a href="#recallpop" id="recall" rel="modal:open"> <img src="https://cdn.shopify.com/s/files/1/0911/1270/files/safe-sleep-campaign_pic13_782648dd-b4de-4e30-b94a-f3afd95b9283.png?12429820572948560117" /></a>
+		<p><a href="#recallpop" id="recall" rel="modal:open">Recalls </a></p>
+	</div>
+</div>
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+</div>
+
+<!---modal-->
+<div id="recallpop" style="display: none;">
+	<h6>Our recall website is currently under repair.</h6>
+	<h6>If any of the following links are not functioning, please contact our customer service department directly at 1-800-377-3777.</h6>
+	<ul>
+	<li>Safety Peg Recalls</li>
+	<li>Delta Drop-side Recalls</li>
+	<li>Spring Peg Recalls</li>
+	</ul>
+	<p>We apologize for this inconvenience.</p>
+	<p>Please visit our recall website here:<a href="http://www.cribrecallcenter.com/" target="_blank"> Recall Center</a></p>
+</div>
+
+<!-- custom styles -->
+<style>
+	#recall-link img {
+		width: 80px;
+	}
+	.img-link-bundle {
+		display: inline-block;
+		text-align: center;
+
+	}
+
+	.img-link-bundle img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	@media all and (max-width: 420px) {
+	.img-link-bundle {
+		height: 130px;
+		width: 160px;
+	}
+
+}
+</style>

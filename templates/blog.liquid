@@ -1,0 +1,546 @@
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+{% assign blog_prefix = 'blog_articles' %}
+
+{% layout 'page.full-width' %}
+
+{% include 'settings' %}
+
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+{% include 'blog-header' %}
+
+<div class="row padded-h">
+  <div class="large-7 small-12 columns">
+    <div class="hfeed">
+    {% paginate blog.articles by 10 %}
+    {% for article in blog.articles %}
+      {% include 'article-short' %}
+    {% endfor %}
+    {% include 'pagination-numbered' %}
+    {% endpaginate %}
+    </div>
+  </div>
+  <div class="right-side large-4 columns" style="padding:0;">
+
+
+
+      <div class="subscribe-group">
+        <h5 class='light-blue bring'>Subscribe to get 10% Off</h5>
+          <!-- Begin MailChimp Signup Form -->
+          <!-- Begin ActiveHost Signup Form -->
+<!--           <div class="_form_5"></div><script src="https://deltachildren.activehosted.com/f/embed.php?id=5" type="text/javascript" charset="utf-8"></script> -->
+
+          <div id="mc_embed_signup">
+            <form action="https://deltachildren.us8.list-manage.com/subscribe/post?u=80ec84eee53425122429cd899&amp;id=e3c2ebf3e8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group" style="display: none;">
+                  <label for="mce-MMERGE4">Header or Footer? </label>
+                  <input type="text" value="Blog" name="MMERGE4" class="" id="mce-MMERGE4">
+              </div>
+
+          <div class="mc-field-group" style="text-align: center;">
+          	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address" class="input-case-padding" style="padding: 0; width: 65%;">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="display: inline-block; padding-left: 5px; padding-right: 5px; padding-top: 0; width: auto; line-height: 32px; height: 32px;">
+          </div>
+        </div>
+
+
+          	<div id="mce-responses" class="clear">
+          		<div class="response" id="mce-error-response" style="display:none"></div>
+          		<div class="response" id="mce-success-response" style="display:none"></div>
+          	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_80ec84eee53425122429cd899_fc532af10e" tabindex="-1" value=""></div>
+          </form>
+          </div>
+        <!-- end mailchimp form -->
+      </div>
+      <div class="blog-privacy">
+                    <a href="/pages/privacy-policy">Privacy Policy</a> |
+                    <a href="/pages/nursery-or-toddler-room-makeover-sweepstakes-rules" target="_blank">Official Rules</a>
+      </div>
+      <ul class="social-icons">
+        <li><a href="https://www.facebook.com/deltachildren" target="_blank"><i class="fa fa-facebook icons"></i></a></li>
+        <li><a href="https://www.pinterest.com/deltachildren/" target="_blank"> <i class="fa fa-pinterest icons"></i> </a></li>
+        <li><a href="https://www.instagram.com/deltachildren/" target="_blank"> <i class="fa fa-instagram icons"></i></i> </a></li>
+        <li><a href="https://twitter.com/deltachildren/" target="_blank"> <i class="fa fa-twitter icons"></i> </a></li>
+        <li><a href="https://www.youtube.com/channel/UCkMJwey5zDD0ieQlpaf9WsA/" target="_blank"> <i class="fa fa-youtube-square icons"></i> </a></li>
+        <li><a href="/pages/contact-the-play-yard" target="_blank"> <i class="fa fa-envelope-square icons"></i></a></li>
+      </ul>
+      <div class="search">
+        <form class="form-search form-inline" method="get" action="/search">
+          <input class="search-query field" type="text" name="q"{% if search.performed %} value="{{ search.terms | escape | downcase }}"{% endif %} placeholder="Search The Play Yard..." />
+          <input type="hidden" name="type" value="article" />
+        </form>
+      </div>
+
+      <div class="row learn_more">
+        <div class="small-6 medium-6 large-12 columns">
+          <div class="about-us-group">
+            <a href="/pages/about-us">
+              <h5 class="learn_more">Learn more about the Delta Family</h5>
+              <img class="bordered" src="https://cdn.shopify.com/s/files/1/0578/7201/files/ABC-Model_Jessica_1.jpg?7312345276704963614">
+            </a>
+          </div>
+        </div>
+        <div class="small-6 medium-6 large-12 columns">
+          <div class="safety-group">
+            <a href="/pages/safety-tips">
+            <h5 class="nursery">Nursery Safety Tips</h5>
+            <img class="bordered" src="https://cdn.shopify.com/s/files/1/0578/7201/files/iStock_000057977638_XXXLarge_1.jpg?7312345276704963614">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% include 'blog-foot' %}
+
+<style>
+@-moz-document url-prefix() {
+    input{
+        padding:0!important;
+    }
+    #mc-embedded-subscribe{
+      padding: 9px !important;
+    }
+}
+
+.input-case-padding{
+  padding:0;
+}
+
+ .search{
+    width: 80%;
+    margin: auto;
+  }
+
+ul.social-icons li {
+  display: inline;
+}
+
+@media only screen and (max-width: 1168px){
+
+div.row.learn_more{
+position: relative;
+top: 80px;
+}
+form.form-search.form-inline{
+  position: relative;
+  /*top: 25px;*/
+}
+
+}
+
+/* Mobile */
+@media only screen and (max-width: 670px) {
+
+  .sub-header {
+    font-size: 9px;
+    font-weight: bold;
+  }
+  .entry-title, .hfeed h2, #site-body h2.entry-title a {
+    font-size: 14px;
+    text-align: center;
+  }
+  .entry-meta, .blog .primary .entry-meta, .blog .primary .entry-meta p, p {
+    margin: 4px 0;
+    font-size: 9px !important;
+    text-transform: uppercase;
+  }
+    .entry-meta p {
+      text-align: center !important;
+  }
+  .social-icons img{
+    max-width: 23px;
+  }
+  .bring {
+    margin-top: 25px;
+    margin-bottom: 22px;
+  }
+  .form-search {
+    max-width: 326px;
+  }
+  .email {
+      max-width: 262px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .nursery {
+      margin-bottom: 42px;
+    }
+    .search {
+      margin-bottom: 50px;
+    }
+    .form-search input {
+      text-align: center;
+    }
+    .search form.form-search {
+      min-width: 100%;
+    }
+    #mc_embed_signup input{
+      text-align: center;
+      max-width: 80%;
+    }
+    .subscribe-group {
+      margin-bottom: 40px;
+    }
+  .hentry {
+      margin-bottom: 30px;
+    }
+.blog-foot{
+  padding-top: 10%;
+}
+ul.foot-nav{
+  margin-left: 0;
+}
+}
+@media only screen and (min-width: 671px) and (max-width: 862px) {
+  .nursery {
+    margin-bottom: 42px;
+  }
+}
+
+/* All except mobile */
+@media only screen and (min-width: 671px) {
+  .sub-header {
+  margin-left: 18px;
+  }
+
+}
+
+/* Medium Small desktop (shopify 'medium' starts at 640 px and ends at 1025px)*/
+@media only screen and (min-width: 671px) and (max-width: 1025px) {
+
+    .form-search {
+      max-width: 49%;
+      margin: 0 auto;
+    }
+    .form-search input {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .bring {
+      text-align: center;
+    }
+    .email {
+      max-width: 50%;
+      text-align: center;
+    }
+    #mc_embed_signup {
+      margin: 0 auto;
+      width: 80%;
+      text-align: center;
+    }
+    .right-side {
+      margin-top: 30px;
+    }
+    h5 {
+      font-size: 1.3125rem;
+      font-weight: 400;
+    }
+    .hentry {
+      margin-bottom: 30px;
+    }
+    .hfeed h2, #site-body h2.entry-title a {
+    font-size: 24px;
+  }
+}
+
+/* Medium Big desktop */
+
+@media only screen and (min-width: 1026px) and (max-width: 1250px) {
+  .bring {
+    margin-bottom: 8px;
+  }
+  .hfeed h5, #site-body h5 {
+    margin: 0 0 25px;
+  }
+  .social-icons img{
+    max-width: 31px;
+  }
+  .hfeed h5, #site-body h5 {
+    font-size: 14px;
+  }
+  .email {
+    max-width: 162px;
+  }
+  .blog-nav a {
+    padding: 20px 15px;
+  }
+  .hfeed h2, #site-body h2.entry-title a {
+  font-size: 24px;
+  }
+  .hfeed header {
+  margin-top: 10px;
+  }
+  .sub-header {
+    margin-top: -11px;
+  }
+  .form-search {
+    max-width: 300px;
+  }
+}
+
+ @media only screen and (min-width: 1026px) {
+  .hfeed h5, #site-body h5 {
+    margin: 0 0 12px;
+  }
+  .about-us-group {
+    margin-bottom: 30px;
+  }
+  .row.padded-h {
+    padding: 0 !important;
+  }
+ }
+
+@media only screen and (min-width: 1275px) {
+  .hfeed h2, #site-body h2.entry-title a {
+    font-size: 28px;
+  }
+  .bring {
+    margin-bottom: 12px !important;
+  }
+  .hfeed h5, #site-body h5 {
+    margin: 0 0 12px;
+    font-size: 22px;
+  }
+  .email {
+    max-width: 70%;
+  }
+  .sub-header {
+    font-weight: 100 !important;
+    font-size: 20px;
+  }
+  .about-us-group {
+    margin-bottom: 30px;
+  }
+  .entry-title {
+    margin-top: 22px;
+  }
+  .entry-meta, .blog .primary .entry-meta, .blog .primary .entry-meta p {
+   font-size: 11px !important;
+  }
+
+ }
+
+ @media only screen and (min-width: 1200px) and (max-width: 1275px) {
+  .email {
+      max-width: 214px;
+    }
+ }
+ @media only screen and (min-width: 1095px) and (max-width: 1190px) {
+  .email {
+      max-width: 70%;
+  }
+ }
+ @media only screen and (min-width: 1000px) and (max-width: 1200px){
+ }
+/*Global*/
+  .blog-privacy {
+    text-align: center;
+    margin: 0;
+    font-size:12px;
+    position: relative;
+    top: -20px;
+  }
+.article-footer {
+  border-top: 1px solid #ccc;
+}
+.article .primary .section {
+  margin-bottom: 0;
+}
+.bring {
+  letter-spacing: 2px;
+}
+.blog-foot {
+  width: 100%;
+  margin: 50px auto 5px;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+}
+
+/*.bordered {
+  border: 1px solid #8dabdd;
+}*/
+.blog-nav {
+  border-bottom: 2px solid #777;
+  border-top: 2px solid #777;
+  letter-spacing: 2px;
+  line-height: 1;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 45px;
+  margin-top: 10px;
+  display: block;
+  bottom: 0;
+  margin-left: -10px !important;
+}
+.blog-nav a {
+  font-weight: bold;
+  display: block;
+  padding: 20px 25px;
+  position: relative;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 16px;
+  color: #4e4949 !important;
+}
+.blog-nav a:visited {
+  color: #4e4949 !important;
+}
+#comments h3 {
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+.dark-blue {
+  color: #3743a1 !important;
+}
+.entry-meta p {
+  text-align: left;
+}
+.entry-meta, .blog .primary .entry-meta, .article .primary .entry-meta{
+  margin: 5px 0 10px;
+}
+
+.entry-content p {
+  margin-top: 30px;
+  color: #333;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.625;
+}
+.entry-content {
+  margin-bottom: 30px !important;
+}
+ .email {
+  display: inline-block !important;
+  max-height: 30px;
+  max-height: 30px;
+  margin-bottom: 26px !important;
+}
+form .form-actions {
+  margin-top: 0;
+}
+.form-actions .button {
+  margin-left: 0;
+}
+
+
+.hcomment p {
+    text-align: left;
+}
+h1 {
+  font-family: 'Montserrat', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+}
+.hfeed h2, #site-body h2.entry-title a {
+  color: #444 !important;
+  letter-spacing: 2px;
+  font-weight: light;
+  font-family: 'Montserratlight', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+}
+#header {
+  margin-top: 20px;
+}
+html, body {
+  font-family: 'Montserrat', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+}
+
+.hfeed h5, #site-body h5 {
+  color: #8dabdd;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: normal;
+}
+h6 {
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+.icons {
+  color: #8dabdd;
+  font-size: 30px;
+  margin: 0 5px;
+}
+.light-blue {
+  color: #8dabdd !important;
+}
+.menu-li{
+  display: inline-block;
+}
+/* li:not(.menu-li) {
+  display: inline-block;
+} */
+#mc_embed_signup {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.mc-field-group input {
+  display: inline-block;
+}
+.menu-toggle, .sub-menu-toggle {
+    display: none;
+    visibility: hidden;
+}
+.page-header {
+    padding: 0;
+}
+.social-icons img {
+  max-width: 42px;
+}
+.sub-header {
+  margin-bottom: 10px;
+  font-family: 'Montserrat', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif;
+}
+.sharing, .article .primary .sharing {
+    margin-bottom: 30px;
+}
+.subscribe-group .button {
+  margin-left: -5px;
+  background-color: #8dabdd !important;
+  padding: 14px;
+  max-height: 30px;
+  padding: 9px;
+  font-size: 10px;
+}
+.social-icons {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.search form.form-search {
+  margin-bottom: 30px;
+  max-height: 30px;
+}
+.search-query {
+    max-height: 30px;
+}
+.search form.form-search {
+  margin-bottom: 30px;
+  max-height: 30px;
+}
+.search-query {
+  max-height: 30px;
+}
+.tcd {
+    text-transform: capitalize;
+}
+
+header#site-header ul.right > li:nth-child(3) ul.dropdown{
+  /*display: none;*/
+}
+/*END OF Global*/
+
+</style>
+<script>
+$("ul.blog-nav li:nth-child(3) a").attr("href", "/blogs/nursery-inspiration");
+</script>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

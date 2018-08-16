@@ -1,0 +1,11 @@
+<script>
+    // Insert Your Add-To-Cart Button's ID below.
+    $( '.fake-checkout' ).click(function() {
+         window._fbq.push(['track', 'AddToCart', {
+            content_ids: [{% for item in order.line_items %}'shopify_{{ item.product.id }}_{{ item.variant.id }}',{% endfor %}],
+            content_type: 'product',
+            value: '{{ variant.price | money_without_currency | remove: ',' }}',
+           currency: 'USD'
+        }]);
+    });
+</script>

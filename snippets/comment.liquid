@@ -1,0 +1,28 @@
+{% include 'settings' %}
+
+<div id="comment-{{comment.id}}" class="hcomment clearfix">
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="image">
+        <img src="//gravatar.com/avatar/{{ comment.email | remove: ' ' | strip_newlines | downcase | md5 }}?s=100&amp;d=mm" alt="{{ comment.author }}" />
+      </div>
+
+      <div class="com-meta">
+        <cite class="poster vcard tcd">{{ comment.author }}</cite>
+        <a class="url" href="#comment-{{comment.id}}">
+          <span class="date">{{ comment.created_at | date: format: 'short' }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="description">
+        {{ comment.content }}
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+{% if settings.widget_twitter_type == 'tweets' %}
+<div class="empyre-tweets"></div>
+{% else %}
+<a class="twitter-timeline" data-widget-id="346600591298015232" data-screen-name="{% if settings.widget_twitter_feed_source != '' %}{{ settings.widget_twitter_feed_source }}{% else %}empyrethemes{% endif %}" data-show-replies="false" data-tweet-limit="{{ settings.widget_twitter_feed_limit }}" lang="EN" height="200" data-theme="{{ settings.widget_twitter_feed_style }}" data-border-color="#ffffff" data-chrome="noheader nofooter"></a>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endif %}
+&nbsp;

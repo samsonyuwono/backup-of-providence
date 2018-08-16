@@ -1,0 +1,68 @@
+<ul class='breadcrumbs'>
+
+  {% if template contains 'customer' %}
+    <li>{{ 'general.breadcrumbs.account' | t | link_to: '/account' }}</li>
+  {% else %}
+    <li>{{ 'general.breadcrumbs.home' | t | link_to: shop.url }}</li>
+  {% endif %}
+
+  <!-- Product -->
+  {% if template contains 'product' %}
+    {% if collection %}
+      {% if collection.handle %}
+        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+        <li>{{ collection.title | link_to: url }}</li>
+      {% elsif collection.all_products_count > 0 and collection.products.first.type == collection.title %}
+        <li>{{ collection.title | link_to_type }}</li>
+      {% elsif collection.all_products_count > 0 and collection.products.first.vendor == collection.title %}
+        <li>{{ collection.title | link_to_vendor }}</li>
+      {% endif %}
+    {% else %}
+      <li>{{ product.type | link_to_type }}</li>
+    {% endif %}
+
+  <li><span>{{ page-header }}</span></li>
+
+  <!-- Page -->
+  {% elsif template contains 'page' %}
+    <li><span>{{ page.title }}</span></li>
+
+  <!-- Blog -->
+  {% elsif template == 'blog' %}
+    <li>{{ blog.title | link_to: blog.url }}</li>
+    {% if current_tags.size > 0 %}
+      <li><span>{{ current_tags.first }}</span></li>
+    {% endif %}
+
+  <!-- Article -->
+  {% elsif template == 'article' %}
+    <li>{{ blog.title | link_to: blog.url }}</li>
+    <li><span>{{ page_title }}</span></li>
+
+  <!-- Collection list -->
+  {% elsif template == 'list-collections' %}
+      <li><span>{{ page_title }}</span></li>
+
+  <!-- Collection -->
+  {% elsif template contains 'collection' %}
+    {% if current_tags.size > 0 %}
+      {% if collection.url.size > 0 %}
+        <li>{{ collection.title | link_to: collection.url }}</li>
+      {% else %}
+        <li>{{ collection.title | link_to: '/collections/all' }}</li>
+      {% endif %}
+      <li><span>{{ current_tags.first }}</span></li>
+    {% else %}
+      <li><span>{{ collection.title | link_to: collection.url }}</span></li>
+    {% endif %}
+
+  <!-- Search -->
+  {% elsif template contains 'search' %}
+    <li><span>{{ 'general.breadcrumbs.search' | t }}</span></li>
+
+  <!-- All else -->
+  {% else %}
+    <li><span>{{ page_title }}</span></li>
+
+  {% endif %}
+</ul>

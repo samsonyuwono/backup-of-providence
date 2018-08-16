@@ -1,0 +1,163 @@
+{% layout settings.customer_layout %}
+
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+{% assign page_title = 'customer_accounts.order.title' | t: order_number: order.name %}
+
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{% if order.cancelled %}
+<div id="order-cancelled" class="alert-box error text-center">
+  {% capture date_cancelled %}{{ order.cancelled_at | date: format: 'long' }}{% endcapture %}
+  <p id="order-cancelled-title">{{ 'customer_accounts.order.cancelled' | t: date_cancelled: date_cancelled}}</p>
+</div>
+{% endif %}
+
+<div id="order-status">
+  {% include 'customer-account-fulfillment-label' %}
+</div>
+
+<div id="order-meta">
+
+  <div class="placed">
+    <div class="row">
+      <div class="medium-3 columns">
+        <p class="text-color-quiet">{{ 'customer_accounts.order.placed' | t }}</p>
+      </div>
+      <div class="medium-9 columns">
+        <p>{{ order.created_at | date: format: 'long' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="row">
+      <div class="medium-3 columns">
+        <p class="text-color-quiet">{{ 'customer_accounts.order.payment_status' | t }}</p>
+      </div>
+      <div class="medium-9 columns">
+        <p>{{ order.financial_status_label | capitalize}}</p>
+      </div>
+    </div>
+  </div>
+
+  {% if order.note != '' %}
+  <div class="status">
+    <div class="row">
+      <div class="medium-3 columns">
+        <p class="text-color-quiet">{{ 'customer_accounts.order.notes' | t }}</p>
+      </div>
+      <div class="medium-9 columns">
+        <p>{{ order.note }}</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+
+<div id="order-address">
+
+  <div class="row">
+    <div class="large-3 columns">
+
+      <div id="payment-address" class="address">
+        <h4>{{ 'customer_accounts.order.billing_address' | t }}</h4>
+        <ul class="vcard">
+          <li class="fn">{{ order.billing_address.name }}</li>
+          <li class="company">{{ order.billing_address.company }}</li>
+          <li class="street-address">{{ order.billing_address.street }}</li>
+          <li class="locality">{{ order.billing_address.city }}</li>
+          <li>
+            <span class="state">{{ order.billing_address.province }}</span>, <span class="zip">{{ order.billing_address.zip }}</span>
+          </li>
+          <li class="country-name">{{ order.billing_address.country }}</li>
+          <li class="phone">{{ order.billing_address.phone }}</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="large-3 left columns">
+
+      {% if order.shipping_address %}
+        <div id="order-shipping" class="address">
+          <h4>{{ 'customer_accounts.order.shipping_address' | t }}</h4>
+            <ul class="vcard">
+              <li class="fn">{{ order.shipping_address.name }}</li>
+              <li class="company">{{ order.shipping_address.company }}</li>
+              <li class="street-address">{{ order.shipping_address.street }}</li>
+              <li class="locality">{{ order.shipping_address.city }}</li>
+              <li>
+                <span class="state">{{ order.shipping_address.province }}</span>, <span class="zip">{{ order.shipping_address.zip }}</span>
+              </li>
+              <li class="country-name">{{ order.shipping_address.country }}</li>
+              <li class="phone">{{ order.shipping_address.phone }}</li>
+            </ul>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</div>
+
+<div id="order-line-items">
+  {% include 'line-items-order' %}
+</div>
+
+
+<div class="order-summary">
+
+  <div class="row">
+    <div class="category small-7 medium-9 large-10 columns">
+      {{ 'customer_accounts.order.subtotal' | t }}
+    </div>
+    <div class="small-5 medium-3 large-2 columns">
+      <span class="price">{{ order.subtotal_price | money }}</span>
+    </div>
+  </div>
+
+  {% for shipping_method in order.shipping_methods %}
+  <div class="row">
+    <div class="category small-7 medium-9 large-10 columns">
+      {{ 'customer_accounts.order.shipping' | t: shipping_method: shipping_method.title }}
+    </div>
+    <div class="small-5 medium-3 large-2 columns">
+      <span class="price">{{ shipping_method.price | money }}</span>
+    </div>
+  </div>
+  {% endfor %}
+
+  {% for tax_line in order.tax_lines %}
+  <div class="row">
+    <div class="category small-7 medium-9 large-10 columns">
+      {% capture tax_rate %}{{ tax_line.rate | times: 100 }}{% endcapture %}
+      {{ 'customer_accounts.order.tax' | t: tax_type: tax_line.title, tax_rate: tax_rate }}
+    </div>
+    <div class="small-5 medium-3 large-2 columns">
+      <span class="price">{{ tax_line.price | money }}</span>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="order-total">
+    <div class="row">
+      <div class="category small-7 medium-9 large-10 columns">
+        {% capture order_currency %}<span class="currency">{{ shop.currency }}</span>{% endcapture %}
+        {{ 'customer_accounts.order.total_html' | t: currency: order_currency }}
+      </div>
+      <div class="small-5 medium-3 large-2 columns">
+        <strong class="text-color-loud"><span class="price">{{ order.total_price | money }}</span></strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% capture currency %}{{ shop.currency}}{% endcapture %}
+<p class="shop-currency text-right text-color-quiet">{{ 'general.all_prices_in' | t: currency: currency }}</p>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

@@ -1,0 +1,117 @@
+{% assign has_sidebar = true %}
+{% assign sidebar_side = 'left' %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+{% if page.handle == 'mattresses'%}
+  {% include 'mattress-landing' %}
+  {%endif %}
+  {% if page.handle != 'mattresses' %}
+	{%if page.handle == 'nursery'%}
+    {% include 'nursery-furn-banner'%}
+    {%endif%}
+  {{ page.content }} 
+  {%endif%}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<style>
+
+@media screen and (max-width: 375px){
+  .small-6.fade{
+    height: 315px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1025px){
+.medium-6.fade {
+  height: 400px;
+}
+
+
+.medium-6.fade a img{
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+}
+}
+  @media only screen and (min-width: 375px) and (max-width: 600px){
+.medium-6.fade {
+  height: 350px;
+}
+  }
+
+@media screen and (max-width: 420px){
+
+img#baby_img{
+  display: none;
+}
+
+
+}
+
+
+</style>
+<script>
+
+// For hiding pop-up on product reigstration page 12/22/16
+if(document.URL.indexOf("pages/product-registration") >= 0){
+  setTimeout(function(){
+    if($("div.privy.privy-popup-container").is(":visible")){
+        $("div.privy.privy-popup-container").hide();
+      };
+    console.log("i want to hide pop-up after 1sec");
+  }, 1000);
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 5sec");
+}, 5000);
+
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 10sec");
+},10000);
+
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 15sec");
+}, 15000);
+
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 20sec");
+}, 15000);
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 30sec");
+}, 30000);
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 40sec");
+}, 40000);
+}
+
+</script>

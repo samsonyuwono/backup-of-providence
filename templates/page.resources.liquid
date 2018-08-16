@@ -1,0 +1,107 @@
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+<div class="row row-links small-collapse">
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/safety-tips"> <img src="https://cdn.shopify.com/s/files/1/0911/1270/files/safe-sleep-campaign_pic7_f94f0738-57f8-41a0-a589-01a67ef5ae88.png?12429820572948560117" /></a>
+		<p><a href="/pages/safety-tips">Nursery Safety Tips</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/crib-safety-q-a"> <img src="https://cdn.shopify.com/s/files/1/0911/1270/files/safe-sleep-campaign_pic8_cc4e683a-cc89-4dc6-afd8-d30003db81e3.png?12429820572948560117" /></a>
+		<p><a href="/pages/crib-safety-q-a"> Crib Safety Q&amp;A</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/toddler-proofing-your-kids-room"> <img src="https://cdn.shopify.com/s/files/1/0911/1270/files/safe-sleep-campaign_pic10_f1d7a433-8e02-4b11-b7fc-f54b3ea57184.png?12429820572948560117" /></a>
+		<p><a href="/pages/toddler-proofing-your-kids-room">Toddler Safety Tips</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns">
+		<a href="/pages/safe-sleep-videos"> <img src="https://cdn.shopify.com/s/files/1/0911/1270/files/safe-sleep-campaign_pic9_5498fc20-7925-4787-bccd-d6a0086be101.png?12429820572948560117" /></a>
+		<p><a href="/pages/safe-sleep-videos">Safe Sleep Videos</a></p>
+	</div>
+	<div class="img-link-bundle small-6 medium-4 columns" style="float: left;">
+		<a href="/pages/leaders-in-safety"> <img src="https://cdn.shopify.com/s/files/1/0911/1270/files/safe-sleep-campaign_pic11_67fb7252-5d8d-4c96-b3e6-ff706ff9b970.png?12429820572948560117" /></a>
+		<p><a href="/pages/leaders-in-safety">Product Compliance</a></p>
+	</div>
+</div>
+
+<!-------modal-->
+<div id="recallpop" style="display: none;">
+	<h6>Our recall website is currently under repair.</h6>
+	<h6>If any of the following links are not functioning, please contact our customer service department directly at 1-800-377-3777.</h6>
+	<ul>
+	<li>Safety Peg Recalls</li>
+	<li>Delta Drop-side Recalls</li>
+	<li>Spring Peg Recalls</li>
+	</ul>
+	<p>We apologize for this inconvenience.</p>
+	<p>Please visit our recall website here:<a href="http://www.cribrecallcenter.com/" target="_blank"> Recall Center</a></p>
+</div>
+
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<!-- styling the img-link-bundle divs -->
+<!-- {% include 'help-and-resources' %} -->
+
+<!-- custom styles -->
+<style>
+	.img-link-bundle img {
+		width: 62px;
+		position: relative;
+		left: 6%;
+	}
+
+	.row-links{
+		position: relative;
+		left: 9%;
+
+	}
+
+	.row-links:nth-child(2) .img-link-bundle:first-child {
+		position: relative;
+		left: 10%;
+	}
+	.row-links:nth-child(2) .img-link-bundle:last-child {
+		position: relative;
+		right: 10%;
+	}
+
+	@media all and (max-width: 650px) {
+		.row-links:nth-child(2) .img-link-bundle:first-child, .row-links:nth-child(2) .img-link-bundle:last-child {
+			left: 0;
+			right: 0;
+		}
+	}
+
+
+/*	.row-links:nth-child(2) .img-link-bundle:first-child {
+		position: relative;
+		left: 10%;
+	}
+
+	.row-links:nth-child(2) .img-link-bundle:nth-child(2) {
+		position: relative;
+		left: 3%;
+	}
+
+	.row-links:nth-child(2) .img-link-bundle:last-child {
+		position: relative;
+		right: 10%;
+	}
+
+	@media all and (max-width: 650px) {
+		.row-links:nth-child(2) .img-link-bundle:first-child, .row-links:nth-child(2) .img-link-bundle:nth-child(2), .row-links:nth-child(2) .img-link-bundle:last-child {
+			left: 0;
+			right: 0;
+		}
+	}*/
+
+</style>

@@ -1,0 +1,7 @@
+<ul class="side-nav">
+{% for article in blogs[settings.widget_articles_simple_blog].articles limit: settings.widget_articles_simple_limit %}
+  <li>
+    {{ article.title | escape | link_to: article.url }}
+  </li>
+{% endfor %}
+</ul>

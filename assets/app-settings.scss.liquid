@@ -1,0 +1,1115 @@
+/*-------------------------------------------------- */
+/*  Internal variables
+/*-------------------------------------------------- */
+
+// Text colors
+$content-text-color:            {{ settings.color_content_text }};
+$footer-text-color:             {{ settings.color_footer_text }};
+
+// Button colors
+$button-bg-color:               {{ settings.button_primary_bg }};
+$button-text-color:             {{ settings.button_primary_text }};
+$button-bg-color-hover:         {{ settings.button_primary_bg_hover }};
+$button-text-color-hover:       {{ settings.button_primary_text_hover }};
+$button-s-bg-color:             {{ settings.button_secondary_bg }};
+$button-s-text-color:           {{ settings.button_secondary_text }};
+$button-s-bg-color-hover:       {{ settings.button_secondary_bg_hover }};
+$button-s-text-color-hover:     {{ settings.button_secondary_text_hover }};
+
+// Background colors
+$body-bg-color:                 {{ settings.bg_body_color }};
+$content-bg-color:              {{ settings.bg_content_color }};
+$footer-bg-color:               {{ settings.bg_footer_color }};
+
+// Line colors
+$body-line-color:               {{ settings.color_body_line }};
+$content-line-color:            {{ settings.color_content_line }};
+$footer-line-color:             {{ settings.color_footer_line }};
+
+// Colors
+$x-dark-grey:                   #2F3238;
+$dark-grey:                     #3A3C42;
+$grey:                          #4F5159;
+$light-grey:                    #909299;
+$x-light-grey:                  #f4f5f6;
+$purple:                        #665885;
+$light-purple:                  #9D8AC7;
+$navy:                          #2570A8;
+$blue:                          #3AA2BF;
+$turquoise:                     #51BDA2;
+$green:                         #3CC28F;
+$yellow:                        #F2C855;
+$orange:                        #F9845B;
+$red:                           #E15258;
+$maroon:                        #913B53;
+$pink:                          #DB688B;
+
+// Notice colors
+$notice-bg-color:               $blue;
+$notice-text-color:             #fff;
+$notice-link-color:             #fff;
+$notice-link-color-hover:       #fff;
+
+$notice-alt-bg-color:           $grey;
+$notice-alt-text-color:         #fff;
+$notice-alt-link-color:         #fff;
+$notice-alt-link-color-hover:   #fff;
+
+$success-bg-color:              #1A3D6E;
+$success-text-color:            #fff;
+$success-link-color:            #fff;
+$success-link-color-hover:      #fff;
+
+$warning-bg-color:              $orange;
+$warning-text-color:            #fff;
+$warning-link-color:            #fff;
+$warning-link-color-hover:      #fff;
+
+$error-bg-color:                $pink;
+$error-text-color:              #fff;
+$error-link-color:              #fff;
+$error-link-color-hover:        #fff;
+
+// Other
+$footer-border-img-height:      6px;
+
+
+/*-------------------------------------------------- */
+/*  Mixins
+/*-------------------------------------------------- */
+
+
+// Buttons
+@mixin button-color($bg-color, $bg-color-hover, $color, $color-hover){
+  background-color: $bg-color;
+  color: $color;
+
+  &:hover{
+    @if ($bg-color-hover == $bg-color) {
+      background-color: desaturate(darken($bg-color-hover, 8%), 5%);
+    }
+    @else {
+      background-color: $bg-color-hover;
+    }
+    color: $color-hover;
+  }
+
+  &:active,
+  &:focus {
+    background-color: desaturate(darken($bg-color-hover, 15%), 5%);
+    box-shadow: inset 0 0.15em 0 rgba(0,0,0,0.15);
+    color: $color;
+  }
+
+}
+
+
+@mixin notice-color ($bg-color, $text-color, $link-color, $link-color-hover) {
+  background-color: $bg-color;
+  color: $text-color;
+
+  a {
+    color: $link-color;
+    &:hover{
+      color: $link-color-hover;
+    }
+  }
+
+  .button {
+    background: transparent;
+    border-color: $text-color;
+    color: $text-color;
+
+    &:hover {
+      background-color: $text-color;
+      color: $bg-color;
+    }
+
+    &:active {
+      background-color: darken($text-color, 5%);
+      border-color: darken($text-color, 5%);
+      box-shadow: none;
+    }
+  }
+}
+
+
+/*-------------------------------------------------- */
+/*  Global Styles
+/*-------------------------------------------------- */
+
+/*  Elements
+/*-------------------------------------------------- */
+
+/*  Alert boxes + Notice bar
+/*-------------------------- */
+.alert-box,
+#notify-bar {
+
+  @include notice-color($notice-alt-bg-color, $notice-alt-text-color, $notice-alt-link-color, $notice-alt-link-color-hover);
+
+  &.secondary {
+    @include notice-color($notice-bg-color, $notice-text-color, $notice-link-color, $notice-link-color-hover);
+  }
+
+  &.success {
+    @include notice-color($success-bg-color, $success-text-color, $success-link-color, $success-link-color-hover);
+  }
+
+  &.warning {
+    @include notice-color($warning-bg-color, $warning-text-color, $warning-link-color, $warning-link-color-hover);
+  }
+
+  &.error {
+    @include notice-color($error-bg-color, $error-text-color, $error-link-color, $error-link-color-hover);
+  }
+
+}
+
+#notify-bar {
+  @include notice-color($notice-bg-color, $notice-text-color, $notice-link-color, $notice-link-color-hover);
+}
+
+
+/*  Browse happy
+/*-------------------------- */
+.browsehappy {
+  background: $orange;
+  color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/*  Cards
+/*-------------------------- */
+.cards {
+  .card {
+    background: #fff;
+
+    &.fixed-image-height {
+      .image {
+        height: {{settings.collection_image_height}}px;
+        .image-helper {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+        img {
+          vertical-align: middle;
+          max-height: {{settings.collection_image_height}}px;
+        }
+      }
+    }
+
+    .details {
+      border: none;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1.5em;
+    }
+  }
+}
+
+
+/*  Fancybox
+/*-------------------------- */
+.fancybox-skin {
+  background: #fff;
+}
+
+.fancybox-opened {
+  .fancybox-skin {
+    box-shadow: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1)
+  }
+}
+
+
+/*  Forms
+/*-------------------------- */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background-color: #fff;
+  color: $content-text-color;
+  &:hover {
+    background-color: #fff;
+    border-color: lighten($grey, 5%);
+  }
+  &:focus{
+    background-color: #fff;
+    border-color: {{ settings.color_accent }};
+  }
+}
+
+#header-search input {
+  &:focus{
+    border-color: {{ settings.color_accent }};
+  }
+}
+
+input.parsley-error,
+.error input,
+input.error,
+.error textarea,
+textarea.error {
+  background: #fff;
+  border-color: lighten($error-bg-color, 20%);
+}
+
+
+/*  Header actions
+/*-------------------------- */
+#header-actions {
+  background-color: $footer-bg-color;
+
+  {% if settings.bg_footer_img == 'custom' %}
+    background-image: url({{'bg-footer.png' | asset_url }});
+  {% elsif settings.bg_footer_img == 'none' %}
+    background-image: none;
+  {% endif %}
+
+  background-position: {{ settings.bg_footer_position_x }} {{ settings.bg_footer_position_y }};
+
+  background-repeat: {{ settings.bg_footer_repeat }};
+
+  {% if settings.bg_footer_attachment == 'full' %}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  {% else %}
+    background-attachment: {{ settings.bg_footer_attachment }};
+  {% endif %}
+
+  color: {{ settings.color_footer_text }};
+
+  a {
+    color: {{ settings.color_footer_link }};
+
+    &:hover {
+      color: {{ settings.color_footer_link_hover }};
+    }
+  }
+
+  .text-loud {
+    color: {{ settings.color_footer_text_loud }};
+  }
+
+  .text-quiet {
+    color: {{ settings.color_footer_text_quiet }};
+  }
+
+  #header-search input.search {
+    border-color: {{ settings.color_footer_text_quiet }};
+    color: {{ settings.color_footer_text_quiet }};
+
+    &:focus{
+      border-color: {{ settings.color_footer_link_hover }};
+      color: {{ settings.color_footer_text_loud }};
+    }
+  }
+
+}
+
+
+/* Search placeholder */
+#header-actions #header-search input.search::-webkit-input-placeholder {
+  color: {{ settings.color_footer_text }};
+}
+#header-actions #header-search input.search:-moz-placeholder {
+  color: {{ settings.color_footer_text }};
+}
+#header-actions #header-search input.search::-moz-placeholder {
+  color: {{ settings.color_footer_text }};
+}
+#header-actions #header-search input.search:-ms-input-placeholder {
+  color: {{ settings.color_footer_text }};
+}
+
+
+/*  Index products
+/*-------------------------- */
+{% if settings.index_products_order == 'random' %}
+body.index .products li {
+  display: none;
+}
+{% endif %}
+
+
+/*  Labels
+/*-------------------------- */
+.label {
+  background-color: $blue;
+  color: #fff;
+
+  &.secondary {
+    background-color: $grey;
+    color: #fff;
+  }
+
+  &.success {
+    background-color: $green;
+    color: #fff;
+  }
+}
+
+
+/*  Modals
+/*-------------------------- */
+.modal {
+  background: #fff;
+
+  &.error {
+    border: 6px solid $error-bg-color;
+  }
+
+  .fancybox-skin {
+    box-shadow: none;
+  }
+}
+
+/*  Shipping calculator
+/*-------------------------- */
+.shipping-calculator .error-item {
+  color: $pink;
+}
+
+
+
+/*-------------------------------------------------- */
+/*  Subthemes
+/*-------------------------------------------------- */
+
+{% if settings.subtheme != '' %}
+
+  {% assign subtheme = settings.subtheme %}
+  {% assign site_body_bg = subtheme | prepend: "img-" | append: "-bg-body.jpg" | asset_url %}
+  {% assign footer_widgets_top_bg = subtheme | prepend: "img-" | append: "-bg-footer-top.png" | asset_url %}
+
+  /*  Universal
+  /*-------------------------- */
+
+  #site-body {
+    background-image: url({{ site_body_bg }});
+  }
+
+  /*SY inserted */
+  #site-body .button {
+    display: block !important;
+  }
+
+  .footer-widgets-top {
+
+    background: transparent url({{ footer_widgets_top_bg }}) repeat-x;
+    display: block;
+    height: $footer-border-img-height;
+
+    {% if settings.bg_footer_widgets_top_img == 'custom' %}
+      background-image: url({{'bg-footer-top.png' | asset_url }});
+    {% elsif settings.bg_footer_widgets_top_img == 'none' %}
+      background-image: none;
+      display: none;
+    {% endif %}
+
+  }
+
+
+  /*  Seaside
+  /*-------------------------- */
+  {% if settings.subtheme == "seaside" %}
+
+    #site-header {
+      border-bottom: 1px solid #e4e5e6;
+    }
+
+  {% endif %}
+
+
+  /*  Birch
+  /*-------------------------- */
+  {% if settings.subtheme == "birch" %}
+
+    #site-header {
+      border-bottom: 1px solid #ddd;
+    }
+
+    aside.footer-widgets {
+      background-image: url({{ 'img-birch-bg-footer.jpg' | asset_url }});
+    }
+
+  {% endif %}
+
+
+{% endif %}
+
+
+
+
+/*-------------------------------------------------- */
+/*  Areas
+/*-------------------------------------------------- */
+
+
+/*  Footer
+/*-------------------------- */
+{% if settings.footer_columns == "0" %}
+aside.footer-widgets{
+  display: none;
+}
+{% endif %}
+
+
+/*-------------------------------------------------- */
+/*  Shopify theme settings page
+/*-------------------------------------------------- */
+
+/*  Backgrounds
+/*-------------------------------------------------- */
+
+/*  Body
+/*-------------------------- */
+body {
+
+  background-color: $body-bg-color;
+
+  {% if settings.bg_body_img == 'custom' %}
+    background-image: url({{'bg-body.png' | asset_url }});
+  {% elsif settings.bg_body_img == 'none' %}
+    background-image: none;
+  {% endif %}
+
+  background-position: {{ settings.bg_body_position_x }} {{ settings.bg_body_position_y }};
+
+  background-repeat: {{ settings.bg_body_repeat }};
+
+  {% if settings.bg_body_attachment == 'full' %}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  {% else %}
+    background-attachment: {{ settings.bg_body_attachment }};
+  {% endif %}
+}
+
+
+/*  Main content
+/*-------------------------- */
+#site-body {
+
+  background-color: $content-bg-color;
+
+  {% if settings.bg_content_img == 'custom' %}
+    background-image: url({{'bg-content.png' | asset_url }});
+  {% elsif settings.bg_content_img == 'none' %}
+    background-image: none;
+  {% endif %}
+
+  background-position: {{ settings.bg_content_position_x }} {{ settings.bg_content_position_y }};
+
+  background-repeat: {{ settings.bg_content_repeat }};
+
+  {% if settings.bg_content_attachment == 'full' %}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  {% else %}
+    background-attachment: {{ settings.bg_content_attachment }};
+  {% endif %}
+}
+
+
+/*  Footer
+/*-------------------------- */
+aside.footer-widgets {
+
+  background-color: $footer-bg-color;
+
+  {% if settings.bg_footer_img == 'custom' %}
+    background-image: url({{'bg-footer.png' | asset_url }});
+  {% elsif settings.bg_footer_img == 'none' %}
+    background-image: none;
+  {% endif %}
+
+  background-position: {{ settings.bg_footer_position_x }} {{ settings.bg_footer_position_y }};
+
+  background-repeat: {{ settings.bg_footer_repeat }};
+
+  {% if settings.bg_footer_attachment == 'full' %}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  {% else %}
+    background-attachment: {{ settings.bg_footer_attachment }};
+  {% endif %}
+}
+
+
+/*  Colors
+/*-------------------------------------------------- */
+
+/*  Branding
+/*-------------------------- */
+#site-header,
+.top-bar-section .dropdown {
+  background-color: {{ settings.bg_header_color }};
+}
+
+// Logo text
+#brand-primary-text a {
+  color: {{ settings.color_brand_text }};
+}
+
+// Accent
+.accent-color {
+  color: {{ settings.color_accent }};
+}
+
+
+/*  Primary navigation
+/*-------------------------- */
+
+// Nav primary
+.top-bar .toggle-topbar a,
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.top-bar-section .dropdown li.title h5 a {
+  color: {{ settings.color_nav_primary }};
+}
+
+// Nav primary hover
+.top-bar .toggle-topbar a:hover,
+.top-bar-section li a:not(.button):hover,
+.top-bar-section li.active:not(.has-form) > a:not(.button),
+.top-bar-section .dropdown li.title h5 a:hover,
+.top-bar-section .dropdown li a:not(.button):hover {
+  color: {{ settings.color_nav_primary_hover }};
+}
+
+.top-bar-section .last a {
+  font-weight: bold;
+}
+
+
+/*  Footer
+/*-------------------------- */
+aside.footer-widgets {
+  background-color: $footer-bg-color;
+}
+
+
+/*  Typography
+/*-------------------------------------------------- */
+
+html, body {
+  font-size: {{ settings.typo_paragraph_font_size }}px;
+  line-height: {{ settings.typo_paragraph_line_height }}em;
+}
+
+body {
+  {% if settings.typo_paragraph_font_google != '' %}
+    font-family: {{ settings.typo_paragraph_font_google }}, Helvetica, Arial, sans-serif;
+  {% else %}
+    font-family: {{ settings.typo_paragraph_font }};
+  {% endif %}
+}
+
+// Logo text
+#brand-primary-text {
+  {% if settings.typo_logo_font_google != '' %}
+    font-family: {{ settings.typo_logo_font_google }}, Helvetica, Arial, sans-serif;
+  {% else %}
+    font-family: {{ settings.typo_logo_font }};
+  {% endif %}
+}
+
+// Nav primary
+.top-bar-section ul li > a,
+.top-bar-section .dropdown li.title h5 {
+  {% if settings.typo_nav_primary_font_google != '' %}
+    font-family: {{ settings.typo_nav_primary_font_google }}, Helvetica, Arial, sans-serif;
+  {% else %}
+    font-family: {{ settings.typo_nav_primary_font }};
+  {% endif %}
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  {% if settings.typo_headings_font_google != '' %}
+    font-family: {{ settings.typo_headings_font_google }}, Helvetica, Arial, sans-serif;
+  {% else %}
+    font-family: {{ settings.typo_headings_font }};
+  {% endif %}
+}
+
+
+/*  Product collection
+/*-------------------------------------------------- */
+
+// Sale sticker
+.product .sticker{
+  background-color: {{ settings.collection_sale_sticker_color }};
+  color: {{ settings.collection_sale_sticker_text_color }};
+}
+
+
+/*  Section settings
+/*-------------------------------------------------- */
+
+/*  Home
+/*-------------------------- */
+.highlight-bar {
+  background-color: {{ settings.color_index_hb_bg }};
+  color: {{ settings.color_index_hb }};
+
+  p, h1, h2, h3, h4, h5, h6 {
+    color: {{ settings.color_index_hb }};
+  }
+}
+
+/*  Slides  */
+{% unless settings.slides_nav_visible? %}
+  .bx-wrapper .bx-controls-direction { display: none; }
+{% endunless %}
+
+{% unless settings.slides_playpause_visible? %}
+  .bx-wrapper .bx-controls-auto { display: none; }
+  .bx-wrapper .bx-controls-direction { margin-left: 0; }
+{% endunless %}
+
+{% unless settings.slides_pagination_visible? %}
+  .bx-wrapper .bx-pager { display: none; }
+{% endunless %}
+
+
+{% if settings.slides_nav_pos == 'top' %}
+.bx-wrapper {
+  .bx-pager,
+  .bx-controls-auto,
+  .bx-controls-direction {
+    top: 2em;
+  }
+}
+{% else %}
+.bx-wrapper {
+  .bx-pager,
+  .bx-controls-auto,
+  .bx-controls-direction {
+    bottom: 0em;
+  }
+}
+{% endif %}
+
+.bx-wrapper {
+  &.slide-controls-top {
+    .bx-pager,
+    .bx-controls-auto,
+    .bx-controls-direction {
+      top: 2em;
+    }
+  }
+  .flex-video {
+    padding-bottom: {{ 1 | divided_by: settings.slides_video_ratio | times: 100 }}%;
+  }
+}
+
+
+/*  Widgets
+/*-------------------------------------------------- */
+.widget {
+  // Social links
+  &.widget-social-links {
+    i {
+      font-size: {{ settings.widget_social_links_size }}em;
+    }
+  }
+}
+
+
+/*-------------------------------------------------- */
+/*  Other
+/*-------------------------------------------------- */
+.bx-wrapper {
+  .bx-controls-direction a:hover,
+  .bx-controls-auto a:hover {
+    background: $button-bg-color;
+    color: $button-text-color;
+  }
+}
+
+
+
+/*-------------------------------------------------- */
+/*  Sections loop
+/*-------------------------------------------------- */
+
+/*  Section arrays
+/*-------------------------- */
+{% assign sections_string = "body, content, footer" %}
+{% assign selectors_string = "body, #site-body, aside.footer-widgets" %}
+
+{% assign sections = sections_string | split: ', ' %}
+{% assign selectors = selectors_string | split: ', ' %}
+
+/*  Output engine
+/*-------------------------- */
+{% for section in sections %}
+{% assign selector = {{selectors[forloop.index0()]}} %}
+{% assign text_color = "color_*_text" | replace: '*', section %}
+{% assign text_color_loud = "color_*_text_loud" | replace: '*', section %}
+{% assign text_color_quiet = "color_*_text_quiet" | replace: '*', section %}
+{% assign header_color = "color_*_headers" | replace: '*', section %}
+{% assign anchor_color = "color_*_link" | replace: '*', section %}
+{% assign anchor_color_hover = "color_*_link_hover" | replace: '*', section %}
+
+
+{{selector}} {
+
+  // Text color
+  color: {{ settings[text_color] }};
+
+  blockquote,
+  table tr td,
+  .breadcrumbs>* span,
+  .social-links a {
+    color: {{ settings[text_color] }};
+  }
+
+  // Text color loud
+  a .totals .price,
+  table thead tr th,
+  .card h2 a,
+  .card .price:not(.compare),
+  .com-meta cite,
+  .fn,
+  .has-tip,
+  .hproduct .pricing .price:not(.compare),
+  .line-price,
+  .pagination li.current a,
+  .text-color-loud,
+  dt,
+  label {
+    color: {{ settings[text_color_loud] }};
+  }
+
+  // Text color quiet
+  a.tag,
+  cite,
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  .amounts,
+  .breadcrumbs>* a,
+  .brand,
+  .compare,
+  .customer-address-fields label,
+  .entry-meta,
+  .entry-meta .divider,
+  .from,
+  .hide-calculator,
+  .hproduct .pricing .price:not(.compare) i,
+  .line-item-property,
+  .pagination li a,
+  .primary .entry-meta .published,
+  .remove-from-cart,
+  .search-result i,
+  .side-nav li ul li:before,
+  .text-color-quiet,
+  .variant {
+    color: {{ settings[text_color_quiet] }};
+  }
+
+  // Link color
+  a,
+  .card:hover h2 a,
+  .has-tip:hover,
+  .hide-calculator:hover,
+  .pagination li:not(.unavailable) a:hover,
+  .remove-from-cart:hover,
+  .social-links li a:hover {
+    color: {{ settings[anchor_color] }};
+  }
+
+  .primary-image-wrap:hover .actions,
+  .secondary-image-wrap li:hover .actions {
+    background-color: {{ settings[anchor_color] }};
+  }
+
+  // Link color hover
+  a:hover,
+  a:focus,
+  a:hover .totals .price {
+    color: {{ settings[anchor_color_hover] }};
+  }
+
+  // Header color
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: {{ settings[header_color] }};
+  }
+
+  // Line color
+  a.tag,
+  hr,
+  table,
+  td,
+  th,
+  aside.sidebar,
+  aside.footer-widgets,
+  #add_address,
+  .account-session-module,
+  .address,
+  .address-actions span,
+  .article-next-prev,
+  .cart .item img,
+  .collection-description,
+  .current-tags,
+  .details,
+  .details .section,
+  .form-actions,
+  .hentry,
+  .hcomment,
+  .line-item,
+  .line-order,
+  .line-order-headers,
+  .nav-collection,
+  .page-actions,
+  .page-header,
+  .pagination-wrap,
+  .pricing,
+  .secondary-image,
+  .related-products,
+  .search-result,
+  .widget,
+  .widget .hproduct,
+  #mobile-search {
+    border-color: ${{section}}-line-color;
+  }
+
+
+  /*  Other
+  /*-------------------------- */
+
+  // Borders
+  h2.entry-title a {
+    border-bottom: 1px solid ${{section}}-line-color;
+  }
+
+
+  // Buttons
+  a.button,
+  .button {
+    @include button-color($button-bg-color, $button-bg-color-hover, $button-text-color, $button-text-color-hover);
+    color: $button-text-color;
+
+    &.secondary{ @include button-color($button-s-bg-color, $button-s-bg-color-hover, $button-s-text-color, $button-s-text-color-hover); }
+
+    &.grey{ @include button-color($grey,$grey,#fff,#fff); }
+    &.dark-grey{ @include button-color($dark-grey,$dark-grey,#fff,#fff); }
+    &.light-grey{ @include button-color($light-grey,$light-grey,$content-text-color,$content-text-color); }
+    &.purple{ @include button-color($purple,$purple,#fff,#fff); }
+    &.light-purple{ @include button-color($light-purple,$light-purple,#fff,#fff); }
+    &.navy{ @include button-color($navy,$navy,#fff,#fff); }
+    &.blue{ @include button-color($blue,$blue,#fff,#fff); }
+    &.turquoise{ @include button-color($turquoise,$turquoise,#fff,#fff); }
+    &.green{ @include button-color($green,$green,#fff,#fff); }
+    &.yellow{ @include button-color($yellow,$yellow,#fff,#fff); }
+    &.orange{ @include button-color($orange,$orange,#fff,#fff); }
+    &.red{ @include button-color($red,$red,#fff,#fff); }
+    &.maroon{ @include button-color($maroon,$maroon,#fff,#fff); }
+    &.pink{ @include button-color($pink,$pink,#fff,#fff); }
+
+    &.disabled,
+    &[disabled],
+    &.disabled:hover,
+    &.disabled:active,
+    &[disabled]:hover,
+    &[disabled]:active {
+      background-color: darken($x-light-grey, 5%);
+      color: darken($x-light-grey, 40%);
+    }
+  }
+
+
+  // Colored links
+  h2.entry-title a,
+  .search-result h3 a,
+  .widget-cart a.title,
+  .widget-products h3 a {
+    color: {{ settings[header_color] }};
+    &:hover {
+      color: {{ settings[anchor_color] }};
+    }
+  }
+
+  .article-next-prev a,
+  .entry-meta a,
+  .side-nav li > a:first-child:not(.button),
+  .widget-social-links a {
+    color: {{ settings[text_color] }};
+    &:hover {
+      color: {{ settings[anchor_color_hover] }};
+    }
+  }
+
+  .side-nav li.active > a:first-child:not(.button) {
+    color: {{ settings[anchor_color] }};
+  }
+
+  .brand a,
+  .com-meta a {
+    color: {{ settings[text_color_quiet] }};
+    &:hover {
+      color: {{ settings[anchor_color] }};
+    }
+  }
+
+
+  // Tabs
+  .tabs dd {
+    >a {
+
+      border-color: ${{section}}-line-color;
+      color: {{ settings[text_color_quiet] }};
+
+      @if (${{section}}-bg-color == "transparent") {
+        background-color: $x-light-grey;
+      }
+      @else {
+        background: darken(${{section}}-bg-color, 5%);
+      }
+    }
+    &:hover,
+    &.active {
+      > a {
+        background: transparent;
+        color: {{ settings[text_color] }};
+      }
+    }
+  }
+
+
+  // Tags
+  .tags a {
+    color: {{ settings[text_color_quiet] }};
+    &:hover {
+      background: $button-bg-color;
+      border-color: $button-bg-color;
+      color: $button-text-color;
+    }
+  }
+
+}
+{% endfor %}
+
+
+/*-------------------------------------------------- */
+/*  Misc color assignment
+/*-------------------------------------------------- */
+
+/*  Accent
+/*-------------------------- */
+
+
+/*  Black
+/*-------------------------- */
+.primary-image-wrap .actions,
+.secondary-image-wrap .actions {
+  background-color: #222;
+}
+
+/*  White
+/*-------------------------- */
+.primary-image-wrap .actions,
+#site-body .bx-wrapper a,
+.parsley-error-list li,
+.secondary-image-wrap .actions {
+  color: #fff;
+}
+
+/*  Pink
+/*-------------------------- */
+#shipping-rates-feedback.error,
+.error label,
+.error label.error {
+  color: $pink;
+}
+
+.parsley-error-list {
+  background-color: $pink;
+}
+
+/*  Other
+/*-------------------------- */
+
+aside.footer-widgets h2.entry-title a {
+  color: {{ settings.color_footer_link }};
+  &:hover {
+    color: {{ settings.color_footer_link_hover }};
+  }
+}
+
+
+/*-------------------------------------------------- */
+/*  Misc
+/*-------------------------------------------------- */
+
+::selection {
+  background: {{ settings.color_accent }};
+  color: #fff;
+}
+::-moz-selection {
+  background: {{ settings.color_accent }};
+  color: #fff;
+}
+img::selection {
+  background: {{ settings.color_accent }};
+  color: #fff;
+}
+img::-moz-selection {
+  background: {{ settings.color_accent }};
+  color: #fff;
+}
+
+
+/*-------------------------------------------------- */
+/*  Custom CSS from theme settings page
+/*-------------------------------------------------- */
+{{ settings.custom_css }}
+
+
+/*-------------------------------------------------- */
+/*  Custom CSS
+/*-------------------------------------------------- */

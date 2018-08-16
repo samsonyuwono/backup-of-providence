@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+{% include 'html-tag' %}
+
+
+<head>
+  {% if template == '404' %}<meta http-equiv="refresh" content="0;URL={{ shop.url }}" />{% endif %}
+{% if template contains 'article.nursery-inspiration' %}<meta http-equiv="refresh" content="0;URL={{ shop.url }}/blogs/nursery-inspiration" />{% endif %}
+
+  <!-- canonical parameter indexing for google seo -->
+{% if template contains 'product' %}
+	<link rel="canonical" href="{{ shop.url }}{{ product.url }}">
+{% endif %}
+
+<!-- hides search results page from google search -->
+{% if template contains 'search' %}
+	<meta name="robots" content="noindex,follow">
+{% endif %}
+{% if template contains 'article.nursery-inspiration' %}
+	<meta name="robots" content="noindex,follow">
+{% endif %}
+  <!-- canonical references for page parameter -->
+{% if template == 'collection.test' %}
+  {%if paginate.current_page == '1' %}
+  <link rel="next" href="{{shop.url}}{{collection.url}}?page=2">
+  {% endif %}
+  {%if paginate.current_page == '2' %}
+  <link rel="next" href="{{shop.url}}{{collection.url}}?page=3">
+  <link rel="prev" href="{{shop.url}}{{collection.url}}?page=1">
+  {% endif %}
+  {%if paginate.current_page == '3' %}
+  <link rel="next" href="{{shop.url}}{{collection.url}}?page=4">
+  <link rel="prev" href="{{shop.url}}{{collection.url}}?page=2">
+  {% endif %}
+  {%if paginate.current_page == '4' %}
+  <link rel="prev" href="{{shop.url}}{{collection.url}}?page=3">
+  {% endif %}
+{% endif %}
+{% if template == 'collection' %}
+  {%if paginate.current_page == '1' %}
+  <link rel="next" href="{{shop.url}}{{collection.url}}?page=2">
+  {% endif %}
+  {%if paginate.current_page == '2' %}
+  <link rel="prev" href="{{shop.url}}{{collection.url}}?page=1">
+  {% endif %}
+{% endif %}
+
+{% if collection and collection.products_count == 0 %}
+<meta name="robots" content="noindex" />
+{% endif %}
+
+{% if template == 'blog' %}
+  {%if paginate.current_page == '1' %}
+  <link rel="next" href="{{shop.url}}{{blog.url}}?page=2">
+  {% endif %}
+  {%if paginate.current_page == '2' %}
+  <link rel="next" href="{{shop.url}}{{blog.url}}?page=3">
+  <link rel="prev" href="{{shop.url}}{{blog.url}}?page=1">
+  {% endif %}
+  {%if paginate.current_page == '3' %}
+  <link rel="next" href="{{shop.url}}{{blog.url}}?page=4">
+  <link rel="prev" href="{{shop.url}}{{blog.url}}?page=2">
+  {% endif %}
+  {%if paginate.current_page == '4' %}
+  <link rel="prev" href="{{shop.url}}{{blog.url}}?page=3">
+  {% endif %}
+{% endif %}
+
+  {%if template == 'product'%}
+{% for product in collection.products %}
+		 {% if product.tags contains 'bundle-option' %}
+		 <meta name="robots" content="noindex,nofollow">
+		 {% else %}
+		 {%endif%}
+{% endfor %}
+  	{% if product.handle contains 'bundle'%}
+		<meta name="robots" content="noindex,nofollow">
+	{%endif%}
+{%endif%}
+
+{% if collection.handle contains 'bundle' %}
+<meta name="robots" content="noindex,nofollow">
+{%endif%}
+{% if page.handle == 'pregnancy-center'%}
+<meta name="robots" content="noindex,nofollow">
+{%endif%}
+
+<!--   Jump Google meta-tag -->
+   {% if template == 'index' %}
+  <meta name="google-site-verification" content="YD57x6X2yekzCwssL6v79ZaRVdQFd0hzpz68I5-lLHU" />
+    {{'header-nav.css' | asset_url | stylesheet_tag}}
+
+  {%endif%}
+
+<!--   styling for header and new nav bar -->
+  {% if template != 'index' %}
+  <style>
+/*     #header-actions{
+      background-color: #73A3EA !important;
+    } */
+    #site-header .top-bar-section{
+      background-color: #73A3EA !important;
+    }
+
+/*     #site-header .right{
+      background-color: #ffffff  !important;
+    }
+    #site-header .dropdown{
+      background-color: #ffffff  !important;
+    }
+    #site-header .right li > a{
+      background-color: #ffffff !important;
+    }
+    #header-actions .ship-container{
+      background-color: #4c80d3 !important;
+    }
+    #header-actions .sign-cart{
+      background-color: #4c80d3 !important;
+    }
+    #header-actions input.search-query{
+      background: white !important;
+      color:#8dabdd !important;
+      border: 2px solid #8caadb !important;
+    }
+    #header-actions input.search-query::placeholder{
+      color:#8dabdd !important;
+    }
+    #header-actions #header-search .fa-search{
+		color: #8caadb !important;
+    } */
+
+
+  </style>
+
+  {% endif%}
+
+
+
+
+<!--   stylesheet call for "Safety Tips" pages  -->
+ {% if page.handle == 'leaders-in-safety' or page.handle == 'crib-safety-tips' or page.handle == 'toddler-safety-tips' %}
+ {{ 'safety-tips.css' | asset_url | stylesheet_tag }}
+ {%endif %}
+
+ <!--   stylesheet call for "simmons kids" pages  -->
+ {% if page.handle == 'simmons-kids' %}
+ {{ 'simmons-kids.css' | asset_url | stylesheet_tag }}
+ {%endif %}
+
+<!-- stylesheet call for slider Mattress Pages -->
+ {% if collection.handle == 'value' or collection.handle == 'luxury' or collection.handle == 'natural' %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+  {{'slider.css' | asset_url | stylesheet_tag}}
+{%endif%}
+
+<!--   stylesheet call for Mattress Pages page -->
+ {% if page.handle == 'mattresses' %}
+  {{'mattress-landing.css' | asset_url | stylesheet_tag}}
+ {%elsif collection.handle == 'value'%}
+  {{'mattress-bv.css' | asset_url | stylesheet_tag}}
+ {%elsif collection.handle == 'luxury'%}
+  {{'mattress-el.css' | asset_url | stylesheet_tag}}
+ {%elsif collection.handle == 'natural'%}
+  {{'mattress-nc.css' | asset_url | stylesheet_tag}}
+ {%endif%}
+
+
+ <link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+
+  {{'nursery-banner.css' | asset_url | stylesheet_tag}}
+
+
+
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W86DVZG');</script>
+<!-- End Google Tag Manager -->
+
+  {% include 'settings' %}
+  {% include 'meta' %}
+  {% include 'head-styles' %}
+  {% include 'head-scripts' %}
+  {{ 'hotjar.js' | asset_url | script_tag }}
+  {{ content_for_header }}
+  <meta name="google-site-verification" content="4hSmMakjWKqroHE1UfpSQ2vd62y-WIdkx2ng8MQLyeM" />
+  {{ 'custom-styles.css' | asset_url | stylesheet_tag }}
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script> -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script> -->
+
+  <!-- NEEDED FOR SWATCHIFY APP -->
+	{% if template == 'collection.test' %}
+  {{ 'panda-swatches.css' | asset_url | stylesheet_tag }}
+	{% endif %}
+
+  	{%if template%}
+	{%else%}
+	{{ 'bold.css' | asset_url | stylesheet_tag }}
+	{%endif%}
+
+
+	<!-- Global site tag (gtag.js) - Google AdWords: 833925430 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-833925430"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-833925430');
+</script>
+
+
+
+
+</head>
+
+
+{% include 'body-class' %}
+<body class="{{ body_class }}" id="{{ page_title | handle }}">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W86DVZG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+{% include 'notify-bar' %}
+  <div id="site-overlay"></div>
+  <div class="site-overlay"></div>
+  {% include 'mobile-cart' %}
+  {% include 'nav-primary-mobile' %}
+<div id="container" >
+    <div id="app-wrap">
+      {% include 'cartpopup' %}
+      {% include 'mobileSearchOverlay' %}
+      {% if template != 'page.coming-soon' and template != 'page.blog-contact' %}
+      {% include 'header-actions' %}
+      <div id="cart-wrapper">
+        {% include 'header' %}
+        {% include 'mobileHeader' %}
+        {% endif %}
+        <section id="site-body">
+        {% if template != 'index' %}
+          <div id="push-content-down-mobile" class="show-for-small-only"></div>
+        {% endif %}
+
+
+        <!-- for header and footer pop-ups -->
+        {% include 'header-footer-popup'%}
+
+
+          <div class="row" id="main-body-container">
+            <div class="small-12 columns">
+              {% if template == 'list-collections' %}
+              {% include 'collection-listing' %}
+              {% else %}
+              {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
+              {% endif %}
+            </div>
+          </div>
+          <div class="footer-widgets-top"></div>
+          {% if template != 'blog' and template != 'article' %}
+          {% include 'footer' %}
+
+          {% endif %}
+          {{ 'ActiveCampaign_Tracking.js' | asset_url | script_tag }}
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="redirectAlert">
+        <img src="{{ 'simmons-redirect-pop-up.png' | asset_url }}">
+      </div> -->
+  {% unless collection.handle == 'guardrails' or collection.handle == "full-size-bed-rails"%}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  {%endunless %}
+      <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+      <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+
+  {{ 'jquery.cookie.js' | asset_url | script_tag }}
+  {% if template == 'page.safety-tips' or template == "index"%}
+  {{ 'slick.min.js' | asset_url | script_tag }}
+  {% endif %}
+  {% if template == 'product' and product.variants.size > 1 %}
+  {{ 'custom.js' | asset_url | script_tag }}
+  {% endif %}
+  {% if template == 'blog.nursery-inspiration' %}
+  {{ 'mag_popup.js' | asset_url | script_tag }}
+  {{ 'jquery.rwdImageMaps.min.js' | asset_url | script_tag }}
+  {% endif %}
+  {% if template == 'page.leaders-in-safety' %}
+  {{ 'jquery.rwdImageMaps.min.js' | asset_url | script_tag }}
+  {% endif %}
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js"></script>
+
+  {% include 'footer-scripts' %}
+
+  <input type="hidden" name="_pc_params" value="{{ shop.permanent_domain }}:{{ customer.id }}" />
+
+  {% include 'bk-tracking' %}
+
+
+  <script src="https://use.fontawesome.com/e5f9e1b771.js"></script>
+  	{%if template%}
+	{%else%}
+
+	{% include 'shopify-bundle-data' %}
+	{{ 'customizeBundles.js' | asset_url | script_tag }}
+	{%endif%}
+
+ <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+	{% include 'pop-up-right-tab' %}
+
+
+
+
+
+
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 802406479;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/802406479/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+{% if template == 'index' %}
+{{ 'home.js' | asset_url | script_tag }}
+
+{%endif%}
+
+
+<!-- BEEKETINGSCRIPT CODE START -->{% include 'bk-tracking' %}<!-- BEEKETINGSCRIPT CODE END --></body>
+
+{{ 'header-footer-popup.js' | asset_url | script_tag }}
+
+<!-- <script src="{{ 'custom-script.js' | asset_url }}" type="text/javascript"></script> -->
+
+<!-- Tabarnapp Pop-up on Cart Page  -->
+  	{%if template == 'cart'%}
+
+<script src="https://d8sfokcjiy6.cloudfront.net/cdn/ultimate-upsells/selectorTool.min.js"></script>
+{%endif%}
+{% if page.handle == 'bundles'%}
+{%else%}
+<script>
+if ($(window).width() > 642) {
+$('#site-header').prependTo('#site-body');
+$('#brand-primary-image').prependTo('#dc-header-container');
+}
+</script>
+{%endif%}
+<script>
+// opens Recall Center link in header nav in a new window
+$("li.nav-item.last a:contains('Recall Center')").attr('target', '_blank');
+
+  $(function() {
+
+  $("aside.footer-widgets .widget-social-links a:contains('Unsubscribe')").hide();
+    $("section.widget-links.01 a:contains('Unsubscribe')").hide();
+//     message once customer is signed in to their account
+//     if(window.location.href === "https://www.deltachildren.com/account"){
+//       $('<div style="text-align: right;">Please email: <a href="mailto:consumersupport@deltachildren.com?subject=Please Delete my Account&body=Hi Delta Consumer Support. I would like to delete my account." name="emailLink">consumersupport@deltachildren.com</a> to delete your account.</div>').appendTo($('header.page-header'));
+//     }
+  });
+</script>
+
+</html>

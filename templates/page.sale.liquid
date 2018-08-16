@@ -1,0 +1,84 @@
+{% assign has_sidebar = true %}
+{% assign sidebar_side = 'left' %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ page.content }}
+
+                                    <!-- LEAVING IN FOR IF SALE PAGE GETS BIGGER LATER-->
+
+<div class="row">
+<div class="large-4 medium-4 small-6 landing-title columns"><a href="/collections/crib-conversions-accessories-wsl" title="Crib Conversions & Accessories"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/0080-028-delta-guard-rails-classic-grey_626b66fd-9274-4fa8-a9e8-2450cf87a8a3_1024x1024-min.jpg" alt="" /></a>
+<a href="/collections/crib-conversions-accessories-wsl" title="Crib Conversions & Accessories">Crib Conversions & Accessories</a>
+</div>
+<div class="large-4 medium-4 small-6 landing-title columns"><a href="/collections/kids-furniture-wsl" title="Storage"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/TB84778SS-sesame-deluxe-multi-bin-toy-organizer-right_1024x1024-min.jpg" alt="" /></a>
+<a href="/collections/kids-furniture-wsl" title="frozen">Kids' Furniture</a>
+</div>
+<div class="large-4 medium-4 small-6 landing-title columns"><a href="/collections/changing-tops-wsl" title="Changing Tops"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/0550-208-topper-espresso-truffle-angle-hi-res_63b819ef-72d4-4509-843a-992458cfe5fe_1024x1024-min.jpg" alt="" /></a>
+<a href="/collections/changing-tops-wsl" title="Changing Tops">Changing Tops</a>
+</div>
+<div class="large-4 medium-4 small-6 landing-title columns"><a href="/collections/baby-gear-wsl" title="Baby Gear"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/26020-325-viaggi-plus-playard-with-bassinet-front-hi-res_1024x1024-min.jpg" alt="" /></a>
+<a href="/collections/baby-gear-wsl" title="Baby Gear">Baby Gear</a>
+</div>
+<div class="large-4 medium-4 small-6 landing-title columns"><a href="/collections/storage-wsl" title="Storage"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/SS2063-689-2piece-nursery-organizer-set-barely-pink_copy_1024x1024-min.jpg" alt="" /></a>
+<a href="/collections/storage-wsl" title="Storage">Storage</a>
+</div>
+<div class="large-4 medium-4 small-6 landing-title columns"><a href="/collections/mattresses-sale" title="Mattresses"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/A45535-1022-Serta-New-Dawn-Ultra_1024x1024_2.jpg" alt="" /></a>
+<a href="/collections/mattresses-sale" title="Storage">Mattresses</a>
+</div>
+</div>
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<style>
+
+#floatLeft {
+  float:left;
+}
+
+
+
+
+/*REDUCE SIZE OF IMAGES AND TITLE (as reqeusted)*/
+ img:not('#branding-wrap') {
+  height: 80%;
+  width: 80%;
+  padding-left: 40px;
+}
+
+h1 {
+ color: red !important;
+}
+
+ .landing-title a {
+  font-size: 90%;
+}
+
+@media screen and (max-width: 1024px) {
+  .landing-title a {
+   font-size: 60%;
+ }
+
+ #SaleTest #left-hook {
+   position: absolute;
+   top: -100px;
+ }
+}
+
+@media only screen and (max-device-width: 640px) {
+  .landing-title a {
+   font-size: 60%;
+  }
+  .landing-title{
+    padding: 0;
+  }
+}
+
+
+</style>

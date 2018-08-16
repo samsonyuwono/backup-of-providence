@@ -1,0 +1,1126 @@
+<!-- FOR MOBILE - 2/23/17-->
+
+{{ 'mag_popup.css' | asset_url | stylesheet_tag }}
+{{ 'filtersStyle.css' | asset_url | stylesheet_tag }}
+<!-- {{ 'nurseryInspiration.css' | asset_url | stylesheet_tag }} -->
+
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+{% assign blog_prefix = 'blog_articles' %}
+
+{% layout 'page.full-width' %}
+
+{% include 'settings' %}
+
+
+<!-- <div class="row small-12 medium-12 large-12 columns"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/nursery-inspiration-page-banner.jpg?10907706793760311934" style="margin-bottom: 40px; border-style: solid; border-width: 1px;"></div> -->
+<div class="row small-12 medium-12 large-12 columns ni" style="width: 100%; margin: 0; padding: 0;">
+  <img class="show-for-medium-up opt" src="//cdn.shopify.com/s/files/1/0578/7201/files/Nursery-Inspiration-page-3-02-min_1x1.jpg" style="margin-bottom: 20px;">
+  <img class="show-for-medium-up opt" src="//cdn.shopify.com/s/files/1/0578/7201/files/Nursery-Inspiration-page-3-03-min_1x1.jpg" style="margin-bottom: 40px;" usemap="#below_banner">
+  <map class="show-for-medium-up" name="below_banner" id="below_banner">
+    <area alt="" id="safety" title="" href="/pages/safety-tips" shape="rect" target="_blank" coords="1394,226,1536,254" />
+  </map>
+
+  <!-- mobile images -->
+  <img class="show-for-small-only" id="m_banner" src="//cdn.shopify.com/s/files/1/0578/7201/files/nursery-inspiration-page-mobil-banner-min.png" style="margin-bottom: 20px;">
+  <img class="show-for-small-only" src="//cdn.shopify.com/s/files/1/0578/7201/files/nursery-inspiration-page-mobil-copy-min.png" style="margin-bottom: 20px;" usemap="#mobile_below_banner">
+  <map class="show-for-small-only" name="mobile_below_banner" id="mobile_below_banner">
+    <area alt="" id="mobile_safety" title="" href="/pages/safety-tips" shape="rect" target="_blank" coords="206,784,386,821" />
+  </map>
+
+
+  <div class="mutliSelect right show-for-medium-up">
+    <div class="mulitWrapper">
+       <a id="submitDesktop">
+         <div class="submitNursery">
+           <span class="filterTitle submit">SUBMIT YOUR NURSERY</span>
+         </div>
+       </a>
+    </div>
+  </div>
+
+<div class="row show-for-small-only">
+  <div class="small-9 mobile_submit">
+    <a id="submitMobile">
+      <img src="//cdn.shopify.com/s/files/1/0578/7201/files/nursery-inspiration-page-mobil-button-min.png">
+    </a>
+  </div>
+</div>
+
+<!-- Filters for Desktop-->
+<div id="collectionInclude show-for-medium-up">
+<div id="filterPieces">
+  <div id="nonMobileFilters" class="filterlist-wrapper filter-parent-wrapper show-for-medium-up">
+    <header id="filter-heading">Filters</header>
+<div class="mutliSelect">
+  <div class="mulitWrapper">
+    <div class="selectTitle"><span class="filterTitle">FILTER NURSERIES</span></div>
+    <ul class="dropdownUl" id="nurse_insp">
+{% for tag in blog.all_tags %}
+{% if current_tags contains tag %}
+          <li class="not_act">
+            <label class="filter-label not_checked"><input type="checkbox" class="not_checked" >{{ tag | link_to_remove_tag: tag }}</label>
+          </li>
+          {% else %}
+            <li class="act">
+           <label class="filter-label active"><input type="checkbox" class="checked" checked>{{ tag | link_to_add_tag: tag }}</label>
+         </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Filters for Mobile -->
+<div class="row show-for-small-only">
+  <div class="small-9 mobile_submit">
+<div id="collectionInclude show-for-small-down">
+<div id="filterPieces">
+  <div id="nonMobileFilters" class="filterlist-wrapper filter-parent-wrapper">
+<div class="mutliSelect" style="width: 100%;">
+  <div class="mulitWrapper">
+    <div class="selectTitle"><span class="filterTitle">FILTER NURSERIES</span></div>
+    <ul class="dropdownUl" id="nurse_insp">
+{% for tag in blog.all_tags %}
+{% if current_tags contains tag %}
+          <li class="not_act">
+            <label class="filter-label not_checked"><input type="checkbox" class="not_checked" >{{ tag | link_to_remove_tag: tag }}</label>
+          </li>
+          {% else %}
+            <li class="act">
+           <label class="filter-label active"><input type="checkbox" class="checked" checked>{{ tag | link_to_add_tag: tag }}</label>
+         </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- pagination for thumbnail gallery -->
+{% paginate blog.articles by 50 %}
+<div class="popup-gallery">
+  {% for article in blog.articles %}
+
+  <a class="open-popup-link" href="#test-popup-{{article.id}}" title="{{article.title}}">
+
+    <!-- <img src="{{ article.image.src | img_url }}" alt="{{article.image.alt}}"> -->
+
+    <img src="{{ article.image.src | img_url: 'large' }}">
+
+  </a>
+  {% endfor %}
+
+</div>
+	{% include 'pagination-numbered' %}
+	{% endpaginate %}
+</div>
+
+<!-- area that needs to toggle depending on screen size -->
+<!-- mobile -->
+{% paginate blog.articles by 50 %}
+{% for article in blog.articles %}
+{% if blog_prefix == 'blog_articles' %}
+<div id="test-popup-{{article.id}}" class="white-popup mfp-hide">
+  <div class="mobile">
+  <div class="row insta">
+{{article.excerpt}}
+  </div>
+  <div class="row main_pic">
+
+{{article.content}}
+  </div>
+
+<!-- <div class="info small-12 medium-6 large-6 columns right"> -->
+  <div class="row sm">
+    <ul class="social-icons ni">
+      <li><a href="https://www.facebook.com/deltachildren" target="_blank"><i class="fa fa-facebook icons"></i></a></li>
+      <li><a href="https://www.pinterest.com/deltachildren/" target="_blank"> <i class="fa fa-pinterest icons"></i> </a></li>
+      <li><a href="https://twitter.com/deltachildren/" target="_blank"> <i class="fa fa-twitter icons"></i> </a></li>
+    </ul>
+  </div>
+  <div class="row shop-look">
+    <h3 class="shop" style="color: grey;">Shop This Look</h3>
+</div>
+<!-- </div> -->
+</div>
+
+
+<!-- desktop/tablet -->
+<div class="row desktop">
+<div class="info small-12 medium-6 large-6 columns right">
+  <div class="row sm">
+    <ul class="social-icons ni">
+      <li><a href="https://www.facebook.com/deltachildren" target="_blank"><i class="fa fa-facebook icons"></i></a></li>
+      <li><a href="https://www.pinterest.com/deltachildren/" target="_blank"> <i class="fa fa-pinterest icons"></i> </a></li>
+      <li><a href="https://twitter.com/deltachildren/" target="_blank"> <i class="fa fa-twitter icons"></i> </a></li>
+    </ul>
+  </div>
+  <div class="row insta">
+{{article.excerpt}}
+  </div>
+  <div class="row">
+    <h3 class="shop" style="color: grey;">Shop This Look</h3>
+  </div>
+</div>
+  <div class="row">
+    <div class="main_pic small-12 medium-12 large-12 columns right">
+{{article.content}}
+
+
+  </div>
+  </div>
+</div>
+
+</div>
+{%endif%}
+{% endfor %}
+{% endpaginate %}
+
+<!-- submit nursery iframe Desktop -->
+ <div id="wrapperN"><iframe id="JotFormIFrame-70123492566153" onload="window.parent.scrollTo(0,0)" allowtransparency="true" src="https://form.jotform.com/70123492566153" frameborder="0" scrolling="no"> </iframe></div>
+<div id="coverFrame"></div>
+
+<!-- submit nursery iframe Mobile -->
+<div id="wrapperNMobile"><iframe id="JotFormIFrame-70646443522151" onload="window.parent.scrollTo(0,0)" allowtransparency="true" src="https://form.jotform.com/70646443522151" frameborder="0" style="width:100%; height:534px; border:none;" scrolling="no"> </iframe></div>
+<div id="coverFrameMobile"></div>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+area:focus{
+  outline: none;
+}
+
+div.mutliSelect.right {
+  position: relative;
+  top: 32px;
+  width: 300px;
+}
+
+ul.breadcrumbs{
+  padding-top: 10px;
+  float: left !important;
+}
+
+h3.shop{
+  padding-left: 21px;
+}
+
+div.popup-gallery{
+  padding-top: 30px;
+}
+.popup-gallery img {
+  height: 244.5px;
+  width: 244.5px;
+  padding-left: 0;
+  padding-bottom: 13px;
+  padding-right: 10.5px;
+}
+
+
+ul.social-icons.ni li {
+  padding: 0 10px;
+}
+
+.ni i.fa{
+  font-size: 2rem;
+  color: #487ed6;
+}
+i.fa:hover {
+  color:#8dabdd;
+}
+
+i.fa.fa-instagram.icons{
+  font-size: 2.2rem;
+  padding-right: 5px;
+  color: #487ed6;
+  padding-left: 21px;
+  top: 6px;
+  position: relative;
+}
+i.fa.fa-instagram.icons:hover{
+  color:#8dabdd;
+}
+.main_pic img{
+  float: left !important;
+  height: 150px;
+  width: 150px;
+  margin-top: 20px;
+}
+
+div.main_pic a {
+  width: 150px !important;
+height: 150px !important;
+position: relative;
+display: inline-block;
+left: 0;
+}
+
+
+img.main {
+  float: left !important;
+  width: auto;
+  height: auto;
+  top: -100px;
+  border-style: none;
+  max-height: 480px;
+}
+
+div.row.insta{
+  margin-top:-50px;
+}
+ div.pic_holder{
+   height: 60%;
+ }
+
+div.main_pic{
+/*background-color: grey;*/
+/*width: 50%;
+height: 50%;*/
+top: -40px;
+padding-right: 40px;
+padding-left: 40px;
+}
+
+
+div.mfp-content{
+  /*height: 60%;*/
+  width: 90%;
+}
+div.mfp-figure{
+  background-color: white;
+}
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 1000px;
+  max-height: 900px;
+  margin: 20px auto;
+  top: 0;
+/*   height: 700px; */
+  padding-right: -50px;
+}
+
+div.info {
+  left: 50px;
+}
+div.row.sm{
+  padding-right: 50px;
+}
+
+.white-popup a{
+
+  color: black;
+
+}
+ul.social-icons{
+  float: right;
+}
+
+button.mfp-arrow.mfp-arrow-right {
+  margin-right: -15px;
+margin-top: -100px;
+}
+button.mfp-arrow.mfp-arrow-left {
+  margin-left: -15px;
+margin-top: -100px;
+}
+
+aside.footer-widgets{
+  margin-top: 200px;
+}
+
+div.silo_holder{
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  margin-right: 20px;
+  height: 230px;
+  padding-left: 15px;
+}
+div.silo_holder span{
+  display: block;
+  position: relative;
+  top: 10px;
+
+}
+
+span.alt_text{
+  font-size: 90%;
+    color: black;
+
+}
+
+
+@media only screen
+  and (min-device-width: 1300px){
+    div.popup-gallery{
+      position: relative;
+      /*left: 4%;*/
+      margin-right: -20px;
+    }
+
+  }
+
+
+
+/*tablet*/
+@media only screen and (max-width: 967px){
+.white-popup{
+  height: auto;
+  width: 80%;
+  max-width: 600px;
+  max-height: 1200px;
+  top: -170px;
+}
+div.info{
+  top: 500px;
+  width: 80%;
+  float: none !important;
+}
+
+img.main{
+  /*width: 100%;
+  height: 100%;*/
+}
+
+div.row.sm {
+  /*width: 80%;*/
+}
+
+i.fa.fa-instagram.icons{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+div.mfp-content {
+  height: 65%;
+
+}
+
+}
+/*tablet*/
+@media only screen and (max-width: 760px){
+  div.info{
+    top: 480px;
+  }
+img.main{
+  top: -150px;
+}
+div.mutliSelect.right{
+  top: 0;
+}
+div.mfp-content {
+  height: 60%;
+
+}
+}
+
+/*mobile*/
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+div.mfp-content {
+  height: 60%;
+
+}
+div.selectTitle span.filterTitle{
+  font-size: 90%;
+}
+
+div.selectTitle::after{
+  top: 16px !important;
+  right: 6%;
+}
+
+div.selectTitle.upsideDown.activeDropdown-title::after{
+  top: 5px !important;
+  right: 7%;
+}
+
+span.filterTitle{
+  margin-left: 10px;
+}
+.main_pic img {
+  height: 100px;
+  width: 100px;
+}
+
+div.popup-gallery{
+  width: 102%;
+}
+.popup-gallery img {
+  height: 32.5%;
+  width: 32.5%;
+  padding-bottom: 6.5px;
+  padding-right:4px;
+}
+div.silo_holder{
+  height: 160px;
+}
+span.alt_text{
+  top: -50px !important;
+}
+
+
+div.info{
+  top: 200px;
+}
+
+div.row.insta {
+  margin-left: -60px;
+  display: inline-block;;
+}
+
+h3.shop{
+  margin-left: -50px;
+  padding-left: 0px;
+  font-size: 150%;
+}
+
+img.main{
+  width: 100%;
+  height: auto;
+  top: 0px;
+  padding-left: 1%;
+  padding-right: 1%;
+  /*padding-left: 40px;*/
+}
+div.row.sm{
+  margin-right: 45px;
+  width: 100%;
+}
+.white-popup {
+  top: -140px;
+  width: 90%;
+  padding: 0px;
+}
+div.main_pic{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+div.mutliSelect.right{
+  top: -20px;
+  padding-bottom: 20px;
+}
+.mfp-close{
+  right: -10px;
+  top: -10px;
+}
+
+}
+@media only screen
+  and (max-device-width: 320px){
+
+    img.main{
+      /*top: -150px;*/
+      /*padding-left: 0px;
+      margin-left: 20px;*/
+    }
+    div.row.sm {
+      top: 325px !important;
+      padding-right: 0px;
+    }
+    .white-popup{
+      top: -120px;
+    }
+    div.shop-look{
+      top: 375px !important;
+
+    }
+  }
+
+  /*iphone 6*/
+  @media only screen
+    and (max-width: 375px) and (min-width: 321px){
+      div.row.sm {
+        top: 375px;
+      }
+
+      div.shop-look{
+        top: 425px !important;
+
+      }
+    }
+
+
+/*for styling "Sumit Nursery" button and filters for mobile 2/14/17*/
+  @media only screen
+    and (max-width: 705px){
+
+div.small-9.mobile_submit {
+    position: relative;
+    left: 11%;
+  }
+  div.selectTitle{
+    max-height: 60px;
+    padding-bottom: 3.5% !important;
+    padding-top: 3.5%;
+  }
+  .upsideDown:after{
+    /*top: 0px !important;*/
+  }
+div.selectTitle:after{
+  /*top: 40.5% !important;*/
+}
+
+/*styles photogallery*/
+
+
+
+}
+
+
+
+
+/*For Filters 1/6/16*/
+
+div.mutliSelect{
+  width: 225px;
+}
+
+.fadeDown{
+  width: 225px;
+}
+
+div.mulitWrapper{
+  width: 100%;
+}
+
+ul.dropdownUl{
+  width: 100% !important;
+position: relative;
+}
+/*.dropdownUI{
+  width: 100% !important;
+}*/
+
+
+ul.activeDropdown-dropdown{
+  width: 100% !important;
+position: relative;
+}
+header#filter-heading{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  margin-left: 10px;
+  color: #656565;
+}
+label.filter-label{
+  font-family: 'Montserrat', sans-serif;
+  color: white !important;
+  height: 25px;
+}
+label.filter-label.active a{
+  color: black !important;
+}
+label.filter-label a{
+color: #656565 !important;
+}
+div.selectTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: larger;
+  padding-bottom: 2px;
+}
+li.sortSpecial {
+  font-family: 'Montserrat', sans-serif;
+  color: #656565;
+}
+ul li.nursery_filter{
+  display: inline;
+}
+
+.selectTitle {
+  border: 1px solid #e1e1e1;
+  background-color: #f4f4f4;
+}
+div.selectTitle:after{
+  margin-right: 4px;
+  background-image:url('//cdn.shopify.com/s/files/1/0578/7201/t/5/assets/arrow-down-icon.png?14360995437405392002');
+  background-size: 16px;
+  top: 10px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+div.selectTitle::after{
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.upsideDown:after{
+  top: 0px !important;
+}
+.filterTitle{
+  color: #656565;
+}
+
+.filterTitle.submit{
+  color: white;
+}
+
+#spanSortTitle {
+  margin-left: -20px;
+}
+ul#sortByList {
+  left: -25px;
+}
+ul li:first-child label a:active{
+  color: black !important:
+}
+
+div.submitNursery{
+border: 1px solid #e1e1e1;
+background-color: #003366;
+padding: 3px 5px 0px 5px;
+position: relative;
+color: white;
+font-family: 'Montserrat', sans-serif;
+font-size: larger;
+padding-bottom: 2px;
+  width: 100%;
+  border: 0;
+  height: 25px;
+
+}
+  
+  span.filterTitle.submit{
+   position: relative;
+    width: 100%;
+    
+  }
+
+.submitNursery:after{
+  position: absolute;
+content: '';
+background-image:url({{'Plus-icon.png' | asset_url}});
+background-color: #997610;
+background-position: 3px;
+display: inline-block;
+width: 20px;
+background-size: 15px;
+background-repeat: no-repeat;
+height: 25px;
+right: 0;
+top: 0;
+margin-right: -5px;
+-webkit-filter: invert(100%);
+filter: invert(100%);
+}
+
+.top-bar-section .left {
+  display: block !important;
+}
+
+@media only screen and (max-width: 640px) {
+  #spanSortTitle {
+    margin-left: 0px;
+  }
+  ul#sortByList {
+    left: 0px;
+  }
+  i.fa{
+    font-size: 1.5rem;
+  }
+  .dropdownUI{
+    width: 94%;
+    border: none;
+  }
+}
+
+
+/*styling for mobile redesign 2/23/17*/
+@media only screen and (max-width: 420px) {
+
+div.row.insta{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+i.fa.fa-instagram.icons{
+  font-size: 2.2rem;
+  padding-right: 10px;
+}
+
+ul.social-icons{
+  float: none;
+}
+div.sm{
+  position: absolute;
+  top: 400px;
+}
+.sm ul.social-icons i.fa {
+  font-size: 1.8rem !important;
+}
+
+img.main{
+  padding-bottom: 50px;
+}
+h3.shop{
+  margin-left: 0px;
+  margin-right: 0px;
+  font-size: 120%;
+  font-style: bold;
+}
+div.shop-look{
+  position: absolute;
+  top: 450px;
+  padding-left: 10px;
+}
+
+div.main_pic a{
+  width: 85px !important;
+height: 85px !important;
+}
+
+.silo_holder a img{
+  height: 85px;
+  width: 85px;
+}
+
+div.silo_holder{
+  /*height: 160px;*/
+  width: 85px;
+  position: relative;
+  top: 20px;
+}
+span.alt_text{
+  font-size: 65%;
+  top: 10px !important;
+  line-height: 1rem;
+}
+.white-popup{
+  padding-bottom: 40px;
+}
+
+}
+
+
+
+/*for "Sumit nursery" Desktop*/
+div#coverFrame{
+  display:none;
+  position: absolute;
+  background: black;
+  background-size: cover;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  opacity: 0.6;
+}
+
+div#wrapperN{
+  position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    display: none;
+    top: 5%;
+}
+iframe#JotFormIFrame-70123492566153{
+  z-index: 3;
+  /*top: 10%;*/
+  width: 100%;
+  height: 715px;
+  max-width: 560px;
+  max-height: 690px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+div#coverFrameMobile{
+  display:none;
+  position: absolute;
+  background: black;
+  background-size: cover;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  opacity: 0.6;
+}
+
+div#wrapperNMobile{
+  position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    display: none;
+    top: 5%;
+}
+iframe#JotFormIFrame-70646443522151{
+  z-index: 3;
+  /*top: 10%;*/
+  width: 100%;
+  /*height: 715px;*/
+  max-width: 300px;
+  max-height: 570px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+  iframe#JotFormIFrame-70123492566153{
+    z-index: 3;
+    /*top: 10%;*/
+    width: 100%;
+    height: 860px;
+    max-width: 560px;
+    max-height: 860px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+</style>
+
+<script>
+
+
+
+// makes home page images tiny for mobile and large for desktop to increase page speed dh-edit 5/8/17
+if ( $(window).width() > 667) {
+$("img.opt").each(function(){
+  $(this).attr('src', $(this).attr('src').replace('_1x1.jpg', '.jpg'));
+});
+
+// $("img.ni_th").each(function(){
+//   $(this).attr('src', $(this).attr('src').replace('_1x1.jpg', '_medium.jpg'));
+// });
+};
+// if ( $(window).width() < 667) {
+//   $("img.ni_th").each(function(){
+//     $(this).attr('src', $(this).attr('src').replace('_1x1.jpg', '_compact.jpg'));
+//   });
+// }
+
+
+// calls magic pop-up function
+$(document).ready(function() {
+	$('.open-popup-link').magnificPopup({
+		// delegate: 'a',
+		type: 'inline',
+    midClick: true,
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title');
+			}
+		}
+ });
+});
+// image maps link below banner
+$(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+
+// logic for image organization in pop-up
+  $("a.open-popup-link").click(
+    function() {
+console.log("thumbnail clicked!");
+
+  $("img[alt='Main']").addClass('main small-12 medium-6 large-6 columns left caption');
+
+  $('div.silo_holder span').remove();
+  $('div.silo_holder a').unwrap();
+
+  console.log("Found main pic and added class");
+
+  // adds alt text under image
+    $(".main_pic img").not('.main').each(function(i, ele) {
+    var alt = this.alt;
+    $(this).parent().wrap("<div class='silo_holder'></div>")
+    //wrap in div, then append span to div
+    $(this).closest("div.silo_holder").append("<span class='alt_text'>"+alt+"</span>");
+    });
+
+    $('div.silo_holder a').each(function(){
+    $(this).attr('target','_blank');
+    });
+
+  //   $('div.silo_holder').appendTo("div.row.silo_bank");
+  });
+
+  // puts instagram image next to handle
+  $('.row.insta a').prepend("<i class='fa fa-instagram icons'></i>");
+
+
+  // replaces filters text
+  $("ul li:first-child label a").text("Designed by Moms");
+  $("ul li:nth-child(2) label a").text("Designed by Delta Children");
+
+
+// Filter Logic 1/6/17
+  $(".mulitWrapper").click(function(event){
+      if($('.activeDropdown-dropdown').length >= 1){
+        if( $(event.target).hasClass('activeDropdown-title') || $(event.target).parent().hasClass('activeDropdown-title') ){
+          //this is if dropdown is open and we click on the title to close it
+        closeDropdowns();
+        }else{
+          //this is if dropdown is open and we click on another dropdown
+           if($(event.target).closest('.filter-parent-wrapper').attr('id') != "MobileFilter"){
+             closeDropdowns();
+            }
+           el = $(event.target)[0].closest('.mulitWrapper')
+           el = $(el).children()
+           $(el[0]).toggleClass("upsideDown").toggleClass("activeDropdown-title");
+           $(el[1]).toggleClass("fadeDown").toggleClass("activeDropdown-dropdown");
+           event.stopPropagation();
+        }
+      }
+      else{
+        el = $(this).children()
+        $(el[0]).toggleClass("upsideDown").toggleClass("activeDropdown-title");
+        $(el[1]).toggleClass("fadeDown").toggleClass("activeDropdown-dropdown");
+        event.stopPropagation();
+      }
+  })
+
+  $(document).on('click', function(event) {
+    if($('.activeDropdown-dropdown').length >= 1){ //a dropdown has been opened
+      if( ($(event.target)!= $('.activeDropdown-dropdown'))) {
+        closeDropdowns();
+      }
+    }
+    if($('.activeSort').length >= 1){ //a sort dropdown has been opened
+      if( ($(event.target)!= $('#sortByList')) || $(event.target)!= $('#sortBySpecial')){
+        closeSortDropdown();
+      }
+    }
+  });
+
+  function closeDropdowns(){
+      $('.activeDropdown-dropdown').toggleClass("fadeDown").removeClass('activeDropdown-dropdown');
+      $('.activeDropdown-title').toggleClass("upsideDown").removeClass('activeDropdown-title');
+  };
+  // end filter logic
+
+// checkbox logic for filters 1/16/17
+$('ul#nurse_insp li.not_act:first-child label.not_checked input.not_checked').click(function(){
+  $('ul#nurse_insp li.not_act:first-child label.not_checked a')[0].click();
+});
+
+$('ul#nurse_insp li.not_act:nth-child(2) label.not_checked input.not_checked').click(function(){
+  $('ul#nurse_insp li.not_act:nth-child(2) label.not_checked a')[0].click();
+  });
+
+$('ul#nurse_insp li.act:first-child label.active input.checked').click(function(){
+  $("ul li.act:first-child label.active a")[0].click();
+});
+
+$('ul#nurse_insp li.act:nth-child(2) label.active input.checked').click(function(){
+$('ul#nurse_insp li.act:nth-child(2) label.active a')[0].click();
+});
+
+
+// For saving screen position of user when they filter images
+// When document is ready...
+$(document).ready(function() {
+
+// If scroll AND location cookie is set, and the location is the same
+//scroll to the position saved in the scroll cookie.
+if ( $.cookie("scroll") !== null && $.cookie("location") !== null
+           && $.cookie("location") == $(location).attr('href')) {
+    $(document).scrollTop( $.cookie("scroll") );
+}
+if(window.location.href === "http://www.deltachildren.com/blogs/nursery-inspiration/tagged/deltanursery"){
+  $(document).scrollTop( $.cookie("scroll") );
+  console.log(this);
+};
+if(window.location.href === "http://www.deltachildren.com/blogs/nursery-inspiration/tagged/othernursery"){
+  $(document).scrollTop( $.cookie("scroll") );
+    console.log(this);
+};
+if(window.location.href === "http://www.deltachildren.com/blogs/nursery-inspiration/tagged/deltanursery+othernursery"){
+  $(document).scrollTop( $.cookie("scroll") );
+    console.log(this);
+};
+if(window.location.href === "http://www.deltachildren.com/blogs/nursery-inspiration"){
+  $(document).scrollTop( $.cookie("scroll") );
+    console.log("hi");
+};
+
+// When a button is clicked...
+$('ul li label input').on("click", function() {
+  // Set a cookie that holds the scroll position.
+  $.cookie("scroll", $(document).scrollTop() );
+
+  // set a cookie that holds the current location.
+  $.cookie("location", $(location).attr('href'));
+
+});
+
+// if location equals, set the scroll top cookie
+
+
+// Logic that re-organizes compilation of article information for pop-up depending on screensize - dh-edit 2/28/17
+// For Mobile
+if ( $(window).width() < 760) {
+$("div.ni").appendTo("div#main-body-container.row");
+$("div.desktop").hide();
+};
+// For Desktop
+if ( $(window).width() > 761) {
+$('div.mobile').hide();
+$("div.desktop-tablet").show();
+};
+
+
+
+// logic for "Submit Nursery" iframe open and close Desktop
+$("a#submitDesktop").click( function () {
+  var tempScrollTop = $(window).scrollTop();
+  $('div#coverFrame').appendTo('section#site-body').show();
+  $('div#wrapperN').appendTo('section#site-body').show();
+  $(window).scrollTop(tempScrollTop);
+    $('body').click( function () {
+    $('div#wrapperN').hide();
+    $('div#coverFrame').hide();
+  });
+});
+
+
+// logic for "Submit Nursery" iframe open and close Mobile
+$("a#submitMobile").click(function () {
+  var tempScrollTop = $(window).scrollTop();
+  $('div#coverFrameMobile').appendTo('section#site-body').show();
+  $('div#wrapperNMobile').appendTo('section#site-body').show();
+  $(window).scrollTop(tempScrollTop);
+    $('div#wrapperNMobile').click(function () {
+    $('div#wrapperNMobile').hide();
+    $('div#coverFrameMobile').hide();
+  });
+  $('div#coverFrameMobile').click(function () {
+  $('div#wrapperNMobile').hide();
+  $('div#coverFrameMobile').hide();
+});
+});
+
+
+
+});
+
+</script>

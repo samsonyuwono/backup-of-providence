@@ -1,0 +1,207 @@
+  #filterPieces{
+  font-family: 'montserrat-light';
+  margin-bottom: 15px;
+  }
+
+  #filter-heading{
+    font-size: 20px;
+    color: #828282;
+    margin-bottom: 12px;
+  }
+
+  #sortBySpecial{
+    float: right;
+    right: 20px;
+    position: relative;
+    bottom: 0px;
+    width: 95px;
+  	display:inline-block;
+  	vertical-align: top;
+  }
+
+  .sortSpecial{
+    margin: 0 5px 0 10px!important;
+    list-style: none;
+  }
+
+  #sortByTitle{
+    border: none;
+    background-color: #fff;
+  }
+
+  #spanSortTitle{
+   text-transform: initial;
+  }
+
+  #sortByList{
+    border: none;
+    border-bottom: 0px!important;
+    background-color: white;
+  }
+
+.filter-label{
+  display:inline-block;
+  margin: 0px!important;
+  pointer:cursor;
+}
+
+  li{
+	 color:#333;
+  }
+
+
+  .filterClick{
+        margin: 0 5px 0 10px!important;
+  }
+
+  .dropdownUl {
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    margin:0px;
+    background: #fff;
+    border: 1px solid #a3a3a3;
+    border-top:0px;
+    border-bottom: 0px;
+    /* need to add media query for this for mobile */
+    position: absolute;
+    z-index: 5;
+    width: 200px;
+}
+
+  .fadeDown {
+    max-height: 500px!important;
+    transition: max-height 1s ease-in!important;
+    border-bottom:1px solid #a3a3a3!important;
+}
+
+
+ .filterTitle{
+    color:#333;
+    margin-left:5px;
+    text-transform: uppercase;
+ }
+
+  .selectTitle:after{
+    content: '';
+    background-image:url({{'arrow-down-icon.png' | asset_url}});
+    display: inline-block;
+    width: 15px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    height: 15px;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+  }
+
+
+  .upsideDown:after{
+    top: 0px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+
+ .selectTitle{
+  border: 1px solid #808080;
+  background-color:#e8e8e8;
+  padding: 3px 5px 0px 5px;
+  position: relative;
+ }
+
+
+.mutliSelect{
+  width: 200px;
+  display:inline-block;
+  vertical-align: top;
+}
+
+
+
+@media screen and (max-width:640px) {
+
+	.selectTitle:after{
+      background-image:url({{'mobileDropPlus.png' | asset_url}});
+      background-repeat: no-repeat;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+    }
+
+
+
+    #spanSortTitle{
+          color: #7c7a7b;
+    }
+
+  	#sortByTitle:after{
+      background-image:url({{'arrowDownFilters.png' | asset_url}});
+      background-repeat: no-repeat;
+      top: 3px;
+      right: -7px;
+      width: 12px;
+      height: 12px;
+      background-size: 12px;
+      position: relative;
+    }
+
+    .selectTitle{
+    	background-color: white;
+    	border: none;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+  	.mutliSelect{
+          width: 100%;
+          display:block;
+    }
+
+  	#sortByTitle{
+    	font-size: 20px;
+    	font-weight: bold;
+    }
+
+  	#sortBySpecial{
+      float: none;
+      position: static;
+      display: block;
+      width:100%;
+    }
+
+    .dropdownUl{
+      width: 94%;
+      border: none;
+      position: relative;
+    }
+
+  	.fadeDown{
+      border:none!important;
+          margin-top: 7px;
+    }
+
+    .upsideDown:after{
+      top: 8px!important;
+      background-image:url({{'minusFilters.png' | asset_url}});!important
+       height: 16px;
+   	   background-size: 16px;
+       width: 16px;
+    }
+
+    #sortByTitle.selectTitle.upsideDown:after{
+       top: -3px!important
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:930px) {
+
+  .mutliSelect {
+    width: 26%;
+  }
+
+  .mulitWrapper .dropdownUl {
+    width: 24.7%;
+  }
+}

@@ -1,0 +1,23 @@
+{% comment %} Feel free to change these {% endcomment %}
+
+{% assign sidebar_span = 3 %}
+{% assign show_sidebar_small = false %}
+{% assign show_footer_widgets_small = false %}
+{% assign product_primary_image_size = '1024x1024' %}
+{% assign product_secondary_image_size = 'medium' %}
+{% assign product_lightbox_image_size = 'master' %}
+{% assign product_qty_select_max = 10 %}
+{% assign product_set_variant_from_secondary = false %}
+{% assign debug_mode = false %}
+
+
+{% comment %} Please do not change these {% endcomment %}
+
+{% assign theme_name = 'Providence' %}
+{% assign theme_version = '4.5.5' %}
+
+{% if shop.customer_accounts_enabled and customer %}
+  {% assign customer_logged_in = true %}
+{% else %}
+  {% assign customer_logged_in = false %}
+{% endif %}

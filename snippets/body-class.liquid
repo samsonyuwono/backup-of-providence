@@ -1,0 +1,13 @@
+{% assign body_class = template %}
+
+{% if template contains '.' %}
+  {% assign template_classes = template | split: '.' %}
+  {% assign template_classes_handled = template | replace: '.', '-' %}
+  {% assign body_class = template_classes[0] | append: ' ' | append: template_classes_handled %}
+{% endif %}
+
+{% if template contains '/' %}
+  {% assign template_classes = template | split: '/' %}
+  {% assign template_classes_handled = template | replace: '/', '-' %}
+  {% assign body_class = template_classes[0] | append: ' ' | append: template_classes_handled %}
+{% endif %}

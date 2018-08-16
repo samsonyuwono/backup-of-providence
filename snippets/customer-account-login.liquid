@@ -1,0 +1,37 @@
+<div id="customer-login" class="account-session-module">
+  <div class="inner">
+
+  <p class="note">{{ 'customer_accounts.login.message_html' | t }}</p>
+
+  {% form 'customer_login' %}
+
+  <fieldset>
+
+    {% if form.errors %}
+    <div class="alert-box error">
+      <ul class="errors-list">
+        {% for field in form.errors %}
+          <li>{{ form.errors.messages[field] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% include 'customer-account-field-email' %}
+    {% include 'customer-account-field-password' %}
+
+    <div class="form-actions">
+      <button type="submit" class="button">{{ 'customer_accounts.login.submit' | t }}</button>&nbsp;&nbsp;
+      <a href="/account/register" class="button secondary">{{ 'customer_accounts.login.create_account' | t }}</a>
+
+      <div class="secondary-actions">
+        <a href="#" id="recover-password">{{ 'customer_accounts.login.reset_password' | t }}</a>
+      </div>
+    </div>
+
+  </fieldset>
+
+  {% endform %}
+
+  </div>
+</div>

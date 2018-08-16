@@ -1,0 +1,51 @@
+{% if shop.customer_accounts_enabled and customer %}
+  {% assign default_country = customer.default_address.country %}
+{% elsif settings.shipping_calculator_default_country != '' %}
+  {% assign default_country = settings.shipping_calculator_default_country %}
+{% endif %}
+
+{% if shop.customer_accounts_enabled and customer and customer.default_address.province != '' %}
+  {% assign default_province = customer.default_address.province %}
+{% endif %}
+
+
+<section class="shipping-calculator">
+  <h3>{{ 'shipping_calculator.title' | t }}</h3>
+
+  <a href="#" class="show-calculator button secondary">{{ 'shipping_calculator.calculate_shipping' | t }}</a>
+
+  <div class="calculator hide">
+
+    <div class="response"></div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <label for="sc-address-country">{{ 'shipping_calculator.country' | t }}</label>
+        <select id="sc-address-country" class="address-country" name="address[country]" data-default="{{ default_country }}">{{ country_option_tags }}</select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="sc-address-province-container">
+          <label for="sc-address-province">{{ 'shipping_calculator.province' | t }}</label>
+          <select id="sc-address-province" class="address-province" name="address[province]" data-default="{{ default_province }}"></select>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <label for="sc-address-zip">{{ 'shipping_calculator.zip' | t }}</label>
+        <input id="sc-address-zip"class="address-zip" type="text" name="address[zip]"{% if shop.customer_accounts_enabled and customer %} value="{{ customer.default_address.zip }}"{% endif %} placeholder="Zip/Postal">
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="get-rates button">{{ 'shipping_calculator.find_rates' | t }}</button>
+      <a href="#" class="hide-calculator button secondary">{{ 'shipping_calculator.close' | t }}</a>
+    </div>
+
+  </div>
+
+</section>

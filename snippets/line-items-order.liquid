@@ -1,0 +1,72 @@
+<div class="line-items">
+  {% for item in order.line_items %}
+  {% include 'bold-cart-item' with line_item, bold_order:order %}
+
+  <div class="line-item {{ bold_row_class }}">
+    <div class="row">
+
+      <div class="small-3 medium-2 large-1 columns">
+        <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}" />
+      </div>
+      <!-- /.image -->
+
+
+      <div class="small-9 medium-10 large-11 columns">
+
+        <div class="row">
+
+          <div class="medium-5 large-8 columns">
+            <a class="title" href="{{item.product.url}}" title="{{item.title | escape }}">
+              {{ item.product.title }}
+            </a>
+
+            {% if item.variant.title != 'Default Title' %}
+            <div class="variant">
+              {{item.variant.title}}
+            </div>
+            {% endif %}
+
+
+            {% for p in item.properties %}
+              {% unless p.last == blank %}
+                <div class="line-item-property">
+                {{ p.first }}:
+                {% if p.last contains '/uploads/' %}
+                <span class="value"><a class="fancybox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a></span>
+                {% else %}
+                <span class="value">{{ p.last }}</span>
+                {% endif %}
+                </div>
+              {% endunless %}
+            {% endfor %}
+
+
+            {% if item.product.description != "" %}
+            <p class="description">{{ item.product.description | truncatewords: 15 | strip_html }}</p>
+            {% endif %}
+
+          </div>
+
+
+          <div class="pricing medium-3 large-2 columns">
+            <div class="amounts">
+              <span class="price">{{ bold_item_price | money }}</span>
+              <span>x</span>
+              <span class="quantity">{{ item.quantity }}</span>
+            </div>
+            <div class="price line-price">{{ bold_item_line_price | money }}</div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.details -->
+
+
+    </div>
+  </div>
+  <!-- /.line-item -->
+
+  {% endfor %}
+</div>
+<!-- /.line-items -->

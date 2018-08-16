@@ -1,0 +1,616 @@
+@-webkit-keyframes slide {
+    100% { right: 0; }
+}
+
+@keyframes slide {
+    100% { right: 0; }
+}
+
+@-webkit-keyframes slideBack {
+    100% { right: -100%; }
+}
+
+@keyframes slideBack {
+    100% { right: -100%; }
+}
+
+a{
+  -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4)
+}
+
+/* Middle Style */
+.scotch-panel-added{
+  -moz-transform: none!important;
+  -ms-transform: none!important;
+  -o-transform: none!important;
+  -webkit-transform: none!important;
+  transform: none!important;
+}
+
+#sectionOneButtons{
+  padding-top:8px;
+}
+
+.secOneChoiceWrap{
+  padding:0px!important
+}
+
+.secOneChoiceWrap a img{
+  border-right: 4px solid white;
+  border-left: 4px solid white;
+}
+
+#middleMobileShopButton{
+    margin: auto;
+    display: block;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 0px;
+}
+
+#main-mobile-image img{
+  margin-top:-65px;
+}
+
+
+#footerTitle{
+  color:white;
+  font-size: 23px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  text-align: center;
+  line-height: 1em;
+}
+
+#sectionOne{
+  position:relative;
+}
+
+#sectionOneFooter{
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+
+#cart-mobile{
+    text-align: center;
+    background-color: #112e53;
+    -webkit-box-shadow: inset 1.5em 0 1.5em -0.75em rgba(0,0,0,0.25);
+    box-shadow: inset 1.5em 0 1.5em -0.75em rgba(0,0,0,0.25);
+    /*min-height: 600px;*/
+  }
+
+
+  .product-in-cart{
+    color: white;
+      margin: 5% 0px 5% 0px;
+  }
+
+  #shopping-cart-header-mobile {
+      background-color: white;
+      padding: 7%;
+      font-size: 18px;
+      color: #112e53;
+/*      position: fixed;
+      width: 70%;
+      margin: auto;*/
+/*      z-index: 5;*/
+}
+
+  #mobile-checkout-button{
+    color: #112e53;
+    background-color: white;
+    width: 70%;
+    margin-bottom: 30px;
+    margin:auto;
+  }
+
+/*  #nav-mobile-ul:first-child{
+    margin-top: 5%;
+  }*/
+
+  #nav-mobile-slide{
+    background-color:#112e53;
+    overflow-y: scroll !important;
+    overflow: scroll !important;
+    height: 600px !important;
+  }
+
+  #toggle-cart-mobile-close{
+    position: absolute;
+    left: 0;
+    top: 5px;
+    padding: 0px 0px 0px 6px;
+    font-size: 21px;
+  }
+
+  .toggle-menu-mobile-close{
+    position: absolute;
+    right:0px;
+    padding: 0px 10px 0px 0px;
+    font-size: 17px;
+    color: #112e53;
+  }
+
+.has-dropdown-mobile:after , .dropdown-back{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: inset 8px;
+    border-color: transparent transparent transparent rgba(255,255,255,1);
+    border-left-style: solid;
+    position: relative;
+    float: right;
+    /*left: -30px;*/
+    top: 5px;
+    border-right: 0px;
+}
+
+.dropdown-mobile-secondlevel:after{
+  top:10px;
+}
+
+/*dhedit 1/31/17*/
+.dropdown-mobile-thirdlevel:after{
+  top:10px;
+}
+
+.dropdown-back{
+    border-color: transparent transparent transparent rgb(17, 46, 83);
+    float: left;
+    position: relative;
+    left: 15px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    top: 4px;
+}
+
+
+#scotch-panel{
+    overflow:visible!important;
+  }
+
+  .scotch-panel-wrapper{
+    background-color: #112e53;
+  }
+
+/*.topLevel:after{
+  top:18px;
+}*/
+
+
+
+#nav-mobile-header, .stepBackMMenu{
+    text-align: center;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    background-color: rgba(255,255,255,1);
+    color: rgb(17, 46, 83);
+}
+
+#mobileHeaderMenuText{
+    vertical-align: top;
+    position: relative;
+    top: 4px;
+    left: 7px;
+    color: #112e53;
+}
+
+  #site-header-mobile{
+    padding:0px!important;
+  }
+
+  .siteHeaderMobile{
+    position: fixed !important;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .leftWrap {
+    float:left;
+  }
+  .rightWrap {
+    float:right;
+  }
+
+  .toggle-topbar{
+    background-color: #85a8d8;
+  }
+
+  #mobileSearchOverlay{
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.9);
+    overflow-x: hidden;
+  }
+
+  #mobileSearchBar{
+    border: none;
+    border-bottom: 1px solid #112e53;
+    border-radius: 0px;
+    background-color: transparent;
+  }
+
+ #mobileSearchBar::-webkit-input-placeholder{
+      color: rgba(17,46,83,0.8);
+    position: relative;
+    top: 3px;
+  }
+
+   #mobileSearchBar::-moz-placeholder{
+      color: rgba(17,46,83,0.8);
+    position: relative;
+    top: 3px;
+  }
+
+  #mobileSearchBar:-ms-input-placeholder{
+        color: rgba(17,46,83,0.8);
+    position: relative;
+    top: 3px;
+  }
+
+  #mobileSearchBar:-moz-placeholder{
+        color: rgba(17,46,83,0.8);
+    position: relative;
+    top: 3px;
+  }
+
+  #searchOverlayClose{
+    float: right;
+    position: relative;
+    left: -20px;
+    font-size: 30px;
+    color: #112e53;
+    top: 20px;
+  }
+
+  #overlaySearchBarForm{
+    width: 80%;
+    display: inline-block;
+  }
+
+  #overlayWrapper{
+    position: relative;
+    top: 25%;
+    text-align: center;
+    left: 4%;
+  }
+
+  #searchIconOverlay{
+    font-size: 30px;
+    vertical-align: middle;
+    position: relative;
+    bottom: -8px;
+    left: -5px;
+    color: #112e53;
+  }
+  /*
+    menu icon css3
+    */
+
+    .menu-icon {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 auto;
+      float: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+    .menu-icon > span {
+      position: absolute;
+      top: 50%;
+      display: block;
+      margin-top: -0.5em;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    .menu-icon > span:before,
+    .menu-icon > span:after {
+      content: "";
+      position: absolute;
+      background-color: white;
+      border-radius: 3px;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+
+    .menu-icon > span:before {
+      -webkit-transform: translateY(-1em);
+      transform: translateY(-1em);
+    }
+
+    .menu-icon > span:after {
+      -webkit-transform: translateY(1em);
+      transform: translateY(1em);
+    }
+
+    /* OPENED */
+
+    .menu-icon.open {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .menu-icon.open > span:before {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      display: none;
+    }
+
+    .menu-icon.open > span:after {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      top: 0px;
+    }
+
+
+   .searchIcon i {
+    position: absolute;
+    z-index: 2;
+    right: 7px;
+    cursor: pointer;
+    color: #112e53;
+    top: 1px;
+  }
+
+
+  #mobileCartIcon{
+   font-size: 40px;
+   margin-right: 5px;
+   color: #112e53;
+  }
+
+
+  #mobileNavBar{
+    background-color: white;
+    text-align: inherit;
+  }
+
+  #menuBars{
+    color: white;
+    font-size:40px;
+    display: inline-block;
+  }
+
+  #closeMenuIcon{
+    display: none;
+    width: 30px;
+    vertical-align: top;
+    margin-top: 2px;
+  }
+
+  .toggle-topbar{
+    width: 50px;
+  }
+
+
+  #branding-wrap-mobile{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0px;
+    top: 3px;
+    z-index: 9999;
+  }
+
+  #search-wrap{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+  }
+
+  #cart-wrap{
+    display:inline-block;
+    vertical-align: top;
+  }
+
+  #mobileMenuWrapper{
+    overflow: hidden;
+    margin: 8px 2% -3% 2%;
+  }
+
+  #sectionOneHeader{
+    display:none;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    z-index: 99;
+    overflow: auto;
+}
+
+#customerAlert{
+   float: left;
+    margin-left: 2%;
+}
+
+.closeAlertText{
+  float: right;
+  margin-right: 10px;
+}
+
+#mLevelTwoMenu{
+  background-color:#112e53;
+  color:white;
+  height:100%;
+}
+
+/*dhedit 1/31/17*/
+#mLevelThreeMenu{
+  background-color:#112e53;
+  color:white;
+  height:100%;
+}
+
+/*.dropdownM:first-child {
+  margin-top: 20%;
+}*/
+
+.dropdownM{
+    position: absolute!important;
+    display: block;
+    overflow: scroll;
+    height: auto;
+    background-color: #112e53!important;
+    left:auto!important;
+    right:-100%;
+    -webkit-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0,0,0,0.25);
+    box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0,0,0,0.25);
+}
+
+.slideForwards{
+  -webkit-animation: slide 1s forwards;
+  animation: slide 1s forwards;
+}
+
+.slideBack{
+  -webkit-animation: slideBack 1s forwards;
+  animation: slideBack 1s forwards;
+}
+
+.dropdownMSpan a {
+  display:inline-block;
+  width: auto;
+  color:white!important;
+  width: 90%;
+}
+
+@media screen and (min-width: 320px){
+    #shopping-cart-header-mobile{
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    body{
+      overflow-x:hidden;
+    }
+    #customerAlert, .closeAlertText{
+        font-size: 80%;
+        color: white;
+      }
+
+     .searchIcon{
+     font-size: 23px;
+     top: 1px;
+    }
+
+    #branding-wrap-mobile{
+      width: 70px;
+    }
+
+    #mobileCartIcon, #menuBars{
+      font-size:25px;
+    }
+
+    .menu-icon {
+      width:25px;
+      height:40px;
+    }
+
+    .menu-icon > span{
+      width: 25px;
+      height: 2px;
+      background-color: #0d2a4e;
+    }
+
+    .menu-icon > span:before, .menu-icon > span:after{
+      width: 25px;
+      height: 2px;
+      top: 7px;
+      background-color: #0d2a4e;
+    }
+
+    .menu-icon > span:after{
+      top: -7px;
+    }
+}
+
+@media screen and (max-width: 619px){
+    .page-header{
+      /* margin-top: 60px;*/
+      margin-left: 6px;
+    }
+}
+
+@media screen and (min-width: 425px){
+
+    #shopping-cart-header-mobile{
+      font-size: 20px;
+    }
+
+     .searchIcon i {
+      top:2px;
+    }
+
+    #mobileHeaderMenuText{
+      top: 7px;
+      left: 15px;
+      font-size: 17px;
+    }
+
+    #branding-wrap-mobile{
+      width: 100px;
+    }
+
+    #customerAlert, .closeAlertText{
+     font-size: 105%;
+     margin-top: 2%;
+   }
+
+   .menu-icon > span{
+    width: 35px;
+    height: 4px;
+  }
+
+  .menu-icon > span:before, .menu-icon > span:after{
+    width: 35px;
+    height: 4px;
+    top: 2px;
+  }
+
+  .menu-icon > span:after {
+    top: -2px;
+  }
+
+  .menu-icon{
+    top: 3px;
+  }
+
+
+  #mobileMenuWrapper{
+    margin-bottom: 0px;
+  }
+
+  .searchIcon{
+    font-size:30px;
+  }
+
+  #mobileCartIcon, #menuBars{
+    font-size:35px;
+  }
+
+}
+
+  @media screen and (min-width: 600px){
+    #customerAlert, .closeAlertText {
+        font-size: 115%;
+        margin-top: 1%;
+    }
+  }
+
+  #closeAlert{
+    font-size: 20px;
+    cursor: pointer;
+  }

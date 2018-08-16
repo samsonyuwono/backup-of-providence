@@ -1,0 +1,81 @@
+{% layout settings.customer_layout %}
+
+{% assign has_sidebar = true %}
+{% assign has_crumbs = true %}
+{% assign page_title = 'customer_accounts.account.title' | t %}
+
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+<h3>{{ 'customer_accounts.account.order_history' | t }}</h3>
+
+<div id="customer-orders">
+  {% if customer.orders.size != 0 %}
+
+    <div class="line-order-headers">
+      <div class="row">
+
+        <div class="small-8 columns">
+          <div class="row">
+            <div class="large-4 columns">
+              {{ 'customer_accounts.account.order' | t }}
+            </div>
+            <div class="large-4 columns show-for-large-up">
+              {{ 'customer_accounts.account.order_total' | t }}
+            </div>
+            <div class="large-4 columns show-for-large-up">
+              <span class="{{ order.financial_status_label }}">
+                {{ 'customer_accounts.account.order_payment' | t }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-4 columns text-right">
+          {{ 'customer_accounts.account.order_status' | t }}
+        </div>
+
+      </div>
+    </div>
+
+    {% for order in customer.orders %}
+
+    <div class="line-order">
+      <div class="row">
+
+        <div class="small-8 columns">
+          <div class="row">
+            <div class="large-4 columns">
+              <span class="number">{{ order.name | link_to: order.customer_url }}</span>
+              <div class="date-created text-color-quiet">{{ order.created_at | date: format: 'short' }}</div>
+            </div>
+            <div class="large-4 columns">
+              <span class="price" data-money-with-currency>{{ order.total_price | money_with_currency }}</span>
+            </div>
+            <div class="large-4 columns">
+              <span class="{{ order.financial_status_label }}">
+                {{ order.financial_status_label | capitalize }}
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="small-4 columns text-right">
+          {% include 'customer-account-fulfillment-label' %}
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  {% else %}
+    <p>{{ 'customer_accounts.account.no_orders' | t }}</p>
+  {% endif %}
+</div>
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

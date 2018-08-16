@@ -1,0 +1,345 @@
+@font-face{
+  font-family: 'Georgia Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0578/7201/files/Georgia_Bold.ttf?7686200330746778271')
+}
+@font-face{
+  font-family: 'Gotham Book';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Gotham_Book.otf');
+}
+@font-face{
+  font-family: 'Gotham Medium';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/gotham-medium.otf');
+}
+@font-face{
+  font-family: 'Gotham Bold';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/gotham-bold.otf');
+}
+/* ------ hide the page header from full.width template ----- */
+.page-header{
+  display: none
+}
+#main-body-container{
+  max-width: 100%
+}
+
+
+.cat-rows .visible{
+  display: none
+}
+#shipping-banner{
+  background-image: url(https://cdn.shopify.com/s/files/1/0578/7201/files/banner-1.jpg?7414503136281143864);
+  background-size: cover;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 30px
+}
+#shipping-banner h2{
+  color: #ffffff !important;
+  font-family: 'Gotham Book';
+  font-size: 12px;
+  margin: auto;
+}
+#crib-background a img{
+  width: 110px;
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  right: 0;
+  left: 6%;
+}
+.category-list{
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  right: 0;
+  left: 22%;
+  display: inline-flex;
+  height:auto
+}
+.category-list div{
+  margin: 0 3%;
+}
+.category-list h2{
+  color: #003366 !important;
+  font-family: "Georgia Bold";
+  font-variant: small-caps;
+  font-size: 22px;
+  cursor: pointer
+}
+.category-list div ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -2%;
+  line-height: 190%;
+}
+.category-list ul li a{
+  color: #3b3c44 !important;
+  font-family: "Gotham Book";
+  font-size: 15px
+}
+#shop-banner{
+  background-image: url(https://cdn.shopify.com/s/files/1/0578/7201/files/banner-2.jpg?7686200330746778271);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px
+}
+#shop-banner h2{
+  color: #ffffff !important;
+  font-family: 'Georgia Bold';
+  font-size: 20px;
+  margin: auto
+}
+.cat-rows{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap
+}
+.cat-rows div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2% 0;
+}
+.cat-rows .category{
+  margin: auto 0
+}
+.category h2 {
+  color: #3b3c44 !important;
+  font-family: 'Georgia Bold';
+  font-size: 25px;
+  margin: auto;
+  text-align: center;
+  line-height: 100%
+}
+.sub-category h3{
+  text-align: center;
+  line-height: 100%;
+  margin-top: 5%;
+  color: #747575 !important;
+  font-family: 'Gotham Book';
+  font-size: 17px
+}
+#baby-gear-row{
+  background-color: #efefef
+}
+/* --------- Media Query for Background image ---------- */
+@media only screen and (min-width: 1350px){
+  #crib-background{
+    background-image: url(https://cdn.shopify.com/s/files/1/0578/7201/files/simmons-landing-page-nursery.jpg?3324642523685641066);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+    position: relative;
+    padding-top: 0
+  }
+}
+@media only screen and (max-width: 1350px){
+  #crib-background{
+    background-image: url(https://cdn.shopify.com/s/files/1/0578/7201/files/simmons-landing-page-nursery.jpg?3324642523685641066);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 60%;
+    position: relative
+  }
+  #crib-background a img{
+    width: 100px;
+  }
+}
+/* --------- Media Query for top drop-down list ---------- */
+@media only screen and (max-width: 1000px){
+  .category-list h2{
+    font-size: 20px
+  }
+  .category-list ul li a{
+    font-size: 13px
+  }
+}
+ @media only screen and (max-width: 880px){
+  .category-list h2{
+    font-size: 18px
+  }
+  .category-list ul li a{
+    font-size: 11px
+  }
+}
+@media only screen and (max-width: 790px){
+  .category-list h2{
+    font-size: 16px
+  }
+  .category-list ul li a{
+    font-size: 10px;
+  }
+  .category-list div ul{
+    line-height: 140%
+  }
+}
+/* --------- Media Query for all other styling --------*/
+@media only screen and (max-width: 900px){
+  #shipping-banner h2 {
+  font-size: 10px;
+  }
+  #shop-banner h2 {
+  font-size: 16px;
+  }
+  .category h2 {
+  font-size: 20px;
+  }
+  .sub-category h3 {
+  font-size: 14px
+  }
+  #crib-background a img{
+    width: 90px;
+  }
+}
+@media only screen and (max-width: 750px){
+  #shipping-banner h2 {
+  font-size: 9px;
+  }
+  #shop-banner h2 {
+  font-size: 14px;
+  }
+  .category h2 {
+  font-size: 18px;
+  }
+  .sub-category h3 {
+  font-size: 12px
+  }
+  #crib-background a img{
+    width: 80px;
+  }
+}
+@media only screen and (max-width: 650px){
+  .category h2 {
+  font-size: 16px;
+  }
+  .sub-category h3 {
+  font-size: 10px
+  }
+  #crib-background a img{
+    width: 70px;
+  }
+}
+@media only screen and (max-width: 641px){
+  .plus-sign:after{
+    content: ' +'
+  }
+  .minus-sign:after{
+    content: ' -'
+  }
+  .category-list div ul{
+    display:none
+  }
+   .category-list ul li a::after{
+    content: " >"
+  }
+  .category-list{
+    display: block;
+    left: 0;
+    margin: 3% 0;
+    position: relative
+  }
+  #crib-background a img{
+    display: none
+  }
+  #crib-background{
+    background-image: url(https://cdn.shopify.com/s/files/1/0578/7201/files/333150-130-peyton-room-mobile-4.jpg?6540832023893580503);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    padding-top: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #shipping-banner{
+    height: auto;
+    padding:2%
+  }
+  #shop-banner{
+    height: auto;
+    padding: 3%
+  }
+  #shipping-banner h2{
+    font-size: 8px;
+    font-family: 'Gotham Bold'
+  }
+  #shipping-banner h2 span{
+    font-size: 6px;
+    font-family: 'Gotham Medium'
+  }
+  #shop-banner h2{
+    font-size: 12px;
+  }
+  .category-list h2{
+    font-size: 14px;
+  }
+  .category-list ul li a{
+    font-size: 13px;
+    line-height: 200%;
+    margin-left: 3%;
+  }
+  .cat-rows{
+    justify-content: flex-start
+  }
+  .cat-rows .category{
+    display: none
+  }
+  .cat-rows .visible{
+    display: block;
+  }
+  .sub-category{
+    margin: 0
+  }
+  .sub-category a img{
+    width: 100%;
+    height: auto
+  }
+  .cat-rows .mobile-cat h2{
+    text-align: left;
+    font-size: 13px;
+    margin-top: 2%
+  }
+  .leftWrap{
+    display: inline
+  }
+  .leftWrap a img{
+    width: 40px;
+    height: auto
+  }
+  #extra-delta-logo{
+    position: relative;
+    left: 190%;
+    top: 5%;
+    width: 40px
+  }
+  #mobileNavBar{
+    height: 60px
+  }
+  .white-space{
+    height: 10px
+  }
+}
+@media only screen and (max-width: 424px){
+  #mobileNavBar{
+    height: 45px
+  }
+  .white-space{
+    height: 0
+  }
+  #extra-delta-logo{
+    position: relative;
+    left: 130%;
+    width: 40px
+  }
+}

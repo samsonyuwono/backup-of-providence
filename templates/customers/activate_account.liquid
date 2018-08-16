@@ -1,0 +1,18 @@
+{% layout settings.customer_layout %}
+
+{% assign has_sidebar = false %}
+{% assign has_crumbs = false %}
+{% assign page_title = 'customer_accounts.activate_account.title' %}
+
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+<div class="row">
+  <div class="large-4 columns large-centered">
+    {% include 'customer-account-activate' %}
+  </div>
+</div>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

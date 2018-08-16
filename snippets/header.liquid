@@ -1,0 +1,41 @@
+<!-- BEGIN #site-headaer -->
+<header id="site-header" class="show-for-medium-up">
+  <div class="row">
+    {% if template != 'index'%}
+    <div class="small-12 columns">
+      {%else%}
+    <div class="small-12 medium-12 columns">
+      {%endif%}
+      <div class="table">
+        <div id="branding-wrap" class="cell">
+          {% include 'branding' %}
+        </div>
+        <div id="nav-primary-wrap" class="cell">
+          {% include 'nav-primary' %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+<!-- /#site-header -->
+
+<style>
+header#site-header ul.right > li:nth-child(3) ul.dropdown{
+  /*display: none;*/
+}
+
+/*for the "Shop Products" link in header nav, hides all second level dropdowns*/
+#site-header li:nth-child(3) #level-2  .dropdown{
+  display: none;
+}
+
+/*makes "sale" red on homepage*/
+#site-header li.nav-item.last.alone a{
+  color: red !important;
+}
+/*makes "sale" red on homepage*/
+#site-header li.main:nth-child(3) .dropdown .last a{
+  color: red !important;
+}
+</style>

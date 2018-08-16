@@ -1,0 +1,32 @@
+    {% for item in search.results %}
+      {% include 'get-content-type' with item %}
+      {% if content_type == 'article' %}
+        {% assign icon = 'comment' %}
+      {% elsif content_type == 'page' %}
+        {% assign icon = 'file' %}
+      {% elsif content_type == 'product' %}
+        {% assign icon = 'shopping-cart' %}
+      {% endif %}
+      {% if content_type == 'page' || content_type == 'article' %} 
+        <li>
+          <div class="product card fixed-image-height">
+            <div class="image-wrap">
+              <div class="image">
+                {% if item.featured_image %}
+                 <a href="{{ item.url }}">{{ item.featured_image | product_img_url: 'medium' | img_tag: item.featured_image.alt }}</a>
+                 {% else %}
+                  <i class="fa fa-{{icon}}" rel="tooltip" title="{{content_type}}"></i>
+                {% endif %}
+              </div>
+            </div>
+            <div class="details">
+              <header>
+                <h2> 
+                  <span class="name">{{ item.title | link_to: item.url }}</span>
+                </h2>
+              </header>
+            </div>
+          </div>
+        </li>
+      {% endif %}  
+    {% endfor %}

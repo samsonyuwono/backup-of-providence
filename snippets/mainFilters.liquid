@@ -1,0 +1,21 @@
+<div id="MobileFilter" class="filter-parent-wrapper">
+<div class="mutliSelect" style="margin-top:10px">
+  <div class="mulitWrapper">
+    <div id="sortByTitle" class="selectTitle"><span id="spanSortTitle" class="filterTitle" style="margin-left: 2px;">All Filters</span></div>
+    <ul class="dropdownUl filterlist-wrapper">
+    {% include 'vendorFilters' %}
+    {% include 'typeFilters' %}
+    {% include 'featureFilters' %}  
+    {% include 'bracketFilter' %}  
+    </ul>
+  </div>
+</div>
+</div>
+
+<div id="nonMobileFilters" class="filterlist-wrapper filter-parent-wrapper">
+    <header id="filter-heading">Filters</header>
+    {% include 'vendorFilters' %}
+    {% include 'typeFilters' %}  
+    {% include 'featureFilters' %}  
+    {% include 'bracketFilter' %} 
+</div>

@@ -1,0 +1,94 @@
+<!-- Line item modal template -->
+<script type="text/template" id="modal-line-item-template">
+{% raw %}
+<div class="line-item" data-variant-id="{{id}}">
+  <div class="image">
+    <a class="title" href="{{url}}" title="View {{title}}">
+      <img src="{{image}}" alt="{{title}}" />
+    </a>
+  </div>
+  <div class="details">
+    <a class="title" href="{{url}}" title="View {{title}}">
+     {{title}}
+    </a>
+    <div class="variant">
+      {{variant}}
+    </div>
+    {{#properties.keyedProperties}}
+      <div class="line-item-property text-color-quiet">
+      {{property}}: <div class="value">{{{value}}}</div>
+      </div>
+    {{/properties.keyedProperties}}
+    <div class="description">
+      {{description}}
+    </div>
+    <div class="pricing">
+      <div class="amounts">
+        <span class="price">{{{price}}}</span>
+        <span>x</span>
+        <span class="quantity">{{quantity_added}}</span>
+      </div>
+      <div class="price line-price">{{{price_added}}}</div>
+    </div>
+  </div>
+</div>
+{% endraw %}
+</script>
+
+<!-- Cart widget line item modal template -->
+<script type="text/template" id="widget-cart-line-item-template">
+{% raw %}
+<div class="line-item" data-variant-id="{{id}}">
+  <a class="title" href="{{url}}" title="View {{title}}">
+    {{title}}
+  </a>
+  <div class="variant">
+    {{variant}}
+  </div>
+  {{#properties.keyedProperties}}
+    <div class="line-item-property text-color-quiet">
+    {{property}}: <div class="value">{{{value}}}</div>
+    </div>
+  {{/properties.keyedProperties}}
+  <div class="pricing">
+    <div class="amounts">
+      <span class="price">{{{price}}}</span>
+      <span>x</span>
+      <span class="quantity">{{quantity}}</span>
+    </div>
+    <div class="price line-price">{{{line_price}}}</div>
+  </div>
+</div>
+{% endraw %}
+</script>
+
+<!-- Shipping calculator response template -->
+<script type="text/template" id="shipping-calculator-response-template">
+  {% raw %}
+  <div class="{{status}}">
+  {{#message}}
+  <p class="message">{{message}}</p>
+  {{/message}}
+  {{#errors}}
+    {{#messages}}
+      <div class="error-item">{{attribute}} {{.}}</div>
+    {{/messages}}
+  {{/errors}}
+  {{#rates}}
+  <div class="rate">
+    <div class="name">{{name}}</div>
+    <div class="price">{{{price}}}</div>
+  </div>
+  {{/rates}}
+  </div>
+  {% endraw %}
+</script>
+
+<!-- Error modal template -->
+<script type="text/template" id="modal-error-template">
+  {% raw %}
+  <h2>{{message}}</h2>
+  <p>{{description}}</p>
+  <p class="text-color-quiet">{{status}}</p>
+  {% endraw %}
+</script>

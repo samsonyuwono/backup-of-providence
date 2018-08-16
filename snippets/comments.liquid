@@ -1,0 +1,5 @@
+<div id="comments" class="section">
+  {% for comment in article.comments %}
+    {% include 'comment' with comment %}
+  {% endfor %}
+</div>

@@ -1,0 +1,331 @@
+<!-- CSS for Bundle Link avengers (to be placed on product.liquid) -->
+<style>
+
+/*Global Styles*/
+@font-face{
+  font-family: 'Montserrat Bold';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Montserrat_Bold.otf');
+}
+@font-face{
+  font-family: 'Montserrat Black';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Montserrat_Black.otf');
+}
+
+.mont-bold{
+  font-family: 'Montserrat Bold';
+}
+.mont-black{
+  font-family: 'Montserrat Black';
+}
+.mont-regular{
+  font-family: 'Montserrat';
+}
+.dark-grey{
+  color: #333333 !important;
+}
+.white{
+  color: #ffffff;
+}
+
+/*Custom styling for product page template*/
+body.product .section.pricing{
+  margin-bottom: 0 !important;
+}
+  .body.section{
+  margin-top: -50px !important;
+}
+@media only screen and (min-width: 1290px){
+  .body.section{
+    margin-top: -15px !important;
+  }
+
+}
+
+/*avengers link styling*/
+
+#avengers-promo-container{
+  padding-left: .9375rem;
+  margin-top: -40px;
+}
+#avengers-ad-text{
+  font-size: 100%;
+}
+
+  .avengers-link-holder{
+    position: relative;
+    display: none;
+    width: 225px;
+    height: 80px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 1;
+    padding: 5px;
+    background-size: cover;
+  }
+  .avengers-link-holder:hover{
+    opacity: .7;
+  }
+
+  #both-buttons{
+    position: relative;
+  }
+  #avengers-form-button{
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 80px;
+    margin: 0px auto;
+    text-align: left;
+    line-height: 1;
+    padding: 5px;
+    top: 13px;
+    padding-top: 6px;
+    cursor: pointer;
+  }
+  #avengers-form-button:hover{
+    opacity: .7;
+  }
+  .avengers-link-holder img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100px;
+  }
+  #avengers-form-button img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 65px;
+  }
+
+  #avengers-link-text{
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    font-size: 85%;
+    line-height: 1.5;
+    margin-left: 5px;
+    height: 100%;
+  }
+    #avengers-link-text span{
+      display: block;
+    width: 75%;
+    left: 20%;
+    position: relative;
+    top: 12px;
+    text-align: right;
+    }
+    #avengers-form-text{
+      padding-right: 8px;
+      font-weight: 100;
+      line-height: 1.5;
+      font-size: 85%;
+      letter-spacing: .3;
+      margin-left: 10px;
+
+    }
+    #avengers-form-text .b-text{
+      display: block;
+    }
+
+  #avengers-link-or{
+    display: none;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4d4949 !important;
+    font-size: 110%;
+    position: relative;
+    top: -5px;
+}
+
+/*avengers Form styling*/
+  #avengers-form-container{
+    display: none;
+    position: relative;
+    width: 450px;
+  }
+  #avengers-form-container .supernova{
+    background-color: white !important;
+  }
+  .jotform-form .form-input{
+    width: 75% !important;
+  }
+  #hide-form-x-avengers{
+     display: none;
+  position: absolute;
+  left: 90%;
+  color: white;
+  top: 12px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .5;
+  text-align: center;
+  padding-right: .5px;
+  cursor: pointer;
+  line-height: 21px;
+  z-index: 2;
+
+  }
+
+
+  /*@media only screen and (min-width: 642px){*/
+    iframe#JotFormIFrame-80786164384163{
+      min-height: 540px;
+      width: 450px !important;
+    }
+
+/*}*/
+@media only screen and (max-width: 642px){
+  #avengers-form-container{
+    width: 370px !important;
+    left: 0;
+  }
+  iframe#JotFormIFrame-80786164384163{
+    width: 370px !important;
+  }
+  #hide-form-x-avengers{
+    left: 89%;
+    top: 13px;
+  }
+
+}
+
+
+
+  @media only screen and (max-width: 1290px){
+
+    .avengers-link-holder{
+/*       display: block; */
+      width: 225px;
+      text-align: center;
+      margin-left: 0;
+    }
+    #avengers-link-or {
+/*     display: block; */
+    text-align: center;
+    padding-left: 0;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 215px;
+    margin-top: 0;
+    left: 35px;
+    top: 2px;
+  }
+  #avengers-form-button{
+    padding: 5px;
+    top: 0;
+    padding-top: 6px;
+/*     left: 45px; */
+    left: 0;
+  }
+
+
+
+}
+@media only screen and (max-width: 1290px) and (min-width: 900px){
+#avengers-form-container{
+  margin-left: -50%;
+  width: 450px;
+
+}
+}
+@media only screen and (max-width: 900px) and (min-width: 642px){
+#avengers-form-container{
+  margin-left: -130%;
+  width: 450px;
+
+}
+}
+
+
+
+
+</style>
+
+<!-- HTML for bundle link avengers -->
+<div id="avengers-promo-container">
+  <h5 id="avengers-ad-text" class="mont-bold">This product will be back in May!</h5>
+  <div id="both-buttons">
+  <div class="avengers-link-holder">
+    <img src="//cdn.shopify.com/s/files/1/0578/7201/files/blue-button.jpg">
+    <a href="/products/dc-comics-justice-league-upholstered-twin-bed" id="avengers-link">
+      <div id="avengers-link-text" class="white">
+        <span class="mont-regular">Check out the<div class="mont-black" style="display:inline; letter-spacing: .7px;"> Justice</div></span>
+        <span class="mont-black" style="letter-spacing: .7px;">League</span>
+        <span  class="mont-black" style="letter-spacing: .7px;">Twin Bed</span>
+      </div>
+    </a>
+  </div>
+  <div id="avengers-link-or" class="gotham-black dark-grey">OR</div>
+  <div id="avengers-form-button">
+    <img src="//cdn.shopify.com/s/files/1/0578/7201/files/red-button.jpg">
+    <div id="avengers-form-text" class="white">
+      <span class="b-text mont-regular">Join our <span class="mont-black" style="letter-spacing: 1px;">waitlist</span> and</span>
+      <span class="b-text mont-regular">we'll notify you once</span>
+      <span class="b-text mont-regular">it's back in stock!</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="avengers-form-container">
+  <span id="hide-form-x-avengers">X</span>
+   <iframe id="JotFormIFrame-80786164384163" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" src="https://form.jotform.com/80786164384163" frameborder="0" style="width: 100%; min-height:540px; border:none; position: absolute; top: 0;" scrolling="no" > </iframe>
+
+</div>
+
+<!-- form script -->
+<script type="text/javascript">
+var ifr = document.getElementById("JotFormIFrame-80786164384163");
+if(window.location.href && window.location.href.indexOf("?") > -1) { var get = window.location.href.substr(window.location.href.indexOf("?") + 1);
+if(ifr && get.length > 0){ var src = ifr.src; src = src.indexOf("?") > -1 ? src + "&" + get : src + "?" + get; ifr.src = src; } }
+window.handleIFrameMessage = function(e) { var args = e.data.split(":");
+if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); }
+ else { iframe = document.getElementById("JotFormIFrame"); }
+ if (!iframe) { return; }
+ switch (args[0]) {
+   case "scrollIntoView": iframe.scrollIntoView(); break;
+   case "setHeight": iframe.style.height = args[1] + "px"; break;
+   case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break;
+   case "reloadPage": window.location.reload(); break; case "loadScript": var src = args[1]; if (args.length > 3) { src = args[1] + ':' + args[2]; }
+   var script = document.createElement('script');
+   script.src = src;
+   script.type = 'text/javascript';
+   document.body.appendChild(script); break;
+   case "exitFullscreen": if (window.document.exitFullscreen) window.document.exitFullscreen();
+   else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+   else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+   else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+   else if (window.document.msExitFullscreen) window.document.msExitFullscreen(); break; }
+   var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+   if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } };
+   if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); }
+   else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); }
+ </script>
+
+<script>
+$(window).on('load', function() {
+  showHideForm();
+
+
+
+  function showHideForm(){
+    $('#avengers-form-button, #hide-form-x-avengers').click(function(){
+      $('#avengers-form-container').toggle();
+      $('#hide-form-x-avengers').toggle();
+
+
+
+    });
+
+
+  }
+
+});
+</script>

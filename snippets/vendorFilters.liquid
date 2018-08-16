@@ -1,0 +1,99 @@
+{%if collection.handle == "cribs" or collection.handle == "changing-tables" or collection.handle == "strollers" or collection.handle == "mattresses" %}
+<div class="mutliSelect">
+  <div class="mulitWrapper">
+    <div class="selectTitle"><span class="filterTitle">Brand</span></div>
+    <ul class="dropdownUl">
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="vendorDelta">Delta Children</label>
+      </li>
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="vendorSimmons">Simmons Kids</label>
+      </li>
+      <li>
+      {%if collection.handle == "strollers"%}
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="vendorJeep">J is for Jeep® Brand</label>
+      {%else%}
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="vendorSerta">Serta</label>
+      {%endif%}
+      </li>
+    </ul>
+    </div>
+</div>
+{%endif%}
+
+
+
+{%if collection.handle == "toy-storage"%}
+<div class="mutliSelect">
+  <div class="mulitWrapper">
+ <div class="selectTitle"><span class="filterTitle">Type</span></div>
+     <ul class="dropdownUl">
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="ToyBox">Toy Box</label>
+      </li>
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="ToyOrg">Toy Organizer</label>
+      </li>
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="BookStorage">Book Storage</label>
+      </li>
+    </ul>
+  </div>
+</div>
+{%endif%}
+
+
+
+
+{%if collection.handle == "activity"%}
+<div class="mutliSelect">
+  <div class="mulitWrapper">
+ <div class="selectTitle"><span class="filterTitle">Type</span></div>
+ <ul class="dropdownUl">
+  <li>
+     <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="Desk">Desk</label>
+  </li>
+  <li>
+     <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="easel">Easel</label>
+  </li>
+</ul>
+  </div>
+</div>
+{%endif%}
+
+
+{%if collection.handle == "kids-seating"%}
+<div class="mutliSelect">
+   <div class="mulitWrapper">
+   <div class="selectTitle"><span class="filterTitle">Type</span></div>
+     <ul class="dropdownUl">
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="Chair">Chair</label>
+      </li>
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="Sofa">Sofa</label>
+      </li>
+      <li>
+         <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="Desk">Desk</label>
+      </li>
+    </ul>
+   </div>
+</div>
+{%endif%}
+
+
+{% if collection.handle == "table-chair-sets" %}
+<div class="mutliSelect">
+  <div class="mulitWrapper">
+   <div class="selectTitle"><span class="filterTitle">Type</span></div>
+   <ul class="dropdownUl">
+    <li>
+       <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="TableNChairSet">Table &amp; Chair Set</label>
+    </li>
+    <li>
+       <label class="filter-label"><input class="filterClick" data-id="Vendor" type="checkbox" value="ToddlerChair">Single Chair</label>
+    </li>
+  </ul>
+  </div>
+</div>
+{%endif%}

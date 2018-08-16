@@ -1,0 +1,60 @@
+  // Add custom JavsScript here
+  // --------------------------
+
+$(document).ready(function() {
+
+
+
+// if (document.cookie.indexOf("alert=true") == -1) {
+// 	$("#tip5").fancybox({
+// 		"overlayColor": "#808080",  // here you set the background black
+// 		"overlayOpacity": 1,  // here you set the transparency of background: 1
+// 		"hideOnOverlayClick": true,  // if true, closes fancybox when clicking OUTSIDE the box
+// 	 	"hideOnContentClick": true, // if true, closes fancybox when clicking INSIDE the box
+// 	 	"width": 750,
+// 		'titlePosition'     : 'inside',
+// 	    'transitionIn'      : 'none',
+// 	    'transitionOut'     : 'none',
+// 		'scrolling'		: 'no',
+// 		'titleShow'		: false,
+// 		'onClosed'		: function() {
+// 		    $("#login_error").hide();
+// 		}
+// 	});
+// 	// Set a cookie to indicate the alert has been displayed.
+// 	// Expiration time is 60 seconds * 60 minutes * 24 hours
+// 	document.cookie = "alert=true; max-age=" + 60 * 60 * 24;
+// }
+
+
+// setTimeout(function () {
+//         $( "#tip5" ).trigger( "click" );
+//     }, 1000); 
+
+$("#login_form").bind("submit", function() {
+
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	    $.fancybox.resize();
+	    return false;
+	}
+
+	$.fancybox.showActivity();
+
+	$.ajax({
+		type		: "POST",
+		cache	: false,
+		url		: "/data/login.php",
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			$.fancybox(data);
+		}
+	});
+
+	return false;
+});
+  
+
+
+});
+

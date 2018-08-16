@@ -1,0 +1,176 @@
+{{ 'social-mediaIcons.css' | asset_url | stylesheet_tag }}
+{% assign has_sidebar = true %}
+{% assign sidebar_side = 'left' %}
+{% assign has_crumbs = true %}
+{% include 'settings' %}
+{% include 'page-header' with product.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+<div class="social-icons-before">
+        {% if settings.product_display_sharing_google_plus? or settings.product_display_sharing_twitter? or settings.product_display_sharing_facebook? or settings.product_display_sharing_pinterest? %}
+        {% include 'share' with product %}
+        {% endif %}
+</div>
+<article class="hproduct product-{{product.id}} {{product.handle}} single">
+  <!-- EXTENDED WARRANTY PRODUCT product.ex_war-->
+  <div class="row">
+    <div class="medium-6 columns moveOver">
+      <div class="images">
+        {% include 'product-images' %}
+      </div>
+    </div>
+
+    <div class="medium-6 columns">
+      <div class="details">
+
+        {% if collection and settings.product_collection_nav_top? %}
+          {% include 'product-collection-nav' with 'top' %}
+        {% endif %}
+
+        {% if settings.product_display_vendor? %}
+        <div class="brand section">
+          {{ product.vendor }}
+          <!-- {{ product.vendor | link_to_vendor }} -->
+        </div>
+
+        {% endif %}
+
+
+
+        <div class="assembly-info">
+        </div>
+
+
+        {% if settings.product_variations_location == 'top' %}
+          {% include 'product-ex_war-variants' %}
+
+          {% include 'product-body' %}
+        {% else %}
+          {% include 'product-body' %}
+          {% include 'product-ex_war-variants' %}
+        {% endif %}
+        <div id="upc-div">
+          SKU: <span id="display_sku"></span><br>
+          UPC: <span id="display_upc"></span><br>
+        </div><br>
+
+        {% include 'product-footer' %}
+
+        {% if collection and settings.product_collection_nav_bottom? %}
+          {% include 'product-collection-nav' with 'bottom' %}
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+
+</article>
+
+<!-- Start Kudobuzz review form-->
+<div id="kudobuzz_reviews" data-domain="{{ shop.permanent_domain | escape }}" data-uid="44a4u2u223w2s274t274r233231463z2a4u2p2b423" data-name="{{ product.title | escape }}" data-product-id="{{ product.id }}" data-url="{{ page.url }}" data-handle="{{ product.handle }}" data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"> </div>
+<!-- End Kudobuzz review form -->
+
+
+{% include 'related-variants' %}
+
+
+
+{% if settings.product_display_related? %}
+{% if collection.products.size > 0 or product.collections.first.products.size > 0 %}
+  {% include 'product-related' %}
+{% endif %}
+{% endif %}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<style>
+ul.related-products{
+  padding-top: 0;
+}
+
+/*mm-edits as of 1/25*/
+.top-bar-section .right li:nth-of-type(3) ul {
+  display: none;
+}
+
+.widget-header h2 {
+  display: none;
+}
+
+header#site-header ul.right > li:nth-child(3) ul.dropdown{
+  /*display: none;*/
+}
+
+
+</style>
+
+
+<!--
+<style>
+ul#retailers {
+  display: inline-block !important;
+  margin: 0;
+  padding: 0;
+}
+ul#retailers li.item {
+  float: left !important;
+  width: 50%;
+}
+</style> -->
+
+
+
+<script>
+if($('p:last').find('img').length <= 0 ){
+    $('.assembly-info').append($('p:last'));
+}
+$('.noshow').remove();
+
+
+$(function() {
+
+
+// if (window.location.href.indexOf('turbo-race-car-twin-bed') > -1){
+//   $('.pricing.section label').append("<h2 class='old_price'><strike>$250.00</strike></h2>");
+//   $("span.price").css("color", "red");
+//   $(".pricing.section label").css("margin-bottom", "-20px");
+//   $(".pricing.section label").css("padding-top", "15px");
+//   };
+//
+//   if (window.location.href.indexOf('turbo-race-car-twin-bed-pink') > -1){
+//     $(".pricing.section label").css("margin-bottom", "0px");
+//     $(".pricing.section label").css("padding-top", "0px");
+//     $("span.price").css("color", "#4e4949");
+//     $(".old_price").css("display", "none");
+//   };
+
+  if (window.location.href.indexOf('discontinued') > -1){
+    $('.pricing.section').css("display", "none");
+  };
+});
+
+if ( $(window).width() > 768) {
+
+// mm-edits as of 1/25
+    var $shopProd_mainMenu_a = $('.top-bar-section > .right > li:nth-of-type(3) > a');
+    var $shopProd_mainMenu_ul = $('.top-bar-section > .right > li:nth-of-type(3) > ul');
+
+    $shopProd_mainMenu_a.hover(function() {
+      $shopProd_mainMenu_ul.css('display', 'none')
+    });
+
+    // display 3rd level dropdown in left-nav when on collection page
+    $('ul').has('li.active').each(function() {
+     this.style.setProperty('display', 'block', 'important')
+   });
+
+
+    //  hide 2nd level list not active
+   var $liParentList = $('li.active').parent().parent().parent().parent().siblings();
+   console.log($liParentList);
+   $liParentList.css('display', 'none');
+
+};
+</script>

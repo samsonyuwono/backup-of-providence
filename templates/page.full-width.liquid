@@ -1,0 +1,402 @@
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{% if page.handle == "our-story" %}
+  <style>
+    .fluid-width-video-wrapper{
+      width: 80%;
+      margin-bottom: -80px;
+    }
+    </style>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/fAHijUD6-hw?autoplay=1" frameborder="0" allowfullscreen style="height: 80%;"></iframe>
+{%endif%}
+
+{% if page.handle == "bundles" %}
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+{%include 'bundle-landing'%}
+{%endif%}
+
+
+  {% if page.handle == 'characters' %}
+  {% include 'characters' %}
+  {% endif %}
+
+{% if page.handle == "recall" %}
+{% include 'recall-landing' %}
+{% else %}
+{{ page.content }}
+{%endif%}
+
+{%if page.handle == "help-center" %}
+{% include 'help-center' %}
+{%endif%}
+
+{%if page.handle == "about-us-1" %}
+{% include 'about-us-landing' %}
+{%endif%}
+
+{% if page.handle == "parent-center"%}
+{% include 'parent-center'%}
+{%endif%}
+
+{% if page.handle == 'major-league-baseball' %}
+{% include 'mlb-landing' %}
+{% endif %}
+
+
+{%if page.handle == 'simmons-kids'%}
+  {%include 'simmons-kids'%}
+{%endif%}
+{%if page.handle == 'simmons-kids-conversions-accessories'%}
+  {%include 'simmons-conversions-accessories'%}
+{%endif%}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+
+{% if page.handle == "product-registration" %}
+
+<style>
+div#nav-primary-wrap.cell{
+  display: none;
+}
+
+/*fix for iframe*/
+
+@media screen and (max-width: 640px){
+.jotform iframe{
+  overflow: auto !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+.jotform{
+  overflow: auto !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+}
+
+</style>
+<script>
+  //hides privy pop-up from displaying if on "product-registration" page
+$("div.privy.privy-popup-container").ready(function(){
+  $("div.privy.privy-popup-container").hide();
+  console.log("pop-up hidden");
+});
+
+setTimeout(function(){
+  if($("div.privy.privy-popup-container").is(":visible")){
+      $("div.privy.privy-popup-container").hide();
+    };
+  console.log("i want to hide pop-up after 1sec");
+}, 1000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 5sec");
+}, 2000);
+
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 10sec");
+},3000);
+
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 15sec");
+}, 4000);
+
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 5000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 6000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 7000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 8000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 9000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 10000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 11000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 12000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 13000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 14000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 15000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 30sec");
+}, 16000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 40sec");
+}, 17000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 18000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 19000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 20000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 21000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 22000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 23000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 24000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 25000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 26000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 27000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 28000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 29000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 30000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 31000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 32000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 33000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 34000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 35000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 36000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 37000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 38000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 39000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 40000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 41000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 42000);
+
+setTimeout(function(){
+if($("div.privy.privy-popup-container").is(":visible")){
+    $("div.privy.privy-popup-container").hide();
+  };
+console.log("i want to hide pop-up after 20sec");
+}, 43000);
+
+
+
+
+
+</script>
+
+{%endif%}

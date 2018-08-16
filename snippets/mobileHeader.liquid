@@ -1,0 +1,93 @@
+{% if template !='index' %}
+<style>
+  #mobileCartIcon,
+  .searchIcon i,
+  #mobileHeaderMenuText{
+    color:white!important;
+  }
+
+  .menu-icon > span,
+  .menu-icon > span:before, .menu-icon > span:after{
+    background-color:white!important;
+  }
+
+#mobileNavBar{
+  background-color: #112e53!important
+}
+</style>
+{% endif %}
+
+<!-- BEGIN # MOBILE site-headaer -->
+<header id="site-header-mobile" class="show-for-small-only siteHeaderMobile">
+  <div class="row">
+    <div class="small-12 columns" id="mobileNavBar">
+        <div id="mobileMenuWrapper">
+          <div class="leftWrap">
+            <div class="menu-icon pushy-link toggle-nav-mobile">
+              <span></span>
+            </div>
+            <span id="mobileHeaderMenuText" class="toggle-nav-mobile">Menu</span>
+          </div>
+          <div class="rightWrap">
+            <div id="search-wrap">
+                <form name="search" action="/search" novalidate="">
+                  <span class="searchIcon" id="searchIconMain">
+                    <i class="fa fa-search"></i>
+                  </span>
+                </form>
+              </div>
+            <div id="cart-wrap">
+              <span class="cart inline toggle-cart-mobile " id="cart-icon-count">
+                      <i class="fa fa-shopping-cart header-utilites-color" id="mobileCartIcon"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        {% if template == 'index' %}
+        <div id="sectionOneHeader" class="fadeInDown">
+	        <span id="customerAlert">Returning customer?</span>
+	        <span class="closeAlertText" id="closeAlert">X</span>
+	        <span class="closeAlertText"> Click <a href="/pages/help-center" id="clickHereAlertMobile">here</a> for help</span>
+   	    </div>
+        {% endif %}
+      </div>
+  </div>
+   <div id="branding-wrap-mobile">
+              {% include 'branding' %}
+    </div>
+</header>
+<!-- /# MOBILE site-header -->
+
+<script>
+$( window ).bind( 'load', function(){
+$('header#site-header-mobile').show();
+});
+
+// Adjustments to mobile cart 12/6/2016
+$("span#cart-icon-count.cart.inline.toggle-cart-mobile").click(function(){
+  $('body#baby-gear.page.scotchified').css("position", "fixed");
+  console.log("scotified overflow");
+});
+$("span#toggle-cart-mobile-close").click(function(){
+  $('body#baby-gear.page.scotchified').css("position", "relative");
+  console.log("scotified hidden");
+});
+
+$("div#site-overlay").click(function(){
+  $('body#baby-gear.page.scotchified').css("position", "relative");
+  console.log("scotified hidden");
+});
+
+// Adjustments to mobile Navigation 12/6/2016
+// $("div.menu-icon.pushy-link.toggle-nav-mobile").click(function(){
+//   $('body#baby-gear.page.scotchified').css("overflow-y", "hidden");
+//   console.log("scotified overflow");
+// });
+// $("span.toggle-menu-mobile-close.pushy-link").click(function(){
+//   $('body#baby-gear.page.scotchified').css("overflow-y", "visible");
+//   console.log("scotified hidden");
+// });
+
+
+
+</script>

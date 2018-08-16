@@ -1,0 +1,946 @@
+<style>
+
+  /*For pop-up app*/
+.tabarnapp__title{
+  display: none !important;
+}
+.tabarnapp__big_container{
+  visibility: hidden;
+}
+.tabarnapp__description{
+  white-space: normal;
+}
+  .ns-effect-bouncyflip.ns-show, .ns-effect-bouncyflip.ns-hide{
+  animation-delay: 0s !important;
+}
+  .tabarnapp__call_to_action button{
+    width: 30% !important;
+
+  }
+@media only screen and (min-width: 1250px){
+  .ns-box{
+    max-width: 60%;
+    width: 60%;
+    left: 20%;
+    height: 75%;
+    top: 15%;
+    overflow: scroll;
+    }
+    .tabarnapp__bundle_title{
+      font-size: 200% !important;
+    }
+}
+@media only screen and (max-width: 1250px){
+  .ns-box{
+    max-width: 80%;
+    width: 80%;
+    left: 10%;
+    height: 70%;
+    top: 15%;
+    overflow: scroll;
+  }
+  .tabarnapp__bundle_title{
+    font-size: 200% !important;
+  }
+
+}
+@media only screen and (max-width: 642px){
+
+  .tabarnapp__col{
+    max-width: max-content !important;
+    width: 49% !important;
+  }
+  .tabarnapp__bundle_title{
+    font-size: 150% !important;
+  }
+
+}
+.cover{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: grey;
+  z-index: 8;
+  display: none;
+  opacity: .9;
+}
+.form{
+  display:none;
+}
+.form-wrapper{
+  margin:0;
+  padding:0;
+  text-align: center;
+  position: fixed;
+  top: 10%;
+  z-index: 9;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+div.form{
+  /*padding-top: 10px;
+  padding-left: 5%;
+  padding-right: 5%;*/
+  /*top: 10%;*/
+  z-index: 10;
+  width: 80%;
+  max-height: 700px;
+  /*left: 10%;*/
+  /*position: fixed;*/
+  /*display: inline-block;*/
+  text-align: left;
+  background-color: #F1F1F1;
+  /*border-radius: 5px;*/
+  overflow-y: scroll;
+  max-width: 700px;
+}
+.form .row{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.banner-holder{
+  padding: 0 !important;
+  position: relative;
+}
+div.form::-webkit-scrollbar {
+    display: none;
+}
+div.form label{
+  color: #8dabdd!important;
+}
+div.form input{
+border-radius: 0;
+}
+h3.ew{
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+  color: #8dabdd;
+}
+@font-face{
+  font-family: 'Chalkduster';
+  src:url('/assets/chalkduster.ttf') format('truetype');
+}
+h3.ew{
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+  color: #4d4d4d;
+}
+label{
+  color: white !important;
+}
+
+.bullets{
+  text-align: center;
+}
+.bullet{
+  text-align: left;
+  position: relative;
+  left: 10%;
+}
+div.row.title h1{
+  text-align: center;
+  font-family: 'Chalkduster';
+  color: #F97CA0 !important;
+  font-size: 450%;
+  margin: 0;
+}
+h4.copy-bullet{
+  display: inline-block;
+  font-size: 200%;
+  color: #173D6F !important;
+}
+img.num-bullet{
+  width: 4%;
+}
+.menu{
+  text-align: center;
+}
+.info-holder{
+  display: none;
+}
+.x{
+  text-align:right;
+}
+a.info-link{
+  text-decoration: underline;
+}
+button.ew-buy{
+  border-radius: 0;
+}
+img.pop-up-x{
+  width: 3%;
+  position: absolute;
+  right: 0;
+}
+label.check-text{
+  /*width: 70%;*/
+  margin-left: 0 !important;
+  color: #aea8a8 !important;
+}
+.exinfo{
+  display: none;
+}
+input#t-and-c{
+  position: relative;
+  display: inline-block;
+  bottom: 22px;
+}
+label.tc{
+  width: 80%;
+}
+#ex-war-states-text{
+  display: none;
+  color: red !important;
+}
+
+/*for state validation pop-up*/
+.state-validation-pop-up{
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  z-index: 6;
+  border-radius: 10px;
+  background-color: white;
+}
+#background-overlay{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: black;
+  opacity: .7;
+  text-align: center;
+}
+
+#state-label{
+  color: #8dabdd !important;
+}
+
+
+
+@media only screen and (max-width: 1250px){
+  div.row.title h1{
+    font-size: 350%;
+  }
+  .bullet{
+    padding-bottom: 10px;
+  }
+  h4.copy-bullet{
+    font-size: 180%;
+    width: 80%;
+    margin: 0;
+  }
+  img.num-bullet{
+    vertical-align: top;
+    width: 6%;
+}
+label.check-text{
+  width: 70%;
+  margin-left: 0 !important;
+}
+input.ex-war-check{
+  position: relative;
+  vertical-align: top;
+  top: 4px;
+}
+
+}
+@media only screen and (max-width: 667px){
+  div.row.title h1{
+    font-size: 250%;
+  }
+  img.num-bullet{
+    width: 6%;
+  }
+  h4.copy-bullet{
+    font-size: 120%;
+    width: 80%;
+  }
+  div.form{
+    max-height: 500px;
+  }
+  img.pop-up-x{
+    width: 5%;
+    position: absolute;
+    right: 0;
+  }
+  label.check-text{
+    width: 70%;
+  margin-left: 0 !important;
+  }
+  input.ex-war-check{
+    position: relative;
+    vertical-align: top;
+    top: 4px;
+  }
+  .state-validation-pop-up{
+   left: 10%;
+    width: 80%;
+    height:	60%;
+    top: 20%;
+
+  }
+
+}
+</style>
+
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+{% assign page_title = 'cart.title' | t %}
+
+{% include 'settings' %}
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{% if cart.items == empty %}
+  <p class="empty">{{ 'cart.empty_html' | t }}</p>
+{% else %}
+
+<form id="cartform" action="/cart" method="post">
+
+  {% include 'line-items-cart' %}
+
+  <div class="row">
+    <div class="small-12 medium-12 large-12 columns">
+      <h6 id="ex-war-states-text">Extended Warranty only available in the following States: Arkansas, Colorado, Delaware, District of Columbia, Georgia, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maryland, Michigan, Mississippi, Missouri, Nebraska, Nevada, New Hampshire, New York, North Carolina, North Dakota, Pennsylvania, Rhode Island, South Dakota, Tennessee, Utah, West Virginia</h6>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-7 columns">
+
+      <div class="row">
+<!--         used to include "shipping-calculator"
+ -->
+        <!--
+        <div class="large-5 columns">
+           if settings.cart_display_note?
+            include 'order-note'
+           endif
+        </div>
+		-->
+
+      </div>
+    </div>
+
+    <div class="large-5 columns">
+      <div class="checkout-actions">
+        <h2>
+          <span class="price-prefix">{{ 'cart.subtotal' | t }}</span>
+          <span class="currency text-color-quiet">{{ shop.currency }}</span>
+          <span class="price"><span id="bk-cart-subtotal-price">{{ cart.total_price | money }}</span></span>
+        </h2>
+        <div class="no_PO_Box">
+          <h6>Please note: We cannot accept PO Box <br>addresses for shipments at this time.</h6>
+        </div>
+
+        <div class="form-actions" style="display:-webkit-inline-box;">
+          <input type="submit" class="button secondary large" id="update-cart" name="update" value="{{ 'cart.update' | t }}" />
+          <input type="submit" class="button large" name="checkout" value="{{ 'cart.checkout' | t }}"/>
+        </div>
+
+        {% if additional_checkout_buttons %}
+          <div class="additional-checkout-actions">
+            {{ content_for_additional_checkout_buttons }}
+          </div>
+        {% endif %}
+
+        <div class="continue-shopping">
+          <a href="/collections/all" data-history-back>{{ 'cart.continue_shopping' | t }}</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</form>
+{% if settings.cart_page_content != '' %}
+<div class="additional-content">
+{{ pages[settings.cart_page_content].content }}
+</div>
+{% endif %}
+{% endif %}
+
+<!-- ****** Extended Warranty section ****** -->
+<!-- ****** Extended Warranty section ****** -->
+<div class= "cover"></div>
+<!-- makes form for extended warranty, form is invariably staying hidden, so "buy" button and line-item info can still be exposed   -->
+  {% for product in collections.extended-warranty-1.products %}
+  <div class="form" id="{{product.handle}}">
+    <div class="row banner-holder">
+      <img class="pop-up-x" src="//cdn.shopify.com/s/files/1/0911/1270/files/close.png">
+      {% if product.handle == "toddler-furniture-extended-warranty"%}
+      <img id="tfbanner" class="popup-banner" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-banner-toddler.svg">
+      {%endif%}
+      {% if product.handle == "cribs-and-dressers-extended-warranty"%}
+      <img id="nfbanner" class="popup-banner" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-banner-nursery.svg">
+      {%endif%}
+      {% if product.handle == "bassinets-extended-warranty-1"%}
+      <img id="bbanner" class="popup-banner" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-banner-bassinet.svg">
+      {%endif%}
+      {% if product.handle == "strollers-extended-warranty"%}
+      <img id="sbanner" class="popup-banner" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-banner-stroller.svg">
+      {%endif%}
+    </div>
+    <form action="/cart/add" method="post" id="add-to-cart" class="custom" enctype="multipart/form-data">
+<!-- see product variants ex war for what to put here -->
+    <div class="hidden">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <input type="hidden" name="quantity" value="1">
+    </div>
+
+
+
+     <!-- if liquid statement product.handle equals nursery furniture to allow for brand dropdown -->
+    <!-- <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <label>Brand</label><br>
+          <select required class="required" id="brand" name="properties[Brand]">
+            <option value="Delta Children">Delta Children</option>
+            <option value="Simmons">Simmons Kids</option>
+            <option value="Serta">Serta</option>
+          </select>
+      </div>
+    </div> -->
+    {%if product.handle == "cribs-and-dressers-extended-warranty"%}
+    <div class="row correct-variant">
+      <!-- Variant select -->
+        <div class="small-12 medium-6 large-6 columns">
+          <label class="placeholder" for="product-select" "brand">Brand:</label>
+          <select id="product-select" "brand" name='id' 'properties[Brand]' option-selector>
+            {% for variant in product.variants %}
+              <option id="{{ variant.id }}" data-metafield="{{ metafield_data }}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }}</option>
+              <!-- <h4 style="display: inline-block" class="variant_price">{{variant.price}}</h4> -->
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      {%else%}
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <label for="brand">Brand:</label>
+        <input required type="text" id="brand" name="properties[Brand]">
+      </div>
+    </div>
+    {%endif%}
+
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <h6 style="color:#8dabdd; font-weight: 700;">Product Information*</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <label for="style_num">Style #:</label>
+        <input required type="text" id="style_num" name="properties[Style #]">
+      </div>
+      <div class="small-12 medium-6 large-6 columns">
+        <label for="style_name">Style Name:</label>
+        <input required type="text" id="style_name" name="properties[Style Name]">
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <label for="date_code">Date Code:</label>
+        <input required type="text" id="date_code" name="properties[Date Code]">
+      </div>
+      <div class="small-12 medium-6 large-6 columns">
+        <label for="lot_code">Lot Code:</label>
+        <input required type="text" id="lot_code" name="properties[Lot Code]">
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+      <a class ="info-link">*Where Do I Find This Information?</a>
+    </div>
+
+    <div>
+    <label for="contract_id">Contract ID:</label>
+    <input type="text" id="contract_id" name="properties[Contract ID]">
+    </div>
+
+    </div>
+    <div class="info-holder columns">
+      <div class="row x"><strong>X</strong></div>
+      <div class="row info-spot">
+        {% if product.handle == "toddler-furniture-extended-warranty"%}
+        <img id="tfinfo" class="popup-info" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-info-image-toddler.svg">
+          {%endif%}
+        {% if product.handle == "cribs-and-dressers-extended-warranty"%}
+        <img id="nfinfo" class="popup-info" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-info-image-nursery.svg">
+        {%endif%}
+        {% if product.handle == "bassinets-extended-warranty-1" or product.handle == "strollers-extended-warranty"%}
+        <img id="sbinfo" class="popup-info" src="//cdn.shopify.com/s/files/1/0911/1270/files/extended-warranty-page-pop-up-info-image-baby-gear.svg">
+        {%endif%}
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+    <div class="form-actions">
+      <button type="submit" name="add" class="add-to-cart button large ew-buy">{{ 'products.add_to_cart' | t }}</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+  {%endfor%}
+  <!-- *****end extended warranty section***** -->
+
+
+<div class="state-validation-pop-up">
+  <div class="row">
+    <div class="small-12 medium-12 large-12 columns">
+      <label id="state-label"><h3>State:</h3></label><span style="color: #8dabdd;">*Please note that extended warranties are currently only available to residents of the states listed below.</span>
+      {%include 'state-dropdown' %}
+    </div>
+    <div class="small-12 medium-12 large-12 columns">
+    <button id="submit-state" class="button large">Submit</button>
+    <button id="no-state" class="button large">Continue Without Extended Warranty</button>
+  </div>
+  </div>
+</div>
+<div id="background-overlay"></div>
+
+
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+
+<script>
+
+console.log('cart.liquid');
+
+//hides text content for bundle products
+$('span.product__description__property.order-summary__small-text:contains("Bundle")').hide();
+
+
+$('input#strollers-check').hide();
+$('input#bassinets-check').hide();
+$('input#nursery-check').hide();
+$('input#gliders-check').hide();
+$('input#toddler-check').hide();
+$('#background-overlay').appendTo('#container');
+$('.state-validation-pop-up').appendTo('#container');
+
+// hides extended warranty checkbox if an extended warranty of the same product type has been added to car dh edit 4/5/17
+// $( window ).on( "load", function() {
+$(function() {
+
+  strollersCheckState();
+  bassinetsCheckState();
+  nurseryCheckState();
+  gliderCheckState();
+  toddlerCheckState();
+
+
+  function strollersCheckState(){
+      $('#strollers-state-check').click(function(){
+        if ($(this).is(':checked')) {
+        $('#background-overlay').show();
+        $('.state-validation-pop-up').show();
+        $('#submit-state').click(function(){
+          $('#background-overlay').hide();
+          $('.state-validation-pop-up').hide();
+          $('#strollers-state-check').hide();
+          $('input#strollers-check').show();
+          // click on checkbox that submites line-item properties with extended warranty to cart
+//           $('input#strollers-check').click();
+          $('#strollers-state-check:checked').next('#strollers-check').click();
+        });
+      };
+      $('#no-state').click(function(){
+        $('#background-overlay').hide();
+        $('.state-validation-pop-up').hide();
+        $('#strollers-state-check').click();
+      });
+    });
+  };
+  function bassinetsCheckState(){
+      $('#bassinets-state-check').click(function(){
+        if ($(this).is(':checked')) {
+        $('#background-overlay').show();
+        $('.state-validation-pop-up').show();
+        $('#submit-state').click(function(){
+          $('#background-overlay').hide();
+          $('.state-validation-pop-up').hide();
+          $('#bassinets-state-check').hide();
+          $('input#bassinets-check').show();
+          // click on checkbox that submites line-item properties with extended warranty to cart
+          // $('input#bassinets-check').click();
+          $('#bassinets-state-check:checked').next('#bassinets-check').click();
+
+        });
+      };
+      $('#no-state').click(function(){
+        $('#background-overlay').hide();
+        $('.state-validation-pop-up').hide();
+        $('#bassinets-state-check').click();
+
+      });
+    });
+  };
+  function nurseryCheckState(){
+      $('.nursery-state-check').click(function(){
+        if ($(this).is(':checked')) {
+          console.log("nursery/dressers state check clicked!");
+
+        $('#background-overlay').show();
+        $('.state-validation-pop-up').show();
+        $('#submit-state').click(function(){
+          $('#background-overlay').hide();
+          $('.state-validation-pop-up').hide();
+          $('.nursery-state-check').hide();
+          $('input#nursery-check').show();
+          // click on checkbox that submites line-item properties with extended warranty to cart
+          $('.nursery-state-check:checked').next('#nursery-check').click();
+          // $('input#nursery-check').click();
+        });
+      };
+      $('#no-state').click(function(){
+        $('#background-overlay').hide();
+        $('.state-validation-pop-up').hide();
+        $('#nursery-state-check').click();
+      });
+    });
+  };
+  function toddlerCheckState(){
+      $('#toddler-state-check').click(function(){
+        if ($(this).is(':checked')) {
+        $('#background-overlay').show();
+        $('.state-validation-pop-up').show();
+        $('#submit-state').click(function(){
+          $('#background-overlay').hide();
+          $('.state-validation-pop-up').hide();
+          $('#toddler-state-check').hide();
+          $('input#toddler-check').show();
+          // click on checkbox that submites line-item properties with extended warranty to cart
+          // $('input#toddler-check').click();
+          $('#toddler-state-check:checked').next('#toddler-check').click();
+
+        });
+      };
+      $('#no-state').click(function(){
+        $('#background-overlay').hide();
+        $('.state-validation-pop-up').hide();
+        $('#toddler-state-check').click();
+      });
+    });
+  };
+  function gliderCheckState(){
+      $('#gliders-state-check').click(function(){
+        console.log("glider state check clicked!");
+
+        if ($(this).is(':checked')) {
+        $('#background-overlay').show();
+        $('.state-validation-pop-up').show();
+        $('#submit-state').click(function(){
+          $('#background-overlay').hide();
+          $('.state-validation-pop-up').hide();
+          $('#gliders-state-check').hide();
+          $('input#gliders-check').show();
+          // click on checkbox that submites line-item properties with extended warranty to cart
+          // $('input#gliders-check').click();
+          $('#gliders-state-check:checked').next('#gliders-check').click();
+
+        });
+      };
+      $('#no-state').click(function(){
+        $('#background-overlay').hide();
+        $('.state-validation-pop-up').hide();
+        $('#gliders-state-check').click();
+      });
+    });
+  };
+
+
+//hides purchase extended warranty checkbox if extended warranty for that particular item is already in cartform
+exWarInCart();
+function exWarInCart(){
+  skuNum = 0;
+  $('.nfsku, .gsku, .bsku, .ssku, .tfsku').each(function(){
+    skuNum = $(this).text();
+    if($(".info-item:contains('"+skuNum+"')").length > 0){
+      hideExOffer = $('#' + skuNum);
+      hideExOffer.hide();
+
+      //inserts specific extended warranty below it's related product
+      $(".info-item:contains('"+skuNum+"')").closest('.line-item').insertAfter($(this).closest('.line-item'));
+
+    }
+
+  });
+}
+
+  if($("a.title:contains('Cribs and Dressers Extended Warranty')").length > 0 ){
+    $("a.title:contains('Cribs and Dressers Extended Warranty')").next().hide();
+    $("a.title:contains('Cribs and Dressers Extended Warranty')").next().next().hide();
+    $("a.title:contains('Cribs and Dressers Extended Warranty')").click(function(e){
+      e.preventDefault();
+    });
+
+
+    // $('p.crib').hide();
+  }
+
+
+
+
+  if($("a.title:contains('Toddler Furniture Extended Warranty')").length > 0 ){
+    $("a.title:contains('Toddler Furniture Extended Warranty')").next().hide();
+    $("a.title:contains('Toddler Furniture Extended Warranty')").next().next().hide();
+    $("a.title:contains('Toddler Furniture Extended Warranty')").click(function(e){
+      e.preventDefault();
+    });
+    // $('p.toddler_bed').hide();
+  }
+  if($("a.title:contains('Bassinets Extended Warranty')").length > 0 ){
+    $("a.title:contains('Bassinets Extended Warranty')").next().hide();
+    $("a.title:contains('Bassinets Extended Warranty')").next().next().hide();
+    $("a.title:contains('Bassinets Extended Warranty')").click(function(e){
+      e.preventDefault();
+    });
+    // $('p.bassinet').hide();
+  }
+  if($("a.title:contains('Strollers Extended Warranty')").length > 0 ){
+    $("a.title:contains('Strollers Extended Warranty')").next().hide();
+    $("a.title:contains('Strollers Extended Warranty')").next().next().hide();
+    $("a.title:contains('Strollers Extended Warranty')").click(function(e){
+      e.preventDefault();
+    });
+    // $('p.stroller').hide();
+  }
+  if($("a.title:contains('Gliders Extended Warranty')").length > 0 ){
+    $("a.title:contains('Gliders Extended Warranty')").next().hide();
+    $("a.title:contains('Gliders Extended Warranty')").next().next().hide();
+    $("a.title:contains('Gliders Extended Warranty')").click(function(e){
+      e.preventDefault();
+    });
+    // $('p.glider').hide();
+  }
+
+  // hides contract ID from customer on "cart" page dh-edit - 6/9/17
+  $("div.ex-info-holder").children('span:contains("Contract")').css('visibility', 'hidden');
+
+ });
+
+ // hides terms and conditions checkbox if extedned warranty was added from pages/extended-warranty
+ $('span.ex_values:contains("Accepts")').parentsUntil('.line-item').next().hide();
+ $('div.quant').show();
+
+ // this adds required to terms and conditions checkbox if visible
+ $('div#accept-from-cart input#t-and-c:visible').attr('required', true);
+
+
+// if there are two different extened warratny applicable products in cart, hide second checkbox that shows up
+$('div.variant p:nth-child(2)').hide();
+
+// function instances for adding extedned warranty info as line-item properties
+addSkuTitleNf();
+addSkuTitleTf();
+addSkuTitleS();
+addSkuTitleB();
+addSkuTitleG();
+
+// add brand, variant sku, and product title to extended warranty form and add to cart dh-edit 4/25/17
+// CRIBS AND DRESSERS FUNCTION
+function addSkuTitleNf(){
+$('#nursery-check.ex-war-check').click(function(){
+$('div#cribs-and-dressers-extended-warranty.form input#brand').val($('div#cribs-and-dressers-extended-warranty.form input#brand').val() + $(this).parent().next().text());
+$('div#cribs-and-dressers-extended-warranty.form input#style_num').val($('div#cribs-and-dressers-extended-warranty.form input#style_num').val() + $(this).parent().next().next().text());
+$('div#cribs-and-dressers-extended-warranty.form input#style_name').val($('div#cribs-and-dressers-extended-warranty.form input#style_name').val() + $(this).parent().next().next().next().text());
+
+// add contract # as line-item property and specify the brand by passing parameter into createNumber();
+if($(this).parent().next().is(':contains("Simmons Kids")')){
+  $('div#cribs-and-dressers-extended-warranty.form input#contract_id').val($('div#cribs-and-dressers-extended-warranty.form input#contract_id').val() + createNumber("SIM#"));
+  $('div#cribs-and-dressers-extended-warranty.form select#product-select').val('43065016014')
+}
+if($(this).parent().next().is(':contains("Serta")')){
+  $('div#cribs-and-dressers-extended-warranty.form input#contract_id').val($('div#cribs-and-dressers-extended-warranty.form input#contract_id').val() + createNumber("SER#"));
+}
+if($(this).parent().next().is(':contains("Delta Children")')){
+  $('div#cribs-and-dressers-extended-warranty.form input#contract_id').val($('div#cribs-and-dressers-extended-warranty.form input#contract_id').val() + createNumber("DEL#"));
+  $('div#cribs-and-dressers-extended-warranty.form select#product-select').val('43065016078');
+}
+
+$('div#cribs-and-dressers-extended-warranty.form button.ew-buy').click();
+goToCart();
+});
+};
+
+// add brand, variant sku, and product title to extended warranty form and add to cart dh-edit 4/25/17
+function addSkuTitleTf(){
+  $('#toddler-check.ex-war-check').click(function(){
+
+
+    $('div#toddler-furniture-extended-warranty.form input#brand').val($('div#toddler-furniture-extended-warranty.form input#brand').val() + $(this).parent().next().text());
+    $('div#toddler-furniture-extended-warranty.form input#style_num').val($('div#toddler-furniture-extended-warranty.form input#style_num').val() + $(this).parent().next().next().text());
+    $('div#toddler-furniture-extended-warranty.form input#style_name').val($('div#toddler-furniture-extended-warranty.form input#style_name').val() + $(this).parent().next().next().next().text());
+
+    // add contract # as line-item property and specify the brand by passing parameter into createNumber();
+    if($(this).parent().next().is(':contains("Simmons Kids")')){
+      $('div#toddler-furniture-extended-warranty.form input#contract_id').val($('div#toddler-furniture-extended-warranty.form input#contract_id').val() + createNumber("SIM#"));
+    }
+    if($(this).parent().next().is(':contains("Serta")')){
+      $('div#toddler-furniture-extended-warranty.form input#contract_id').val($('div#toddler-furniture-extended-warranty.form input#contract_id').val() + createNumber("SER#"));
+    }
+    if($(this).parent().next().is(':contains("Delta Children")')){
+      $('div#toddler-furniture-extended-warranty.form input#contract_id').val($('div#toddler-furniture-extended-warranty.form input#contract_id').val() + createNumber("DEL#"));
+    }
+    $('div#toddler-furniture-extended-warranty.form button.ew-buy').click();
+    goToCart();
+
+});
+};
+// add brand, variant sku, and product title to extended warranty form and add to cart dh-edit 4/25/17
+function addSkuTitleS(){
+$('#strollers-check.ex-war-check').click(function(){
+$('div#strollers-extended-warranty.form input#brand').val($('div#strollers-extended-warranty.form input#brand').val() + $(this).parent().next().text());
+$('div#strollers-extended-warranty.form input#style_num').val($('div#strollers-extended-warranty.form input#style_num').val() + $(this).parent().next().next().text());
+$('div#strollers-extended-warranty.form input#style_name').val($('div#strollers-extended-warranty.form input#style_name').val() + $(this).parent().next().next().next().text());
+
+// add contract # as line-item property and specify the brand by passing parameter into createNumber();
+if($(this).parent().next().is(':contains("Simmons Kids")')){
+  $('div#strollers-extended-warranty.form input#contract_id').val($('div#strollers-extended-warranty.form input#contract_id').val() + createNumber("SIM#"));
+}
+if($(this).parent().next().is(':contains("Serta")')){
+  $('div#strollers-extended-warranty.form input#contract_id').val($('div#strollers-extended-warranty.form input#contract_id').val() + createNumber("SER#"));
+}
+if($(this).parent().next().is(':contains("Delta Children")')){
+  $('div#strollers-extended-warranty.form input#contract_id').val($('div#strollers-extended-warranty.form input#contract_id').val() + createNumber("DEL#"));
+}
+
+$('div#strollers-extended-warranty.form button.ew-buy').click();
+goToCart();
+});
+};
+// add brand, variant sku, and product title to extended warranty form and add to cart dh-edit 4/25/17
+function addSkuTitleB(){
+$('#bassinets-check.ex-war-check').click(function(){
+$('div#bassinets-extended-warranty-1.form input#brand').val($('div#bassinets-extended-warranty-1.form input#brand').val() + $(this).parent().next().text());
+$('div#bassinets-extended-warranty-1.form input#style_num').val($('div#bassinets-extended-warranty-1.form input#style_num').val() + $(this).parent().next().next().text());
+$('div#bassinets-extended-warranty-1.form input#style_name').val($('div#bassinets-extended-warranty-1.form input#style_name').val() + $(this).parent().next().next().next().text());
+
+// add contract # as line-item property and specify the brand by passing parameter into createNumber();
+if($(this).parent().next().is(':contains("Simmons Kids")')){
+  $('div#bassinets-extended-warranty-1.form input#contract_id').val($('div#bassinets-extended-warranty-1.form input#contract_id').val() + createNumber("SIM#"));
+}
+if($(this).parent().next().is(':contains("Serta")')){
+  $('div#bassinets-extended-warranty-1.form input#contract_id').val($('div#bassinets-extended-warranty-1.form input#contract_id').val() + createNumber("SER#"));
+}
+if($(this).parent().next().is(':contains("Delta Children")')){
+  $('div#bassinets-extended-warranty-1.form input#contract_id').val($('div#bassinets-extended-warranty-1.form input#contract_id').val() + createNumber("DEL#"));
+}
+
+$('div#bassinets-extended-warranty-1.form button.ew-buy').click();
+goToCart();
+});
+};
+// add brand, variant sku, and product title to extended warranty form and add to cart dh-edit 4/25/17
+function addSkuTitleG(){
+$('#gliders-check.ex-war-check').click(function(){
+$('div#gliders-extended-warranty.form input#brand').val($('div#gliders-extended-warranty.form input#brand').val() + $(this).parent().next().text());
+$('div#gliders-extended-warranty.form input#style_num').val($('div#gliders-extended-warranty.form input#style_num').val() + $(this).parent().next().next().text());
+$('div#gliders-extended-warranty.form input#style_name').val($('div#gliders-extended-warranty.form input#style_name').val() + $(this).parent().next().next().next().text());
+
+// add contract # as line-item property and specify the brand by passing parameter into createNumber();
+if($(this).parent().next().is(':contains("Simmons Kids")')){
+  $('div#gliders-extended-warranty.form input#contract_id').val($('div#gliders-extended-warranty.form input#contract_id').val() + createNumber("SIM#"));
+}
+if($(this).parent().next().is(':contains("Serta")')){
+  $('div#gliders-extended-warranty.form input#contract_id').val($('div#gliders-extended-warranty.form input#contract_id').val() + createNumber("SER#"));
+}
+if($(this).parent().next().is(':contains("Delta Children")')){
+  $('div#gliders-extended-warranty.form input#contract_id').val($('div#gliders-extended-warranty.form input#contract_id').val() + createNumber("DEL#"));
+}
+
+$('div#gliders-extended-warranty.form button.ew-buy').click();
+// $('input#update-cart').delay(1000).click();
+goToCart();
+});
+};
+
+
+function goToCart(){
+  // $('#background-overlay').hide();
+  // $('#state-validation-pop-up').hide();
+
+    setTimeout(function() {
+      window.location.href = "/cart";
+    }, 1000);
+};
+
+//random id generation for Extended Warranty contract #
+function createNumber(brand) {
+  var number;
+
+  try {
+
+    // If the client supports the more secure crypto lib
+    if (Uint32Array && window.crypto && window.crypto.getRandomValues) {
+
+      var numbers = new Uint32Array(1);
+      window.crypto.getRandomValues(numbers);
+      number = numbers.length ? (numbers[0] + '') : null;
+    }
+  } catch(e) {
+
+    // If the browser fucks up ...
+
+  } finally {
+
+    // The fallback
+    if (!number) {
+      number = Math.floor( Math.random() * 1e9 ).toString() + (new Date().getTime());
+    }
+  }
+
+// var delta = "DEL#"
+// var simmons = "SIM#"
+// var serta = "SER#"
+
+// add jquery here depending on what brand is selected
+var brand = brand
+
+
+var id = brand.concat(number.substring(0,6));
+return id;
+
+  // return number.substring(0,6);
+
+
+};
+
+  //tabarnapp pop-up app for toddler beds and bedding
+setTimeout(
+function()
+{
+  $('.tabarnapp__description').insertAfter('.tabarnapp__bundle_title');
+  $('a.tabarnapp__product_title').each(function(){
+    title = $(this).html();
+    title = title.split('4')[0];
+    $(this).replaceWith(title);
+    console.log(title);
+  });
+  $('.tb_price').hide();
+  $('<div class="replace-price-text">Add to Cart</div>').insertAfter('.tb_price');
+  $('.tabarnapp__big_container').css('visibility','visible');
+
+}, 4000);
+
+
+</script>

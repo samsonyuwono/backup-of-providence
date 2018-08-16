@@ -1,0 +1,33 @@
+<div class="collection card">
+
+  <article class="hcollection {{collection.handle}} thumbnail">
+
+    <div class="image-wrap">
+      <div class="image">
+        <a href="{{ collection.url }}" title="{{ collection.title }}">
+          {% if collection.image %}
+            {{ collection.image.src | collection_img_url: 'original' | img_tag: collection.title }}
+          {% else %}
+            {{ collection.products.first.featured_image.src | product_img_url: 'original' | img_tag: collection.title }}
+          {% endif %}
+        </a>
+      </div>
+    </div>
+
+    <div class="details">
+
+      <header>
+        <h2>
+          <a href="{{ collection.url }}" title="{{ collection.title }}">
+            <span class="name">{{ collection.title }}</span>
+          </a>
+          </a>
+        </h2>
+      </header>
+
+      <span class="product-count text-color-quiet">{{ 'collections.collection_list.item_count' | t: count: collection.all_products_count }}</span>
+    </div>
+
+  </article>
+
+</div>

@@ -1,0 +1,121 @@
+{% assign image_size = 'compact' %}
+{% assign heading = 'Related Products' %}
+
+{% if product.selected_or_first_available_variant.metafields.recommendations.productHandles %}
+
+<h3>{{ heading }}</h3>
+<ul class="related-products"></ul>
+
+<style type="text/css">
+.related-products { list-style-type:none }
+{% case image_size %}
+{% when 'small' %}
+.related-products * { font-size:12px; text-align:center; padding:0 }
+.related-products h4  { border:none; margin:10px 0 0 0; line-height:1.3 }
+.related-products div.image { height:100px }
+.related-products li { float:left; width:120px; height:160px; margin-right:20px }
+{% when 'compact' %}
+.related-products * { font-size:13px; text-align:center; padding:0 }
+.related-products h4  { border:none; margin:5px 0 0 0; line-height:1.5 }
+.related-products div.image { height:160px }
+.related-products li { float:left; width:180px; height:220px; margin-right:25px }
+{% when 'medium' %}
+.related-products * { font-size:14px; text-align:center; padding:0 }
+.related-products h4  { border:none; margin:10px 0 0 0; line-height:1.8 }
+.related-products div.image { height:240px }
+.related-products li { float:left; width:260px; height:300px; margin-right:25px }
+{% endcase %}
+.related-products { overflow:hidden }
+.related-products span.money { font-size:0.8em }
+.related-products li:last-child { margin-right:0 }
+</style>
+
+{% endif %}
+
+<script>!window.jQuery && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"><\/script>')</script>
+{{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+<script type="text/javascript" charset="utf-8">
+
+
+
+$(document).ready(function(){
+
+  setTimeout(function() {
+    var dd = $('.single-option-selector#product-select-option-0');
+    if(location.search.substring(9) != ''){
+      var vId = location.search.substring(9);
+     }
+     else {
+      var vId = {{ product.selected_or_first_available_variant.id }};
+     }
+    switchRelated(vId);
+
+
+    $('#product-select option').each(function(index, element){
+
+      $(".single-option-selector#product-select-option-0 option:eq(" + index + ")").attr('id', element.id);
+      $('.single-option-selector#product-select-option-0 option:eq(' + index + ')').attr('data-metafield', $(element).attr("data-metafield"));
+      $('#product-select option:eq(' + index + ')').attr('id', '');
+     
+
+    });
+
+
+    dd.on('change', function() {
+      var list = $('ul.related-products');
+      $(list).children().remove();
+       $(list).empty();
+       if(location.search.substring(9) != ''){
+        var vId = location.search.substring(9);
+       }
+       else {
+        var vId = {{ product.selected_or_first_available_variant.id }};
+       }
+
+      switchRelated(vId);  
+    });
+    
+    function switchRelated(vId) {
+      var list = $('ul.related-products');
+      $(list).children().remove();
+      $(list).empty();
+      var vIdd = parseInt(vId);
+        
+      if ($('#' + vId).attr('data-metafield')) {
+        //if product has variants, grab recommendations from var option tag
+        var variant_matches = $('#' + vId).attr('data-metafield').split('|');
+        displayRelated(variant_matches, list);
+      } else {
+        //else use product obj to grab recommendations
+        {% capture recs_data %}{% endcapture %}
+        {% assign recommendations = product.selected_or_first_available_variant.metafields.recommendations.productHandles  | split: '|' %}
+          {% for rec in recommendations %}
+            {% assign metafields = rec | split: ',' %}
+            {% assign r_p = metafields[0] %}
+            {% assign r_first_var = all_products[r_p].selected_or_first_available_variant %}
+            {% assign r_sku = metafields[1] %}
+            {% assign r_url = all_products[r_p].url | remove:'/products/' %}
+            {% assign r_img = r_first_var.image.src | img_url: 'medium' %}
+            {% assign r_n = all_products[r_p].title %}    
+            {% assign r_vid = r_first_var.id %}
+
+          {% capture recs_data %}{{recs_data}}{{r_url}},{{r_sku}},{{r_img}},{{r_n}},{{r_vid}}{% unless forloop.last %}|{% endunless %}{% endcapture %}  
+          {%endfor%}
+
+        var data = '{{recs_data}}'.split('|');
+        displayRelated(data, list);
+      }
+      
+    }   
+    //parse data-metafield to populate links
+    function displayRelated(variant, list) {
+      for (var i=0; i < variant.length; i++) {
+          var items = variant[i].split(','); 
+          list.append('<li><div class="image"><a href="/products/'+items[0]+'/?variant='+items[4]+'"><img src="'+items[2]+'" /></a></div><h4><a href="/products/' + items[0] + '?variant=' + items[4] + '">' + items[3] + '</a></h4></li>');
+      }
+    }
+  }, 1);
+});
+
+</script>

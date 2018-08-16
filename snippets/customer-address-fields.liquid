@@ -1,0 +1,130 @@
+<div class="customer-address-fields">
+  <div class="row">
+    <div class="medium-12 large-6 columns medium-centered">
+
+      <!-- First name -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_first_name_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.first_name' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_first_name_{{customer-address-fields}}" name="address[first_name]" value="{{form.first_name}}"/>
+        </div>
+      </div>
+
+      <!-- Last name -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_last_name_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.last_name' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_last_name_{{customer-address-fields}}" name="address[last_name]" value="{{form.last_name}}"/>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_company_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.company' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_company_{{customer-address-fields}}" name="address[company]" value="{{form.company}}"/>
+        </div>
+      </div>
+
+      <!-- Address 1 -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_address_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.address_1' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_address1_{{customer-address-fields}}" name="address[address1]" value="{{form.address1}}"/>
+        </div>
+      </div>
+
+      <!-- Address 2 -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_address2_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.address_2' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_address2_{{customer-address-fields}}" name="address[address2]" value="{{form.address2}}"/>
+        </div>
+      </div>
+
+      <!-- City -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_city_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.city' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_city_{{customer-address-fields}}" name="address[city]" value="{{form.city}}"/>
+        </div>
+      </div>
+
+      <!-- Country -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_country_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.country' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <select id="address_country_{{customer-address-fields}}" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
+        </div>
+      </div>
+
+      <!-- Province -->
+      <div id="address_province_container_{{customer-address-fields}}">
+        <div class="row">
+          <div class="medium-3 columns">
+            <label for="address_province_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.province' | t }}</label>
+          </div>
+          <div class="medium-9 columns">
+            <select id="address_province_{{customer-address-fields}}" class="address_form" name="address[province]" data-default="{{form.province}}"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zip/Postal -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_zip_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.zip' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_zip_{{customer-address-fields}}" name="address[zip]" value="{{form.zip}}"/>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="row">
+        <div class="medium-3 columns">
+          <label for="address_phone_{{customer-address-fields}}" class="inline">{{ 'customer_accounts.address_form_labels.phone' | t }}</label>
+        </div>
+        <div class="medium-9 columns">
+          <input type="text" id="address_phone_{{customer-address-fields}}" name="address[phone]" value="{{form.phone}}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-9 medium-offset-3 columns">
+          {{ form.set_as_default_checkbox }}
+          <label for="address_default_address_{{customer-address-fields}}">{{ 'customer_accounts.addresses.set_as_default_address' | t }}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-9 medium-offset-3 columns">
+          <div class="form-actions">
+            {% if customer-address-fields == 'new' %}
+            <input class="button" type="submit" value="{{ 'customer_accounts.addresses.add_address' | t }}" />
+            <span class="note"> <a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'general.cancel' | t }}</a></span>
+            {% else %}
+            <input class="button" type="submit" value="{{ 'customer_accounts.addresses.update_address' | t }}" />
+            <span class="note"> <a href="#" onclick="Shopify.CustomerAddress.toggleForm({{customer-address-fields}}); return false;">{{ 'general.cancel' | t }}</a></span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

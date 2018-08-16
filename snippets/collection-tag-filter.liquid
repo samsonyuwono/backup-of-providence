@@ -1,0 +1,15 @@
+<div class="collection-tag-filter">
+
+  {% if settings.collection_browse_text %}
+  <label for="collection-tags" class="inline">{{ settings.collection_browse_text }}</label>
+
+  <select class="collection-tags">
+    <option value="">{{ 'collections.collection.tag_filter_all' | t }}</option>
+    {% for tag in collection.all_tags %}
+    <option value="{{ tag | handle }}" id="{{ tag | handle }}"{% if current_tags contains tag %} selected{% endif %}>{{ tag }}</option>
+    {% endfor %}
+  </select>
+
+  {% endif %}
+
+</div>

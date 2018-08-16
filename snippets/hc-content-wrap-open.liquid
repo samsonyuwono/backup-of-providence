@@ -1,0 +1,55 @@
+{% include 'settings' %}
+
+{% if template contains '.' %}
+  {% assign template_type = template | split: '.' %}
+  {% assign template_base = template_type[0] %}
+  {% assign settings_has_sidebar = 'sidebar_display_' | append: template_base | append: '?' %}
+{% else %}
+  {% assign settings_has_sidebar = 'sidebar_display_' | append: template | append: '?' %}
+{% endif %}
+
+{% if settings[settings_has_sidebar] %}
+  {% assign has_sidebar = true %}
+{% endif %}
+
+{% if force_no_sidebar %}
+  {% assign has_sidebar = false %}
+{% endif %}
+
+{% if has_sidebar %}
+  {% unless sidebar_side %}
+    {% assign sidebar_side = settings.sidebar_side %}
+  {% endunless %}
+
+  {% assign wrap_class = sidebar_side | prepend: 'has-sidebar sidebar-' %}
+
+  {% assign content_span = 12 | minus: sidebar_span %}
+
+  {% assign content_class = 'medium-8 large-' | append: content_span %}
+  {% assign content_class = content_class | append: ' columns' %}
+  {% assign sidebar_class = 'medium-4 large-' | append: sidebar_span %}
+  {% assign sidebar_class = sidebar_class | append: ' columns' %}
+
+  {% if sidebar_side == 'left' %}
+    {% assign content_class = content_class | append: ' medium-push-4 large-push-' %}
+    {% assign content_class = content_class | append: sidebar_span %}
+    {% assign sidebar_class = sidebar_class | append: ' medium-pull-8 large-pull-' %}
+    {% assign sidebar_class = sidebar_class | append: content_span %}
+  {% endif %}
+
+  {% assign content_class = content_class | append: ' primary' %}
+  {% assign sidebar_class = sidebar_class | append: ' secondary' %}
+
+  {% if show_sidebar_small == false %}
+    {% assign sidebar_class = sidebar_class | append: ' show-for-medium-up' %}
+  {% endif %}
+
+{% else %}
+  {% assign wrap_class = 'default' %}
+  {% assign content_class = 'small-12 columns primary' %}
+{% endif %}
+
+<!-- BEGIN #content-wrap -->
+<div id="content-wrap" class="{{ wrap_class }}">
+  <div class="row">
+    <div class="{{ content_class }}">

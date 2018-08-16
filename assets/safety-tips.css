@@ -1,0 +1,1790 @@
+/*This stylesheet applies to the "How We are Safe" page, "Nurser Safety Tips" page, and "Toddler Safety Tips" page.
+It first describes global styles.
+Then it describes styles broken down by the sections of the page. "Header", "How We Test", "Materials We Use" etc.
+dh-edit - 7/12/17*/
+
+/*********************************************global font faces*********************************************/
+@font-face{
+  font-family: 'Om Telolet Om';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Om_Telolet_Om.otf');
+}
+@font-face{
+  font-family: 'Gotham Bold';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/gotham-bold.otf');
+}
+@font-face{
+  font-family: 'Gotham Black';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Gotham_Black.otf');
+}
+@font-face{
+  font-family: 'Gotham Book';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Gotham_Book.otf');
+}
+@font-face{
+  font-family: 'Gotham Medium';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/gotham-medium.otf');
+}
+@font-face{
+  font-family: 'Gotham Ultra';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/GothamUltranew.otf');
+}
+
+/*********************************************global classes*********************************************/
+
+
+
+/* fixes double logo issue in left upper corner */
+
+#main-body-container #brand-primary-image{
+  display: none;
+  
+}
+
+
+
+#site-body{
+      overflow-x: inherit !important;
+}
+
+
+
+#main-body-container{
+  max-width: none;
+}
+.arrow-right{
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid white;
+  display: inline-block;
+  margin-left: 7px;
+  position: relative;
+  top: 2px;
+}
+#up-leaders-arrow{
+  border: solid #1a3d6e;
+ border-width: 0 5px 5px 0;
+ display: inline-block;
+ padding: 15px;
+ transform: rotate(-135deg);
+ -webkit-transform: rotate(-135deg);
+ cursor: pointer;
+}
+h2.section-title{
+  font-size: 250%;
+  padding-top: 20px;
+  margin-bottom: 0;
+  line-height: .8;
+}
+span.section-title{
+  font-size: 170%;
+}
+h3.section-sub-title{
+  line-height: 1.3;
+  margin-top: 0;
+  font-size: 140%;
+  padding-top: 0;
+}
+.learn-more{
+  background-color: #1a3d6e;
+  border-radius: 10px;
+  width: 140px;
+  font-family: 'Gotham Book';
+  font-weight: 700;
+  letter-spacing: 1px;
+  height: 30px;
+  padding: 0;
+}
+.main-container{
+  min-height: 400px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.full-img{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.dark-blue{
+  color: #1a3d6e !important;
+}
+.grey{
+  color: #333333;
+}
+.gotham-medium{
+  font-family: 'Gotham Medium';
+}
+.gotham-bold{
+  font-family: 'Gotham Bold';
+}
+.gotham-black{
+  font-family: 'Gotham Black';
+}
+.om-font{
+  font-family: 'Om Telolet Om';
+}
+.ultra{
+  font-family: 'Gotham Ultra';
+}
+.gotham-book{
+  font-family: 'Gotham Book';
+}
+#how-we-are-safe-container{
+  text-align: center;
+}
+#up-leaders-arrow{
+  position: fixed;
+  right: 5%;
+  top: 50%;
+  display: none;
+}
+/*tablet*/
+@media only screen and (max-width: 1025px){
+  .main-container{
+    min-height: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h3.section-sub-title{
+    font-size: 120%;
+  }
+  h2.section-title{
+    font-size: 220%;
+  }
+}
+/*mobile*/
+@media only screen and (max-width: 641px){
+  h2.section-title{
+    font-size: 200%;
+  }
+  h3.section-sub-title{
+    font-size: 100%;
+  }
+  #up-leaders-arrow{
+    padding: 10px;
+  }
+  .arrow-right{
+    top: 3px;
+  }
+}
+
+/******************************************************************************************/
+/******************************************************************************************/
+/*********************"How We Are Safe" page styles - /pages/leaders-in-safety*************/
+/******************************************************************************************/
+/******************************************************************************************/
+
+/*********************************************Header*********************************************/
+#header-sub-text{
+  width: 50%;
+  left: 25%;
+  position: relative;
+  text-align: left;
+  font-size: 130%;
+}
+#safe-start-container{
+  background-image:url("//cdn.shopify.com/s/files/1/0578/7201/files/baby-in-crib-min_2.jpg");
+  background-size: cover;
+  height: 410px;
+}
+#safe-start-container h1{
+  margin: 0;
+}
+#safety-text{
+  display: inline;
+}
+#safe-start-text-container{
+  margin-top: 20px;
+  right: 5%;
+}
+span#with{
+  font-size: 300%;
+}
+#title-top-text{
+  position: relative;
+  right: 9%;
+}
+#title-bottom-text{
+  position: relative;
+  left: 6.5%;
+}
+#title-top-text h1{
+  line-height: 1;
+  font-size: 300%;
+}
+#title-bottom-text span{
+  line-height: 1;
+}
+#title-bottom-text h1{
+  line-height: 1;
+  font-size: 300%;
+}
+@media only screen and (min-width: 1850px){
+#safe-start-container{
+  padding-left: 25%;
+  padding-right: 25%;
+  }
+}
+@media only screen and (min-width: 1550px){
+  #safe-start-container{
+    background-size: 1600px;
+    background-position: center;
+    height: 560px;
+    background-repeat: no-repeat;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}
+@media only screen and (max-width: 1025px){
+  #safe-start-container{
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 310px;
+  }
+  #title-top-text{
+    width: 80%;
+    left: 0;
+    text-align: left;
+  }
+  #title-bottom-text{
+    left: 0;
+  }
+  #safe-start-text-container{
+    right: 0;
+  }
+  #header-sub-text{
+    width: 70%;
+    left: 0;
+    font-size: 100%;
+  }
+  #title-bottom-text{
+    width: 80%;
+  }
+  #title-top-text h1{
+    font-size: 250%;
+  }
+  #title-bottom-text h1{
+    font-size: 250%;
+  }
+  span#with{
+    font-size: 250%;
+  }
+}
+
+/*mobile*/
+@media only screen and (max-width: 641px){
+  #safe-start-text-container{
+    margin-top: 20px;
+  }
+
+  #safe-start-container{
+    background-image:url("//cdn.shopify.com/s/files/1/0578/7201/files/baby-in-crib-mobile-2.jpeg");
+    background-size: contain;
+    height: 230px;
+  }
+  #title-top-text h1{
+    font-size: 200%;
+  }
+  span#with{
+    font-size: 200%;
+  }
+  #title-bottom-text h1{
+    font-size: 200%;
+  }
+    #title-bottom-text{
+      padding-left: 20%;
+    }
+  #header-sub-text{
+    font-size: 80%;
+  }
+}
+
+/********************************************NAVIGATION********************************************/
+#nav-container{
+  margin: 0;
+  width: 100%;
+}
+#nav-container .nav-element{
+  display: inline-block;
+  width: 25%;
+  color: #ffffff;
+  font-family: 'Gotham Book';
+  opacity: .7;
+  height: 50px;
+  vertical-align: middle;
+  padding-top: 12px;
+  cursor: pointer;
+}
+#nav-row{
+  background-color: #557fd0;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+#nav-container .nav-element.on {
+  color: white;
+  font-family: 'Gotham Bold';
+  opacity: 1;
+  background-color: #4365a6;
+}
+
+@media only screen and (max-width: 1025px){
+
+  #nav-container .nav-element{
+    font-size: 90%;
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 641px){
+  #nav-row{
+    background-color: transparent;
+    height: 50px;
+  }
+    #nav-container{
+      text-align: center;
+    }
+  #nav-container .nav-element.on{
+    background-color: transparent;
+    color: #1a3d6e;
+    font-family: 'Gotham Book';
+    font-weight: bold;
+  }
+  #nav-container .nav-element{
+    font-size: 65%;
+    background-color: #3b5891;
+    line-height: 1.2;
+    padding-top: 15px;
+  }
+  #nav-1{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  #nav-2{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+@media only screen and (max-width: 320px){
+  #nav-container .nav-element{
+    font-size: 65%;
+  }
+  .foot-icon-container p{
+    font-size: 90%;
+  }
+  h6.footer-icon-title{
+    font-size: 115%;
+  }
+  #nav-1{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/*************************************************How We Test**************************************************/
+#how-we-test-container{
+  background-image: url("//cdn.shopify.com/s/files/1/0578/7201/files/background-how-we-test-v2-min.jpg");
+  background-size: cover;
+  padding-bottom: 30px;
+}
+#how-we-test-right{
+  text-align: left;
+}
+#top-title{
+  margin-top: 50px;
+}
+#youtube-vid{
+  max-width: 389px;
+}
+#youtube-img-holder{
+  text-align:right;
+}
+#how-we-test-right h3{
+  color: #333333;
+  font-size: 130%;
+  width: 60%;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#how-we-test-right p{
+  color: #333333;
+  width: 70%;
+}
+@media only screen and (max-width: 1025px){
+  #youtube-img-holder{
+    text-align: center;
+  }
+  #how-we-test-right{
+    text-align: center;
+  }
+  #how-we-test-right h3{
+    width: 100%;
+    padding-top: 20px;
+  }
+  #how-we-test-right p{
+      left: 15%;
+      position: relative;
+  }
+}
+@media only screen and (max-width: 641px){
+  #youtube-vid{
+    width: 100%;
+  }
+  #how-we-test-right h3{
+    font-size: 100%;
+  }
+  #how-we-test-right p{
+    width: 100%;
+    font-size: 90%;
+    left: 0;
+  }
+  .learn-more{
+    height: 50px;
+    width: 120px;
+  }
+}
+
+/*********************************************Materials We Use*********************************************/
+#icon-holder{
+  text-align: center;
+}
+#chemicals-img{
+  width: 50%;
+  position: relative;
+  left: 25%;
+}
+#materials-img-text-holder{
+  position: relative;
+  /*width: 60%;*/
+  /*left: 20%;*/
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+#materials-container p{
+  letter-spacing: .1px;
+  font-size: 110%;
+  color: #333333;
+  padding-bottom: 15px;
+}
+#greenguard-img{
+  display: inline-block;
+  position: relative;
+  width: 90px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+#greenguard-txt{
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  color: #333333 !important;
+}
+@media only screen and (max-width: 1025px){
+  #greenguard-txt{
+    width: 50%;
+  }
+  #chemicals-img{
+    width: 80%;
+    left: 10%;
+  }
+  #materials-container p{
+    font-size: 110%;
+  }
+}
+@media only screen and (max-width: 641px){
+  #materials-container p{
+    font-size: 100%;
+  }
+  #chemicals-img{
+    width: 100%;
+  }
+  #greenguard-txt{
+    width: 60%;
+    font-size: 90%;
+  }
+}
+
+/*********************************************Safety Organizations*********************************************/
+.safety-org-icons{
+  padding: 20px;
+  padding-top: 0;
+}
+.nonprof-icons{
+  padding: 20px;
+  padding-top: 0;
+}
+.org-title{
+  margin-bottom: 0;
+}
+#org-footer-text{
+  position: relative;
+  width: 70%;
+  left: 15%;
+  font-size: 120%;
+}
+#safety-container{
+  background-image: url("//cdn.shopify.com/s/files/1/0578/7201/files/background-safety-org-v2-min.jpg");
+  background-size: cover;
+}
+#safety-container p{
+  color: #333333;
+}
+#safety-container h3{
+  font-size: 140%;
+  padding-top: 10px;
+}
+#safety-container p#sub-sub-text{
+  position: relative;
+  width: 60%;
+  left: 20%;
+  padding-bottom: 10px;
+  font-size: 110%;
+}
+#text-below-compliance-icon{
+  position: relative;
+  width: 40%;
+  left: 30%;
+  font-size: 110%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #333333;
+}
+@media only screen and (max-width: 1025px){
+  #safety-container h3{
+    font-size: 120%;
+  }
+  #safety-container p#sub-sub-text{
+    width: 80%;
+    left: 10%;
+  }
+  #org-footer-text{
+    width: 90%;
+    left: 5%;
+    font-size: 100%;
+  }
+}
+@media only screen and (max-width: 641px){
+  #safety-container h3{
+    font-size: 100%;
+  }
+  #safety-container p#sub-sub-text{
+    font-size: 100%;
+    width: 100%;
+    left: 0;
+  }
+ img#astm{
+    width: 80px !important;
+  }
+  img#jpma{
+    width: 65px !important;
+  }
+  img#ispa{
+    width: 60px !important;
+  }
+  img#tia{
+    width: 110px !important;
+  }
+  #non-profits-text{
+    padding-top: 20px;
+  }
+  #org-footer-text{
+    width: 100%;
+    left: 0;
+    font-size: 70%;
+  }
+  .safety-org-icons{
+    padding: 5px;
+  }
+  .nonprof-icons{
+    width: 160px !important;
+    padding: 10px;
+  }
+}
+
+/*********************************************Product Compliance*********************************************/
+#compliance-note{
+  position: relative;
+  width: 35%;
+  left: 32.5%;
+  line-height: 1.1;
+  text-align: left;
+  color: #333333;
+}
+#icon-compliance{
+  width: 100px;
+}
+span#note{
+  font-size: 200%;
+  padding-right: 10px;
+}
+
+#text-below-compliance-icon{
+  text-align: center;
+}
+
+@media only screen and (max-width: 1025px){
+  #text-below-compliance-icon{
+    width: 80%;
+    left: 10%;
+  }
+  #compliance-note{
+    width: 80%;
+    left: 10%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 641px){
+  #icon-compliance{
+    width: 60px;
+  }
+  #text-below-compliance-icon{
+    width: 100%;
+    left: 0;
+    font-size: 90%;
+  }
+  #compliance-note{
+    width: 100%;
+    left: 0;
+    font-size: 90%;
+  }
+  .learn-more{
+    width: 140px;
+    font-size: 90%;
+  }
+}
+/*********************************************Footer (It's all about safety.)*********************************************/
+img.footer-icon{
+  width: 100px;
+}
+h6.footer-icon-title{
+    font-size: 240%;
+    width: 75%;
+    left: 12.5%;
+    position: relative;
+    line-height: 1;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.foot-icon-container{
+  padding-top: 360px;
+  padding-bottom: 50px;
+}
+#foot-container{
+  background-image: url("//cdn.shopify.com/s/files/1/0578/7201/files/background-all-about-safety-min.jpg");
+  background-size: cover;
+  height: 100%;
+}
+#footer-title-holder{
+  position: relative;
+  top: 50px;
+  text-align: left;
+}
+#footer-title-text{
+  font-size: 300%;
+}
+#footer-title-text span{
+  font-size: 200%;
+}
+#footer-middle-icon{
+  width: 60%;
+  left: 20%;
+}
+#c-s-text{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.foot-icon-container p{
+  position: relative;
+  width: 85%;
+  left: 7.5%;
+}
+@media only screen and (min-width: 2050px){
+  .foot-icon-container{
+    padding-top: 820px !important;
+  }
+
+}
+
+@media only screen and (min-width: 1818px) and (max-width: 2050px){
+  .foot-icon-container{
+    padding-top: 620px !important;
+  }
+  #c-s-text{
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+  }
+  #t-s-child-tips{
+    width: 80% !important;
+    left: 10% !important;
+  }
+}
+
+@media only screen and (min-width: 1518px) and (max-width: 1818px){
+  #donate-text{
+    width: 70%;
+    left: 15%;
+  }
+  .foot-icon-container{
+    padding-top: 520px !important;
+  }
+}
+
+
+/*for very large screens*/
+@media only screen and (min-width: 1340px){
+  #c-s-text{
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  #s-s-text{
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  #t-s-child-tips{
+    width: 90%;
+    left: 5%;
+  }
+  .foot-icon-container {
+    padding-top: 420px;
+  }
+}
+@media only screen and (max-width: 1340px){
+  #t-s-child-tips{
+    width: 90%;
+    left: 5%;
+  }
+  .foot-icon-container p{
+    width: 100%;
+    left: 0;
+  }
+  #donate-text{
+    width: 90%;
+    left: 5%;
+  }
+
+}
+
+@media only screen and (max-width: 1086px){
+  .foot-icon-container p{
+    font-size: 90%;
+  }
+  #t-s-child-tips{
+    width: 100%;
+    left: 0;
+  }
+  #c-s-text{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1025px){
+  #foot-container{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100%;
+    position: relative;
+  }
+  .foot-icon-container{
+    margin-top: 190px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #footer-title-holder{
+    height: 180px;
+  }
+  #footer-title-holder h2{
+    width: 50%;
+    text-align: center;
+    position: relative;
+    left: 5%;
+  }
+  #footer-title-text{
+    font-size: 250%;
+  }
+  h6.footer-icon-title{
+    width: 100%;
+    font-size: 150%;
+    left: 0;
+  }
+  .foot-icon-container p{
+    width: 90%;
+    left: 5%;
+  }
+}
+@media only screen and (max-width: 950px){
+  #c-s-text{
+    width: 40%;
+    left: 30%;
+  }
+  #s-s-text{
+    width: 50%;
+    left: 25%;
+  }
+  .foot-icon-container p{
+    width: 100%;
+    left: 0%;
+  }
+}
+@media only screen and (max-width: 724px){
+  #c-s-text{
+    width: 60%;
+    left: 20%;
+  }
+
+
+}
+@media only screen and (max-width: 641px){
+  #foot-container{
+    background-image: url("//cdn.shopify.com/s/files/1/0578/7201/files/background-all-about-safety-mobile.jpg");
+    background-size: contain;
+    background-position: top;
+    background-color: #f4f7fc;
+    height: 100%;
+  }
+  #footer-title-text{
+    font-size: 180%;
+  }
+  #footer-title-holder h2{
+    width: 70%;
+    left: 0;
+  }
+  #footer-middle-icon{
+    width: 100%;
+    left: 0;
+  }
+  #s-s-text{
+    /*padding-left: 20px;
+    padding-right: 20px;*/
+  }
+  #c-s-text{
+    /*padding-left: 25px;
+    padding-right: 25px;*/
+  }
+  img.footer-icon{
+    width: 65px;
+  }
+  .foot-icon-container{
+    margin-top: 135px;
+    height: 320px;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .foot-icon-container p{
+    line-height: 1.5;
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  h6.footer-icon-title{
+    font-size: 115%;
+  }
+  /* a.lm-btn-link{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  } */
+  .footer-btn{
+    width: 80%;
+    font-size: 80%;
+    height: 40px;
+    padding-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .foot-icon-container{
+    margin-top: 105px;
+  }
+}
+@media only screen and (max-width: 320px){
+  h2#footer-title-text{
+    text-align: left;
+    font-size: 150%;
+  }
+  .foot-icon-container{
+    height: 370px;
+    margin-top: 70px;
+  }
+  .footer-btn{
+    font-size: 70%;
+  }
+}
+
+
+/******************************************************************************************/
+/******************************************************************************************/
+/*********************"Crib Safety Tips page styles - /pages/crib-safety-tips*************/
+/******************************************************************************************/
+/******************************************************************************************/
+/**********************Global section**********************/
+.section{
+  /* height: 600px; */
+  text-align: center;
+}
+.make-skinny{
+  width: 60% !important;
+  left: 20%;
+}
+.om-font.medium{
+  font-size: 110%;
+}
+.title-font{
+  font-size: 250%;
+}
+.nursery-container{
+  text-align: center;
+  position: relative;
+}
+.grey{
+  color: #58595b;
+}
+.mobile{
+  display: none!important;
+}
+
+
+@media only screen and (max-width: 641px){
+
+#push-content-down-mobile{
+  height: 40px !important;
+  }
+  .title-font{
+    font-size: 210%;
+  }
+  .mobile{
+    display: block !important;
+  }
+  .desktop{
+    display: none !important;
+  }
+  .n-box-img.mobile{
+    width: 254px;
+  }
+}
+
+/**********************Banner section**********************/
+#banner-babies{
+  max-width: 1500px;
+  width: 100%;
+}
+#banner-toddlers{
+  max-width: 1500px;
+  width: 70%;
+}
+
+.nursery-container{
+  text-align: center;
+  position: relative;
+}
+
+.nt-title-container{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#n-title-container{
+  background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/sky-background-min.jpg')
+}
+#t-title-container{
+  background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/toddler-safety-page-background-desktop-01.jpg?6380265608186933589')
+}
+
+.nt-title-text-container{
+  padding-top: 60px;
+}
+.nt-title-text-container h3{
+  font-size: 110%;
+}
+.nt-title-text h1{
+  position: relative;
+  right: 5%;
+  margin-bottom: 0;
+  line-height: 1;
+}
+#t-title-text h1{
+  right: 0
+}
+.nt-bottom-text h1{
+  position: relative;
+  left: 5%;
+  margin-top: 0;
+  line-height: 1;
+}
+#t-bottom-text h1{
+  left: -15%
+}
+
+@media only screen and (min-width: 2100px){
+  .nt-title-text h1{
+    font-size: 360%;
+  }
+  #n-bottom-text h1{
+    font-size: 360%;
+  }
+  .nt-title-text-container h3{
+    font-size: 180%;
+  }
+}
+@media only screen and (min-width: 1880px) and (max-width: 2100px){
+  .nt-title-text h1{
+    font-size: 340%;
+  }
+  #n-bottom-text h1{
+    font-size: 340%;
+  }
+  .nt-title-text-container h3{
+    font-size: 160%;
+  }
+}
+@media only screen and (min-width: 1580px) and (max-width: 1880px){
+  .nt-title-text h1{
+    font-size: 320%;
+  }
+  #n-bottom-text h1{
+    font-size: 320%;
+  }
+  .nt-title-text-container h3{
+    font-size: 140%;
+  }
+}
+
+@media only screen and (min-width: 1335px){
+  .nt-title-text-container {
+    padding-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 641px){
+  #banner-babies{
+    display: none;
+  }
+  #banner-toddlers{
+    display: none;
+  }
+  .nt-title-container{
+    /*background-size: contain;*/
+    background-position: top;
+    height: 370px;
+  }
+  #n-title-container{
+    background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/header-image.jpg');
+  }
+  #t-title-container{
+    background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/toddler-safety-page-top-banner-image-with-kids.jpg?6380265608186933589');
+  }
+  #t-bottom-text h1{
+    left: -10%
+  }
+  .make-skinny{
+    width: 100% !important;
+    left: 0;
+  }
+  #n-bottom-text h1{
+    margin-bottom: 10px;
+  }
+  .nt-title-text-container{
+    padding-top: 0;
+    margin-top: 60px;
+  }
+  .nt-sub-text-container h3{
+    font-size: 120%;
+  }
+  .nt-sub-text-container h3 i{
+    display: inline;
+  }
+}
+/* @media only screen and (max-width: 376px){
+  .nt-title-container{
+    background-size: contain;
+    height: 300px;
+  }
+} */
+
+/**********************Delta Tips section**********************/
+.n-box-img{
+  display: inline-block;
+  max-width: 400px;
+  max-height: 335px;
+  width: 400px;
+  height: 335px;
+  position: relative;
+}
+#third-box-img{
+  width: 480px;
+  max-width: 480px
+}
+#fourth-box-img{
+  width: 430px;
+  max-width: 430px
+}
+.n-box-img:hover{
+  opacity: .6;
+}
+.social{
+  width: 32px;
+  height: 32px;
+}
+.links-social-tips{
+  display: inline-block;
+  position: relative;;
+}
+.social-tips-holder{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+.social-tips-holder a:first-child{
+  top: 13px;
+}
+.n-tips-img-holder{
+  position: relative;
+  display: inline-block;
+  max-width: 400px;
+  max-height: 335px;
+}
+#third-img-holder{
+  width: 480px;
+  max-width: 480px;
+}
+#fourth-img-holder{
+  width: 430px;
+  max-width: 430px;
+}
+
+.n-tips-img-holder span{
+  display: inline-block;
+  position: relative;
+  top: 12px;
+}
+div.row.nt-dtips-container{
+  width: 80%;
+  left: 10%;
+  position: relative;
+  text-align: center;
+}
+div.row#second-nt-dtips-container{
+  width: 90%;
+  left: 3%
+}
+.nt-dtips-container p:first-child{
+  margin-bottom: 0;
+}
+.social-holder{
+  width: 100%;
+  height: 50px;
+  padding-left: 16%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.nt-social-text{
+  width: 45%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+  font-size: 90%;
+  padding: 0;
+  margin: 0;
+  color: #557fc8 !important;
+  text-align: right;
+}
+.nt-safety-social{
+  width: 45%;
+  display: inline-block;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  top: 6px;
+  position: relative;
+  text-align: left;
+}
+.nt-safety-social li a i{
+  font-size: 200%;
+}
+.nt-safety-social li{
+  width: initial !important;
+  float: none !important;
+}
+.om-font.big{
+  font-size: 150%;
+}
+
+.image-first-tip{
+  /*left: 1px;*/
+}
+.image-second-tip{
+  /*right: 1px;*/
+}
+.image-third-tip{
+  /*left: 1px;*/
+}
+#image-fourth-tip{
+  /*right: 1px;*/
+}
+
+/*twitter iframe overlaps twitter button*/
+iframe.twitshot-tweet-button{
+  width: 32px !important;
+  height: 32px !important;
+  position: absolute;
+  bottom: 0px;
+  left: 70px;
+  opacity: 0;
+}
+@media only screen and (min-width: 2200px){
+  .nt-dtips-container{
+    width: 40% !important;
+    left: 30% !important;
+    padding-top: 40px !important;
+
+  }
+}
+@media only screen and (min-width: 1700px) and (max-width: 2200px){
+  div.row.nt-dtips-container{
+    width: 50% !important;
+    left: 25% !important;
+    padding-top: 40px !important;
+  }
+
+}
+@media only screen and (min-width: 1340px){
+  div.row.nt-dtips-container{
+    width: 70%;
+    left: 15%;
+    padding-top: 20px;
+  }
+}
+@media only screen and (max-width: 1046px){
+  .n-box-img{
+    width: 300px;
+    height: 235px;
+  }
+  #third-box-img{
+    width: 360px;
+    max-width: 360px
+  }
+  #fourth-box-img{
+    width: 320px;
+    max-width: 320px
+  }
+  #third-img-holder{
+    width: 360px;
+    max-width: 360px;
+  }
+  #fourth-img-holder{
+    width: 320px;
+    max-width: 320px;
+  }
+  div.row.second-nt-dtips-container{
+    left: 2%
+  }
+}
+@media only screen and (max-width: 1025px){
+  .n-box-img{
+    width: 280px;
+    height: 236px;
+  }
+  #third-box-img{
+    width: 340px;
+    max-width: 340px
+  }
+  #fourth-box-img{
+    width: 300px;
+    max-width: 300px
+  }
+  #third-img-holder{
+    width: 340px;
+    max-width: 340px;
+  }
+  #fourth-img-holder{
+    width: 300px;
+    max-width: 300px;
+  }
+  .social-holder{
+    right: 5%;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 641px){
+  div.row.nt-dtips-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin:auto;
+    left:0
+  }
+  .n-box-img{
+    width: 300px;
+    height: auto;
+  }
+  #third-img-holder{
+    width: 350px;
+    max-width: 350px;
+    right: 10%
+  }
+  #fourth-img-holder{
+    width: 310px;
+    max-width: 310px;
+  }
+  #third-box-img{
+    width: 350px;
+    max-width: 350px;
+  }
+  #fourth-box-img{
+    width: 310px;
+    max-width: 310px;
+  }
+  .n-tips-img-holder{
+    width: 300px;
+  }
+  /* .image-first-tip{
+    right: 22px;
+  } */
+  /* .image-second-tip{
+    left: 22px;
+  } */
+  /* .image-third-tip{
+    right: 23px;
+  } */
+  /* .image-fourth-tip{
+    left: 18px;
+  } */
+  .image-fourth-tip .social-tips-holder{
+    bottom: 25px
+  }
+  #fourth-img-holder .social-tips-holder.mobile{
+    right: 20px;
+    bottom: 0
+  }
+  .social-tips-holder{
+    display: block;
+  }
+  .nt-dtips-container{
+    width: 100%;
+    left: 0;
+  }
+  .nt-social-text{
+    width: 100%;
+    text-align: center;
+  }
+  .social-holder{
+    padding-left: 0;
+    right: 0;
+    margin-bottom: 50px;
+  }
+  .nt-safety-social{
+    width: 100%;
+    text-align: center;
+  }
+  .nt-safety-social li a i{
+    color: #557fc8 !important;
+    font-size: 1.8rem !important;
+  }
+  .nt-safety-social li{
+    width: 18% !important;
+  }
+}
+/**********************FAQ section**********************/
+.faq{
+  margin-bottom: 5px;
+  font-size: 90%;
+}
+.faq-answer{
+  font-size: 85%;
+}
+.faq-text-holder h6{
+  text-align: left;
+}
+.faq-text-holder h2{
+  /*padding-top: 60px;*/
+}
+.faq-text-holder{
+  width: 42% !important;
+  left: 29%;
+  margin-bottom: 20px;
+}
+.faq-text-holder p{
+  text-align: left;
+}
+.bottom-padding.faq-answer{
+  padding-bottom: 50px;
+}
+.faq-text-holder a.lm-bt-link{
+  top: 20px;
+  position: relative;
+}
+.bottom-FAQ-text {
+  padding-top: 5px;
+}
+.bottom-FAQ-text h2{
+  font-size: 130%;
+}
+.bottom-FAQ-text h2 span{
+  font-size: 150%;
+}
+.nt-faq-container{
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  text-align: center;
+}
+#n-faq-container{
+  background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/background-pink-min.png');
+}
+#t-faq-container{
+  background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/toddler-safety-page-background-desktop-02.jpg?2337679483721791778')
+}
+.top-FAQ-text{
+  padding-top: 30px;
+}
+.top-FAQ-text h2 span{
+  font-size: 170%;
+  line-height: 1.5;
+}
+.top-FAQ-text h2{
+  font-size: 220%;
+}
+@media only screen and (max-width: 1025px){
+  .faq-text-holder{
+    width: 60% !important;
+    left: 20%;
+  }
+}
+@media only screen and (max-width: 641px){
+  .faq-text-holder{
+    width: 100% !important;
+    left: 0;
+  }
+  .faq-text-holder p{
+    line-height: 1.45;
+  }
+  .faq-text-holder a.lm-btn-link{
+    position: relative;
+    margin-top: 70px;
+  }
+  .faq-text-holder a.lm-btn-link button{
+    width: 40%;
+    font-size: 100%;
+    height: 30px;
+    padding-bottom: 0;
+  }
+  .top-FAQ-text h2{
+    font-size: 150%;
+  }
+  .bottom-FAQ-text h2{
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 360px){
+  .top-FAQ-text h2{
+    line-height: 1.2;
+  }
+  .bottom-FAQ-text{
+    padding-top: 0;
+  }
+}
+
+/**********************Safety is Essential section**********************/
+.safety-title-text h2{
+  font-size: 200%;
+  text-align: left;
+}
+.safety-title-text h2 span{
+  font-size: 170%;
+}
+div.crib-text-holder{
+  padding-top: 40px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 60%;
+  left: 20%;
+  height: 570px;
+}
+#n-crib-text-holder{
+  background-image: url("//cdn.shopify.com/s/files/1/0578/7201/files/baby-image-desktop.jpg");
+  background-size: 500px;
+}
+#t-crib-text-holder{
+  background-image: url("//cdn.shopify.com/s/files/1/0578/7201/files/toddler-safety-page-girl-with-stroller.png?10644172405450505397");
+  background-size: 350px;
+}
+div.crib-text-holder p{
+  text-align: left;
+  width: 50%;
+  position: relative;
+  padding-top: 30px;
+}
+.lm-crib-safety{
+  position: relative;
+  margin-right: 50%;
+  top: 50px;
+}
+.lm-crib-safety button{
+  width: 120px;
+  height: 25px;
+  border-radius: 8px;
+}
+@media only screen and (min-width: 1500px){
+  div.crib-text-holder{
+    width: 50%;
+    left: 25%;
+  }
+}
+@media only screen and (max-width: 1025px){
+  div.crib-text-holder{
+    width: 80%;
+    left: 10%;
+  }
+}
+@media only screen and (max-width: 641px){
+  .safety-title-text h2{
+    font-size: 170%;
+    text-align: center;
+    line-height: 1;
+    padding-top: 0;
+  }
+  div.crib-text-holder{
+    width: 100%;
+    left: 0;
+    padding-top: 10px;
+    height: 520px;
+  }
+  #n-crib-text-holder{
+    background-size: 350px;
+  }
+  #t-crib-text-holder{
+    background-size: 230px;
+  }
+  div.crib-text-holder p{
+    width: 100%;
+    padding-top: 10px;
+  }
+  div.crib-text-holder p span{
+    width: 50%;
+    position: relative;
+    display: block;
+  }
+  .lm-crib-safety{
+    top: 140px;
+    margin-right: 0;
+  }
+  .lm-crib-safety button{
+    font-size: 90%;
+    padding-bottom: 0;
+  }
+  .nt-crib-container{
+    height: 580px;
+  }
+}
+@media only screen and (max-width: 360px){
+  #n-crib-text-holder{
+    background-size: 300px;
+  }
+  #t-crib-text-holder{
+    background-size: 200px;
+  }
+  .lm-crib-safety{
+    top: 80px;
+  }
+}
+
+/**********************Related Articles section**********************/
+.article-padding{
+  /*height: 100%;*/
+  width: 100%;
+  padding: 10px;
+}
+.article-padding h6{
+  font-size: 90%;
+}
+.article-padding p{
+  font-size: 90%;
+}
+.blog-content{
+  text-align: left;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  margin-top: 40px;
+}
+.blog-content-container{
+  position: relative;
+  height: 360px;
+}
+.blog-content-container img, h6, p{
+  z-index: 2;
+  position: relative;
+}
+.footer-btn:hover{
+  color: #8dabdd !important;
+}
+.read-more{
+  /*padding-left: 10px;*/
+  position: absolute;;
+  top: 350px;
+}
+.read-more:hover{
+  color: #8dabdd !important;
+}
+.transparent-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 380px;
+  width: 100%;
+  background-color: white;
+  opacity: .3;
+}
+#blog-btn-container{
+  padding-top: 40px;
+}
+.blog-top-title{
+  position: relative;
+  right: 5%;
+}
+.blog-title-bottom{
+  position: relative;
+  left: 5%;
+}
+.blog-top-title h2{
+  margin-bottom: 0;
+  line-height: .7;
+}
+.blog-top-title h2 span{
+  font-size: 190%;
+}
+.blog-title-bottom h2 span{
+  font-size: 190%;
+}
+.blog-title-bottom h2 {
+  line-height: .7;
+  margin-bottom: 0;
+}
+#n-blog-background{
+  background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/background-purple-min.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#t-blog-background{
+  background-image: url('//cdn.shopify.com/s/files/1/0578/7201/files/toddler-safety-page-background-desktop-03.jpg?10644172405450505397');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.nt-blog-container{
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+.nt-blog-title-container{
+  padding-top: 30px;
+}
+#right-arrow{
+  display: none;
+}
+@media only screen and (max-width: 1025px){
+  .blog-content{
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+  }
+}
+@media only screen and (max-width: 641px){
+  .horiz-scroll-container{
+    width: 900px;
+    position: relative;
+    display: block;
+    height: 400px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nt-blog-container{
+    overflow-x: scroll;
+  }
+  .nt-blog-title-container{
+    padding-bottom: 30px;
+  }
+  #blog-btn-container a button{
+    width: 40%;
+    font-size: 100%;
+    height: 30px;
+  }
+  #blog-btn-container{
+    padding-top: 60px;
+  }
+  #blog-right-arrow{
+    display: block;
+    position: absolute;
+    bottom: 250px;
+    right: 0;
+    opacity: .5;
+  }
+  #blog-left-arrow{
+    display: block;
+    position: absolute;
+    bottom: 250px;
+    left: 0;
+    opacity: .5;
+  }
+  .blog-top-title h2{
+    font-size: 150%;
+  }
+  .blog-title-bottom h2{
+    font-size: 150%;
+  }
+  .blog-top-title h2 span{
+    font-size: 160%;
+  }
+  .blog-title-bottom h2 span{
+    font-size: 160%;
+  }
+  #blog-t-title h2{
+    font-size: 130%;
+  }
+  #blog-t-bottom h2{
+    font-size: 130%;
+  }
+  #blog-t-title h2 span{
+    font-size: 150%;
+  }
+  #blog-t-bottom h2 span{
+    font-size: 150%;
+  }
+  .blog-content{
+    width: 300px !important;
+    display: inline-block;
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 380px) and (max-width: 420px){
+  .nt-blog-container{
+    width: 70%;
+    left: 15%;
+  }
+  #blog-btn-container a button{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 360px){
+  .blog-content-container{
+    width: 220px;
+  }
+  #blog-btn-container a button{
+    width: 50%;
+  }
+}

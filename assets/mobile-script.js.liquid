@@ -1,0 +1,172 @@
+$('#closeAlert').on('click', function(){
+     $('#sectionOneHeader').fadeOut();
+   })
+
+  var easyPaneltwo = $('#cart-mobile').scotchPanel({
+      containerSelector: 'body',
+      direction: 'right',
+      duration: 500,
+      transition: 'ease-in-out',
+      distanceX: '80%',
+      beforePanelOpen: function() {
+          $('#cart-mobile').css('display','block')
+          $('.scotch-panel-canvas').attr('id','')
+          toggleNavFixed();
+
+
+          if($('#cart-items-mobile').children().length > 0){
+            calculateElementHeight($('#cart-filled-wrapper').innerHeight() + 100)
+            $('#mobile-checkout-button').show();
+            $('#cart-empty-message').hide();
+          }else{
+            if($('#cart-empty-message').css('display') != 'none'){
+              calculateElementHeight($('#cart-filled-wrapper').innerHeight() + 100)
+            }else{
+                calculateElementHeight('100%');
+            $('#mobile-checkout-button').hide();
+            }
+          }
+        },
+        beforePanelClose: function() {
+          resetBodyHeight();
+          toggleNavFixed();
+          $('.scotch-panel-canvas').attr('id','scotchFix');
+        }
+
+
+  });
+
+   var easyPanelthree = $('#nav-mobile-slide').scotchPanel({
+      containerSelector: 'body',
+      direction: 'left',
+      duration: 500,
+      transition: 'ease-in-out',
+      distanceX: '80%',
+      beforePanelOpen: function() {
+          $('#nav-mobile-slide').css('display','block')
+          $('.scotch-panel-canvas').attr('id','')
+          toggleNavFixed();
+          calculateElementHeight($('#nav-mobile-ul').innerHeight() + 100)
+        },
+        beforePanelClose: function() {
+          resetBodyHeight();
+          toggleNavFixed();
+          $('.scotch-panel-canvas').attr('id','scotchFix');
+        }
+  });
+
+
+   var calculateElementHeight = function(elementH){
+      $('.scotch-panel-canvas').css('height',elementH);
+   }
+
+   var resetBodyHeight = function(){
+    $('.scotch-panel-canvas').css('height','100%')
+   }
+
+   var toggleNavFixed = function(){
+    $('#site-header-mobile').toggleClass('nav-fix-absolute')
+   }
+
+  $('.toggle-cart-mobile').on('click', function() {
+      $('#site-overlay').fadeIn();
+      easyPaneltwo.toggle();
+  });
+
+  $('.toggle-nav-mobile').on('click', function() {
+      $('#site-overlay').fadeIn();
+      easyPanelthree.toggle();
+  });
+
+  $('#site-overlay, .toggle-menu-mobile-close').on('click',function(){
+      $('#site-overlay').fadeOut();
+      easyPanelthree.close();
+   })
+
+
+   $('#site-overlay, #toggle-cart-mobile-close').on('click',function(){
+      $('#site-overlay').fadeOut();
+      easyPaneltwo.close();
+   })
+
+
+    var menuCounter = 0
+
+     $('.has-dropdown-mobile').each(function(){
+        var nested = $(this).children()[1];
+        var textForLabel = $(nested).siblings()[0].innerText;
+        var elementForLabel = $(nested).children()[0];
+        $(elementForLabel).append("<span class='dropdown-back'></span>" + textForLabel);
+     })
+
+   $('.has-dropdown-mobile').on('click ', function(e){
+       e.preventDefault();
+
+      var nested = $(this).children()[1];
+      console.log(nested);
+
+      var height = window.innerHeight + 150 ; //causes landscape switch
+      $(nested).addClass('slideForwards');
+      $(nested).fadeIn();
+      $(nested).css('min-height',height);
+      $(nested).animate({ scrollTop: 0 }, "slow");
+      // $('.pushy-left').css('overflow','hidden');
+       menuCounter++;
+       e.stopPropagation();
+      }).on('click', 'li', function() {
+        e.stopPropagation()
+      });
+
+
+    $('.dropdown-back').on('click ',function(e){
+      menuCounter--;
+      var nested = $(this).parent().parent()[0]
+      if (menuCounter == 0){
+        $('.pushy-left').css('overflow','auto')
+      }
+      setTimeout(function () {
+            $(nested).removeClass('slideForwards')
+            $(nested).fadeOut()
+      }, 100);
+      e.stopPropagation();
+    })
+
+
+
+  $(window).bind("scroll", function() {
+      if ($(this).scrollTop() > 200) {
+        var el = $("#sectionOneHeader")
+        if($(el).hasClass('alreadyShown')){
+            return;
+          }else{
+          $("#sectionOneHeader").fadeIn();
+          $(el).addClass('alreadyShown')
+        }
+      }
+  });
+
+    $('.scotch-panel-canvas').attr('id','scotchFix')
+    $('#searchIconMain').on('click touchstart',function(){
+          $('#mobileSearchOverlay').fadeIn(200);
+          $('body').css('position','fixed');
+      })
+      $('#searchOverlayClose').on('click touchstart',function(){
+         $('body').css('position','static');
+         $('#mobileSearchOverlay').fadeOut(200);
+      })
+
+
+
+        //  GET MOBILE NAV TO RETURN TO WHERE IT WAS BEFORE TOUCHING INTO PAGE
+
+  var url = window.location;
+  console.log(url);
+
+ if (url = 'http://deltachildren-content.myshopify.com/collections/toddler-beds{{%collection.url%}}') {
+   $('.toggle-nav-mobile').on('click', function(e) {
+       e.preventDefault();
+
+   });
+ }
+
+      

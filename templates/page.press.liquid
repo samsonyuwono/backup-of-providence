@@ -1,0 +1,856 @@
+{{ 'jquery.easyPaginate.js' | asset_url | script_tag }}
+{{ 'jquery.easyPaginate2.js' | asset_url | script_tag }}
+
+
+<div id="bannerImage" class="pressBanner">
+  <span id="pressBanner"><img alt="articlesButtonOn" src="https://cdn.shopify.com/s/files/1/0578/7201/files/press-page-banner.jpeg?16617733008482243379" /></span>
+  <span id="articlesOn"><img alt="articlesButtonOn" src="https://cdn.shopify.com/s/files/1/0578/7201/files/articles-ON.png?7116909264774437797" /></span>
+  <span id="videosOff"><a href="https://www.deltachildren.com/pages/videos"><img alt="videoButtonOff" src="https://cdn.shopify.com/s/files/1/0578/7201/files/videos-OFF.png?7116909264774437797" /></a></span>
+</div>
+
+<div class="articlesHeaderMobile">
+  <img src="https://cdn.shopify.com/s/files/1/0578/7201/files/press-page-banner-mobile-350x150_TEST.png?18209584702406118629" />
+</div>
+<div id="articlesMobileButtons" >
+  <ul >
+    <li>
+      <img alt="articlesButtonOn_mobile" src="https://cdn.shopify.com/s/files/1/0578/7201/files/articles-ON_TEST.png?18209584702406118629" />
+    </li>
+    <li>
+      <a href="https://www.deltachildren.com/pages/videos"><img alt="videoButtonOff_mobile" src="https://cdn.shopify.com/s/files/1/0578/7201/files/videos-OFF_mobileTest2.png?898660441148654307" /></a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+<ul id='easyPaginate' class="articlesDesktop">
+
+  <!-- <li>
+    <a title="Delta Children featured on Olive & Tate" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Olive-_-Tote-Press-Page-Image.jpg?802043862039330883"><img id="adjustImg1" alt="Delta Children featured on Olive & Tate" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Olive-_-Tote-Press-Page-Image.jpg?802043862039330883" style="float: left; margin-right: 20px;" /></a>
+    <h3> Olive & Tate:</br> <em>Baby Girl's Nursery Reveal  </em><h3>
+    <h6>May 11, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Charleston/Glenwood 3-in-1 Crib" target="_blank" href="http://www.deltachildren.com/products/charleston-glenwood-3-in-1-crib?variant=11177126531">Charleston/Glenwood 3-in-1 Crib </a>.</em><p>
+    <p><a title="DeltaBook of Olive & Tate" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Olive-_-Tote-Press-Page-Image.jpg?802043862039330883"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Bird A la Mode" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Bird_a_La_Mode.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Bird A la Mode" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Bird-a-la-Mode-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Bird A la Mode:</br> <em>Musical Beds </em><h3>
+    <h6>February 24, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Aster 3-Piece Toddler Room-in-a-Box" target="_blank" href="http://www.deltachildren.com/products/aster-3-piece-twin-room-in-a-box">Aster 3-Piece Toddler Room-in-a-Box </a>.</em><p>
+    <p><a title="DeltaBook of Bird A la Mode" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Bird_a_La_Mode.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Ashn Fashn" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Ashn-Fashn-Press-Page-Image.jpg?9550054006332889724"><img id="adjustImg1" alt="Delta Children featured on Ashn Fashn" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Ashn-Fashn-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Ashn Fashn:</br> <em>Nursery Additions </em><h3>
+    <h6>February 21, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Ava 3 Drawer Dresser with Changing Top" target="_blank" href="http://www.deltachildren.com/products/ava-3-drawer-dresser-w-changing-top-black-espresso-w-white">Ava 3 Drawer Dresser with Changing Top </a>.</em><p>
+    <p><a title="DeltaBook of Ashn Fashn" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Ashn-Fashn-Press-Page-Image.jpg?9550054006332889724"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Olivia Jeanette" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_The_Corporate_Catwalk.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Olivia Jeanette" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Olivia-Jeanette-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Olivia Jeanette:</br> <em>3 Baby Essencials for a Small Nursery </em><h3>
+    <h6>February 19, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Ava 3 Drawer Dresser with Changing Top" target="_blank" href="http://www.deltachildren.com/products/ava-3-drawer-dresser-w-changing-top-black-espresso-w-white">Ava 3 Drawer Dresser with Changing Top </a>.</em><p>
+    <p><a title="DeltaBook of Olivia Jeanette" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_The_Corporate_Catwalk.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Book of Leisure" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Book_of_Leisure.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Book of Leisure" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Book-0f-Leisure-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Book of Leisure:</br> <em>A Peek at Violet's Nursery </em><h3>
+    <h6>February 17, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Paris Glider" target="_blank" href="http://www.deltachildren.com/products/paris-glider?variant=22197174275">Paris Glider </a>.</em><p>
+    <p><a title="DeltaBook of Book of Leisure" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Book_of_Leisure.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Twelve & Six" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Twelve_Six_Blog.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Twelve & Six" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Twelve-_-Six-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Twelve & Six:</br> <em>The Perfect Nursery Dresser  </em><h3>
+    <h6>February 10, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View 3 Drawer Dresser" target="_blank" href="http://www.deltachildren.com/products/3-drawer-dresser?variant=15944205699">3 Drawer Dresser </a>.</em><p>
+    <p><a title="Delta Children featured on Twelve & Six" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Twelve_Six_Blog.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Good, Bad & Fab" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Good_Bad_and_Fab_Blog.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Good, Bad & Fab" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Good-Bad-_-Fab-Press-Page-image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Good, Bad & Fab:</br> <em>Nursery Reveal  </em><h3>
+    <h6>January 19, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Barrett 4-in-1 Convertible Crib" target="_blank" href="http://www.deltachildren.com/products/barrett-4-in-1-convertible-crib?variant=26868464323">Barrett 4-in-1 Convertible Crib </a>.</em><p>
+    <p><a title="Delta Children featured on Good, Bad & Fab:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Good_Bad_and_Fab_Blog.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Elisabeth Mcknight:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Elisabeth_McKnight.pdf?15738650105202982311"><img id="adjustImg1" alt="Delta Children featured on Elisabeth Mcknight:" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Elisabeth-Mcknight-press-page-image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Elisabeth Mcknight:</br> <em>6 Months Baby Schedule </em><h3>
+    <h6>January 10, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Paris Glider" target="_blank" href="http://www.deltachildren.com/products/paris-glider?variant=22197174211">Paris Glider</a>.</em><p>
+    <p><a title="Delta Children featured on Elisabeth Mcknight" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Elisabeth_McKnight.pdf?15738650105202982311"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Simple Clark" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Simply_Clarke.pdf?518021770788124569"><img id="adjustImg1" alt="Delta Children featured on Simple Clark" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Simply-Clarke-Press-Page-Image_medium.jpg?518021770788124569" style="float: left; margin-right: 20px;" /></a>
+    <h3>Simple Clark:</br> <em>Transitioning To a Toddler Bed </em><h3>
+    <h6>January 5, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Archer Toddler Bed" target="_blank" href="http://www.deltachildren.com/products/archer-toddler-bed?variant=22197083651">Archer Toddler Bed</a>.</em>
+    <p><a title="Delta Children featured on Simple Clark" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Simply_Clarke.pdf?518021770788124569"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on White J XOXO" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/White-J-XoXo-Press-Page-Image.jpg?9550054006332889724"><img id="adjustImg1" alt="Delta Children featured on White J XOXO" src="https://cdn.shopify.com/s/files/1/0578/7201/files/White-J-XoXo-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>White J XOXO:</br> <em>Must Have Gifts of 2016 For Your Infant </em><h3>
+    <h6>November 25, 2016</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Fun Time 36 x 36 Play Yard" target="_blank" href="http://www.deltachildren.com/products/fun-time-36-x-36-play-yard?variant=15355709699">Fun Time 36 x 36 Play Yard</a>.</em>
+    <p><a title="Delta Children featured on White J XOXO" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/White-J-XoXo-Press-Page-Image.jpg?9550054006332889724"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_For_the_Love_of_Fancy.pdf?14804545918756287512"><img id="adjustImg1" alt="Delta Children featured on For the Love of Fancy:" src="https://cdn.shopify.com/s/files/1/0578/7201/files/For-the-Love-of-Fancy-Press-Page-Image_medium.jpg?14804545918756287512" style="float: left; margin-right: 20px;" /></a>
+    <h3>For the Love of Fancy:</br> <em>Harper Rae’s Nursery</em><h3>
+    <h6>November 14, 2016</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Disney Princess Magical Dreams 4-in-1 Cribd" target="_blank" href="http://www.deltachildren.com/products/princess-magical-dreams-4-in-1-crib">Disney Princess Magical Dreams 4-in-1 Crib</a>.</em>
+    <p><a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_For_the_Love_of_Fancy.pdf?14804545918756287512"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Crazy_Life_With_Littles.pdf?13467105355211728141"><img id="adjustImg1" alt="Delta Children featured on For the Love of Fancy:" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Crazy-Life-With-Littles-Press-Page-Image_medium.jpg?8857941192240359019" style="float: left; margin-right: 20px;" /></a>
+    <h3>Crazy Life with Littles:</br> <em>Travelling with babies and Toddlers Printable Checklist</em><h3>
+    <h6>October 11, 2016</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View J is for Jeep Brand Metro Stroller " target="_blank" href="http://www.deltachildren.com/products/jeep-metro-stroller?variant=15945246787">J is for Jeep Brand Metro Stroller </a>.</em>
+    <p><a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Crazy_Life_With_Littles.pdf?13467105355211728141"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li> -->
+  <li>
+    <a title="Delta Children featured on Classic Bride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_On_Classic_Bride.pdf?2523623169255421953"><img id="adjustImg1" alt="Delta Children featured on Classic Bride" src="//cdn.shopify.com/s/files/1/0578/7201/files/Classic-Bride-Press-Page-Image_medium.jpg?v=1474583372" style="float: left; margin-right: 20px;" /></a>
+    <h3>Classic Bride:</br> <em>Our Preppy Baby Nursery Reveal</em><h3>
+    <h6>September 20, 2016</h6>
+    <p><em>Sarah from The Classic Bride shares her guide to a beautifully preppy blue and ivory nursery, featuring Delta Children's <a title="View Emery 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/emery-4-in-1-crib?variant=11176831875">Emery 4-in-1 Crib</a>.</em>
+    <p><a title="Delta Children featured on Classic Bride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_On_Classic_Bride.pdf?2523623169255421953"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on A Thrifty Diva" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Thrifty_Diva.pdf?7603157250916356100"><img alt="Delta Children featured on A Thrifty Diva" src="https://cdn.shopify.com/s/files/1/0578/7201/files/A-Thrifty-Diva-Press-Page_Image_medium.png?v=1474053750" style="float: left; margin-right: 20px;" /></a>
+    <h3>A Thrifty Diva:</br> <em>Baby Essentials - <br/>Do You Really Need A Bassinet?</h3>
+    <h6>September 15, 2016</h6>
+    <p><em>Blogger A Thrifty Diva answers the question all parents-to-be are wondering in her review of the Delta Children <a title="View Gliding Bassinet, Marina in browser" target="_blank" href="http://www.deltachildren.com/collections/bassinets/products/smooth-glide-bassinet">Marina Gliding Bassinet</a>.</em>
+    <p><a title="Delta Children featured on A Thrifty Diva" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Thrifty_Diva.pdf?12536204372588569345"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Little Mrs. Priss" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Little_Mrs._Priss.pdf?4168909477302627906"><img alt="Delta Children featured on Little Mrs. Priss" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Little-Mrs-Priss-Press-Page-Image_medium.png?v=1472668795" style="margin-right: 20px; float: left;" /></a>
+    <h3>Little Mrs. Priss:</br> <em>Go To Sleep Little One</em><h3>
+    <h6>August 23, 2016</h6>
+    <p><em>Blogger Little Mrs. Priss elaborates on the wonderful features of her new Simmons Kids <a title="View Beautyrest® Studio Gliding Bassinet in browser" target="_blank" href="http://www.deltachildren.com/products/beautyrest-studio-gliding-bassinet?variant=12115548035">Beautyrest® Studio Gliding Bassinet</a> and how perfect it is for her precious little one.<br /></em>
+    <p><a title="Delta Children featured on Little Mrs. Priss" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Little_Mrs._Priss.pdf?4168909477302627906"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Kids Today Online" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today_Article_Online.pdf?3636448159898238505"><img alt="Delta Children featured on Kids Today Online" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Kids-Today-Lactation-Room-Press-Page-Image_medium.png?v=1472493295" style="float: left; margin-right: 20px;" /></a>
+    <h3>Kids Today Online:</br> <em>Delta Children Helps New York City Furnish Lactation Rooms</em><h3>
+    <h6>August 22, 2016</h6>
+    <p><em>Delta Children pledges to donate furniture after NYC mayor, Bill de Blasio, signs bill that requires lactation rooms in certain public city offices.</em><p>
+    <p><a title="Delta Children featured on Kids Today Online" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today_Article_Online.pdf?3636448159898238505"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on A Touch of Pink" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Touch_of_Pink.pdf?899380487944222431"><img alt="Delta Children featured on A Touch of Pink" src="https://cdn.shopify.com/s/files/1/0578/7201/files/A-Touch-of-Pink-Press-Page-Image_medium.png?v=1472571867" style="margin-right: 20px; float: left;" /></a>
+    <h3>A Touch of Pink:<br/> <em>Baby Girl's Nursery Reveal</em></h3>
+    <h6>August 16, 2016</h6>
+    <p><em>A pretty pink girl's room put together by Katelyn Jones from A Touch of Pink featuring the <a title="View Emma Tufted Glider in browser" target="_blank" href="http://www.deltachildren.com/products/emma-tufted-glider-1?variant=15898252803">Emma Tufted Glider</a> in Blush by Delta Children.</em>
+    <p ><span style="text-decoration: underline;"><a title="Delta Children featured on A Touch of Pink" style=" text-decoration: underline;" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Touch_of_Pink.pdf?899380487944222431"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Marina McAvoy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Marina_McAvoy.pdf?9513326231504342183"><img alt="Delta Children featured on Marina McAvoy" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Marina-McAvoy-Press-Page-Image_medium.png?v=1472584205" style="float: left; margin-right: 20px;" /></a>
+    <h3>Marina McAvoy:<br/> <em>Ethan's Nursery Reveal</em><h3>
+    <h6>August 13, 2016</h6>
+    <p><em>This soft and gorgeous nursery by Marina McAvoy features Simmons Kids <a title="View Hollywood 4 Drawer Chest in browser" target="_blank" href="http://www.deltachildren.com/products/hollywood-4-drawer-chest-antique-white-grey?variant=14560360707">Hollywood 4 Drawer Chest</a> and Delta Children <a title="View Eva Glider in browser" target="_blank" href="http://www.deltachildren.com/collections/gliders/products/eva-glider?variant=23009601475">Eva Glider</a>.</em><p>
+    <p><a title="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Marina_McAvoy.pdf?9513326231504342183" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Marina_McAvoy.pdf?9513326231504342183"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_My_Wife_Styles.pdf?14228944063244768818"><img alt="Delta Children featured on My Wife Styles" src="https://cdn.shopify.com/s/files/1/0578/7201/files/My-Wife-Styles-Press-Page-Image_medium.png?v=1472575478" style="float: left; margin-right: 20px;" /></a>
+    <h3> My Wife Styles:</br> <em>Sneak Peek of Baby's Nursery</em><h3>
+    <h6> August 10, 2016</h6>
+    <p><em>Blogger My Wife Styles shares details on why she chose Delta Children's <em><a title="View Epic 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/epic-4-in-1-crib-grey?variant=15946500675">Epic 4-in-1 Crib</a> and secrets behind designing this black and white nursery.<br /></em>
+    <p><a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_My_Wife_Styles.pdf?14228944063244768818"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Jeep_featured_on_My_Wife_Styles.pdf?5073133567806288195"><img alt="Delta Children featured on My Wife Styles" src="https://cdn.shopify.com/s/files/1/0578/7201/files/My-Wife-Styles-Jeep-Press-Page-Image_medium.png?v=1472669472" style="margin-right: 20px; float: left;" /></a>
+    <h3>My Wife Styles:</br> <em>Taking a Stroll with Delta Children</em><br/></h3>
+    <h6><span>July 31, 2016</h6>
+    <p><em>Clarissa from My Wife Styles shares her favorite features of the <a title="View J is for Jeep® Brand Atlas AL Sport Stroller in browser" target="_blank" href="http://www.deltachildren.com/products/j-is-for-jeep-brand-atlas-al-sport-stroller">J is for Jeep<sub>®</sub> Brand Atlas AL Sport Stroller</a>
+    <a title="Delta Children featured on Buzy Little Izzy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Busy_Little_Izzy.pdf?4023359850278521207">.</a></em>
+    <p><a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Jeep_featured_on_My_Wife_Styles.pdf?5073133567806288195"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Buzy Little Izzy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Busy_Little_Izzy.pdf?4023359850278521207"><img alt="Delta Children featured on Buzy Little Izzy" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Busy-Little-Izzy-Press-Page-Image_medium.png?v=1472674028" style="margin-right: 20px; float: left;" /></a>
+    <h3>Busy Little Izzy:<br/> <em>3 Ways to Create a Great Stroller Environment</em><h3>
+    <h6><span>July 18, 2016</h6>
+    <p><em>Blogger Busy Little Izzy shares why the <a title="View J is for Jeep® Brand Scout Stroller in browser" target="_blank" href="http://www.deltachildren.com/products/scout-stroller-11598?variant=11176108355">J is for Jeep<sub>®</sub> Brand Scout Stroller</a> is so perfect for her family.<br /></em>
+    <p><a title="Delta Children featured on Buzy Little Izzy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Busy_Little_Izzy.pdf?4023359850278521207"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Mrs. Coco Wyse" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs._Coco_Wyse_Blog.pdf?5421664669748913645"><img alt="Delta Children featured on Mrs. Coco Wyse" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Mrs.-Coco-Wyse-Press-Page-Image_medium.png?14703275877795409820" style="margin-right: 20px; float: left;" /></a>
+    <h3>Coco Wyse:<br/> <em>Emmy's Updated Nursery!</em></h3>
+    <h6>July 5, 2016</h6>
+    <p><em>Delta Children's <a title="View Fabio 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/fabio-4-in-1-crib?variant=14260160707">Fabio 4-in-1 Crib</a> is featured in this nursery makeover that will effortlessly transition into a big girl's room.</em>
+    <p><a title="Delta_Children_featured_on_Mrs._Coco_Wyse_Blog" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs._Coco_Wyse_Blog.pdf?5421664669748913645"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Mrs. Coco Wyse" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs_Coco_Wyse.pdf?1364445380213782470"><img alt="Delta Children featured on Mrs. Coco Wyse" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Mrs-Coco-Wyse-Press-Page-Image_medium.png?v=1472577085" style="margin-right: 20px; float: left;" /></a>
+    <h3>Mrs. Coco Wyse: <br/><em>Baby Boy Nursery &amp; Welcome!</em></h3>
+    <h6>June 25, 2016</h6>
+    <p><em>Delta Children's <a title="View Epic Glider in browser" target="_blank" href="http://www.deltachildren.com/products/epic-glider/?variant=15946628675">Epic Glider</a> looks stunning in this neutral and calm nursery styled and put together by Courtney Wyse.<br /></em></span></p>
+    <p><a title="Delta Children featured on Mrs. Coco Wyse" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs_Coco_Wyse.pdf?1364445380213782470"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children Featured on The DIY Playbook" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_DIY_Playbook.pdf?11703990626405761935"><img alt="Delta Children featured in Lacey Chabert's Nursery on People.com" src="https://cdn.shopify.com/s/files/1/0578/7201/files/DIY-Playbook-Press-Page-Image_medium.png?14703275877795409820" style="margin-right: 20px; float: left;" /></a>
+    <h3>The DIY Playbook:<em>Happy Camper Nursery Source List<br /></em></h3>
+    <h6>June 24, 2016</h6>
+    <p><em>Blogger The DIY Playbook reveals the source list from her beautiful gender neutral nursery featuring Delta Children's</span> <a title="View Manhattan 3-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/manhattan-3-in-1-crib?variant=11177724611">Manhattan 3-in-1 Crib</a> and</span> <a title="View Ava Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/ava-upholstered-glider-graphite">Ava Upholstered Glider</a>.</span> </em></p>
+    <p><a title="Delta Children Featured on The DIY Playbook" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_DIY_Playbook.pdf?11703990626405761935"><span style="text-decoration: underline; "><em>Read More...</em></span></a> </p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Lacey Chabert's Nursery on People.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Lacey_Chamberts_nursery_on_People.com.pdf?1364445380213782470"><img alt="Delta Children featured in Lacey Chabert's Nursery on People.com" src="https://cdn.shopify.com/s/files/1/0578/7201/files/People.com-Lacey-Chabert-Press-Page-Image_medium.png?v=1472577600" style="margin-right: 20px; float: left;" /></a>
+    <h3>People.com: <br/><em>Pretty in Pink! Inside Lacey Chabert’s ‘Feminine and Romantic’ Nursery</em></h3>
+    <h6>June 23, 2016</h6>
+    <p><em>Delta Children's <a title="View Epic Glider in browser" target="_blank" href="http://www.deltachildren.com/products/epic-glider/?variant=15946628675">Epic Glider</a> stands out in Mean Girls' Lacey Chabert's beautiful nursery.</em></span></p>
+    <p><a title="Delta Children featured in Lacey Chabert's Nursery on People.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Lacey_Chamberts_nursery_on_People.com.pdf?1364445380213782470"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Frills &amp; Drills" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Frills_Drills.pdf?17598708003842598038"><img alt="Delta Children featured on Frills &amp; Drills" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Frills-Drills-Press-Page-Image_medium.png?v=1472588874" style="margin-right: 20px; float: left;" /></a>
+    <h3><span style="text-decoration: underline;"></span>Frills &amp; Drills: <br/><em>Nursery Reveal</em><br /></span></span></h3>
+    <h6>June 16, 2016</h6>
+    <p><em>Blogger Frills &amp; Drills' gentle safari themed nursery is completed by  the subtle of presence of Delta Children's <a title="View Fancy 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/fancy-4-in-1-crib?variant=15944500611">Fancy 4-in-1 Crib</a>.</em></span></p>
+    <p><a title="Delta Children featured on Frills &amp; Drills" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Frills_Drills.pdf?17598708003842598038"><span style="text-decoration: underline;"><span style=" text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Island Fever Sisters on AOL.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Island_Fever_Sisters_on_Aol.com.pdf?4772105401649133703"><img alt="Delta Children featured in Island Fever Sisters on AOL.com" src="https://cdn.shopify.com/s/files/1/0578/7201/files/AOL.com-Island-Fever-Sisters-Press-Page-Image_medium.png?v=1472591929" style="margin-right: 20px; float: left;" /></a>
+    <h3>AOL.com: <br/><em>A Nursery That Your Child Can Grow Into</em></h3>
+    <h6>June 14, 2016</h6>
+    <p><em>Island Fever Sisters' vibrant nursery is featured on AOL.com for its bold and stylish design which stars Delta Children's <a title="View Tribeca 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/tribeca-4-in-1-crib-whitegrey">Tribeca 4-in-1 Convertible Crib</a> that grows with your child.</em></span></p>
+    <p><a title="Delta Children featured in Island Fever Sisters on AOL.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Island_Fever_Sisters_on_Aol.com.pdf?4772105401649133703"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Lauren McBride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Lauren_McBride.pdf?7250584729745803716"><img alt="Delta Children featured on Lauren McBride" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Lauren-McBride-Press-Page-Image_medium.png?v=1472507431" style="float: left; margin-right: 20px;" /></span></a>
+    <h3> Lauren McBride: <br/><em>Whimsical, Bohemian Girl's Nursery</em></h3>
+    <h6>May 11, 2016</h6>
+    <p><em>Lauren McBride puts together a soft nursery with pink touches for her daughter, Noelle, featuring Delta Children's <a title="View Avery Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/avery-upholstered-glider?variant=15947860995">Avery Upholstered Glider.</a></em></span></p>
+    <p><a title="Delta Children featured on Lauren McBride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Lauren_McBride.pdf?7250584729745803716"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on The Street" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Street.pdf?18321339467758725580"><img alt="Delta Children featured on The Street" src="https://cdn.shopify.com/s/files/1/0578/7201/files/The-Streeet-Press-Page-Image_medium.png?v=1472667718" style="margin-right: 20px; float: left;" /></a>
+    <h3>The Street: <br/><em>These Gift Ideas Will Make You Mom’s Favorite on Mother’s Day</em></h3>
+    <h6>April 8, 2016</h6>
+    <p><em>Delta Children's <a title="View Set of Three Tapered Totes in browser" target="_blank" href="http://www.deltachildren.com/products/tapered-tote?variant=11176550659">Set of Three Tapered Totes</a> and <a title="View Sesame Street Deluxe Multi-Bin Toy Organizer in browser" target="_blank" href="http://www.deltachildren.com/products/sesame-street-deluxe-multi-bin-toy-organizer">Sesame Street Deluxe Multi-Bin Toy Organizer</a> are featured as top picks for Mother's Day gifts on The Street.</span></em></p>
+    <p><a title="Delta Children featured on The Street" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Street.pdf?18321339467758725580"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children Featured on J'adore Lexie Couture" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_J_Adore_Lexie_Couture.pdf?6066315601149550379"><img alt="Delta Children Featured on J'adore Lexie Couture" src="https://cdn.shopify.com/s/files/1/0578/7201/files/JAdore-Lexie-Couture-Press-Page-Image_medium.png?v=1472660435" style="margin-right: 20px; float: left;" /></a>
+    <h3>J'Adore Lexie Couture: <br/><em>The Perfect Room Made for a Little Princess</em></h3>
+    <h6>February 29, 2016</h6>
+    <p><em>Delta Children's <a title="View Princess Carriage Convertible Toddler-to-Twin Bed in browser" target="_blank" href="http://www.deltachildren.com/products/disney-princess-carriage-toddler-to-twin-bed">Princess Carriage Convertible Toddler-to-Twin Bed</a> proves to be the perfect addition to blogger J'Adore Lexie Coutoure's little princess's room.</em></span></p>
+    <p><span style="text-decoration: underline; "><em><span style=" text-decoration: underline;"><span style="color: #999999; text-decoration: underline;"><span><em><span style=" text-decoration: underline;"><a title="Delta Children Featured on J'adore Lexie Couture" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_J_Adore_Lexie_Couture.pdf?6066315601149550379"><span style=" text-decoration: underline;">Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Positively Oakes" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Positively_Oakes_Blake_s_Indie_Nursery.pdf?1713051489322416594"><img alt="Delta Children featured on Positively Oakes" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Positively-Oakes-Indie-Nursery-Press-Page-Image_medium.png?v=1472570599" style="margin-right: 20px; float: left;" /></a>
+    <h3>Positively Oakes: <br/><em>Blake's Indie Nursery</em></h3>
+    <h6>January 5, 2016</h6>
+    <p><em>Positively Oakes built her baby's indie nursery around these key pieces from Delta Children: <a title="View Disney Princess Magical Dreams 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/collections/cribs/products/princess-magical-dreams-4-in-1-crib">Disney Princess Magical Dreams 4-in-1 Crib</a>,
+      <a title="View Disney Princess Magical Dreams Dresser in browser" target="_blank" href="http://www.deltachildren.com/products/princess-magical-dreams-dresser/?variant=15944702595">Disney Princess Magical Dreams Dresser</a>, and <a title="View Eva Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/eva-glider?variant=23009601347">Eva Upholstered Glider</a>. </em></span></p>
+    <p><a title="Delta Children featured on Positively Oakes" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Positively_Oakes_Blake_s_Indie_Nursery.pdf?1713051489322416594"><em><span style="text-decoration: underline; ">Read More...</span></em></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Pregnancy &amp; Newborn Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Pregnancy_Newborn_January_Issue.pdf?9591571260952127375"><img alt="Delta Children featured in Pregnancy &amp; Newborn Magazine" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Pregnancy-Newborn-Press-Page-Image_medium.png?v=1472589945" style="margin-right: 20px; float: left;" /></a>
+    <h3>Pregnancy &amp; Newborn: <br/><em>Gender Neutral Nursery Design</em></h3>
+    <h6>January 2016</h6>
+    <p> </p>
+    <p><em>Pregnancy &amp; Newborn featured Delta Children's <a title="View Lux Swivel Chair in browser" target="_blank" href="http://www.deltachildren.com/products/lux-swivel-chair?variant=11177585283">Lux Swivel Chair</a> as the perfect accessory to a gender neutral nursery.</em></span></p>
+    <p><a title="Delta Children featured in Pregnancy &amp; Newborn Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Pregnancy_Newborn_January_Issue.pdf?9591571260952127375"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Better Homes and Gardens" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Better_Homes_and_Gardens_Online.pdf?16514790265335243745"><img alt="Delta Children featured on Better Homes and Gardens" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Better-Homes-and-Gardens-Press-Page-Image_medium.png?v=1472574141" style="float: left; margin-right: 20px;" /></a>
+    <h3>Better Homes and Gardens: <br/><em>Tiny Rooms with Big Personality</em></h3>
+    <h6>January 2016</h6>
+    <p><em>Honey We're Home's collab with Delta Children featuring the <a title="View Epic 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/epic-4-in-1-crib-grey?variant=11176720387">Epic 4-in-1 Crib</a>,
+    <a title="View Epic 3 Drawer Dresser in browser" target="_blank" href="http://www.deltachildren.com/products/epic-3-drawer-dresser-grey/?variant=11176703683">Epic 3 Drawer Dresser</a>, and <a title="View Epic Glider in browser" target="_blank" href="http://www.deltachildren.com/products/epic-glider/?variant=15752290627">Epic Glider</a> receives an A+ in style from Better Homes and Gardens.</em></span></p>
+    <p><a title="Delta Children featured on Better Homes and Gardens" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Better_Homes_and_Gardens_Online.pdf?16514790265335243745"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on The Style Editrix" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Style_Editrix.pdf?11328235588006697226"><img alt="Delta Children featured on The Style Editrix" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Style-Editrix-Ava-Press-Page-Image_medium.png?v=1472497092" style="float: left; margin-right: 20px;" /></a>
+    <h3>The Style Editrix: <br/><em>Nursery Reveal</em></h3>
+    <h6>November 30, 2015</h6>
+    <p><em>The Style Editrix shares her dream nursery come true featuring Delta Children's <a title="View Ava 3-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/ava-3-in-1-crib-white?variant=15946867907">Ava 3-in-1 Crib</a>, <a title="View Haven 6 Drawer Dresser in browser" target="_blank" href="http://www.deltachildren.com/products/haven-6-drawer-dresser-white?variant=11176611587">Haven 6 Drawer Dresser</a>,
+      and <a title="View Ava Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/ava-upholstered-glider-graphite">Ava Upholstered Glider</a>.</em></span></p>
+    <p><a target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Style_Editrix.pdf?11328235588006697226"><span style="text-decoration: underline;"><span><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Kids Today Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444"><img alt="Delta Children featured in Kids Today Magazine" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Kids-Today-2015-Press-Page-Image_medium.png?v=1472490253" style="float: left; margin-right: 20px;" /></a>
+    <h3>Kids Today: <em>Delta Children Participates in African American Breastfeeding Week</em></h3>
+    <h6>September/October 2015</h6>
+    <p> Delta Children donates gliders and other furniture to new lactation rooms in Brooklyn.</em></p>
+    <p><a title="Delta Children featured in Kids Today Magazine" style="" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444"><span style="text-decoration: underline;">Read More...</span></a></span></em></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Kids Today Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444"><img alt="Delta Children featured in Kids Today Magazine" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Kids-Today-2015-Press-Page-Image_medium.png?v=1472490253" style="margin-right: 20px; float: left;" /></a>
+    <h3>Kids Today: <br/><em>Family Tradition</em></h3>
+    <h6>September/October 2015</h6>
+    <p> Delta Children President, Joseph Shamie, shares about continuing his family's commitment to safety.<br /></em></p>
+    <p><a title="Delta Children featured in Kids Today Magazine" style=" text-decoration: underline;" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444">Read More...</a></em></span></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><img alt="Delta Children featured in Baby &amp; Kids Magazine" src="//cdn.shopify.com/s/files/1/0578/7201/files/Baby-and-Kids-Press-Page-Image_medium.png?v=1472658850" style="margin-right: 20px; float: left;" /></a>
+    <h3>Baby &amp; Kids: <br/><em>Rooms to Remember</em></h3>
+    <h6>Fall 2015</h6>
+    <p><em>Delta Children called an innovator in safety and juvenile furniture in Baby &amp; Kids Fall Issue featuring <a title="View Serta Northbrook Collection in browser" target="_blank" href="http://www.deltachildren.com/products/northbrook-4-in-1-crib?variant=15944402819">Serta Northrbook Collection</a>.</em></span></p>
+    <p><a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><img alt="Delta Children featured in Baby &amp; Kids Magazine" src="//cdn.shopify.com/s/files/1/0578/7201/files/Baby-and-Kids-Press-Page-Image_medium.png?v=1472658850" style="margin-right: 20px; float: left;" /></a>
+    <h3>Baby &amp; Kids: <br/><em>Rooms to Remember</em></h3>
+    <h6>Fall 2015</h6>
+    <p><em>Delta Children called an innovator in safety and juvenile furniture in Baby &amp; Kids Fall Issue featuring <a title="View Serta Northbrook Collection in browser" target="_blank" href="http://www.deltachildren.com/products/northbrook-4-in-1-crib?variant=15944402819">Serta Northrbook Collection</a>.</em></span></p>
+    <p><a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+</ul><!-- end articles -->
+
+
+
+{%comment%}---------------------------------------BEGING MOBILE SECTION--------------------------------------------------{%endcomment%}
+
+
+<ul id='easyPaginate2' class="articlesMobile">
+
+  <!-- <li>
+    <a title="Delta Children featured on Olive & Tate" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Olive-_-Tote-Press-Page-Image.jpg?802043862039330883"><img id="adjustImg1" alt="Delta Children featured on Olive & Tate" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Olive-_-Tote-Press-Page-Image.jpg?802043862039330883" style="float: left; margin-right: 20px;" /></a>
+    <h3> Olive & Tate:</br> <em>Baby Girl's Nursery Reveal  </em><h3>
+    <h6>May 11, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Charleston/Glenwood 3-in-1 Crib" target="_blank" href="http://www.deltachildren.com/products/charleston-glenwood-3-in-1-crib?variant=11177126531">Charleston/Glenwood 3-in-1 Crib </a>.</em><p>
+    <p><a title="DeltaBook of Olive & Tate" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Olive-_-Tote-Press-Page-Image.jpg?802043862039330883"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Bird A la Mode" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Bird_a_La_Mode.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Bird A la Mode" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Bird-a-la-Mode-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Bird A la Mode:</br> <em>Musical Beds </em><h3>
+    <h6>February 24, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Aster 3-Piece Toddler Room-in-a-Box" target="_blank" href="http://www.deltachildren.com/products/aster-3-piece-twin-room-in-a-box">Aster 3-Piece Toddler Room-in-a-Box </a>.</em><p>
+    <p><a title="DeltaBook of Bird A la Mode" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Bird_a_La_Mode.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Ashn Fashn" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Ashn-Fashn-Press-Page-Image.jpg?9550054006332889724"><img id="adjustImg1" alt="Delta Children featured on Ashn Fashn" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Ashn-Fashn-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Ashn Fashn:</br> <em>Nursery Additions </em><h3>
+    <h6>February 21, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Ava 3 Drawer Dresser with Changing Top" target="_blank" href="http://www.deltachildren.com/products/ava-3-drawer-dresser-w-changing-top-black-espresso-w-white">Ava 3 Drawer Dresser with Changing Top </a>.</em><p>
+    <p><a title="DeltaBook of Ashn Fashn" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Ashn-Fashn-Press-Page-Image.jpg?9550054006332889724"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Olivia Jeanette" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_The_Corporate_Catwalk.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Olivia Jeanette" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Olivia-Jeanette-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Olivia Jeanette:</br> <em>3 Baby Essencials for a Small Nursery </em><h3>
+    <h6>February 19, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Ava 3 Drawer Dresser with Changing Top" target="_blank" href="http://www.deltachildren.com/products/ava-3-drawer-dresser-w-changing-top-black-espresso-w-white">Ava 3 Drawer Dresser with Changing Top </a>.</em><p>
+    <p><a title="DeltaBook of Olivia Jeanette" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_The_Corporate_Catwalk.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Book of Leisure" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Book_of_Leisure.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Book of Leisure" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Book-0f-Leisure-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Book of Leisure:</br> <em>A Peek at Violet's Nursery </em><h3>
+    <h6>February 17, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Paris Glider" target="_blank" href="http://www.deltachildren.com/products/paris-glider?variant=22197174275">Paris Glider </a>.</em><p>
+    <p><a title="DeltaBook of Book of Leisure" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Book_of_Leisure.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Twelve & Six" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Twelve_Six_Blog.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Twelve & Six" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Twelve-_-Six-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Twelve & Six:</br> <em>The Perfect Nursery Dresser  </em><h3>
+    <h6>February 10, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View 3 Drawer Dresser" target="_blank" href="http://www.deltachildren.com/products/3-drawer-dresser?variant=15944205699">3 Drawer Dresser </a>.</em><p>
+    <p><a title="Delta Children featured on Twelve & Six" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Twelve_Six_Blog.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Good, Bad & Fab" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Good_Bad_and_Fab_Blog.pdf?10208115752463843368"><img id="adjustImg1" alt="Delta Children featured on Good, Bad & Fab" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Good-Bad-_-Fab-Press-Page-image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Good, Bad & Fab:</br> <em>Nursery Reveal  </em><h3>
+    <h6>January 19, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Barrett 4-in-1 Convertible Crib" target="_blank" href="http://www.deltachildren.com/products/barrett-4-in-1-convertible-crib?variant=26868464323">Barrett 4-in-1 Convertible Crib </a>.</em><p>
+    <p><a title="Delta Children featured on Good, Bad & Fab:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_feature_on_Good_Bad_and_Fab_Blog.pdf?10208115752463843368"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Elisabeth Mcknight:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Elisabeth_McKnight.pdf?15738650105202982311"><img id="adjustImg1" alt="Delta Children featured on Elisabeth Mcknight:" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Elisabeth-Mcknight-press-page-image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>Elisabeth Mcknight:</br> <em>6 Months Baby Schedule </em><h3>
+    <h6>January 10, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Paris Glider" target="_blank" href="http://www.deltachildren.com/products/paris-glider?variant=22197174211">Paris Glider</a>.</em><p>
+    <p><a title="Delta Children featured on Elisabeth Mcknight" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Elisabeth_McKnight.pdf?15738650105202982311"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Simple Clark" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Simply_Clarke.pdf?518021770788124569"><img id="adjustImg1" alt="Delta Children featured on Simple Clark" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Simply-Clarke-Press-Page-Image_medium.jpg?518021770788124569" style="float: left; margin-right: 20px;" /></a>
+    <h3>Simple Clark:</br> <em>Transitioning To a Toddler Bed </em><h3>
+    <h6>January 5, 2017</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Archer Toddler Bed" target="_blank" href="http://www.deltachildren.com/products/archer-toddler-bed?variant=22197083651">Archer Toddler Bed</a>.</em>
+    <p><a title="Delta Children featured on Simple Clark" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Simply_Clarke.pdf?518021770788124569"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on White J XOXO" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/White-J-XoXo-Press-Page-Image.jpg?9550054006332889724"><img id="adjustImg1" alt="Delta Children featured on White J XOXO" src="https://cdn.shopify.com/s/files/1/0578/7201/files/White-J-XoXo-Press-Page-Image.jpg?9550054006332889724" style="float: left; margin-right: 20px;" /></a>
+    <h3>White J XOXO:</br> <em>Must Have Gifts of 2016 For Your Infant </em><h3>
+    <h6>November 25, 2016</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Fun Time 36 x 36 Play Yard" target="_blank" href="http://www.deltachildren.com/products/fun-time-36-x-36-play-yard?variant=15355709699">Fun Time 36 x 36 Play Yard</a>.</em>
+    <p><a title="Delta Children featured on White J XOXO" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/White-J-XoXo-Press-Page-Image.jpg?9550054006332889724"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_For_the_Love_of_Fancy.pdf?14804545918756287512"><img id="adjustImg1" alt="Delta Children featured on For the Love of Fancy:" src="https://cdn.shopify.com/s/files/1/0578/7201/files/For-the-Love-of-Fancy-Press-Page-Image_medium.jpg?14804545918756287512" style="float: left; margin-right: 20px;" /></a>
+    <h3>For the Love of Fancy:</br> <em>Harper Rae’s Nursery</em><h3>
+    <h6>November 14, 2016</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View Disney Princess Magical Dreams 4-in-1 Cribd" target="_blank" href="http://www.deltachildren.com/products/princess-magical-dreams-4-in-1-crib">Disney Princess Magical Dreams 4-in-1 Crib</a>.</em>
+    <p><a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_For_the_Love_of_Fancy.pdf?14804545918756287512"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Crazy_Life_With_Littles.pdf?13467105355211728141"><img id="adjustImg1" alt="Delta Children featured on For the Love of Fancy:" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Crazy-Life-With-Littles-Press-Page-Image_medium.jpg?8857941192240359019" style="float: left; margin-right: 20px;" /></a>
+    <h3>Crazy Life with Littles:</br> <em>Travelling with babies and Toddlers Printable Checklist</em><h3>
+    <h6>October 11, 2016</h6>
+    <p><em>**NEEDS DESCRIPTION**<a title="View J is for Jeep Brand Metro Stroller " target="_blank" href="http://www.deltachildren.com/products/jeep-metro-stroller?variant=15945246787">J is for Jeep Brand Metro Stroller </a>.</em>
+    <p><a title="Delta Children featured on For the Love of Fancy:" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Crazy_Life_With_Littles.pdf?13467105355211728141"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li> -->
+  <li>
+    <a title="Delta Children featured on Classic Bride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_On_Classic_Bride.pdf?2523623169255421953"><img id="adjustImg1" alt="Delta Children featured on Classic Bride" src="//cdn.shopify.com/s/files/1/0578/7201/files/Classic-Bride-Press-Page-Image_medium.jpg?v=1474583372" style="float: left; margin-right: 20px;" /></a>
+    <h3>Classic Bride:</br> <em>Our Preppy Baby Nursery Reveal</em><h3>
+    <h6>September 20, 2016</h6>
+    <p><em>Sarah from The Classic Bride shares her guide to a beautifully preppy blue and ivory nursery, featuring Delta Children's <a title="View Emery 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/emery-4-in-1-crib?variant=11176831875">Emery 4-in-1 Crib</a>.</em>
+    <p><a title="Delta Children featured on Classic Bride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_On_Classic_Bride.pdf?2523623169255421953"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on A Thrifty Diva" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Thrifty_Diva.pdf?7603157250916356100"><img alt="Delta Children featured on A Thrifty Diva" src="https://cdn.shopify.com/s/files/1/0578/7201/files/A-Thrifty-Diva-Press-Page_Image_medium.png?v=1474053750" style="float: left; margin-right: 20px;" /></a>
+    <h3>A Thrifty Diva:</br> <em>Baby Essentials - <br/>Do You Really Need A Bassinet?</h3>
+    <h6>September 15, 2016</h6>
+    <p><em>Blogger A Thrifty Diva answers the question all parents-to-be are wondering in her review of the Delta Children <a title="View Gliding Bassinet, Marina in browser" target="_blank" href="http://www.deltachildren.com/collections/bassinets/products/smooth-glide-bassinet">Marina Gliding Bassinet</a>.</em>
+    <p><a title="Delta Children featured on A Thrifty Diva" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Thrifty_Diva.pdf?12536204372588569345"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Little Mrs. Priss" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Little_Mrs._Priss.pdf?4168909477302627906"><img alt="Delta Children featured on Little Mrs. Priss" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Little-Mrs-Priss-Press-Page-Image_medium.png?v=1472668795" style="margin-right: 20px; float: left;" /></a>
+    <h3>Little Mrs. Priss:</br> <em>Go To Sleep Little One</em><h3>
+    <h6>August 23, 2016</h6>
+    <p><em>Blogger Little Mrs. Priss elaborates on the wonderful features of her new Simmons Kids <a title="View Beautyrest® Studio Gliding Bassinet in browser" target="_blank" href="http://www.deltachildren.com/products/beautyrest-studio-gliding-bassinet?variant=12115548035">Beautyrest® Studio Gliding Bassinet</a> and how perfect it is for her precious little one.<br /></em>
+    <p><a title="Delta Children featured on Little Mrs. Priss" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Little_Mrs._Priss.pdf?4168909477302627906"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Kids Today Online" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today_Article_Online.pdf?3636448159898238505"><img alt="Delta Children featured on Kids Today Online" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Kids-Today-Lactation-Room-Press-Page-Image_medium.png?v=1472493295" style="float: left; margin-right: 20px;" /></a>
+    <h3>Kids Today Online:</br> <em>Delta Children Helps New York City Furnish Lactation Rooms</em><h3>
+    <h6>August 22, 2016</h6>
+    <p><em>Delta Children pledges to donate furniture after NYC mayor, Bill de Blasio, signs bill that requires lactation rooms in certain public city offices.</em><p>
+    <p><a title="Delta Children featured on Kids Today Online" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today_Article_Online.pdf?3636448159898238505"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on A Touch of Pink" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Touch_of_Pink.pdf?899380487944222431"><img alt="Delta Children featured on A Touch of Pink" src="https://cdn.shopify.com/s/files/1/0578/7201/files/A-Touch-of-Pink-Press-Page-Image_medium.png?v=1472571867" style="margin-right: 20px; float: left;" /></a>
+    <h3>A Touch of Pink:<br/> <em>Baby Girl's Nursery Reveal</em></h3>
+    <h6>August 16, 2016</h6>
+    <p><em>A pretty pink girl's room put together by Katelyn Jones from A Touch of Pink featuring the <a title="View Emma Tufted Glider in browser" target="_blank" href="http://www.deltachildren.com/products/emma-tufted-glider-1?variant=15898252803">Emma Tufted Glider</a> in Blush by Delta Children.</em>
+    <p ><span style="text-decoration: underline;"><a title="Delta Children featured on A Touch of Pink" style=" text-decoration: underline;" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_A_Touch_of_Pink.pdf?899380487944222431"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Marina McAvoy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Marina_McAvoy.pdf?9513326231504342183"><img alt="Delta Children featured on Marina McAvoy" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Marina-McAvoy-Press-Page-Image_medium.png?v=1472584205" style="float: left; margin-right: 20px;" /></a>
+    <h3>Marina McAvoy:<br/> <em>Ethan's Nursery Reveal</em><h3>
+    <h6>August 13, 2016</h6>
+    <p><em>This soft and gorgeous nursery by Marina McAvoy features Simmons Kids <a title="View Hollywood 4 Drawer Chest in browser" target="_blank" href="http://www.deltachildren.com/products/hollywood-4-drawer-chest-antique-white-grey?variant=14560360707">Hollywood 4 Drawer Chest</a> and Delta Children <a title="View Eva Glider in browser" target="_blank" href="http://www.deltachildren.com/collections/gliders/products/eva-glider?variant=23009601475">Eva Glider</a>.</em><p>
+    <p><a title="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Marina_McAvoy.pdf?9513326231504342183" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Marina_McAvoy.pdf?9513326231504342183"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_My_Wife_Styles.pdf?14228944063244768818"><img alt="Delta Children featured on My Wife Styles" src="https://cdn.shopify.com/s/files/1/0578/7201/files/My-Wife-Styles-Press-Page-Image_medium.png?v=1472575478" style="float: left; margin-right: 20px;" /></a>
+    <h3> My Wife Styles:</br> <em>Sneak Peek of Baby's Nursery</em><h3>
+    <h6> August 10, 2016</h6>
+    <p><em>Blogger My Wife Styles shares details on why she chose Delta Children's <em><a title="View Epic 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/epic-4-in-1-crib-grey?variant=15946500675">Epic 4-in-1 Crib</a> and secrets behind designing this black and white nursery.<br /></em>
+    <p><a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_My_Wife_Styles.pdf?14228944063244768818"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Jeep_featured_on_My_Wife_Styles.pdf?5073133567806288195"><img alt="Delta Children featured on My Wife Styles" src="https://cdn.shopify.com/s/files/1/0578/7201/files/My-Wife-Styles-Jeep-Press-Page-Image_medium.png?v=1472669472" style="margin-right: 20px; float: left;" /></a>
+    <h3>My Wife Styles:</br> <em>Taking a Stroll with Delta Children</em><br/></h3>
+    <h6><span>July 31, 2016</h6>
+    <p><em>Clarissa from My Wife Styles shares her favorite features of the <a title="View J is for Jeep® Brand Atlas AL Sport Stroller in browser" target="_blank" href="http://www.deltachildren.com/products/j-is-for-jeep-brand-atlas-al-sport-stroller">J is for Jeep<sub>®</sub> Brand Atlas AL Sport Stroller</a>
+    <a title="Delta Children featured on Buzy Little Izzy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Busy_Little_Izzy.pdf?4023359850278521207">.</a></em>
+    <p><a title="Delta Children featured on My Wife Styles" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Jeep_featured_on_My_Wife_Styles.pdf?5073133567806288195"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Buzy Little Izzy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Busy_Little_Izzy.pdf?4023359850278521207"><img alt="Delta Children featured on Buzy Little Izzy" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Busy-Little-Izzy-Press-Page-Image_medium.png?v=1472674028" style="margin-right: 20px; float: left;" /></a>
+    <h3>Busy Little Izzy:<br/> <em>3 Ways to Create a Great Stroller Environment</em><h3>
+    <h6><span>July 18, 2016</h6>
+    <p><em>Blogger Busy Little Izzy shares why the <a title="View J is for Jeep® Brand Scout Stroller in browser" target="_blank" href="http://www.deltachildren.com/products/scout-stroller-11598?variant=11176108355">J is for Jeep<sub>®</sub> Brand Scout Stroller</a> is so perfect for her family.<br /></em>
+    <p><a title="Delta Children featured on Buzy Little Izzy" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Busy_Little_Izzy.pdf?4023359850278521207"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Mrs. Coco Wyse" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs._Coco_Wyse_Blog.pdf?5421664669748913645"><img alt="Delta Children featured on Mrs. Coco Wyse" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Mrs.-Coco-Wyse-Press-Page-Image_medium.png?14703275877795409820" style="margin-right: 20px; float: left;" /></a>
+    <h3>Coco Wyse:<br/> <em>Emmy's Updated Nursery!</em></h3>
+    <h6>July 5, 2016</h6>
+    <p><em>Delta Children's <a title="View Fabio 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/fabio-4-in-1-crib?variant=14260160707">Fabio 4-in-1 Crib</a> is featured in this nursery makeover that will effortlessly transition into a big girl's room.</em>
+    <p><a title="Delta_Children_featured_on_Mrs._Coco_Wyse_Blog" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs._Coco_Wyse_Blog.pdf?5421664669748913645"><span style="text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Mrs. Coco Wyse" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs_Coco_Wyse.pdf?1364445380213782470"><img alt="Delta Children featured on Mrs. Coco Wyse" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Mrs-Coco-Wyse-Press-Page-Image_medium.png?v=1472577085" style="margin-right: 20px; float: left;" /></a>
+    <h3>Mrs. Coco Wyse: <br/><em>Baby Boy Nursery &amp; Welcome!</em></h3>
+    <h6>June 25, 2016</h6>
+    <p><em>Delta Children's <a title="View Epic Glider in browser" target="_blank" href="http://www.deltachildren.com/products/epic-glider/?variant=15946628675">Epic Glider</a> looks stunning in this neutral and calm nursery styled and put together by Courtney Wyse.<br /></em></span></p>
+    <p><a title="Delta Children featured on Mrs. Coco Wyse" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Mrs_Coco_Wyse.pdf?1364445380213782470"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children Featured on The DIY Playbook" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_DIY_Playbook.pdf?11703990626405761935"><img alt="Delta Children featured in Lacey Chabert's Nursery on People.com" src="https://cdn.shopify.com/s/files/1/0578/7201/files/DIY-Playbook-Press-Page-Image_medium.png?14703275877795409820" style="margin-right: 20px; float: left;" /></a>
+    <h3>The DIY Playbook:<em>Happy Camper Nursery Source List<br /></em></h3>
+    <h6>June 24, 2016</h6>
+    <p><em>Blogger The DIY Playbook reveals the source list from her beautiful gender neutral nursery featuring Delta Children's</span> <a title="View Manhattan 3-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/manhattan-3-in-1-crib?variant=11177724611">Manhattan 3-in-1 Crib</a> and</span> <a title="View Ava Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/ava-upholstered-glider-graphite">Ava Upholstered Glider</a>.</span> </em></p>
+    <p><a title="Delta Children Featured on The DIY Playbook" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_DIY_Playbook.pdf?11703990626405761935"><span style="text-decoration: underline; "><em>Read More...</em></span></a> </p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Lacey Chabert's Nursery on People.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Lacey_Chamberts_nursery_on_People.com.pdf?1364445380213782470"><img alt="Delta Children featured in Lacey Chabert's Nursery on People.com" src="https://cdn.shopify.com/s/files/1/0578/7201/files/People.com-Lacey-Chabert-Press-Page-Image_medium.png?v=1472577600" style="margin-right: 20px; float: left;" /></a>
+    <h3>People.com: <br/><em>Pretty in Pink! Inside Lacey Chabert’s ‘Feminine and Romantic’ Nursery</em></h3>
+    <h6>June 23, 2016</h6>
+    <p><em>Delta Children's <a title="View Epic Glider in browser" target="_blank" href="http://www.deltachildren.com/products/epic-glider/?variant=15946628675">Epic Glider</a> stands out in Mean Girls' Lacey Chabert's beautiful nursery.</em></span></p>
+    <p><a title="Delta Children featured in Lacey Chabert's Nursery on People.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Lacey_Chamberts_nursery_on_People.com.pdf?1364445380213782470"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Frills &amp; Drills" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Frills_Drills.pdf?17598708003842598038"><img alt="Delta Children featured on Frills &amp; Drills" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Frills-Drills-Press-Page-Image_medium.png?v=1472588874" style="margin-right: 20px; float: left;" /></a>
+    <h3><span style="text-decoration: underline;"></span>Frills &amp; Drills: <br/><em>Nursery Reveal</em><br /></span></span></h3>
+    <h6>June 16, 2016</h6>
+    <p><em>Blogger Frills &amp; Drills' gentle safari themed nursery is completed by  the subtle of presence of Delta Children's <a title="View Fancy 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/fancy-4-in-1-crib?variant=15944500611">Fancy 4-in-1 Crib</a>.</em></span></p>
+    <p><a title="Delta Children featured on Frills &amp; Drills" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Frills_Drills.pdf?17598708003842598038"><span style="text-decoration: underline;"><span style=" text-decoration: underline;"><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Island Fever Sisters on AOL.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Island_Fever_Sisters_on_Aol.com.pdf?4772105401649133703"><img alt="Delta Children featured in Island Fever Sisters on AOL.com" src="https://cdn.shopify.com/s/files/1/0578/7201/files/AOL.com-Island-Fever-Sisters-Press-Page-Image_medium.png?v=1472591929" style="margin-right: 20px; float: left;" /></a>
+    <h3>AOL.com: <br/><em>A Nursery That Your Child Can Grow Into</em></h3>
+    <h6>June 14, 2016</h6>
+    <p><em>Island Fever Sisters' vibrant nursery is featured on AOL.com for its bold and stylish design which stars Delta Children's <a title="View Tribeca 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/tribeca-4-in-1-crib-whitegrey">Tribeca 4-in-1 Convertible Crib</a> that grows with your child.</em></span></p>
+    <p><a title="Delta Children featured in Island Fever Sisters on AOL.com" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_in_Island_Fever_Sisters_on_Aol.com.pdf?4772105401649133703"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Lauren McBride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Lauren_McBride.pdf?7250584729745803716"><img alt="Delta Children featured on Lauren McBride" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Lauren-McBride-Press-Page-Image_medium.png?v=1472507431" style="float: left; margin-right: 20px;" /></span></a>
+    <h3> Lauren McBride: <br/><em>Whimsical, Bohemian Girl's Nursery</em></h3>
+    <h6>May 11, 2016</h6>
+    <p><em>Lauren McBride puts together a soft nursery with pink touches for her daughter, Noelle, featuring Delta Children's <a title="View Avery Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/avery-upholstered-glider?variant=15947860995">Avery Upholstered Glider.</a></em></span></p>
+    <p><a title="Delta Children featured on Lauren McBride" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_featured_on_Lauren_McBride.pdf?7250584729745803716"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on The Street" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Street.pdf?18321339467758725580"><img alt="Delta Children featured on The Street" src="https://cdn.shopify.com/s/files/1/0578/7201/files/The-Streeet-Press-Page-Image_medium.png?v=1472667718" style="margin-right: 20px; float: left;" /></a>
+    <h3>The Street: <br/><em>These Gift Ideas Will Make You Mom’s Favorite on Mother’s Day</em></h3>
+    <h6>April 8, 2016</h6>
+    <p><em>Delta Children's <a title="View Set of Three Tapered Totes in browser" target="_blank" href="http://www.deltachildren.com/products/tapered-tote?variant=11176550659">Set of Three Tapered Totes</a> and <a title="View Sesame Street Deluxe Multi-Bin Toy Organizer in browser" target="_blank" href="http://www.deltachildren.com/products/sesame-street-deluxe-multi-bin-toy-organizer">Sesame Street Deluxe Multi-Bin Toy Organizer</a> are featured as top picks for Mother's Day gifts on The Street.</span></em></p>
+    <p><a title="Delta Children featured on The Street" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Street.pdf?18321339467758725580"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children Featured on J'adore Lexie Couture" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_J_Adore_Lexie_Couture.pdf?6066315601149550379"><img alt="Delta Children Featured on J'adore Lexie Couture" src="https://cdn.shopify.com/s/files/1/0578/7201/files/JAdore-Lexie-Couture-Press-Page-Image_medium.png?v=1472660435" style="margin-right: 20px; float: left;" /></a>
+    <h3>J'Adore Lexie Couture: <br/><em>The Perfect Room Made for a Little Princess</em></h3>
+    <h6>February 29, 2016</h6>
+    <p><em>Delta Children's <a title="View Princess Carriage Convertible Toddler-to-Twin Bed in browser" target="_blank" href="http://www.deltachildren.com/products/disney-princess-carriage-toddler-to-twin-bed">Princess Carriage Convertible Toddler-to-Twin Bed</a> proves to be the perfect addition to blogger J'Adore Lexie Coutoure's little princess's room.</em></span></p>
+    <p><span style="text-decoration: underline; "><em><span style=" text-decoration: underline;"><span style="color: #999999; text-decoration: underline;"><span><em><span style=" text-decoration: underline;"><a title="Delta Children Featured on J'adore Lexie Couture" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_J_Adore_Lexie_Couture.pdf?6066315601149550379"><span style=" text-decoration: underline;">Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Positively Oakes" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Positively_Oakes_Blake_s_Indie_Nursery.pdf?1713051489322416594"><img alt="Delta Children featured on Positively Oakes" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Positively-Oakes-Indie-Nursery-Press-Page-Image_medium.png?v=1472570599" style="margin-right: 20px; float: left;" /></a>
+    <h3>Positively Oakes: <br/><em>Blake's Indie Nursery</em></h3>
+    <h6>January 5, 2016</h6>
+    <p><em>Positively Oakes built her baby's indie nursery around these key pieces from Delta Children: <a title="View Disney Princess Magical Dreams 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/collections/cribs/products/princess-magical-dreams-4-in-1-crib">Disney Princess Magical Dreams 4-in-1 Crib</a>,
+      <a title="View Disney Princess Magical Dreams Dresser in browser" target="_blank" href="http://www.deltachildren.com/products/princess-magical-dreams-dresser/?variant=15944702595">Disney Princess Magical Dreams Dresser</a>, and <a title="View Eva Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/eva-glider?variant=23009601347">Eva Upholstered Glider</a>. </em></span></p>
+    <p><a title="Delta Children featured on Positively Oakes" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Positively_Oakes_Blake_s_Indie_Nursery.pdf?1713051489322416594"><em><span style="text-decoration: underline; ">Read More...</span></em></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Pregnancy &amp; Newborn Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Pregnancy_Newborn_January_Issue.pdf?9591571260952127375"><img alt="Delta Children featured in Pregnancy &amp; Newborn Magazine" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Pregnancy-Newborn-Press-Page-Image_medium.png?v=1472589945" style="margin-right: 20px; float: left;" /></a>
+    <h3>Pregnancy &amp; Newborn: <br/><em>Gender Neutral Nursery Design</em></h3>
+    <h6>January 2016</h6>
+    <p> </p>
+    <p><em>Pregnancy &amp; Newborn featured Delta Children's <a title="View Lux Swivel Chair in browser" target="_blank" href="http://www.deltachildren.com/products/lux-swivel-chair?variant=11177585283">Lux Swivel Chair</a> as the perfect accessory to a gender neutral nursery.</em></span></p>
+    <p><a title="Delta Children featured in Pregnancy &amp; Newborn Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Pregnancy_Newborn_January_Issue.pdf?9591571260952127375"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on Better Homes and Gardens" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Better_Homes_and_Gardens_Online.pdf?16514790265335243745"><img alt="Delta Children featured on Better Homes and Gardens" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Better-Homes-and-Gardens-Press-Page-Image_medium.png?v=1472574141" style="float: left; margin-right: 20px;" /></a>
+    <h3>Better Homes and Gardens: <br/><em>Tiny Rooms with Big Personality</em></h3>
+    <h6>January 2016</h6>
+    <p><em>Honey We're Home's collab with Delta Children featuring the <a title="View Epic 4-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/epic-4-in-1-crib-grey?variant=11176720387">Epic 4-in-1 Crib</a>,
+    <a title="View Epic 3 Drawer Dresser in browser" target="_blank" href="http://www.deltachildren.com/products/epic-3-drawer-dresser-grey/?variant=11176703683">Epic 3 Drawer Dresser</a>, and <a title="View Epic Glider in browser" target="_blank" href="http://www.deltachildren.com/products/epic-glider/?variant=15752290627">Epic Glider</a> receives an A+ in style from Better Homes and Gardens.</em></span></p>
+    <p><a title="Delta Children featured on Better Homes and Gardens" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_Better_Homes_and_Gardens_Online.pdf?16514790265335243745"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured on The Style Editrix" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Style_Editrix.pdf?11328235588006697226"><img alt="Delta Children featured on The Style Editrix" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Style-Editrix-Ava-Press-Page-Image_medium.png?v=1472497092" style="float: left; margin-right: 20px;" /></a>
+    <h3>The Style Editrix: <br/><em>Nursery Reveal</em></h3>
+    <h6>November 30, 2015</h6>
+    <p><em>The Style Editrix shares her dream nursery come true featuring Delta Children's <a title="View Ava 3-in-1 Crib in browser" target="_blank" href="http://www.deltachildren.com/products/ava-3-in-1-crib-white?variant=15946867907">Ava 3-in-1 Crib</a>, <a title="View Haven 6 Drawer Dresser in browser" target="_blank" href="http://www.deltachildren.com/products/haven-6-drawer-dresser-white?variant=11176611587">Haven 6 Drawer Dresser</a>,
+      and <a title="View Ava Upholstered Glider in browser" target="_blank" href="http://www.deltachildren.com/products/ava-upholstered-glider-graphite">Ava Upholstered Glider</a>.</em></span></p>
+    <p><a target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_on_The_Style_Editrix.pdf?11328235588006697226"><span style="text-decoration: underline;"><span><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Kids Today Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444"><img alt="Delta Children featured in Kids Today Magazine" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Kids-Today-2015-Press-Page-Image_medium.png?v=1472490253" style="float: left; margin-right: 20px;" /></a>
+    <h3>Kids Today: <em>Delta Children Participates in African American Breastfeeding Week</em></h3>
+    <h6>September/October 2015</h6>
+    <p> Delta Children donates gliders and other furniture to new lactation rooms in Brooklyn.</em></p>
+    <p><a title="Delta Children featured in Kids Today Magazine" style="" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444"><span style="text-decoration: underline;">Read More...</span></a></span></em></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Kids Today Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444"><img alt="Delta Children featured in Kids Today Magazine" src="https://cdn.shopify.com/s/files/1/0578/7201/files/Kids-Today-2015-Press-Page-Image_medium.png?v=1472490253" style="margin-right: 20px; float: left;" /></a>
+    <h3>Kids Today: <br/><em>Family Tradition</em></h3>
+    <h6>September/October 2015</h6>
+    <p> Delta Children President, Joseph Shamie, shares about continuing his family's commitment to safety.<br /></em></p>
+    <p><a title="Delta Children featured in Kids Today Magazine" style=" text-decoration: underline;" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_Featured_in_Kids_Today.pdf?5005426162937978444">Read More...</a></em></span></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><img alt="Delta Children featured in Baby &amp; Kids Magazine" src="//cdn.shopify.com/s/files/1/0578/7201/files/Baby-and-Kids-Press-Page-Image_medium.png?v=1472658850" style="margin-right: 20px; float: left;" /></a>
+    <h3>Baby &amp; Kids: <br/><em>Rooms to Remember</em></h3>
+    <h6>Fall 2015</h6>
+    <p><em>Delta Children called an innovator in safety and juvenile furniture in Baby &amp; Kids Fall Issue featuring <a title="View Serta Northbrook Collection in browser" target="_blank" href="http://www.deltachildren.com/products/northbrook-4-in-1-crib?variant=15944402819">Serta Northrbook Collection</a>.</em></span></p>
+    <p><a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+  <li>
+    <a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><img alt="Delta Children featured in Baby &amp; Kids Magazine" src="//cdn.shopify.com/s/files/1/0578/7201/files/Baby-and-Kids-Press-Page-Image_medium.png?v=1472658850" style="margin-right: 20px; float: left;" /></a>
+    <h3>Baby &amp; Kids: <br/><em>Rooms to Remember</em></h3>
+    <h6>Fall 2015</h6>
+    <p><em>Delta Children called an innovator in safety and juvenile furniture in Baby &amp; Kids Fall Issue featuring <a title="View Serta Northbrook Collection in browser" target="_blank" href="http://www.deltachildren.com/products/northbrook-4-in-1-crib?variant=15944402819">Serta Northrbook Collection</a>.</em></span></p>
+    <p><a title="Delta Children featured in Baby &amp; Kids Magazine" target="_blank" href="https://cdn.shopify.com/s/files/1/0578/7201/files/Delta_Children_and_Serta_Featured_in_Baby_Kids.pdf?3708664179523373030"><span style="text-decoration: underline; "><em>Read More...</em></span></a></p>
+    <br/><br/><hr>
+  </li>
+</ul><!-- end articles mobile-->
+
+
+
+
+
+
+<style>
+
+#easyPaginate li {
+  height: 320px;
+  list-style:none;
+}
+
+hr {
+  display: block;
+  margin-before: 0.5em;
+  margin-after: 0.5em;
+  margin-start: auto;
+  margin-end: auto;
+  border-style: inset;
+  border-width: 1px;
+  width: 95%;
+}
+
+.easyPaginateNav {
+  text-align: center;
+}
+
+.easyPaginateNav a {
+  padding: 3px;
+}
+
+a.page.current {
+  color: darkblue !important;
+  text-decoration: underline;
+}
+
+.articlesMobile {
+  display: none;
+}
+
+.easyPaginate2Nav {
+  display: none;
+}
+
+
+
+/*#pagination {
+  text-align: center;
+  color: #A1BCDE;
+}*/
+
+
+
+
+/*FOR DESKTOP, etc.*/
+/*@media only screen and (min-device-width: 1200px) {*/
+
+  /*#pressNotMobile {
+    display: block;
+    position: relative;
+    bottom: 7px;
+  }*/
+  /*#pressMobile {
+    display: none;
+  }*/
+
+  /*.M_Hide {
+    display: none;
+  }*/
+
+
+
+
+
+/*}*/
+
+
+
+/*for iPads, etc. */
+@media screen and (max-width: 1024px) and (min-width: 641px)   {
+
+  .articlesMobile {
+    display: block;
+  }
+
+
+
+  /*#pressNotMobile {
+    display: block;
+  }
+
+  #pressMobile {
+    display: none;
+  }*/
+
+  #pressBannerMobile,
+  #articlesOn_mobile {
+    display: none;
+  }
+
+
+  #articlesOff_mobile,
+  #videosOnn_mobile {
+    display: none;
+  }
+
+  h3 {
+    font-size: 110%;
+    font-weight: 999;
+    color: black;
+  }
+
+  h6,
+  p {
+    font-size: 90%;
+  }
+
+}
+
+
+
+  /*for mobile phones, etc. */
+  @media only screen and (max-device-width: 640px) {
+
+    .articlesMobile {
+      display: block;
+      margin-top: 32px;
+    }
+
+    .articlesDesktop {
+      display: none;
+    }
+
+    #easyPaginate2 li {
+      list-style: none !important;
+    }
+
+    div.easyPaginateNav {
+      display: none;
+    }
+
+    div.easyPaginate2Nav {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .easyPaginate2Nav a {
+      padding: 3px;
+    }
+
+    .articlesMobile li a img  {
+      float: none !important;
+    }
+
+    .articlesMobile li h3 {
+      font-size: 125%;
+      font-weight: bold;
+    }
+
+
+
+
+
+
+}
+
+</style>
+
+
+<script>
+
+//jQuery EasyPaginate plugin (file: assets/jquery.easyPaginate.js)
+$('#easyPaginate').easyPaginate({
+    paginateElement: 'li',
+    elementsPerPage: 15,
+    effect: 'climb',
+    hashPage: '#page:2'
+});
+
+$('a.first').text('first');
+$('a.last').text('last');
+
+
+$('#easyPaginate2').easyPaginate2({
+    paginateElement: 'li',
+    elementsPerPage: 15,
+    effect: 'climb',
+    hashPage: '#page:2'
+});
+
+// $('a.first').text('first');
+// $('a.last').text('last');
+
+
+
+
+</script>

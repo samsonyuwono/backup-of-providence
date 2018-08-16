@@ -1,0 +1,57 @@
+<div id="comment-form" class="section">
+
+  <h3>{{ 'blog.comments.form_title' | t }}</h3>
+
+  {% form article %}
+
+  {% if form.posted_successfully? and blog.moderated? %}
+    <div class="alert-box success" data-alert>{{ 'blog.comments.submitted_moderated' | t }}</div>
+  {% elsif form.posted_successfully? %}
+    <div class="alert-box success" data-alert>{{ 'blog.comments.submitted' | t }}</div>
+  {% else %}
+    {% if form.errors %}
+      <div class="alert-box error" data-alert>{{ 'blog.comments.submitted_error' | t }}</div>
+    {% endif %}
+  {% endif %}
+  <div class="alert-box error" id="verification-error" style="display:none;"></div>
+
+  <fieldset>
+
+    <div class="row">
+      <div class="large-4 small-3 large-push-8 columns">
+        <label for="comment_author" class="inline">{{ 'blog.comments.name_field_label' | t }}</label>
+      </div>
+      <div class="large-8 small-12 large-pull-4 columns{% if form.errors contains 'author' %} error{% endif %}">
+        <input type="text" id="comment_author" name="comment[author]" value="{{ form.author }}" data-required="true" data-required-message="{{ 'blog.comments.name_field_required' | t }}" placeholder="{{ 'blog.comments.name_field_placeholder' | t }}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 small-3 large-push-8 columns">
+        <label for="comment_email" class="inline">{{ 'blog.comments.email_field_label' | t }}</label>
+      </div>
+      <div class="large-8 small-12 large-pull-4 columns{% if form.errors contains 'email' %} error{% endif %}">
+        <input type="email" id="comment_email" name="comment[email]" value="{{ form.email }}" data-required="true" data-required-message="{{ 'blog.comments.email_field_required' | t }}"  data-type-email-message="{{ 'blog.comments.email_field_valid' | t }}" placeholder="{{ 'blog.comments.email_field_placeholder' | t }}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns{% if form.errors contains 'body' %} error{% endif %}">
+        <label for="comment_body" class="inline hidden">{{ 'blog.comments.comment_field_label' | t }}</label>
+        <textarea class="span12" id="comment_body" name="comment[body]" data-required="true" data-required-message="{{ 'blog.comments.comment_field_required' | t }}" rows="5" placeholder="{{ 'blog.comments.comment_field_placeholder' | t }}">{{ form.body }}</textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="button">{{ 'blog.comments.add_comment' | t }}</button>
+    </div>
+
+  </fieldset>
+
+  {% endform %}
+
+  {% if blog.moderated? %}
+    <span class="notice text-color-quiet">{{ 'blog.comments.moderated' | t }}</span>
+  {% endif %}
+
+</div>

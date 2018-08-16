@@ -1,0 +1,13 @@
+{% assign display_author = blog_prefix | append: '_display_author?' %}
+{% assign display_date = blog_prefix | append: '_display_date?' %}
+{% assign display_time = blog_prefix | append: '_display_time?' %}<br>
+{% assign display_comment_count = blog_prefix | append: '_display_comment_count?' %}
+
+{% if settings[display_author]  or settings[display_date] or settings[display_time] or settings[display_comment_count] %}
+  <div class="entry-meta">
+    <p>
+    {% if settings[display_author] %}<span class="author group">{{ 'blog.meta.by' | t }} {{ article.author }}</span><span class="divider"></span>{% endif %}{% if settings[display_date] %}<time class="published group" datetime="{{ article.published_at | date: '%F' }}">{{ article.published_at | date: '%B %d, %Y' }}</time>{% endif %}{% if settings[display_time] %}<span class="divider"></span> <time class="published-time group" datetime="{{ article.published_at | date: '%H:%M' }}"> {{ article.published_at | date: '%I:%M%p' }}</time><span class="divider"></span>{% endif %}{% if settings[display_comment_count] %}{% if blog.comments_enabled? or article.comments.size > 0 %}<span class="comment-count group"><a href="{{ article.url }}#comments">{{ 'blog.meta.comments_count' | t: count: article.comments_count }}</a></span>{% endif %}
+    {% endif %}
+    </p>
+  </div>
+{% endif %}

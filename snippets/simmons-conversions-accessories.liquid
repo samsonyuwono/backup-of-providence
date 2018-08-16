@@ -1,0 +1,62 @@
+<style>
+h6#regular-inquiries{
+  display: none;
+}
+h3.dd{
+  border: 3px solid #487ed6;
+  text-align: center;
+  border-radius: 3px;
+  color: #487ed6 !important;
+  cursor: pointer;
+  background-color: white;
+  width: 80%;
+  position: relative;
+  left: 10%;
+}
+h3.dd:hover{
+  border-color: #3743a1;
+  color: #3743a1 !important;
+}
+
+h3.dd.selected{
+  border-color: #4e4949 !important;
+  color: #4e4949 !important;
+  z-index: 1;
+  background-color: #D3D3D3;
+}
+h2#reasons{
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+/*medium-sized screens*/
+@media only screen and (max-width: 500px){
+  h2#reasons{
+    font-size: 100%;
+}
+  h3.dd{
+    font-size: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+</style>
+
+<div class="row">
+  <div class="small-12 medium-12 large-6 columns">
+    <h2 id="reasons">Convert Your Crib:</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-12 large-6 columns">
+    <a href='https://www.deltachildren.com/collections/simmons-kids-guardrails'>
+      <h3 class='dd' id="order-replace">Toddler Bed</h3>
+    </a>
+  </div>
+  <div class="small-12 medium-12 large-6 columns">
+    <a href='https://www.deltachildren.com/collections/simmons-kids-full-size-bed-rails'>
+      <h3 class='dd' id="other">Full-Size Bed</h3>
+    </a>
+ </div>
+</div>

@@ -1,0 +1,98 @@
+{{ 'product-images.css' | asset_url | stylesheet_tag }}
+{% assign primary_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+
+{% assign image_title = primary_image.alt ?? primary_image.alt | product.title %}
+
+{% assign image_position = 0 %}
+
+<!-- Primary image -->
+<div class="primary-image-wrap">
+  <div class="loading">{{ 'img-loading.gif' | asset_url | img_tag }}</div>
+		<img class="primary-image" src="{{ primary_image | product_img_url: product_primary_image_size }}" alt="{{ image_title | escape }}" />
+		<span class="actions">
+			<i class="fa fa-expand"></i>
+		</span>
+
+</div>
+
+<!-- Secondary images -->
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "a0a" or image.alt contains "a1a" or image.alt contains "a2a" or image.alt contains "a3a" or image.alt contains "a4a" or image.alt contains "a5a" or image.alt contains "a6a" or image.alt contains "a7a" or image.alt contains "a8a" or image.alt contains "a9a" or image.alt contains "a10a" or image.alt contains "a11a" or image.alt contains "a12a" or image.alt contains "a13a" or image.alt contains "a14a" or image.alt contains "a15a" or image.alt contains "a16a" or image.alt contains "a17a" or image.alt contains "a18a" or image.alt contains "a19a" or image.alt contains "a20a" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a data-image-id="{{ image.id }}" href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "b0b" or image.alt contains "b1b" or image.alt contains "b2b" or image.alt contains "b3b" or image.alt contains "b4b" or image.alt contains "b5b" or image.alt contains "b6b" or image.alt contains "b7b" or image.alt contains "b8b" or image.alt contains "b9b" or image.alt contains "b10b" or image.alt contains "b11b" or image.alt contains "b12b" or image.alt contains "b13b" or image.alt contains "b14b" or image.alt contains "b15b" or image.alt contains "b16b" or image.alt contains "b17b" or image.alt contains "b18b" or image.alt contains "b19b" or image.alt contains "b20b" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "c0c" or image.alt contains "c1c" or image.alt contains "c2c" or image.alt contains "c3c" or image.alt contains "c4c" or image.alt contains "c5c" or image.alt contains "c6c" or image.alt contains "c7c" or image.alt contains "c8c" or image.alt contains "c9c" or image.alt contains "c10c" or image.alt contains "c11c" or image.alt contains "c12c" or image.alt contains "c13c" or image.alt contains "c14c" or image.alt contains "c15c" or image.alt contains "c16c" or image.alt contains "c17c" or image.alt contains "c18c" or image.alt contains "c19c" or image.alt contains "c20c" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "d0d" or image.alt contains "d1d" or image.alt contains "d2d" or image.alt contains "d3d" or image.alt contains "d4d" or image.alt contains "d5d" or image.alt contains "d6d" or image.alt contains "d7d" or image.alt contains "d8d" or image.alt contains "d9d" or image.alt contains "d10d" or image.alt contains "d11d" or image.alt contains "d12d" or image.alt contains "d13d" or image.alt contains "d14d" or image.alt contains "d15d" or image.alt contains "d16d" or image.alt contains "d17d" or image.alt contains "d18d" or image.alt contains "d19d" or image.alt contains "d20d" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "e0e" or image.alt contains "e1e" or image.alt contains "e2e" or image.alt contains "e3e" or image.alt contains "e4e" or image.alt contains "e5e" or image.alt contains "e6e" or image.alt contains "e7e" or image.alt contains "e8e" or image.alt contains "e9e" or image.alt contains "e10e" or image.alt contains "e11e" or image.alt contains "e12e" or image.alt contains "e13e" or image.alt contains "e14e" or image.alt contains "e15e" or image.alt contains "e16e" or image.alt contains "e17e" or image.alt contains "e18e" or image.alt contains "e19e" or image.alt contains "e20e" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "f0f" or image.alt contains "f1f" or image.alt contains "f2f" or image.alt contains "f3f" or image.alt contains "f4f" or image.alt contains "f5f" or image.alt contains "f6f" or image.alt contains "f7f" or image.alt contains "f8f" or image.alt contains "f9f" or image.alt contains "f10f" or image.alt contains "f11f" or image.alt contains "f12f" or image.alt contains "f13f" or image.alt contains "f14f" or image.alt contains "f15f" or image.alt contains "f16f" or image.alt contains "f17f" or image.alt contains "f18f" or image.alt contains "f19f" or image.alt contains "f20f" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "g0g" or image.alt contains "g1g" or image.alt contains "g2g" or image.alt contains "g3g" or image.alt contains "g4g" or image.alt contains "g5g" or image.alt contains "g6g" or image.alt contains "g7g" or image.alt contains "g8g" or image.alt contains "g9g" or image.alt contains "g10g" or image.alt contains "g11g" or image.alt contains "g12g" or image.alt contains "g13g" or image.alt contains "g14g" or image.alt contains "g15g" or image.alt contains "g16g" or image.alt contains "g17g" or image.alt contains "g18g" or image.alt contains "g19g" or image.alt contains "g20g" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="secondary-image-wrap">
+	{% for image in product.images %}
+		{% if image.alt contains "h0h" or image.alt contains "h1h" or image.alt contains "h2h" or image.alt contains "h3h" or image.alt contains "h4h" or image.alt contains "h5h" or image.alt contains "h6h" or image.alt contains "h7h" or image.alt contains "h8h" or image.alt contains "h9h" or image.alt contains "h10h" or image.alt contains "h11h" or image.alt contains "h12h" or image.alt contains "h13h" or image.alt contains "h14h" or image.alt contains "h15h" or image.alt contains "h16h" or image.alt contains "h17h" or image.alt contains "h18h" or image.alt contains "h19h" or image.alt contains "h20h" %}
+			{% assign image_title = image.alt ?? image.alt | product.title %}
+			<li value="{{ image.alt | slice: -4, 4 | strip }}">
+			<a href="{{ image | product_img_url: product_lightbox_image_size }}" title="{{ image_title | escape }}" data-fancybox-group="secondary-image"><img class="secondary-image" src="{{ image | product_img_url: product_secondary_image_size }}" alt="{{ image_title | escape }}" data-image-index="{{ image.position }}" /><span class="actions"><i class="fa fa-plus"></i></span></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

@@ -1,0 +1,175 @@
+<style>
+@font-face{
+  font-family: 'Gotham';
+  src: url('//cdn.shopify.com/s/files/1/0578/7201/files/Gotham_Light.otf');
+}
+@font-face{
+  font-family: 'Gotham Ultra';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/GothamUltranew.otf');
+  /*src: url({{"Gotham Ultra.otf" | asset_url}});*/
+}
+
+
+.gotham{
+  font-family: 'Gotham';
+}
+
+.gotham-ultra{
+  font-family: 'Gotham Ultra';
+}
+
+.heavy{
+  font-weight: 900;
+}
+.light{
+  font-weight:100;
+}
+.center{
+  text-align: center;
+}
+#you_are_covered{
+  width: 50%;
+  left: 25%;
+  position: relative;
+}
+#what_is{
+  margin-bottom: 0;
+}
+.text-below-icon{
+  width: 60%;
+  left: 20%;
+  position: relative;
+}
+.section-padding{
+  padding-top: 3%;
+}
+
+.small-device{
+  display: none;
+}
+
+.no-margin{
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 667px){
+#you_are_covered{
+  width: 90%;
+  left: 5%;
+}
+.text-below-icon{
+  width: 90%;
+  left: 5%;
+  position: relative;
+}
+.img-padding{
+  padding-top: 5%;
+}
+.img-width{
+  width: 90%;
+  left: 5%;
+}
+
+}
+@media only screen and (max-width: 375px){
+.small-device{
+  display: block;
+}
+.medium-and-large-device{
+  display: none;
+}
+
+}
+
+
+</style>
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+{% include 'page-header' %}
+{% include 'settings' %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ page.content }}
+
+<div id="content-container">
+  <div class="row">
+    <!-- banner image -->
+      <img class="medium-and-large-device opt" src="//cdn.shopify.com/s/files/1/0911/1270/files/Artboard_13_1x1.png">
+      <img class="small-device" src="//cdn.shopify.com/s/files/1/0578/7201/files/Mobile_BANNER_2.jpg">
+
+  </div>
+  <div class="row section-padding">
+    <div class="small-12 medium-12 large-12 columns center">
+      <h1 id="what_is" class="gotham-ultra" style="color: #173D6F">WHAT IS COVERED?</h1>
+      <div class="row">
+        <h6 id="you_are_covered" class="gotham light">With Delta Enterprise Corp Extended Warranty, you're covered for mechanical failure from normal use, or if your item stops working due to normal wear &amp; tear. Plus, life’s mishaps.</h6>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-4 large-4 columns center">
+      <img src="//cdn.shopify.com/s/files/1/0911/1270/files/Artboard_14.png"><br>
+        <h6 class="gotham heavy no-margin" style="color: #173D6F">NORMAL WEAR AND TEAR</h6>
+        <div class="row">
+          <h6 class="text-below-icon gotham light">You're covered from worn-out parts and material failures.</h6>
+        </div>
+    </div>
+    <div class="small-12 medium-4 large-4 columns center">
+      <img src="//cdn.shopify.com/s/files/1/0911/1270/files/Artboard_14_copy.png"><br>
+      <h6 class="gotham heavy no-margin" style="color: #173D6F">HARDWARE FAILURE</h6>
+      <div class="row">
+        <h6 class="text-below-icon gotham light">We cover hardware failures that can make your item unusable.</h6>
+      </div>
+    </div>
+    <div class="small-12 medium-4 large-4 columns center">
+      <img src="//cdn.shopify.com/s/files/1/0911/1270/files/Artboard_14_copy_2.png"><br>
+      <h6 class="gotham heavy no-margin" style="color: #173D6F">ACCIDENT DAMAGE</h6>
+      <div class="row">
+        <h6 class="text-below-icon gotham light">No worries. We cover accidents caused by you, people you know and your pets.</h6>
+      </div>
+    </div>
+  <!-- icons and subtext -->
+  </div>
+  <div class="row section-padding">
+    <div class="small-12 medium-12 large-12 columns center">
+      <HR style="border: 0; border-bottom: 1px dashed #ccc; border-color:#4e4949; width: 80%; position: relative; left: 10%;">
+    </div>
+  </div>
+  <div class="row section-padding">
+    <div class="small-12 medium-12 large-12 columns center">
+      <h1 class="gotham-ultra" style="color: #173D6F">2 YEARS OF PROTECTION</h1>
+    </div>
+  <!-- 2 years of protection -->
+  </div>
+  <div class="row">
+    <!-- charts for extended warranty -->
+    <div class="small-12 medium-6 large-6 columns center">
+      <img src="//cdn.shopify.com/s/files/1/0911/1270/files/Cribs.png" class="img-width">
+    </div>
+    <div class="small-12 medium-6 large-6 columns center img-padding">
+      <img src="//cdn.shopify.com/s/files/1/0911/1270/files/Everything_else.png" class="img-width">
+    </div>
+  </div>
+  <div class="row section-padding">
+    <!-- link to actual t and c page -->
+    <div class="small-12 medium-12 large-12 columns center">
+      <a href="/pages/extended-warranty-terms"><h6 class="gotham" style="color: #487ED6; font-size: 80%; font-weight: 900;">TERMS &amp; CONDITIONS ></h6>
+    </div>
+  </div>
+</div>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+
+<script>
+// makes home page images tiny for mobile and large for desktop to increase page speed dh-edit 5/8/17
+if ( $(window).width() > 375) {
+$(".opt").each(function(){
+  $(this).attr('src', $(this).attr('src').replace('_1x1.png', '.png'));
+});
+}
+
+</script>

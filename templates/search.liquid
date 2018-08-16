@@ -1,0 +1,61 @@
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+{% assign page_title = 'general.search.title' | t %}
+
+{% include 'settings' %}
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+
+{% if search.performed %}
+  {% paginate search.results by 15 %}
+
+
+
+<div class="search-results">
+    <div class="products cards">
+      <ul class="block-grid small-block-grid-1 medium-block-grid-3 large-block-grid-5">
+        {% for item in search.results %}
+          {% include 'get-content-type' with item %}
+         
+          
+            <li>
+              <div class="product card fixed-image-height">
+                <div class="image-wrap">
+                  <div class="image">
+                    {% if item.featured_image %}
+                     <a href="{{ item.url }}">{{ item.featured_image | product_img_url: 'medium' | img_tag: item.featured_image.alt }}</a>
+                     {% else %}
+                      <i class="fa fa-{{icon}}" rel="tooltip" title="{{content_type}}"></i>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="details">
+                  <header>
+                    <h2> 
+                      <span class="name">{{ item.title | link_to: item.url }}</span>
+                    </h2>
+                  </header>
+                </div>
+              </div>
+            </li>
+          
+        {% endfor %}
+      </ul>
+    </div>
+    
+        
+</div>
+
+
+
+
+  {% include 'pagination-numbered' %}
+  {% endpaginate %}
+{% endif %}
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

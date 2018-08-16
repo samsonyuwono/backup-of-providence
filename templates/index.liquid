@@ -1,0 +1,198 @@
+<style>
+/*media query for new home page*/
+@media screen and (min-width: 642px) {
+
+.hide-for-1300px-bigger{
+  display: none !important;
+}
+.show-for-1300px-bigger{
+  display: block;
+}
+  #content-wrap .primary{
+    overflow: hidden;
+}
+  #content-wrap{
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 642px) {
+
+
+.show-for-1300px-bigger{
+  display: none !important;
+}
+.hide-for-1300px-bigger{
+  display: block;
+}
+}
+
+</style>
+{% assign has_sidebar = false %}
+{% include 'settings' %}
+
+<!-- Slider -->
+{% if settings.slides_visible? %}
+  {% assign area = 'index' %}
+  <div style="margin:0; padding:0;" class="row show-for-medium-up">
+    <div style="margin:0; padding:0;" class="large-12 columns">
+      <div style="margin:0; padding:0;" class="slides-wrap">
+        {% include 'slides' with area %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+<a href="/pages/bundles" class="hide-for-1300px-bigger">
+<div class="row show-for-medium-up">
+  <img src="//cdn.shopify.com/s/files/1/0578/7201/files/bundls-rotator-larg.jpeg" style="width: 100%;">
+</div>
+</a>
+
+
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+<div class="show-for-1300px-bigger">
+{%include 'home-page-new'%}
+</div>
+<div class="hide-for-1300px-bigger">
+
+
+
+
+ <!-- center content of homepage -->
+{% include 'home-middle' %}
+<!-- mobile center links -->
+<div class="show-for-small-only" id="mobile-middle">
+  {% include 'mobile-middle-links' %}
+</div>
+<!-- instagram grid -->
+  <div class="hide-for-1300px-bigger">
+{% include 'insta-footer' %}
+  </div>
+
+
+
+
+
+
+<!-- Page content -->
+{% if pages[settings.index_content_s1].content != '' %}
+  <div class="page-content">
+  {{ pages[settings.index_content_s1].content }}
+  </div>
+{% endif %}
+
+{% if settings.index_products != '' %}
+  {% include 'index-products' %}
+{% endif %}
+
+
+</div>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<style>
+#mobile-middle{
+  position: relative;
+  top: -17px;
+}
+
+.row .row:after {
+  margin: 10px 0;
+}
+
+
+/*mobile*/
+  @media only screen and (max-device-width: 679px){
+
+    #site-header, #header-actions, .promo-boxes {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .columns {
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+
+
+@media only screen and (min-device-width: 679px) and (max-width: 679px){
+
+  .columns {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+}
+
+ /*All excxept mobile*/
+  @media only screen and (min-width: 679px){
+
+    .columns {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+
+}
+
+@media screen and (min-width: 1599px){
+
+.bx-wrapper img {
+    width: 100%;
+    display: block;
+    margin: 0 !important;
+    padding: 0;
+}
+}
+
+
+.row, .padded-h, .bx-viewport, .bx-wrapper, .slide, .index {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+
+.row.padded-h {
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  padding: 0 !important;
+
+}
+ .index {
+  .slides-wrap {
+
+  }
+    .slide {
+       min-width: 100% !important;
+       max-width: 100% !important;
+      img {
+        min-width: 150% !important;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+      }
+
+  }
+</style>
+
+<script>
+// Shorthand for $( document ).ready()
+// $(function() {
+  if ($(window).width() > 642) {
+  $('#site-header').prependTo('#site-body');
+  $('#brand-primary-image').prependTo('#header-actions');
+}
+// });
+
+
+
+</script>

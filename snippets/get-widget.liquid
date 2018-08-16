@@ -1,0 +1,28 @@
+{% assign widget_location = widget_area | append: '_widget_0' | append: i %}
+{% assign widget_suffix = '' %}
+
+{% if settings[widget_location] != 'none' %}
+
+  {% assign widget_instance = 'widget_' | append: settings[widget_location] %}
+
+  {% if widget_instance contains '_0' %}
+    {% assign widget_instance_number = widget_instance | split: '_' | last %}
+    {% assign widget_suffix = '_' | append: widget_instance_number %}
+    {% assign widget_instance_settings = settings[widget_instance] %}
+  {% endif %}
+
+  {% assign widget = widget_instance | remove: widget_suffix %}
+  {% assign widget_snippet = widget | replace: '_','-' %}
+
+  {% assign widget_title = widget | replace: 'widget_', 'widgets.' %}
+  {% assign widget_title = widget_title | append: widget_suffix %}
+  {% assign widget_title = widget_title | append: '.title' %}
+  {% assign widget_title = widget_title | t %}
+
+  <section class="widget {{ widget_snippet }} {{ widget_instance_number }}">
+    {% include 'widget-header' %}
+    {% include widget_snippet %}
+    {% include 'widget-footer' %}
+  </section>
+
+{% endif %}

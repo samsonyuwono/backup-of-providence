@@ -1,0 +1,58 @@
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header-collection' with collection.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{% if settings.collection_display_browse? %}
+  {% include 'collection-tag-filter' %}
+{% endif %}
+
+{% if collection.description and collection.description.size > 0 %}
+  <div class="collection-description">{{ collection.description }}</div>
+{% endif %}
+
+{% assign page_size = 35 %}
+
+
+{% paginate collection.products by page_size %}
+{% if collection.products.size > 0 %}
+
+  <div class="products cards">
+    <ul class="block-grid small-block-grid-1 medium-block-grid-{{settings.collection_products_per_row_medium}} large-block-grid-{{settings.collection_products_per_row_large}}">
+
+    {% for product in collection.products %}
+
+        <li>
+        {% include 'product-small' %}
+        </li>
+
+    {% endfor %}
+
+
+    </ul>
+    <div id="loading" style="display:none;text-align:center;">{{"load-ring.gif" | asset_url | img_tag}}</div>
+  </div>
+
+
+{% else %}
+  <p class="empty">{{ 'collections.collection.empty_html' | t }}</p>
+{% endif %}
+
+
+{% include 'pagination-numbered' %}
+{% endpaginate %}
+
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+
+<style>
+div.prod-price{
+  display: none;
+}
+  </style>

@@ -1,0 +1,39 @@
+{% assign nav_area = 'primary' %}
+{% assign nav = linklists[settings.header_nav_primary_list] %}
+{% assign levels = 4 %}
+
+<div id="nav-mobile-slide" style="display:none">
+	<nav id="mobile-top-menu">
+	  <section class="top-bar-section">
+	  <ul class="right" id="nav-mobile-ul">
+	            {% include 'nav-structure-mobile' %}
+	   </ul>
+	  </section>
+	</nav>
+</div>
+
+<style>
+
+  div#nav-mobile-slide.scotch-panel-left{
+ 	 overflow-x: hidden !important;
+  }
+
+  .dropdownM{
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+  }
+
+
+</style>
+
+<script>
+if ( $(window).width() < 768) {
+$("span.dropdownMSpan a:contains('DC Nursery Furniture')").text('Nursery Furniture');
+$("span.dropdownMSpan a:contains('DC Strollers & Baby Gear')")[0].childNodes[0].nodeValue = 'Strollers & Baby Gear';
+$('span.dropdownMSpan a:contains("DC Kids\' Furniture")').text("Kids' Furniture");
+$("span.dropdownMSpan a:contains('DC Mattresses')").text('Mattresses');
+$("span.dropdownMSpan a:contains('DC Maternity & Nursing Pillows')").text('Maternity & Nursing Pillows');
+$("span.dropdownMSpan a:contains('DC Storage & Décor')").text('Storage & Décor');
+$("span.dropdownMSpan a:contains('DC Crib Conversions & Accessories')")[0].childNodes[0].nodeValue = 'Crib Conversions & Accessories';
+};
+</script>

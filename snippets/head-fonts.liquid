@@ -1,0 +1,22 @@
+{% assign font_scopes_string = 'typo_paragraph_font_google, typo_logo_font_google, typo_nav_primary_font_google, typo_headings_font_google, typo_sidebar_headings_font_google' %}
+
+{% assign font_scopes = font_scopes_string | split: ', ' %}
+{% assign user_fonts_string = "" %}
+
+
+{% for font_scope in font_scopes %}
+  {% if settings[font_scope] != '' %}
+    {% unless user_fonts_string contains settings[font_scope] %}
+      {% assign user_fonts_string = user_fonts_string | append: settings[font_scope] %}
+      {% unless forloop.last %}
+        {% assign user_fonts_string = user_fonts_string | append: ',' %}
+      {% endunless %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+{% assign user_fonts = user_fonts_string | split: ',' %}
+
+{% for font in user_fonts %}
+<link href="//fonts.googleapis.com/css?family={{ font | replace: ' ', '+' }}" rel="stylesheet" type="text/css">
+{% endfor %}

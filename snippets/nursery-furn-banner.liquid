@@ -1,0 +1,36 @@
+<!-- patch styling to move banner up for mobile -->
+<style>
+  @media only screen and (max-width: 640px){
+    .padded-v{
+      padding-bottom: 0 !important;
+    }
+    header.page-header{
+      padding-bottom: 0 !important;
+    }
+    
+	#nursery-furn-title{
+      padding-bottom: 5px;
+
+  }
+  }
+</style>
+<div class="nursery-furn-banner-holder">
+  <img src="">
+  <div id="nursery-furn-banner-text">
+      <h2 class="gotham-black dark-blue" id="nursery-furn-title">NURSERY FURNITURE SETS</h2>
+      <h5 class="gotham-book dark-blue" id="nursery-furn-sub-t">Save Up to 40% on Everything You Need</h5>
+      <a class="gotham-book" id="shop-now-button" href="/pages/bundles">Shop Now ></a>
+    </div>
+</div>
+
+<script>
+$(function() {
+if ( $(window).width() < 640) {
+  $('.nursery-furn-banner-holder img').attr('src', '//cdn.shopify.com/s/files/1/0578/7201/files/Nursery-Furniture-Landing-Page-MOBILE-banner.jpg');
+  }
+  else{
+    $('.nursery-furn-banner-holder img').attr('src', '//cdn.shopify.com/s/files/1/0578/7201/files/nursery-furniture-landing-page-banner.jpg');
+  }
+});
+
+</script>

@@ -1,0 +1,29 @@
+      </div>
+
+    {% if has_sidebar %}
+      <div class="{{ sidebar_class }}">
+        <aside class="sidebar">
+        <p>
+			<a href="/pages/safe-sleep-videos">Safe Sleep Videos</a>
+		</p>
+		<p>
+			<a href="/pages/nursery-furniture-assembly-videos">Nursery Furniture Assembly Videos</a>
+		</p>
+		<p>
+			<a href="/pages/baby-gear-assembly-videos">Baby Gear Assembly Videos</a>
+		</p>
+		<p>
+			<a href="/pages/kids-furniture-assembly-videos">Kids Furniture Assembly Videos</a>
+		</p>
+		<p>
+			<a href="/pages/videos-de-ensamblaje-en-espanol">Vídeos de Ensamblaje en Español</a>
+		</p>
+          <hr>
+          {% include 'sidebar' %}
+        </aside>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+<!-- /#content-wrap -->

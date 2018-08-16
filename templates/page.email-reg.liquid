@@ -1,0 +1,151 @@
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ page.content }}
+
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+		background:#fff;
+		/*clear:left;*/
+		font:14px Helvetica,Arial,sans-serif;
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.container{
+		width: 100%;
+		align-items: center;
+	}
+	div.mc-field-group.name{
+		clear: none !important;
+	}
+
+	div.mc-field-group.name.first{
+		width: 46% !important;
+		float: left;
+		height: 100%;
+		clear: none;
+	}
+	div.mc-field-group.name.last{
+		width: 46% !important;
+		margin-left: 50%;
+		height: 100%;
+	}
+	div.name_holder{
+		margin: auto !important;
+		display: inline-block !important;
+		width: 100%;
+	}
+	div.mc-field-group{
+		width: 46%;
+	}
+
+	div#new-error.new{
+		padding-bottom: 30px;
+    color: green;
+	}
+
+	h6.pp{
+		font-size: 70%;
+		color: #8dabdd !important;
+		text-decoration: underline;
+	}
+
+	/*for fixing in-line issue with phone numer field 5/22/17*/
+	/*put in-line styling "width: 100%" for mc-field-group size1of2*/
+
+@media only screen and (min-width: 780px) and (max-width: 1038px) {
+	div.phonefield.phonefield-us{
+		width: 100%;
+		position: relative;
+	}
+}
+
+	@media only screen and (max-width: 867px) {
+		div.mc-field-group.size1of2{
+			/*width: 265px !important;*/
+		}
+		div.mc-field-group{
+			width: 300px !important;
+		}
+}
+
+@media only screen and (max-width: 375px) {
+	div.mc-field-group{
+		width: 265px !important;
+	}
+	#mc_embed_signup{
+		background:#fff;
+		/*clear:left;*/
+		font:14px Helvetica,Arial,sans-serif;
+		width: 50%;
+		margin-left: 0;
+		margin-right: auto;
+	}
+div.name_holder {
+	width: 275px;
+}
+
+}
+
+</style>
+<div class="container">
+<div id="mc_embed_signup">
+<form action="//deltachildren.us8.list-manage.com/subscribe/post?u=80ec84eee53425122429cd899&amp;id=d7805fe79a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<!-- <h2>Subscribe to our mailing list</h2> -->
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="name_holder">
+<div class="mc-field-group name first">
+	<label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+</div>
+<div class="mc-field-group name last">
+	<label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+</div>
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group size1of2" style="width: 100%;">
+	<label for="mce-MMERGE5">Phone Number  <span class="asterisk">*</span>
+</label>
+    <div class="phonefield phonefield-us">
+        (<span class="phonearea"><input class="phonepart required" pattern="[0-9]*" id="mce-MMERGE5-area" name="MMERGE5[area]" maxlength="3" size="3" value="" type="text"></span>)
+        <span class="phonedetail1"><input class="phonepart required" pattern="[0-9]*" id="mce-MMERGE5-detail1" name="MMERGE5[detail1]" maxlength="3" size="3" value="" type="text"></span> -
+        <span class="phonedetail2"><input class="phonepart required" pattern="[0-9]*" id="mce-MMERGE5-detail2" name="MMERGE5[detail2]" maxlength="4" size="4" value="" type="text"></span>
+		<span class="small-meta nowrap">(###) ###-####</span>
+    </div>
+</div><div class="mc-field-group">
+	<label for="mce-MMERGE4">Instagram Handle </label>
+	<input type="text" value="" name="MMERGE4" class="" id="mce-MMERGE4">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_80ec84eee53425122429cd899_d7805fe79a" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+		<a href="/pages/privacy-policy"><h6 class="pp">Privacy Policy</h6></a>
+		</div>
+</form>
+</div>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[5]='MMERGE5';ftypes[5]='phone';fnames[4]='MMERGE4';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

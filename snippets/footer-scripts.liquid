@@ -1,0 +1,55 @@
+<!-- BEGIN #footer-scripts -->
+{{ 'vendor.min.js' | asset_url | script_tag }}
+{{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+{{ '//cdn.shopify.com/s/javascripts/currencies.js' | script_tag }}
+{{ 'jquery.currencies.min.js' | asset_url | script_tag }}
+{{ 'option_selection.js' | shopify_asset_url | script_tag }}
+{{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/parsley.js/1.1.16/parsley.min.js' | script_tag }}
+{{ 'jsmodal.js' | asset_url | script_tag }}
+{{ 'panels.js' | asset_url | script_tag }}
+{{'mobile-script.js' | asset_url | script_tag }}
+
+{% if template contains 'customers' %}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+{% endif %}
+
+{{ 'app-base.min.js' | asset_url | script_tag }}
+{{ 'app-custom-scripts.js' | asset_url | script_tag }}
+
+{% include 'script-templates' %}
+
+
+<script type='text/javascript'>
+
+  // Preload product images
+  {% if template contains 'product' %}
+    Shopify.Image.preload({{ product.images | json }}, '{{ product_primary_image_size }}');
+  {% endif %}
+
+  // Google +1
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+
+  //Code for Shopify/Empyre bug 11/7/16
+  function recursiveIteration(object) {
+  for (var property in object) {
+    if (object.hasOwnProperty(property)) {
+      if (typeof object[property] == "object"){
+        recursiveIteration(object[property]);
+      }else{
+        text = object[property];
+        if (text.startsWith("I18n Error:")) {
+          object[property] = text.slice(text.indexOf('for &quot;') + 10,text.length - 6);
+        }
+      }
+    }
+  }
+}
+
+recursiveIteration(Empyre.Theme.locale);
+
+</script>

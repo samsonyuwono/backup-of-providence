@@ -1,0 +1,52 @@
+{% if content_type == 'article' %}
+  {% assign icon = 'comment' %}
+{% elsif content_type == 'page' %}
+  {% assign icon = 'file' %}
+{% elsif content_type == 'product' %}
+  {% assign icon = 'shopping-cart' %}
+{% endif %}
+
+<div class="search-result">
+
+  <div class="row">
+    <div class="small-1 column hide-for-small">
+      <i class="fa fa-{{icon}}" rel="tooltip" title="{{content_type}}"></i>
+    </div>
+
+    <div class="small-12 medium-11 columns">
+
+      <div class="row">
+        <div class="small-12 columns">
+          <h3>{{ item.title | link_to: item.url }}</h3>
+        </div>
+      </div>
+      <div class="row">
+
+        {% capture result_description %}
+          <p class="description">{{ item.content | strip_html | truncatewords: 50 | highlight: search.terms }}</p>
+          <p class="more"><a href="{{ item.url }}" class="button small">{{ 'general.search.result_action' | t: result_type: content_type }}</a></p>
+        {% endcapture %}
+
+        
+        {% if content_type == 'product' %}
+          <div class="large-10 small-8 columns">
+            {{ result_description }}
+          </div>
+          <div class="large-2 small-4 columns text-right">
+            {% if item.featured_image %}
+              <a href="{{ item.url }}">{{ item.featured_image | product_img_url: 'small' | img_tag: item.featured_image.alt }}</a>
+            {% endif %}
+          </div>
+        {% else %}
+          <div class="small-12 columns">
+            {{ result_description }}
+          </div>
+        {% endif %}
+         
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

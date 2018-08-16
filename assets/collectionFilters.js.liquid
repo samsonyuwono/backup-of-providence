@@ -1,0 +1,118 @@
+var collection = $('#handle').text();
+var requestUrl = "http://product-pull.herokuapp.com/collections?collection=" + collection
+var queryParamsVendor = "&Vendor="
+var queryParamsType = "&Type="
+var queryParamsFeature = "&Feature="
+var queryParamsSort = "&sort="
+var queryParamsRange = "&range="
+var backupData = $('#collectionGrid')
+var finalUrl = ""
+var el
+
+$('.filterClick').change(function(){
+  $('#loading').show();
+  var key  = $(this).data("id");
+  var value = $(this).val();
+  value = value + "+";
+  active = 0;
+  switch(key){
+    case "Vendor":
+    if(queryParamsVendor.includes(value)){
+      queryParamsVendor = queryParamsVendor.replace(value,"")
+      active--;
+    }else{
+      queryParamsVendor = queryParamsVendor + value
+      active++;
+    }
+    break;
+
+    case "Type":
+    if(queryParamsType.includes(value)){
+      queryParamsType = queryParamsType.replace(value,"")
+      active--;
+    }else{
+      queryParamsType = queryParamsType + value
+      active++;
+    }
+    break;
+
+    case "Feature":
+    if(queryParamsFeature.includes(value)){
+      queryParamsFeature = queryParamsFeature.replace(value,"")
+      active--;
+    }else{
+      queryParamsFeature = queryParamsFeature + value
+      active++;
+    }
+    break;
+
+    case "Range":
+    if(queryParamsRange.includes(value)){
+      queryParamsRange = queryParamsRange.replace(value,"")
+      active--;
+    }else{
+      queryParamsRange = queryParamsRange + value
+      active++;
+    }
+    break;
+
+    default:
+    break;
+  }
+  loadProducts(active);
+});
+
+
+
+$('.sortSpecial').on('click',function(){
+  el = $(this).data('value')
+  var dataActiveCheck = $(this).data('active')
+  if(dataActiveCheck == true){
+    return;
+  }
+  else if(el == "popular"){
+    queryParamsSort = "&sort="
+  }
+  else{
+    queryParamsSort = "&sort="
+    $(this).data("active","true")
+    queryParamsSort = queryParamsSort + el
+  }
+  loadProducts();
+});
+
+
+
+function loadProducts(activeCheck){
+  finalUrl = requestUrl + queryParamsVendor + queryParamsType + queryParamsFeature + queryParamsSort + queryParamsRange
+
+  //Dev Report---
+
+  // console.log(finalUrl);
+
+  //-------------
+
+  $('#collectionGrid').empty();
+  $('.pagination-wrap').hide();
+  $('#loading').show();
+  $('.filterClick').attr("disabled", true);
+
+
+  $.ajax({
+    url: finalUrl,
+    dataType: "html",
+    success: function(data){
+      $('#loading').hide();
+      $('.filterClick').attr("disabled", false);
+      $('#collectionGrid').append(data);
+    },
+    error: function(error){
+      $('#collectionGrid').append(backupData);
+      $('.pagination-wrap').show();
+    }
+  });
+
+  if(activeCheck==0){
+    $('.pagination-wrap').show();
+  }
+}

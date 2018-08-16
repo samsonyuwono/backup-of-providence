@@ -1,0 +1,113 @@
+<style>
+iframe{
+  display: none;
+}
+h6#regular-inquiries{
+  display: none;
+}
+h3.dd{
+  border: 3px solid #487ed6;
+  text-align: center;
+  border-radius: 3px;
+  color: #487ed6 !important;
+  cursor: pointer;
+  background-color: white;
+  width: 80%;
+  position: relative;
+  left: 10%;
+}
+h3.dd:hover{
+  border-color: #3743a1;
+  color: #3743a1 !important;
+}
+
+h3.dd.selected{
+  border-color: #4e4949 !important;
+  color: #4e4949 !important;
+  z-index: 1;
+  background-color: #D3D3D3;
+}
+h2#reasons{
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+/*medium-sized screens*/
+@media only screen and (max-width: 500px){
+  h2#reasons{
+    font-size: 100%;
+}
+  h3.dd{
+    font-size: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+</style>
+
+
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+
+
+
+<div class="row">
+  <div class="small-12 medium-12 large-6 columns">
+    <h2 id="reasons">Reasons For Contacting:</h2>
+  </div>
+</div>
+<div class="row">
+   <div class="small-12 medium-12 large-6 columns">
+     <a href="/pages/track-order"><h3 class='dd'>Track Order</h3></a>
+  </div>
+   <div class="small-12 medium-12 large-6 columns">
+     <a href="/pages/returns-exchanges"><h3 class='dd'>Returns &amp; Exchanges</h3></a>
+  </div>
+  <div class="small-12 medium-12 large-6 columns">
+    <h3 class='dd' id="order-replace">Order Replacement Parts</h3>
+  </div>
+  <div class="small-12 medium-12 large-6 columns">
+   <h3 class='dd' id="other">All Other Inquiries</h3>
+ </div>
+</div>
+ <div class="row">
+   <div class="small-12 medium-12 large-12 columns">
+      <iframe id="JotFormIFrame-71385156284158" onload="window.parent.scrollTo(0,0)" allowtransparency="true" src="https://form.jotform.us/71385156284158" frameborder="0" style="width:80%; position: relative; left: 10%; overflow: hidden; border:none; height: 1000px !important; background-color: white;" scrolling="yes"> </iframe> <script type="text/javascript"> var ifr = document.getElementById("JotFormIFrame-71385156284158"); if(window.location.href && window.location.href.indexOf("?") > -1) { var get = window.location.href.substr(window.location.href.indexOf("?") + 1); if(ifr && get.length > 0) { var src = ifr.src; src = src.indexOf("?") > -1 ? src + "&" + get : src + "?" + get; ifr.src = src; } } window.handleIFrameMessage = function(e) { var args = e.data.split(":"); if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[2]); } else { iframe = document.getElementById("JotFormIFrame"); } if (!iframe) return; switch (args[0]) { case "scrollIntoView": iframe.scrollIntoView(); break; case "setHeight": iframe.style.height = args[1] + "px"; break; case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break; case "reloadPage": window.location.reload(); break; } var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false; if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } }; if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); } else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); } </script>
+    </div>
+    <div class="small-12 medium-12 large-12 columns" style="text-align: center;">
+     <h6 id="regular-inquiries">
+       <p>Please contact our Customer Service team 8:30 AM to 6:00 PM (EST), Monday to Friday.</p><p>(646)-435-8718</p><p>consumersupport@deltachildren.com</p><p>Please Note: Due to server restrictions we are unable to accept emails with image attachments at this time.</p>
+     </h6>
+   </div>
+ </div>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<script>
+
+$('h3#order-replace').click(function(){
+  $('#JotFormIFrame-71385156284158').css('height', '1000px').slideToggle();
+  $(this).addClass('selected');
+  $('h3#other').removeClass('selected');
+  $('h6#regular-inquiries').hide();
+
+});
+
+$('h3#other').click(function(){
+  $('h6#regular-inquiries').slideToggle();
+  $(this).addClass('selected');
+  $('h3#order-replace').removeClass('selected');
+  $('#JotFormIFrame-71385156284158').hide();
+
+});
+
+</script>

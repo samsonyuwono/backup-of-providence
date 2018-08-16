@@ -1,0 +1,49 @@
+<div id="customer-login" class="account-session-module">
+  <div class="inner">
+
+  <p class="note">{{ 'customer_accounts.register.message_html' | t }}</p>
+
+  {% form 'create_customer' %}
+
+  <fieldset>
+
+    {% include 'form-errors' %}
+
+    <div class="row">
+      <div class="large-12 columns{% if form.errors contains 'first_name' %} error{% endif %} field">
+        <input type="text" name="customer[first_name]" id="customer_first_name" data-required="true" data-required-message="{{ 'customer_accounts.account_fields.first_name_field_required' | t }}" placeholder="{{ 'customer_accounts.account_fields.first_name_field_placeholder' | t }}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns{% if form.errors contains 'last_name' %} error{% endif %} field">
+        <input type="text" name="customer[last_name]" id="customer_last_name" data-required="true" data-required-message="{{ 'customer_accounts.account_fields.last_name_field_required' | t }}" placeholder="{{ 'customer_accounts.account_fields.last_name_field_required' | t }}">
+      </div>
+    </div>
+    
+    <!-- General Entry Tag-->  
+  	  	<input type="hidden" id="customer-tags" name="customer[tags]" value="General Account" />
+	<!-- End General Entry Tag-->
+
+    <div id="notes" class="clearfix large_form">
+	  <label for="notes" class="login">Birthday of Youngest Child</label>
+	  <input type="text" value="" name="customer[note][Birthday of Youngest Child]" id="order-note" class="large" size="5" placeholder="MM/DD/YYYY e.g. 04/12/2012" />
+	</div>
+
+    {% include 'customer-account-field-email' %}
+    {% include 'customer-account-field-password' %}
+
+    <div class="form-actions">
+      <button type="submit" class="button">{{ 'customer_accounts.register.submit' | t }}</button>
+
+      <div class="secondary-actions">
+        <a href="#" data-history-back>{{ 'general.cancel' | t }}</a>
+      </div>
+    </div>
+
+  </fieldset>
+
+  {% endform %}
+
+  </div>
+</div>

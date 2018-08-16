@@ -1,0 +1,401 @@
+<style>
+  /* for produt pages - hides Breadcrum trail
+ */
+ul.breadcrumbs{
+  display: none;
+}
+
+  .tabarnapp-notification-container .ns-box-inner{
+  visibility: hidden;
+}
+
+</style>
+
+
+{{ 'social-mediaIcons.css' | asset_url | stylesheet_tag }}
+{% assign has_sidebar = true %}
+{% assign sidebar_side = 'left' %}
+{% assign has_crumbs = true %}
+{% include 'settings' %}
+{% include 'page-header' with product.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+<div class="social-icons-before">
+        {% if settings.product_display_sharing_google_plus? or settings.product_display_sharing_twitter? or settings.product_display_sharing_facebook? or settings.product_display_sharing_pinterest? %}
+        {% include 'share' with product %}
+        {% endif %}
+</div>
+<article class="hproduct product-{{product.id}} {{product.handle}} single">
+  <div class="row">
+    <div class="medium-6 columns moveOver">
+      <div class="images">
+        {% include 'product-images' %}
+      </div>
+      <div class="product-videos">
+        <div class="video-container">
+        </div>
+      </div>
+    </div>
+
+    <div class="medium-6 columns">
+      <div class="details">
+
+        {% if collection and settings.product_collection_nav_top? %}
+          {% include 'product-collection-nav' with 'top' %}
+        {% endif %}
+
+        {% if settings.product_display_vendor? %}
+        <div class="brand section">
+          {{ product.vendor }}
+          <!-- {{ product.vendor | link_to_vendor }} -->
+        </div>
+
+        {% endif %}
+
+
+
+        <div class="assembly-info">
+        </div>
+
+
+        {% if settings.product_variations_location == 'top' %}
+          {% include 'product-variants' %}
+
+          {% include 'product-body' %}
+        {% else %}
+          {% include 'product-body' %}
+          {% include 'product-variants' %}
+        {% endif %}
+        <div id="upc-div">
+          SKU: <span id="display_sku"></span><br>
+          UPC: <span id="display_upc"></span><br>
+        </div><br>
+
+        {% include 'product-footer' %}
+
+        {% if collection and settings.product_collection_nav_bottom? %}
+          {% include 'product-collection-nav' with 'bottom' %}
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+
+</article>
+
+<!-- Start Kudobuzz review form-->
+<div id="kudobuzz_reviews" data-domain="{{ shop.permanent_domain | escape }}" data-uid="44a4u2u223w2s274t274r233231463z2a4u2p2b423" data-name="{{ product.title | escape }}" data-product-id="{{ product.id }}" data-url="{{ page.url }}" data-handle="{{ product.handle }}" data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"> </div>
+<!-- End Kudobuzz review form -->
+
+
+{% include 'related-variants' %}
+
+
+
+{% if settings.product_display_related? %}
+{% if collection.products.size > 0 or product.collections.first.products.size > 0 %}
+  {% include 'product-related' %}
+{% endif %}
+{% endif %}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}
+
+<style>
+ul.related-products{
+  padding-top: 0;
+}
+
+/*mm-edits as of 1/25*/
+.top-bar-section .right li:nth-of-type(3) ul {
+  display: none;
+}
+
+.widget-header h2 {
+  /*display: none;*/
+}
+
+header#site-header ul.right > li:nth-child(3) ul.dropdown{
+  /*display: none;*/
+}
+
+/*   overrides custom-styles.css that also has styling for class .details */
+
+/*   .details{
+     bottom: 0;
+  font-size: 1.9375rem !important;
+  width: auto;
+
+
+  } */
+
+/*   .pricing.section{
+
+  bottom: 0;
+  font-size: 1.9375rem !important;
+  width: auto;
+    position: initial;
+}
+  .pricing.section label{
+
+
+    position: initial;
+  }
+
+  .assembly-info{
+      bottom: 0;
+  font-size: 1.9375rem !important;
+  width: auto;
+        position: initial;
+
+  } */
+
+</style>
+
+
+<!--
+<style>
+ul#retailers {
+  display: inline-block !important;
+  margin: 0;
+  padding: 0;
+}
+ul#retailers li.item {
+  float: left !important;
+  width: 50%;
+}
+</style> -->
+
+
+{{ 'mag_popup.css' | asset_url | stylesheet_tag }}
+{{ 'mag_popup.js' | asset_url | script_tag }}
+{{'touchPunch.js' | asset_url | script_tag }}
+{{'vmouse.js' | asset_url | script_tag }}
+<script>
+
+  //for products that have youtube videos. url for youtube videos will be inserted as alt text for thumbnail image.
+	makeYoutubeVid();
+
+function makeYoutubeVid(){
+  $("img[alt*='you']").hide();
+  $("img[alt*='you']").each(function(){
+    $(this).addClass('product-youtube-video');
+    youtubeLink = $(this).attr('alt');
+    $(this).wrap('<a class="popup-youtube" href="'+ youtubeLink +'"></a>');
+    $(this).parent().prependTo('.video-container');
+    $("<img class='play-but' src='//cdn.shopify.com/s/files/1/0578/7201/files/play_button-white-01.png'>").prependTo($(this).parent());
+    $(this).show();
+  });
+  $('.popup-youtube').magnificPopup({
+
+      disableOn: false,
+      type: 'iframe',
+      mainClass: 'mfp-fade',
+      removalDelay: 160,
+      preloader: false,
+
+      fixedContentPos: false
+  });
+}
+//end for products with youtube videos
+
+var magnificPopupEnabled = false
+
+$('.secondary-image-wrap').each(function(){
+  $(this).magnificPopup({
+    type: 'image',
+    delegate: 'a',
+    removalDelay: 300,
+    mainClass: 'mfp-with-fade',
+    gallery:{
+      enabled:true
+    },
+    disableOn: function(){
+      if(magnificPopupEnabled){
+        return true
+      }
+      return false
+    },
+    callbacks: {
+      close: function(){
+        magnificPopupEnabled = false
+        return
+      }
+    }
+  })
+})
+
+if($(window).width() > 641){
+  $('.primary-image-wrap').click(function(){
+    magnificPopupEnabled = true;
+    var imageIndex = $('.primary-image-wrap .primary-image').attr('data-image-index');
+    if($('li:visible a .secondary-image[data-image-index='+imageIndex+']').length){
+      $('.secondary-image[data-image-index='+imageIndex+']').click();
+    }else{
+      $('ul.secondary-image-wrap li:visible a img').first().click();
+    }
+  })
+}
+
+if($('p:last').find('img').length <= 0 ){
+    $('.assembly-info').append($('p:last'));
+}
+$('.noshow').remove();
+
+//sorting secondary image items
+$(".secondary-image-wrap").each(function(){
+  $(this).html($(this).children('li').sort(function(a,b){
+    let lenA = $(a).attr('value').length
+    let lenB = $(b).attr('value').length
+    let attrA = $(a).attr('value')
+    let attrB = $(b).attr('value')
+    return lenA - lenB || attrA.localeCompare(attrB)
+  }))
+})
+
+$(function() {
+
+// fix for issue of SKU # not showing for Platform Twin Bed 4/25/17 - dh-edit
+if (window.location.href.indexOf('platform-twin-bed') > -1){
+  $('span#display_sku').text('530850-026');
+  // console.log('right product');
+  };
+if (window.location.href.indexOf('platform-twin-bed?variant=15335683843') > -1){
+  $('span#display_sku').text('530850-026');
+  // console.log('right product');
+  };
+  if (window.location.href.indexOf('platform-twin-bed?variant=15943046595') > -1){
+    $('span#display_sku').text('530850-130');
+    // console.log('right product');
+    };
+    if (window.location.href.indexOf('platform-twin-bed?variant=15943046659') > -1){
+      $('span#display_sku').text('530850-907');
+      // console.log('right product');
+      };
+
+  if (window.location.href.indexOf('discontinued') > -1){
+    $('.pricing.section').css("display", "none");
+  };
+  //end fix for SKU# issue
+
+
+  //global function call
+adjustPopUp();
+
+function adjustPopUp(){
+  //tabarnapp pop-up app for toddler beds and bedding
+  setTimeout(function(){
+      //places description below title
+    $('.tabarnapp__description').insertAfter('.tabarnapp__bundle_title');
+      //creates more space above add to cart button
+    $('.tabarnapp__call_to_action').css('margin-top', '20px');
+    // makes sale price red
+
+    $('.js-upsell-item-price.tabarnapp__price object').css('color', 'red');
+    $('select.tabarnapp__reset_select').change(function(){
+      $('.js-upsell-item-price.tabarnapp__price').css('color', 'red');
+      $('.js-upsell-item-price.tabarnapp__price strike').css('color', 'black');
+
+    });
+    //function calls for dynamic bundle product change based on product page
+    genderizeDropDown();
+    syncProductwithBundle();
+    if ( $(window).width() < 642) {
+      mobileStyling();
+    }
+    $('.tabarnapp-notification-container .ns-box-inner').css('visibility', 'visible');
+
+
+    //adds Boys and Girls Header to dropdown for furniture sets by adding classes to options and then wrapping in optgroup
+    function genderizeDropDown(){
+      //focuses on left hand dropdown of bundle pop-up and adds classes to boys and girls options in dropdown
+      rightSideDropDown = $('.tabarnapp__group .js_tabarnapp_variant_selected:nth-child(2) .js-select-upsell-item-variant');
+      boysOptions = rightSideDropDown.children('option:nth-child(-n+8)').addClass('boys-sets');
+      girlsOptions = rightSideDropDown.children('option:nth-child(n+9)').addClass('girls-sets');
+
+      //wraps boys and girls options in boys and girls option groups
+      boysOptions.wrapAll($('<optgroup id="boys" label="Boy Bedding"></optgroup>'));
+      girlsOptions.wrapAll($('<optgroup id="girls" label="Girl Bedding"></optgroup>'));
+    }
+    function syncProductwithBundle(){
+      //on load
+      productStyle = $('#product-select option:selected').text();
+      // console.log(productStyle);
+      matchWithPopUp();
+      //on change of selector in product page
+      $('select.single-option-selector').change(function(){
+        setTimeout(function(){
+        productStyle = $('#product-select option:selected').text();
+        // console.log(productStyle);
+        matchWithPopUp();
+        }, 1);//end set timout window scroll
+      });
+      function matchWithPopUp(){
+        leftSideDropDown = $('.tabarnapp__group .js_tabarnapp_variant_selected:first-child .js-select-upsell-item-variant');
+        correctProductOption = leftSideDropDown.children('option:contains("' + productStyle + '")');
+
+        //selects bundle product based on product page
+        correctProductOption.prop('selected', 'selected');
+
+        //takes value from bundle product and injects into parent element in order to log change
+        value = correctProductOption.attr('value');
+        leftSide = $('.tabarnapp__group .js_tabarnapp_variant_selected:first-child');
+        leftSide.attr('data-context', value);
+
+        //takes image from product page and puts in bundle pop-up
+        productImg = $('.images .primary-image-wrap img.primary-image').attr('src');
+        leftSide.find('img.js-variant-image').attr('src', productImg);
+      }
+    }
+    function mobileStyling(){
+      popUpContainer = $('.tabarnapp-notification-container');
+      title = $('.tabarnapp__bundle_title h1');
+      description = $('.tabarnapp__description p');
+      closePop = popUpContainer.children('.ns-close');
+
+      popUpContainer.css({
+        'width': '90%',
+        'left': '5%'
+      });
+      title.css({
+        'font-size': '150%',
+        'padding-top': '20px',
+        'margin-bottom': '5px'
+      });
+      description.css({
+        'white-space': 'pre-line',
+        'font-size': '100%;'
+      });
+      closePop.css({
+        'width': '30px',
+        'height': '30px'
+      });
+    }
+
+  }, 5000);
+}
+});
+
+if ( $(window).width() > 768) {
+
+// mm-edits as of 1/25
+    var $shopProd_mainMenu_a = $('.top-bar-section > .right > li:nth-of-type(3) > a');
+    var $shopProd_mainMenu_ul = $('.top-bar-section > .right > li:nth-of-type(3) > ul');
+
+    $shopProd_mainMenu_a.hover(function() {
+      $shopProd_mainMenu_ul.css('display', 'none')
+    });
+
+    // display 3rd level dropdown in left-nav when on collection page
+    $('ul').has('li.active').each(function() {
+     this.style.setProperty('display', 'block', 'important')
+   });
+
+
+    //  hide 2nd level list not active
+   var $liParentList = $('li.active').parent().parent().parent().parent().siblings();
+   $liParentList.css('display', 'none');
+
+};
+</script>

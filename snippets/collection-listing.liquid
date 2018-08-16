@@ -1,0 +1,28 @@
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+{% assign page_title = 'collections.collection_list.title' | t %}
+
+{% include 'page-header' with page_title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+<section>
+
+  {% if collections.size > 0 %}
+    <div class="collections cards">
+      <ul class="block-grid small-block-grid-1 medium-block-grid-{{settings.collection_products_per_row_medium}} large-block-grid-{{settings.collection_products_per_row_large}}">
+      {% for collection in collections %}
+        <li>{% include 'collection-small' %}</li>
+      {% endfor %}
+      </ul>
+    </div>
+
+    {% include 'pagination-numbered' %}
+  {% else %}
+    <p class="empty">{{ 'collections.collection_list.empty_html' | t }}</p>
+  {% endif %}
+
+</section>
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

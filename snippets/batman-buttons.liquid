@@ -1,0 +1,329 @@
+<!-- CSS for Bundle Link batman (to be placed on product.liquid) -->
+<style>
+
+/*Global Styles*/
+@font-face{
+  font-family: 'Montserrat Bold';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Montserrat_Bold.otf');
+}
+@font-face{
+  font-family: 'Montserrat Black';
+  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/Montserrat_Black.otf');
+}
+
+.mont-bold{
+  font-family: 'Montserrat Bold';
+}
+.mont-black{
+  font-family: 'Montserrat Black';
+}
+.mont-regular{
+  font-family: 'Montserrat';
+}
+.dark-grey{
+  color: #333333 !important;
+}
+.yellow{
+  color: #fff14b;
+}
+
+/*Custom styling for product page template*/
+body.product .section.pricing{
+  margin-bottom: 0 !important;
+}
+    .body.section{
+  margin-top: -50px !important;
+}
+@media only screen and (min-width: 1290px){
+  .body.section{
+    margin-top: -15px !important;
+  }
+
+}
+
+/*Batman link styling*/
+
+#batman-promo-container{
+  padding-left: .9375rem;
+  margin-top: -40px;
+}
+#batman-ad-text{
+  font-size: 100%;
+}
+
+  .batman-link-holder{
+    position: relative;
+    display: inline-block;
+    width: 225px;
+    height: 80px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 1;
+    padding: 5px;
+    background-size: cover;
+  }
+  .batman-link-holder:hover{
+    opacity: .7;
+  }
+
+  #both-buttons{
+    position: relative;
+  }
+  #batman-form-button{
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 80px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 1;
+    padding: 5px;
+    top: 9px;
+    padding-top: 15px;
+    cursor: pointer;
+  }
+  #batman-form-button:hover{
+    opacity: .7;
+  }
+  .batman-link-holder img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #batman-form-button img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 80px;
+  }
+
+  #batman-link-text{
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    font-size: 85%;
+    line-height: 1.5;
+    margin-left: 5px;
+    height: 100%;
+  }
+    #batman-link-text span{
+      display: block;
+    width: 40%;
+    left: 57%;
+    position: relative;
+    top: 10px;
+    text-align: center;
+    }
+    #batman-form-text{
+      padding-right: 8px;
+      font-weight: 100;
+      line-height: 1.5;
+      font-size: 85%;
+      letter-spacing: .3;
+
+    }
+    #batman-form-text .b-text{
+      display: block;
+    }
+
+  #batman-link-or{
+    display: inline;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4d4949 !important;
+    font-size: 110%;
+    position: relative;
+    top: -5px;
+}
+
+/*Batman Form styling*/
+  #batman-form-container{
+    display: none;
+    position: relative;
+    width: 450px;
+  }
+  #batman-form-container .supernova{
+    background-color: white !important;
+  }
+  .jotform-form .form-input{
+    width: 75% !important;
+  }
+  #hide-form-x-batman{
+     display: none;
+  position: absolute;
+  left: 90%;
+  color: white;
+  top: 12px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .5;
+  text-align: center;
+  padding-right: .5px;
+  cursor: pointer;
+  line-height: 21px;
+  z-index: 2;
+
+  }
+
+
+  /*@media only screen and (min-width: 642px){*/
+    iframe#JotFormIFrame-80705931684159{
+      min-height: 540px;
+      width: 450px !important;
+    }
+
+/*}*/
+@media only screen and (max-width: 642px){
+  #batman-form-container{
+    width: 370px !important;
+    left: 0;
+  }
+  iframe#JotFormIFrame-80705931684159{
+    width: 370px !important;
+  }
+  #hide-form-x{
+    left: 89%;
+    top: 13px;
+  }
+
+}
+
+
+
+  @media only screen and (max-width: 1290px){
+
+    .batman-link-holder{
+      display: block;
+      width: 225px;
+      text-align: center;
+      margin-left: 0;
+    }
+    #batman-link-or {
+    display: block;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 215px;
+    margin-top: 0;
+    left: 35px;
+    top: 2px;
+  }
+  #batman-form-button{
+    padding: 5px;
+    top: 0;
+    padding-top: 15px;
+    left: 54px;
+  }
+
+
+
+}
+@media only screen and (max-width: 1290px) and (min-width: 900px){
+#batman-form-container{
+  margin-left: -50%;
+  width: 450px;
+
+}
+}
+@media only screen and (max-width: 900px) and (min-width: 642px){
+#batman-form-container{
+  margin-left: -130%;
+  width: 450px;
+
+}
+}
+
+
+
+
+</style>
+
+<!-- HTML for bundle link batman -->
+<div id="batman-promo-container">
+  <h5 id="batman-ad-text" class="mont-bold">This product will be back in April!</h5>
+  <div id="both-buttons">
+  <div class="batman-link-holder">
+    <img src="//cdn.shopify.com/s/files/1/0578/7201/files/batman-yellow-button.png">
+    <a href="/products/dc-comics-batmobile-batman-twin-bed" id="batman-link">
+      <div id="batman-link-text" class="dark-grey">
+        <span class="mont-regular">Check out the</span>
+        <span class="mont-black">Batmobile</span>
+        <span  class="mont-black">Twin Bed</span>
+      </div>
+    </a>
+  </div>
+  <div id="batman-link-or" class="gotham-black dark-grey">OR</div>
+  <div id="batman-form-button">
+    <img src="//cdn.shopify.com/s/files/1/0578/7201/files/batman-black-button.png">
+    <div id="batman-form-text" class="yellow">
+      <span class="b-text mont-regular">Join our <span class="mont-black" style="letter-spacing: 1px;">waitlist</span> and</span>
+      <span class="b-text mont-regular">we'll notify you once</span>
+      <span class="b-text mont-regular">it's back in stock!</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="batman-form-container">
+  <span id="hide-form-x-batman">X</span>
+   <iframe id="JotFormIFrame-80705931684159" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" src="https://form.jotform.com/80705931684159" frameborder="0" style="width: 100%; min-height:540px; border:none; position: absolute; top: 0;" scrolling="no" > </iframe>
+
+</div>
+
+<!-- form script -->
+<script type="text/javascript">
+var ifr = document.getElementById("JotFormIFrame-80705931684159");
+if(window.location.href && window.location.href.indexOf("?") > -1) { var get = window.location.href.substr(window.location.href.indexOf("?") + 1);
+if(ifr && get.length > 0){ var src = ifr.src; src = src.indexOf("?") > -1 ? src + "&" + get : src + "?" + get; ifr.src = src; } }
+window.handleIFrameMessage = function(e) { var args = e.data.split(":");
+if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); }
+ else { iframe = document.getElementById("JotFormIFrame"); }
+ if (!iframe) { return; }
+ switch (args[0]) {
+   case "scrollIntoView": iframe.scrollIntoView(); break;
+   case "setHeight": iframe.style.height = args[1] + "px"; break;
+   case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break;
+   case "reloadPage": window.location.reload(); break; case "loadScript": var src = args[1]; if (args.length > 3) { src = args[1] + ':' + args[2]; }
+   var script = document.createElement('script');
+   script.src = src;
+   script.type = 'text/javascript';
+   document.body.appendChild(script); break;
+   case "exitFullscreen": if (window.document.exitFullscreen) window.document.exitFullscreen();
+   else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+   else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+   else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+   else if (window.document.msExitFullscreen) window.document.msExitFullscreen(); break; }
+   var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+   if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } };
+   if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); }
+   else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); }
+ </script>
+
+<script>
+$(window).on('load', function() {
+  showHideForm();
+
+
+
+  function showHideForm(){
+    $('#batman-form-button, #hide-form-x-batman').click(function(){
+      $('#batman-form-container').toggle();
+      $('#hide-form-x-batman').toggle();
+
+
+
+    });
+
+
+  }
+
+});
+
+</script>

@@ -1,0 +1,12 @@
+div.mfp-container.mfp-s-ready.mfp-image-holder{
+  position:relative;
+  width:60%;
+  height:72%;
+  margin:auto
+}
+div.mfp-wrap.mfp-gallery.mfp-close-btn-in.mfp-auto-cursor.mfp-with-fade.mfp-ready{
+  cursor: default
+}
+.mfp-bottom-bar{
+  display:none
+}

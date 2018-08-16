@@ -1,0 +1,41 @@
+{% assign has_sidebar = false %}
+{% assign use_sidebar = 'page' %}
+{% assign has_crumbs = true %}
+{% assign blog_prefix = 'article' %}
+
+{% include 'settings' %}
+
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{% include 'article-open' %}
+<header class="page-header">
+
+  <div class="row padded-h">
+    <div class="twelve large-6 large-push-1 columns">
+         <h1>{{ article.title }}</h1>
+    </div>
+  </div>
+
+</header>
+
+<div class="row padded-h">
+  <div class="large-6 large-push-1 columns">
+    {% include 'article-meta' %}
+
+    {% if settings.article_display_sharing_google_plus? or settings.article_display_sharing_twitter? or settings.article_display_sharing_facebook? %}
+        {% include 'share' with article %}
+    {% endif %}
+  </div>
+</div>
+
+
+<ul>
+     {% if article.image %}
+
+<li>
+<img>{{article.image.src | img_url}}</img>
+</li>
+     {% endif %}
+
+</ul>

@@ -1,0 +1,71 @@
+<style>
+.prod-price{
+  display: block;
+}
+
+</style>
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header-collection' with collection.title %}
+{% include 'content-wrap-open' %}
+{% include 'content-open' %}
+
+{% if settings.collection_display_browse? %}
+  {% include 'collection-tag-filter' %}
+{% endif %}
+
+{% if collection.description and collection.description.size > 0 %}
+  <div class="collection-description">{{ collection.description }}</div>
+{% endif %}
+
+
+<br>
+
+{% capture collection_size %}{{ collection.products_count }}{% endcapture %}
+{% assign a = collection_size | divided_by: 2 %}
+{% assign b = a | divided_by: 5 %}
+{% assign c = b | round %}
+{% assign final_even_fifth = c | times: 5 %}
+
+{% assign pagination_number = collection_size | divided_by: 1 %}
+
+{% if pagination_number < 20 %}
+	{% assign pagination_size = 100 %}
+{% else %}
+	{% assign pagination_size = a %}
+{% endif %}
+
+{% paginate collection.products by pagination_size %}
+
+
+{% if collection.products.size > 0 %}
+
+
+  <div class="products cards">
+    <ul id="collectionGrid" class="block-grid small-block-grid-1 medium-block-grid-{{settings.collection_products_per_row_medium}} large-block-grid-{{settings.collection_products_per_row_large}}">
+    {% for product in collection.products %}
+
+      <!-- displays all variants on collection page - dh-edit 4/6/17 -->
+      {% for variant in product.variants %}
+        <!-- fix for discontinued tags -->
+        {% unless product.tags contains 'discontinued' %}
+        <li>
+          {% include 'product-small' %}
+        </li>
+      {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    </ul>
+      <div id="loading" style="display:none;text-align:center;">{{"load-ring.gif" | asset_url | img_tag}}</div>
+  </div>
+
+  {% include 'pagination-numbered' %}
+
+{% else %}
+  <p class="empty">{{ 'collections.collection.empty_html' | t }}</p>
+{% endif %}
+{% endpaginate %}
+
+{% include 'content-close' %}
+{% include 'content-wrap-close' %}

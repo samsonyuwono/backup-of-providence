@@ -1,0 +1,100 @@
+<!-- <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> -->
+{% if template != "discontinued" %}
+{{ 'filtersStyle.css' | asset_url | stylesheet_tag }}
+<div id="handle" style="display:none">{{collection.handle}}</div>
+<div id="filterPieces" style="display:none" >
+{% include 'sortFilter' %}
+{% include 'mainFilters' %}
+</div>
+<script>
+
+if ($(window).width() <= 640) {
+    $('#nonMobileFilters').hide();
+    $('#MobileFilter').show();
+}else{
+    $('#nonMobileFilters').show();
+    $('#MobileFilter').hide();
+}
+</script>
+{{ 'filterInit.js' | asset_url | script_tag }}
+{% endif %}
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+
+header#filter-heading{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  margin-left: 10px;
+  color: #656565;
+}
+
+label.filter-label{
+  font-family: 'Montserrat', sans-serif;
+  color: #656565 !important;
+
+}
+
+div.selectTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #656565;
+  font-size: larger;
+  padding-bottom: 2px;
+
+}
+
+li.sortSpecial {
+  font-family: 'Montserrat', sans-serif;
+  color: #656565;
+
+}
+
+
+
+.selectTitle {
+  border: 1px solid #e1e1e1;
+  background-color: #f4f4f4;
+}
+
+div.selectTitle:after{
+  margin-right: 10px;
+  top: 10px;
+
+}
+
+.upsideDown:after{
+  top: 0px !important;
+}
+
+.filterTitle{
+  color: #656565;
+
+}
+
+#spanSortTitle {
+  margin-left: -20px;
+}
+
+ul#sortByList {
+  left: -25px;
+}
+
+@media only screen and (max-width: 640px) {
+
+  #spanSortTitle {
+    margin-left: 0px;
+  }
+
+  ul#sortByList {
+    left: 0px;
+  }
+  div.selectTitle:after{
+    margin-right: 10px;
+    top: 2px;
+
+  }
+
+}
+
+</style>

@@ -1,0 +1,22 @@
+{% assign products = widget_instance_settings %}
+{% assign limit = widget_instance | append: '_limit' %}
+{% assign tag_filter = widget_instance | append: '_filter' %}
+{% assign display_images = widget_instance | append: '_display_images?' %}
+{% assign display_description = widget_instance | append: '_display_description?' %}
+{% assign display_button = widget_instance | append: '_display_button?' %}
+
+<div class="product-list">
+  {% if settings[tag_filter] != '' %}
+    {% for product in collections[products].all_products limit: settings[limit] %}
+      {% for tag in product.tags %}
+        {% if tag == settings[tag_filter] %}
+          {% include 'widget-products-product' %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    {% for product in collections[products].all_products limit: settings[limit] %}
+      {% include 'widget-products-product' %}
+    {% endfor %}
+  {% endif %}
+</div>

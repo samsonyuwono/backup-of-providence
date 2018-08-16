@@ -1,0 +1,167 @@
+// Responsive breakpoints
+
+$medium-screen:   640px;
+$large-screen:    1024px;
+
+
+/*  Add custom styles here
+/*-------------------------------------------------- */
+/*GLOBAL*/
+
+//highlighter
+
+img::selection, ::selection {
+  background: lightblue;
+  color: inherit;
+}
+
+/*homepage */
+
+
+
+/*ROTATOR*/
+.bx-wrapper {
+  box-shadow: 0 !important;
+}
+#site-header {
+  border-bottom: none;
+}
+#site-body {
+  overflow-x: hidden;
+  padding-top: 0;
+  position: relative;
+  z-index: 1;
+}
+/*landing pages*/
+
+.landing-title {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.4375rem;
+
+  a { 
+    font-weight: 500;
+    font-size: 22px;
+    font-family: Droid Serif, Helvetica, Arial, sans-serif;
+    line-height: 1.2em;
+  }
+  &:hover {
+    color: #487ed6;
+  }
+}
+.fade {
+  .fade {
+   opacity: 1;
+   transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out;
+   }
+
+   &:hover {
+    opacity: 0.5;
+  }
+}
+
+/*HELP CENTER*/
+.help-center-wrapper {
+  ul{
+    margin-top: 30px;
+  }
+  li{
+    font-size: 20px;
+  }
+}
+
+.help-center-wrapper {
+  margin-bottom: 50px;
+}
+
+.landing-title {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 1.4375rem;
+
+  a { 
+    font-weight: 500;
+    font-size: 22px;
+    font-family: Droid Serif, Helvetica, Arial, sans-serif;
+    line-height: 1.2em;
+  }
+  &:hover {
+    color: #487ed6;
+  }
+}
+.fade {
+  .fade {
+   opacity: 1;
+   transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out;
+   }
+
+   &:hover {
+    opacity: 0.5;
+  }
+}
+
+.help-center-wrapper {
+  ul {
+    margin-top: 30px;
+  }
+  li{
+    font-size: 20px;
+  }
+}
+
+/*ABOUT US PAGE*/
+
+.about-us-wrapper {
+  font-family: Verdana !important;
+  width: 80%;
+  h1 {
+  color: #3743a1 !important;
+  font-weight: bold;
+  }
+  p {
+  font-size: 16px;
+  }
+  span {
+  font-size: 62px;
+  color: #3743a1;
+  font-weight: bold;
+  }
+  img {
+    float: right;
+    margin-top: -41px;
+  }
+}
+
+
+/*  Add custom responsive styles here
+/*-------------------------------------------------- */
+
+
+// Small screens (phones) only
+@media screen and (max-width: $medium-screen) {
+
+}
+
+
+// Medium screens (tablets) only
+@media screen and (min-width: $medium-screen) and (max-width: $large-screen) {
+
+}
+
+
+// Medium screens (tablets) and up
+@media screen and (min-width: $medium-screen) {
+
+}
+
+
+// Large screens (desktops)
+@media screen and (min-width: $large-screen) {
+
+
+
+}

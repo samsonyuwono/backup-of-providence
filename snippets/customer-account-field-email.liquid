@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="large-12 columns{% if form.errors contains 'email' %} error{% endif %} field">
+    <input type="email" name="customer[email]" id="customer_email" data-required="true" data-required-message="{{ 'customer_accounts.account_fields.email_field_required' | t }}"  data-type-email-message="{{ 'customer_accounts.account_fields.email_field_valid' | t }}" placeholder="{{ 'customer_accounts.account_fields.email_field_placeholder' | t }}" />
+  </div>
+</div>

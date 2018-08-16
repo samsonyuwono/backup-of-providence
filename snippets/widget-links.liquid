@@ -1,0 +1,114 @@
+<style>
+
+aside.sidebar header.widget-header{
+  display: none !important;
+}
+
+#left-nav-container li.main{
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+#left-nav-container .head{
+  font-size: 115%;
+  display: block;
+  position: relative;
+
+}
+
+ #left-nav-container li.main ul{
+  list-style-type: none;
+}
+#left-nav-container ul.dropdown{
+  display: none;
+}
+#left-nav-container ul.dropdown li.nav-item{
+  padding-bottom: 5px;
+  font-size: 100%;
+}
+#left-nav-container .alone{
+  list-style-type: none;
+  padding-bottom: 10px;
+  font-size: 115%;
+
+}
+#left-nav-container i.arrow{
+  border: solid #8dabdd;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  left: 20px;
+  position: relative;
+}
+#left-nav-container .arrow-up{
+  transform: rotate(-135deg) !important;
+   -webkit-transform: rotate(-135deg) !important;
+}
+#left-nav-container .active a{
+  color: #446cc3;
+}
+
+#left-nav-container .back{
+    color: #4e4949;
+    position: absolute;
+    top: -30px;
+  }
+  #left-nav-container .title-active{
+    color: #003366 !important;
+  }
+    #left-nav-container .title-active-arrow{
+      border-color: #003366 !important;
+    }
+
+
+</style>
+
+
+
+{% assign nav_area = 'links-widget' %}
+{% assign nav = linklists[widget_instance_settings] %}
+{% assign levels = 4 %}
+
+<!-- <nav class="top-bar show-for-medium-up" data-topbar data-options="mobile_show_parent_link: true"> -->
+  <!-- <section class="top-bar-section" id="{{page.handle | camelize}}"> -->
+    <!-- <ul class="left sidebar" id="left-sidebar"> -->
+    <div id="left-nav-container">
+      {% include 'nav-structure' %}
+    </div>
+    <!-- </ul> -->
+  <!-- </section> -->
+<!-- </nav> -->
+
+<script>
+// makes Sale in Top Header red
+$("li.nav-item a:contains('Sale')").css('color', 'red');
+
+$('#left-nav-container a.head').each(function(){
+  $(this).click(function(e){
+    e.preventDefault();
+  });
+});
+
+$( document ).ready(function() {
+  //appends arrows to nav items with dropdowns
+  $('#left-nav-container a.head').each(function(){
+    $("<i class='arrow'></i>").appendTo(this);
+  });
+
+//on click slide dropdown down, flip arrow, and hide all other main categories
+  $('#left-nav-container a.head').click(function(){
+    $(this).siblings('.dropdown').slideToggle();
+    $(this).children('.arrow').toggleClass('arrow-up title-active-arrow');
+    $(this).toggleClass('title-active');
+    if($(this).siblings('.dropdown').children().hasClass('active')){
+      $(this).parent().siblings().hide();
+      $("<a href='/pages/shop-products' class='back'>&larr; Go Back</a>").prependTo('#left-nav-container');
+    }
+  });
+  // on page load, looks for active class in nav-item and initiates click on parent to show dropdown and hide all other categories
+  $('#left-nav-container ul.dropdown li.nav-item.active').parent().prev().click();
+
+});
+
+</script>

@@ -1,0 +1,17 @@
+{% assign blog_prefix = 'widget_articles' %}
+
+<div class="articles">
+{% for article in blogs[settings.widget_articles_blog].articles limit: settings.widget_articles_limit %}
+  {% include 'article-open' with blog_prefix %}
+
+  <header>
+    <h2 class="entry-title">
+      {{ article.title | escape | link_to: article.url }}
+    </h2>
+  </header>
+
+  {% include 'article-body' with blog_prefix %}
+  {% include 'article-meta' %}
+  {% include 'article-close' with blog_prefix %}
+{% endfor %}
+</div>

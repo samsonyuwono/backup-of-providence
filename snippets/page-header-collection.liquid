@@ -1,0 +1,27 @@
+<header class="page-header">
+
+  <div class="row">
+    <div class="twelve columns">
+      <div class="table">
+        <div class="cell">
+          <h1>{{ page-header-collection }}</h1>
+          {% if has_crumbs %}
+            {% include 'breadcrumbs' %}
+          {% endif %}
+        </div>
+        <div class="cell">
+
+          <div id="page-header-actions" class="table compress">
+            <div class="cell">
+              {% if settings.collection_display_browse? %}
+                {% include 'collection-tag-filter' %}
+              {% endif %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>

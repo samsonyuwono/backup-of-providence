@@ -1,0 +1,147 @@
+{% assign has_sidebar = false %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'assembly-content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ page.content }}
+
+<!-- Begin HTML for tabs -->       
+<div id="page" class="row padded-v padded-h">  
+  <div class="span12 details">
+    <meta charset="utf-8" />
+    <div style="float:left; display:inline-block; ">
+        <span style="float:left;width: 80%;">
+           <p style="float:right; display:block;">Here you will find a list of our assembly instructions for our products.  All can be downloaded and printed right from your own computer! To view these instructions you will need Adobe Acrobat Reader. <strong><a href="http://get.adobe.com/reader/" target="_blank">Click here</a></strong> for your free download.<a href="http://get.adobe.com/reader/" target="_blank">
+            </p> 
+        </span>
+        <span style="float:right;width: 20%;">
+            <a><img src="//wwwimages.adobe.com/www.adobe.com/downloadcenter/images/reader/reader_128.jpg" alt="reader" width="70" height="70"/></a>
+        </span>
+ </div>
+    </div>
+    </div>
+    <div>
+      <ul class="tabs">
+        <li><a href="#tab-1">Nursery Furniture</a></li>
+        <li><a href="#tab-2">Kids Furniture</a></li>
+        <li><a href="#tab-3">Baby Gear</a></li>
+      </ul>
+      <div id="tab-1">{{ pages.nursery-furniture-assembly-instructions-tab-page.content }}</div>
+      <div id="tab-2">{{ pages.kids-furniture-assembly-instructions-tab-page.content }}</div>
+      <div id="tab-3">{{ pages.baby-gear-assembly-instructions-tab-page.content }}</div>
+    </div>
+<!-- Begin jQuery script for tabs -->       
+	<script>
+		$(document).ready(function() {
+    		$('ul.tabs').each(function(){
+      			var active, content, links = $(this).find('a');
+      			active = links.first().addClass('active');
+      			content = $(active.attr('href'));
+      			links.not(':first').each(function () {
+        			$($(this).attr('href')).hide();
+      			});
+      			$(this).find('a').click(function(e){
+        			active.removeClass('active');
+        			content.hide();
+        			active = $(this);
+        			content = $($(this).attr('href'));
+        			active.addClass('active');
+        			content.show();
+        			return false;
+      			});
+
+      			// code for search box for all tabs
+      			rows =$('table tr');
+    			search = $('.instruct-search');
+    			search.keyup(function() {
+			    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+			    
+				    rows.show().filter(function() {
+				        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+				        return !~text.indexOf(val);
+				    }).hide();
+				});
+    		});
+  		});
+	</script>
+<!-- Begin styling for tabs -->       
+	<style>
+		ul.tabs {
+		  border-bottom: 1px solid #DDDDDD;
+		  display: block;
+		  margin: 0 0 20px;
+		  padding: 0;
+		}
+		ul.tabs li {
+		  display: block;
+		  float: left;
+		  height: 30px;
+		  margin-bottom: 0;
+		  padding: 0;
+		  width: auto;
+		}
+		ul.tabs li a {
+		  -moz-border-bottom-colors: none;
+		  -moz-border-image: none;
+		  -moz-border-left-colors: none;
+		  -moz-border-right-colors: none;
+		  -moz-border-top-colors: none;
+		  background: none repeat scroll 0 0 #F5F5F5;
+		  border-color: #DDDDDD !important;
+		  border-style: solid;
+		  border-width: 1px 1px 0 1px;
+		  display: block;
+		  font-size: 13px;
+		  height: 29px;
+		  line-height: 30px;
+		  margin: 0;
+		  padding: 0 20px;
+		  text-decoration: none;
+		  width: auto;
+		  color: #303030;
+		  border-bottom:none !important;
+		}
+		ul.tabs li a.active {
+		  background: none repeat scroll 0 0 #FFFFFF;
+		  border-left-width: 1px;
+		  border-top-left-radius: 2px;
+		  border-top-right-radius: 2px;
+		  color: #111111;
+		  height: 30px;
+		  margin: 0 0 0 -1px;
+		  padding-top: 4px;
+		  position: relative;
+		  top: -4px;
+		}
+		ul.tabs li:first-child a.active {
+		  margin-left: 0;
+		}
+		ul.tabs li:first-child a {
+		  border-top-left-radius: 2px;
+		  border-width: 1px 1px 0;
+		}
+		ul.tabs li:last-child a {
+		  border-top-right-radius: 2px;
+		}
+		ul.tabs:before, ul.tabs:after {
+		  content: " ";
+		  display: block;
+		  height: 0;
+		  overflow: hidden;
+		  visibility: hidden;
+		  width: 0;
+		}
+		ul.tabs:after {
+		  clear: both;
+		}
+    </style>
+  </div>
+</div>
+
+{% include 'content-close' %}
+{% include 'assembly-content-wrap-close' %}
+
+

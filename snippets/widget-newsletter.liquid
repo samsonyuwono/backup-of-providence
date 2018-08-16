@@ -1,0 +1,14 @@
+{% if 'widgets.newsletter.message_html' | t != '' %}
+  <p>{{ 'widgets.newsletter.message_html' | t }}</p>
+{% endif %}
+
+<form method="post" action="{{ settings.widget_newsletter_action }}" name="mc-embedded-subscribe-form" target="_blank">
+  <div class="row collapse">
+    <div class="small-9 columns">
+      <input type="email" name="EMAIL" class="email with-postfix" data-required="true" data-required-message="{{ 'widgets.newsletter.email_field_required' | t }}"  data-type-email-message="{{ 'widgets.newsletter.email_field_valid' | t }}" placeholder="{{ 'widgets.newsletter.email_field_placeholder' | t }}">
+    </div>
+    <div class="small-3 columns">
+      <button type="submit" class="button postfix radius">{{ 'widgets.newsletter.submit' | t }}</button>
+    </div>
+  </div>
+</form>

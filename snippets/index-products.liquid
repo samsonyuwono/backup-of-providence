@@ -1,0 +1,37 @@
+{% if settings.index_products_order == 'random' %}
+  {% assign index_products_limit = 10000 %}
+{% else %}
+  {% assign index_products_limit = settings.index_products_limit %}
+{% endif %}
+
+{% assign index_products_title = 'home.products.title' | t %}
+
+<section>
+
+  {% if index_products_title != "" %}
+    {% if settings.index_products_display_title? %}
+      <h2>{{ index_products_title }}</h2>
+    {% endif %}
+  {% endif %}
+
+  <div class="products cards" data-order="{{settings.index_products_order}}">
+    <ul class="block-grid small-block-grid-1 medium-block-grid-{{settings.index_products_per_row_medium}} large-block-grid-{{settings.index_products_per_row_large}}">
+
+    {% for product in collections[settings.index_products].all_products limit: index_products_limit %}
+
+      {% if settings.index_products_tag_filter != '' %}
+        {% for tag in product.tags %}
+          {% if tag == settings.index_products_tag_filter %}
+            <li>{% include 'product-small' %}</li>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <li>{% include 'product-small' %}</li>
+      {% endif %}
+
+    {% endfor %}
+
+    </ul>
+  </div>
+
+</section>

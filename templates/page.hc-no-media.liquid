@@ -1,0 +1,12 @@
+{% assign has_sidebar = true %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'hc-no-media-content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ page.content }}
+
+{% include 'content-close' %}
+{% include 'hc-no-media-content-wrap-close' %}

@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+
+{% if template == 'index' %}
+ <title>{{ shop.name }} | {{ page_title }}</title>
+{% elsif template == '404' %}
+  <title>{{ 'general.404.title' | t }} | {{ shop.name }}</title>
+{% else %}
+ <title>{{ page_title }} | {{ shop.name }}</title>
+{% endif %}
+
+{% if template == "index" and shop.description != blank %}
+<meta name="description" content="{{ shop.description }}">
+{% else %}
+<meta name="description" content="{{ page_description }}">
+{% endif %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Social sharing data -->
+<meta property="og:site_name" content="{{ shop.name }}">
+
+<meta property="fb:admins" content="" />
+
+{% if template contains 'product' %}
+<meta itemprop="name" content="{{ product.title }}">
+<meta property="og:url" content="{{ shop.url }}{{ product.url }}">
+<meta property="og:image" content="{{ product.featured_image | product_img_url: 'large'  | prepend: 'http:' }}" />
+<meta property="og:type" content="product" />
+<meta property="og:title" content="{{ product.title }}">
+<meta property="og:description" content="{{ product.description | strip_html | escape }}">
+
+{% elsif template contains 'collection' %}
+<meta itemprop="name" content="{{ collection.title }}">
+<meta property="og:url" content="{{ shop.url }}{{ collection.url }}">
+<meta property="og:title" content="{{ collection.title }}">
+<meta property="og:description" content="{{ collection.description | strip_html | escape }}">
+<meta property="og:image" content="{{ collection.image.src | collection_img_url: 'original' }}">
+
+{% elsif template contains 'article' %}
+<meta itemprop="name" content="{{ article.title }}">
+<meta property="og:url" content="{{ shop.url }}{{ article.url }}">
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ article.title }}">
+<meta property="og:description" content="{{ article.content | strip_html | truncatewords: 30 | escape }}">
+
+  {% if article.content contains '&#60;img' %}
+    {% assign src = article.content | split: 'src="' %}
+    {% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' %}
+    {% if src %}<meta property="og:image" content="{{ src }}">{% endif %}
+    {% endif %}
+  {% else %}
+  <meta property="og:image" content="{{ 'logo.png' | asset_url }}">
+{% endif %}
+
+<!-- Bookmark icons -->
+<link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url  }}">
+<link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url  }}">
+<link rel="canonical" href="{{ canonical_url }}">

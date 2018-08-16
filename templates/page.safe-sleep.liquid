@@ -1,0 +1,492 @@
+<style>
+.bottom_links{
+	display: inline-block;
+	width: 18%;
+}
+.center{
+	text-align: center;
+}
+.content-block{
+	/*display: none;*/
+}
+.content-block h3{
+	color: black !important;
+	font-size: 150%;
+}
+.content{
+	width: 100%;
+}
+.img-container{
+	height: 1342px;
+	position: relative;
+	width: 1100px;
+}
+.main-image{
+	position: absolute;
+	width: 1100px;
+}
+#bottom-banner{
+	width: 100%;
+}
+#bottom-banner-text{
+	color: white !important;
+	position: relative;
+	bottom: 65px;
+}
+#img-1{
+	top: 0;
+}
+#content-1{
+	position: absolute;
+	top: 60px;
+	width: 650px;
+	left: 14%;
+}
+#content-2{
+	position: absolute;
+	z-index: 1;
+	width: 510px;
+	top: 586px;
+	left: 42%;
+}
+#content-3{
+	position: absolute;
+	width: 510px;
+	top: 946px;
+	left: 12%;
+}
+#img-1{
+	top: 0;
+}
+#img-2{
+	top: 456px;
+	z-index:1;
+}
+#img-3{
+	top: 854px;
+}
+#img-area{
+	padding-left: 10%;
+}
+#link-container{
+	text-align: center;
+}
+#title-banner-text{
+	color: white !important;
+	position: relative;
+	bottom: 70px;
+}
+@media only screen and (max-width: 1295px){
+	#img-area	{
+		padding-left: 5%;
+	}
+}
+@media only screen and (max-width: 1190px){
+	#img-area	{
+		padding-left: 3%;
+	}
+}
+@media only screen and (max-width: 1100px){
+	#img-area	{
+		padding-left: 0;
+	}
+}
+
+/*for tablet - portrait*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+	.main-image{
+		width: 768px;
+	}
+	.img-container{
+		height: 980px;
+	}
+	.bottom_links{
+		width: 14%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	.bottom_links h6{
+		font-size: 100%;
+	}
+	.content-block h3{
+		font-size: 115%;
+	}
+	#img-2{
+		top: 318px;
+	}
+	#img-3{
+		top: 596px;
+	}
+	#title-banner-text{
+		bottom: 50px;
+		font-size: 140%;
+	}
+	#bottom-banner-text{
+		bottom: 45px;
+		font-size: 140%;
+	}
+	#content-1{
+		width: 450px;
+		left: 9%;
+		top: 25px;
+	}
+	#content-2{
+		width: 370px;
+    top: 400px;
+    left: 29%;
+	}
+	#content-3{
+		width: 370px;
+		top: 656px;
+		left: 8%;
+	}
+}
+
+/*for tablet - landscape*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+	.img-container{
+		width: 1024px;
+	}
+	.content-block h3{
+		font-size: 150%;
+	}
+	#content-1{
+		width: 580px;
+		top: 50px;
+	}
+	#content-2{
+		left: 41%;
+		top: 546px;
+	}
+
+	#content-3{
+		width: 500px;
+		left: 11%;
+		top: 880px;
+	}
+	#img-2{
+		top: 426px;
+	}
+	#img-3{
+		top: 796px;
+	}
+
+}
+
+@media only screen and (min-width: 761px){
+.mobile{
+	display: none;
+}
+
+}
+@media only screen and (max-width: 760px) and (min-width: 414px){
+	#bottom-banner-text{
+		bottom: 60px !important;
+	}
+	#content-1{
+		top: 20px !important;
+	}
+	#content-1 h3{
+		width: 60% !important;
+		font-size: 120%;
+	}
+	#content-2{
+		top: 80% !important;
+	}
+	#content-2 h3{
+		width: 50% !important;
+	  margin-left: 45% !important;
+	  font-size: 120%;
+	}
+	#content-3{
+		top: 121% !important;
+	}
+	#content-3 h3{
+		width: 45% !important;
+		font-size: 120%;
+	}
+
+	#img-area{
+		height: 2500px;
+	}
+	#title-banner-text{
+		font-size: 180% !important;
+		bottom: 65px !important;
+	}
+
+}
+@media only screen and (max-width: 628px) and (min-width: 414px){
+	#content-2{
+		top: 64% !important;
+	}
+	#content-2 h3{
+		/*font-size: 120%;*/
+
+	}
+	#content-3{
+		top: 99% !important;
+	}
+	#img-area {
+    height: 2100px;
+}
+}
+@media only screen and (max-width: 524px) and (min-width: 414px){
+	#content-2{
+		top: 52% !important;
+	}
+	#content-3{
+		top: 81% !important;
+	}
+	#img-area {
+    height: 1800px;
+}
+}
+@media only screen and (max-width: 464px) and (min-width: 414px){
+	#content-2{
+		top: 45% !important;
+	}
+	#content-3{
+		top: 71% !important;
+	}
+	#img-area {
+    height: 1600px;
+}
+#bottom-banner-text{
+	bottom: 50px !important;
+}
+
+}
+
+
+/*for mobile*/
+@media only screen and (max-width: 760px){
+	@font-face{
+	  font-family: 'Helvetica Oblique';
+	  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/helvetica-neue-lt-std-87-heavy-condensed-oblique.otf');
+	}
+	@font-face{
+	  font-family: 'Helvetica 57';
+	  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/helvetica-neue-lt-std-57-condensed.otf');
+	}
+	@font-face{
+	  font-family: 'Helvetica 67';
+	  src:url('//cdn.shopify.com/s/files/1/0578/7201/files/helvetica-neue-lt-std-67-medium-condensed.otf');
+	}
+	.bottom_links img{
+		height: 75px;
+		width: 75px;
+	}
+	.bottom_links{
+		width: 30%;
+    height: 150px;
+    vertical-align: top;
+	}
+	.content-block h3{
+		font-family: 'Helvetica 57';
+		font-size: 110%;
+	}
+	.img-container{
+		height: 1500px;
+		width: 100%;
+	}
+	.main-image{
+		position: relative;
+	}
+	#bottom-banner-text{
+		font-family: 'Helvetica 67';
+		font-size: 120%;
+		bottom: 40px;
+	}
+	#content-1{
+		top: 5px;
+		width: 100%;
+		left: 1%;
+	}
+	#content-1 h3{
+		width: 200px;
+}
+	#content-2{
+		width: 100%;
+		top: 596px;
+		right: 1%;
+		left: 0;
+	}
+	#content-2 h3{
+		width: 180px;
+		margin-left: 50%;
+	}
+
+	#content-3{
+		top: 888px;
+		width: 100%;
+		left: 1%;
+	}
+
+	#content-3 h3{
+		width: 180px;
+	}
+
+	#mobile-img-2{
+		top: -80px;
+	}
+	#mobile-img-3{
+		top: -50px;
+	}
+	#title-banner-text{
+		font-family: 'Helvetica Oblique';
+		font-size: 130%;
+		bottom: 50px;
+	}
+	.not_mobile{
+		display: none;
+	}
+}
+/*for iphone 7*/
+@media only screen and (max-width: 414px){
+	#content-2{
+		top: 636px;
+	}
+	#content-3{
+		top: 988px;
+	}
+}
+
+/*for nexus phones */
+@media only screen and (max-width: 414px){
+	#content-2{
+		top: 656px;
+	}
+}
+
+/*for google nexus 4*/
+@media only screen and (max-width: 384px){
+	#content-2{
+		top: 596px;
+	}
+	#content-3{
+		top: 918px;
+	}
+
+}
+
+/*for iphone 6*/
+@media only screen and (max-width: 375px){
+	.img-container {
+		height: 1300px;
+	}
+	#content-2{
+		top: 580px;
+	}
+	#content-3{
+		top: 888px;
+	}
+}
+/*for Galaxy phones*/
+@media only screen and (max-width: 360px){
+	#content-1 h3{
+		width: 205px;
+		font-size: 105%;
+	}
+	#content-2{
+		top: 550px;
+	}
+	#content-3{
+		top: 848px;
+	}
+}
+
+/*for iphone 5*/
+@media only screen and (max-width: 320px){
+	.img-container{
+		height: 1100px;
+	}
+	#content-1 h3{
+		width: 205px;
+		font-size: 100%;
+	}
+	#content-2{
+		top: 466px;
+	}
+	#content-2 h3{
+		margin-left: 45%;
+	}
+	#content-3{
+		top: 748px;
+	}
+	#content-3 h3{
+		width: 140px;
+	}
+}
+</style>
+<!-- begin html -->
+
+<!-- banner image -->
+<div class="row">
+	<div class="small-12 medium-12 large-12">
+		<img class="not_mobile" id="hero-image" src="//cdn.shopify.com/s/files/1/0578/7201/files/1-header.png" alt="Every Baby Deserves a Safe Place to Sleep">
+		<img class="mobile" src="//cdn.shopify.com/s/files/1/0578/7201/files/1-mobile-banner.png" alt="Every Baby Deserves a Safe Place to Sleep">
+	</div>
+</div>
+
+<!-- title -->
+<div class="row">
+	<div class="small-12 medium-12 large-12 center">
+		<img class="not_mobile content" id="banner" src="//cdn.shopify.com/s/files/1/0578/7201/files/2-blue-banner.png">
+		<img class="mobile" src="//cdn.shopify.com/s/files/1/0578/7201/files/2-mobile-blue-banner.png">
+		<h1 id="title-banner-text">Every Baby Deserves a Safe Place to Sleep</h1>
+	</div>
+</div>
+
+<div id="img-area" class="row">
+<div class="img-container">
+
+<!-- content 1 - green -->
+		<img class="not_mobile content main-image" id="img-1" src="//cdn.shopify.com/s/files/1/0578/7201/files/3-child-01.png">
+		<img class="main-image mobile" id="mobile-img-1" src="//cdn.shopify.com/s/files/1/0578/7201/files/3-mobile-child-01.png">
+		<div class="content-block" id="content-1">
+			<p><h3>Since Delta Children was founded in 1968, we have been devoted to one mission: finding a safe place for every baby to sleep. This involves both manufacturing the safest products for babies and children, as well as donating product to children in unsafe environments.</h3></p>
+			<p><h3>In 2012, we formalized these efforts and established "The Safe Sleep Campaign". Today, we are proud to continue this nationwide effort to educate parents on the importance of creating safe sleep conditions for their children, backed with a commitment to donate product to families in need.</h3></p>
+	</div>
+<!-- content 2 - blue -->
+		<img class="not_mobile content main-image" id="img-2" src="//cdn.shopify.com/s/files/1/0578/7201/files/4-child-02-v2.png">
+		<img class="main-image mobile" id="mobile-img-2" src="//cdn.shopify.com/s/files/1/0578/7201/files/4-mobile-child-02-mobile.png">
+		<div class="content-block" id="content-2">
+			<p><h3>For every product you purchase, a portion of our proceeds goes towards building a safe sleep environment for children around the world. To date, more than $4 million worth of product and monetary donations have been made.</h3></p>
+		</div>
+<!-- content 3 - pink -->
+		<img class="not_mobile content main-image" id="img-3" src="//cdn.shopify.com/s/files/1/0578/7201/files/5-child-03.png">
+		<img class="main-image mobile" id="mobile-img-3" src="//cdn.shopify.com/s/files/1/0578/7201/files/5-mobile-child-03.png">
+		<div class="content-block" id="content-3">
+			<p><h3>The crib is often the one place your child is alone without supervision. It's our mission to be the safest brand in juvenile furniture and make sure parents are educated on the dos and don'ts of a safe nursery. See below for life saving safety tips for your child.</h3></p>
+		</div>
+</div>
+</div>
+
+<!-- Safety Resources title -->
+<div class="row">
+	<div class="small-12 medium-12 large-12 center">
+		<img class="not_mobile content" id="bottom-banner" src="//cdn.shopify.com/s/files/1/0578/7201/files/6-blue-banner.png">
+		<img class="mobile" src="//cdn.shopify.com/s/files/1/0578/7201/files/6-mobile-blue-banner.png">
+		<h1 id="bottom-banner-text">See Delta Children's Safety Resources</h1>
+	</div>
+</div>
+
+<!-- Safety Resource Icons  -->
+<div class="row">
+	<div class="small-12 medium-12 large-12" id="link-container">
+		<a class="bottom_links" href="/pages/safety-tips"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/6-banner.png"><h6>Nursery Safety Tips</h6></a>
+		<a class="bottom_links" href="/pages/crib-safety-q-a"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/8-icon-safety.png"><h6>Crib Safety Q&amp;A</h6></a>
+		<a class="bottom_links" href="/pages/videos"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/9-icon-video.png"><h6>Safe Sleep Videos</h6></a>
+		<a class="bottom_links" href="/pages/toddler-safety-tips"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/10-icon-toddler.png"><h6>Toddler Room Proofing</h6></a>
+		<a class="bottom_links" href="/pages/leaders-in-safety"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/11-icon-compliance.png"><h6>Product Compliance</h6></a>
+	</div>
+</div>
+
+<script>
+if ( $(window).width() > 667) {
+$("img.not_mobile").each(function(){
+  $(this).attr('src', $(this).attr('src').replace('_1x1.svg', '.svg'));
+});
+};
+
+</script>

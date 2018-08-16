@@ -1,0 +1,22 @@
+<footer class="article-footer section">
+{% if blog_prefix != 'article' %}
+  <!-- Article list -->
+{% else %}
+  <div class="article-location text-color-quiet">
+    {% capture article_blog %}{{ blog.title | link_to: blog.url }}{% endcapture %}
+    {% capture article_tags %}{% if article.tags.size > 0 %}{% for tag in article.tags %}<a href="{{ blog.url }}/tagged/{{ tag | handle }}" rel="tag">{{ tag | strip_html | replace: ' ', '&nbsp;'}}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}{% endfor %}{% endif %}{% endcapture %}
+
+    {{ 'blog.article.blog_html' | t: blog: article_blog }}
+
+    <br>
+
+    {% if article.tags.size > 0 %}
+    {{ 'blog.article.tags_html' | t: tags: article_tags }}
+    {% endif %}
+  </div>
+
+  <!-- Single article -->
+  
+
+{% endif %}
+</footer>

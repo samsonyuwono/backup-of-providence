@@ -1,0 +1,14 @@
+{% assign item = tags %}
+{% assign display_tags = '_display_tags?' | prepend: template %}
+
+{% if settings[display_tags] and item.tags.size > 0 %}
+<div class="tags">
+<ul>
+{% for tag in item.tags %}
+<li>
+<a href="/collections/all/{{tag | replace: ' ', '-'}}" class="tag" rel="tag">{{ tag }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}

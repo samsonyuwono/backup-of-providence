@@ -1,0 +1,14 @@
+<div class="section nav-collection nav-collection-{{ product-collection-nav }} clearfix">
+  <div class="row">
+    <div class="small-6 columns">
+      {% if collection.previous_product %}
+        <a href="{{ collection.previous_product }}" class="previous_product"><i class="fa fa-chevron-left"></i></a>
+      {% endif %}
+    </div>
+    <div class="small-6 columns right text-right">
+      {% if collection.next_product %}
+        <a href="{{ collection.next_product }}" class="next_product"><i class="fa fa-chevron-right"></i></a>
+      {% endif %}
+    </div>
+  </div>
+</div>

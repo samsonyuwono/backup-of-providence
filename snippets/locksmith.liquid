@@ -1,0 +1,21 @@
+{%- comment %}
+  Hey there! This snippet is managed by Locksmith (uselocksmith.com). You can
+  fiddle with what's below, but your changes will be reset the next time that
+  Locksmith interacts with your shop.
+
+  Last updated: Tue, 12 Jun 2018 07:53:50 +0000
+  Integration version: v1.0
+{% endcomment -%}
+
+{%assign _5=true%}{%assign _9=false%}{%assign _3="metafields"%}{%assign _1="locksmith"%}{%assign _7="active"%}{%assign locksmith_active=_9%}{%if shop.metafields.locksmith.active%}{%if shop.metafields.locksmith.active_as_lock%}{%if template != 'customers/account' and template != 'customers/activate_account' and template != 'customers/addresses' and template != 'customers/login' and template != 'customers/order' and template != 'customers/register' and template != 'customers/reset_password'%}{%assign locksmith_active=_5%}{%endif%}{%elsif product%}{%if product.metafields.locksmith.active%}{%assign locksmith_active=_5%}{%else%}{%assign collection_saved=collection%}{%for collection in product.collections%}{%if collection[_3][_1][_7] and collection.metafields.locksmith.active_for_children%}{%endif%}{%endfor%}{%assign collection=collection_saved%}{%endif%}{%elsif page and page.metafields.locksmith.active%}{%assign locksmith_active=_5%}{%elsif collection and collection.metafields.locksmith.active%}{%assign locksmith_active=_5%}{%elsif blog and blog.metafields.locksmith.active%}{%assign locksmith_active=_5%}{%endif%}{%endif%}{%if locksmith_active%}{%assign locksmith_access_granted=_9%}{%unless locksmith_access_granted%}{%if customer%}{%assign locksmith_access_granted=_5%}{%endif%}{%endunless%}{%if locksmith_access_granted%}{%endif%}{%if locksmith_access_granted and product%}{%assign collection_saved=collection%}{%for collection in product.collections%}{%if collection[_3][_1][_7] and collection.metafields.locksmith.active_for_children%}{%endif%}{%endfor%}{%assign collection=collection_saved%}{%endif%}{%if locksmith_access_granted%}{{content_for_layout}}{%else%}{%if customer%}<p><strong>This content is protected, but it doesn't look like you have access.</strong> If you feel this is a mistake, please contact the store owner.</p>{%else%}{%if shop.customer_accounts_enabled%}<script src="//cdn.shopify.com/s/assets/themes_support/customer_area-4beccea87758d91106a581ba89341d9b51842f6da79209258c8297239e950343.js" type="text/javascript" data-via-locksmith="true"></script>{%endif%}<p><strong>This content is protected</strong>. Please log in with your customer account or create one to continue.</p>{%if shop.customer_accounts_enabled%}{%layout settings.customer_layout%}{%assign has_sidebar=_9%}{%assign has_crumbs=_9%}{%assign page_title='customer_accounts.login.title'|t%}{%include 'page-header' with page_title%}{%include 'content-wrap-open'%}{%include 'content-open'%}<div class="row">
+  <div class="large-5 columns large-centered">{%include 'customer-account-login'%}{%include 'customer-account-recover-password'%}</div>
+	<!-- Social Start -->
+<!--     <div data-hull-component="login/shopify@hull">Loading Social Login...</div> -->
+  <!--<center>SOCIAL INSERT</center>-->
+    <!-- End Social Login -->
+</div>{%include 'content-close'%}{%include 'content-wrap-close'%}<script type="text/javascript">
+          document.body.className = 'customers customers-login';
+          document.body.id = 'account';
+          window.document.title = 'Account | Delta Children';
+          document.getElementById('login_checkout_url').value = window.location.pathname;
+        </script>{%endif%}{%endif%}{%endif%}{%else%}{{content_for_layout}}{%endif%}

@@ -1,0 +1,108 @@
+		<div class="row home-top">
+			<div id="align" class="small-10 small-push-1 large-5 large-push-1 columns">
+				<div class="row">
+					<div class="small-6 columns top-grid-single">
+						<div class="grid-single-wrapper">
+							<a href="/blogs/the-play-yard"><img class="grid-img opt" style="" src="//cdn.shopify.com/s/files/1/0578/7201/files/home-page-leaders-in-safety-image-min_1x1.jpg" />
+
+					          <p class="product-title"><span class="hoverText">Visit Our Blog</span></p>
+					      	</a>
+					    </div>
+
+					</div>
+					<div class="small-6 columns top-grid-single">
+						<div class="grid-single-wrapper">
+							<a href="/pages/leaders-in-safety"><img class="grid-img c opt" style="" src="//cdn.shopify.com/s/files/1/0578/7201/files/how-were-safe-image-2-min_1x1.jpg" />
+	            			<p class="product-title"><span class="hoverText">How We're Safe</span></p>
+            				</a>
+            			</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-6 columns top-grid-single">
+						<div class="grid-single-wrapper">
+							<a href="/pages/safety-tips"><img class="grid-img opt" src="//cdn.shopify.com/s/files/1/0578/7201/files/home-page-blog-image-min_1x1.jpg" />
+	            			<p class="product-title"><span class="hoverText">Nursery Safety Tips</span></p>
+	            			</a>
+	            		</div>
+					</div>
+					<div class="small-6 columns top-grid-single">
+						<div class="grid-single-wrapper">
+							<a href="/pages/toddler-safety-tips"><img class="grid-img todd-bed opt" style="" src="//cdn.shopify.com/s/files/1/0578/7201/files/home-page-toddler-safety-tips-image-min_1x1.jpg" />
+	             			 <p class="product-title"><span class="hoverText">Toddler Safety Tips</span></p>
+	             			</a>
+	             		</div>
+					</div>
+				</div>
+			</div>
+			<div class="small-10 small-pull-1 large-5 large-pull-1 columns">
+				<a href="/blogs/nursery-inspiration"><img class="right-image hide-for-small hide-for-medium opt" src="//cdn.shopify.com/s/files/1/0578/7201/files/home-page-nursery-inspiration-page-image-min_1x1.jpg"></a>
+				<!-- <a href="/blogs/nursery-inspiration"><img class="right-image hide-for-large-up" src="//cdn.shopify.com/s/files/1/0578/7201/files/home-page-nursery-inspiration-page-image.jpg?4033506565788237825"></a> -->
+			</div>
+		</div>
+
+<style>
+@media only screen and (max-width: 1025px) {
+
+#align{
+text-align: center;
+}
+}
+
+@media only screen and (max-width: 700px) {
+	.hoverText {
+		font-size: 13px;
+	}
+}
+@media only screen and (min-device-width: 679px) and (max-width: 679px){
+	.hoverText {
+    top: 80%;
+    position: relative;
+  }
+ }
+   @media only screen and (min-width: 679px){
+  	.hoverText {
+    top: 80%;
+    position: relative;
+    font-size: 14px;
+  }
+ }
+.hoverText {
+  color: #8dabdd;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hoverText:hover {
+  color: #487ed6;
+}
+.right-image {
+	min-width: 100%;
+	/*border-radius: 8px;*/
+}
+.product-title {
+	text-align: center;
+	/*max-width: 84%;*/
+}
+.grid-img {
+	/*max-width: 84%;*/
+}
+.grid-single-wrapper {
+	display: inline-block;
+	width: 84%;
+}
+.grid-single-wrapper:hover {
+  border: 5px solid #8dabdd;
+  border-radius: 8px;
+  border
+}
+
+</style>
+<script>
+
+// makes home page images tiny for mobile and large for desktop to increase page speed dh-edit 5/8/17
+if ( $(window).width() > 667) {
+$("img.opt").each(function(){
+  $(this).attr('src', $(this).attr('src').replace('_1x1.jpg', '.jpg'));
+});
+}
+</script>

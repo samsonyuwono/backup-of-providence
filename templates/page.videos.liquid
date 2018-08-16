@@ -1,0 +1,48 @@
+{% assign has_sidebar = false %}
+{% assign force_no_sidebar = true %}
+{% assign has_crumbs = true %}
+
+{% include 'settings' %}
+{% include 'page-header' with page.title %}
+{% include 'videos-content-wrap-open' %}
+{% include 'content-open' %}
+
+{{ page.content }}
+
+{% include 'content-close' %}
+{% include 'videos-content-wrap-close' %}
+
+<style>
+@media only screen and (max-width: 480px)  {
+	td {
+		display:block;
+		width:100%;
+	}
+	td a img {
+		height: 15%;
+		width: auto;
+	}
+}
+
+.thumbnail_title {
+	height: 100%;
+}
+
+table, tr, td {
+	border: 1px solid grey;
+}
+tr {
+	height: 280px;
+}
+td {
+	vertical-align: 2%;
+}
+td img {
+	height: 75%;
+	width: auto;
+	display: block;
+}
+tr p {
+	width:90%;
+}
+</style>

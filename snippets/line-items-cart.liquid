@@ -1,0 +1,273 @@
+{% include 'bold-cart' %}
+<div class="line-items">
+
+  {% for item in cart.items %}
+  {% include 'bold-cart-item' with item %}
+
+  <div class="line-item {{ bold_row_class }}" {{ bold_row_data }}>
+
+    <div class="row">
+      <div class="small-3 medium-2 large-1 columns">
+        <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}" />
+      </div>
+
+      <div class="small-9 medium-10 large-11 columns">
+
+        <div class="row">
+
+
+          <div class="medium-5 large-8 columns">
+            <a class="title" href="{{item.url}}" title="{{item.title | escape }}">{{ item.product.title }}</a>
+
+            {% if item.variant.title != 'Default Title' and item.variant.title != item.product.title %}
+
+            <!-- logic for exposing vendor, sku, and product title for later jquery manipulation, also places checkbox next to line item title - dh edit 4/3/17 -->
+            {% if item.product.type == 'Extended Warranty'%}
+            <div class="variant">{{item.product.title}}</div>
+            {%endif%}
+            {% if item.product.type == 'Strollers' or item.product.tags contains 'BW-strollers' %}
+            <div class="variant needsCheckStroller">{{item.variant.title}}</div>
+              <p id="{{item.variant.sku}}" class="cart-attribute__field stroller">
+                <input type="hidden" name="attributes[Purchase an Extended Warranty?]" value="Yes">
+                <input id="strollers-state-check" type="checkbox"  value="Yes">
+                <input id="strollers-check" class="ex-war-check" type="checkbox" name="attributes[Purchase an Extended Warranty?]" value="Yes"{% if cart.attributes["Purchase an Extended Warranty?"] == "Yes" %}{% endif %}>
+                <label class="check-text">Purchase a <a href="/pages/terms-and-conditions-summary" target="_blank">Two Year Extended Warranty</a> for {% for product in collections.extended-warranty-1.products %}{% if product.handle contains 'strollers-extended-war'%}{{ product.price | money }}{%endif%}{%endfor%}?</label>
+              </p>
+              <div class="svendor exinfo">{{item.vendor}}</div>
+              <div class="ssku exinfo">{{item.variant.sku}}</div>
+              <div class ="sstyle exinfo">{{item.product.title}} - {{item.variant.title}}</div>
+            {%endif%}
+            {% if item.product.type == 'Bassinets' %}
+            <div class="variant needsCheckBassinet">{{item.variant.title}}</div>
+              <p id="{{item.variant.sku}}" class="cart-attribute__field bassinet">
+                <input type="hidden" name="attributes[Purchase an Extended Warranty?]" value="Yes">
+                <input id="bassinets-state-check" type="checkbox"  value="Yes">
+                <input id="bassinets-check" class="ex-war-check" type="checkbox" name="attributes[Purchase an Extended Warranty?]" value="Yes"{% if cart.attributes["Purchase an Extended Warranty?"] == "Yes" %}{% endif %}>
+              <label class="check-text">Purchase a <a href="/pages/terms-and-conditions-summary" target="_blank">Two Year Extended Warranty</a> for {% for product in collections.extended-warranty-1.products %}{% if product.handle contains 'bassinets-extended-war'%}{{ product.price | money }}{%endif%}{%endfor%}?</label>
+              </p>
+              <div class="bvendor exinfo">{{item.vendor}}</div>
+              <div class="bsku exinfo">{{item.variant.sku}}</div>
+              <div class ="bstyle exinfo">{{item.product.title}} - {{item.variant.title}}</div>
+            {%endif%}
+            {% if item.product.type == 'Cribs' or item.product.type == 'Dressers' or item.product.tags contains 'BW-DC-nursery' or item.product.tags contains 'BW-serta-nursery' or item.product.tags contains 'BW-SK-nursery'%}
+            <div class="variant needsCheckCrib">{{item.variant.title}}</div>
+              <p id="{{item.variant.sku}}" class="cart-attribute__field crib">
+                <input type="hidden" name="attributes[Purchase an Extended Warranty?]" value="Yes">
+                <input class="nursery-state-check" type="checkbox"  value="Yes">
+                <input id="nursery-check" class="ex-war-check" type="checkbox" name="attributes[Purchase an Extended Warranty?]" value="Yes"{% if cart.attributes["Purchase an Extended Warranty?"] == "Yes" %}{% endif %}>
+                <label class="check-text">Purchase a <a href="/pages/terms-and-conditions-summary" target="_blank">Two Year Extended Warranty</a> for {%if item.product.vendor == "Delta Children" or item.product.tags contains 'BW-DC-nursery'%}$29.99{%endif%}{%if item.product.vendor == "Serta" or item.product.tags contains 'BW-serta-nursery'%}$39.99{%endif%}{%if item.product.vendor == "Simmons Kids" or item.product.tags contains 'BW-SK-nursery' %}$49.99{%endif%}?</label>
+              </p>
+                <div class="nfvendor exinfo">{{item.vendor}}</div>
+                <div class="nfsku exinfo">{{item.variant.sku}}</div>
+                <div class ="nfstyle exinfo">{{item.product.title}} - {{item.variant.title}}</div>
+            {%endif%}
+            {% if item.product.type == 'Gliders' or item.product.tags contains 'BW-gliders'%}
+            <div class="variant needsCheckGlider">{{item.variant.title}}</div>
+              <p id="{{item.variant.sku}}" class="cart-attribute__field glider">
+                <input type="hidden" name="attributes[Purchase an Extended Warranty?]" value="Yes">
+                <input id="gliders-state-check" type="checkbox"  value="Yes">
+                <input id="gliders-check" class="ex-war-check" type="checkbox" name="attributes[Purchase an Extended Warranty?]" value="Yes"{% if cart.attributes["Purchase an Extended Warranty?"] == "Yes" %}{% endif %}>
+                <label class="check-text">Purchase a <a href="/pages/terms-and-conditions-summary" target="_blank">Two Year Extended Warranty</a> for {% for product in collections.extended-warranty-1.products %}{% if product.handle contains 'gliders-extended-war'%}{{ product.price | money }}{%endif%}{%endfor%}?</label>
+              </p>
+                <div class="gvendor exinfo">{{item.vendor}}</div>
+                <div class="gsku exinfo">{{item.variant.sku}}</div>
+                <div class ="gstyle exinfo">{{item.product.title}} - {{item.variant.title}}</div>
+            {%endif%}
+            {% if item.product.type == 'Toddler Bed' %}
+            <div class="variant needsCheckToddlerBed">{{item.variant.title}}</div>
+              <p id="{{item.variant.sku}}" class="cart-attribute__field toddler_bed">
+                <input type="hidden" name="attributes[Purchase an Extended Warranty?]" value="Yes">
+                <input id="toddler-state-check" type="checkbox"  value="Yes">
+                <input id="toddler-check" class="ex-war-check" type="checkbox" name="attributes[Purchase an Extended Warranty?]" value="Yes"{% if cart.attributes["Purchase an Extended Warranty?"] == "Yes" %}{% endif %}>
+                <label class="check-text">Purchase a <a href="/pages/terms-and-conditions-summary" target="_blank">Two Year Extended Warranty</a> for {% for product in collections.extended-warranty-1.products %}{% if product.handle contains 'toddler-furniture-extended-war'%}{{ product.price | money }}{%endif%}{%endfor%}?</label>
+              </p>
+              <div id="{{item.variant.sku}}" class="tfvendor exinfo">{{item.vendor}}</div>
+              <div id="{{item.variant.sku}}" class="tfsku exinfo">{{item.variant.sku}}</div>
+              <div id="{{item.variant.sku}}" class ="tfstyle exinfo">{{item.product.title}} - {{item.variant.title}}</div>
+              {%endif%}
+            {%else%}
+            <div class="variant">{{item.variant.title}}</div>
+            {% endif %}
+
+			{% comment %}
+            {% for p in item.properties %}
+
+            {% assign first_character_in_key = p.first | truncate: 1, '_' %}
+
+              {% unless p.last == blank or first_character_in_key == '_' %}
+                <div class="line-item-property">
+                {{ p.first }}:
+                {% if p.last contains '/uploads/' %}
+                <span class="value"><a class="fancybox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a></span>
+                {% else %}
+                <span class="value">{{ p.last }}</span>
+                {% endif %}
+                </div>
+              {% endunless %}
+            {% endfor %}
+            {% endcomment %}
+
+            {{ bold_item_properties }}
+
+            {% if item.variant.inventory_quantity <= 0 and item.variant.inventory_management == 'shopify' %}
+              <div class="backorder-notice">
+                <span class="has-tip tip-top" data-tooltip title="{{ 'cart.backorder' | t }}"><i class="fa fa-clock-o"></i></span>
+              </div>
+            {% endif %}
+
+            <!-- logic to show line-item details dhedit - 3/28/17 -->
+            {% assign property_size = item.properties | size %}
+            <div class="ex-info-holder">
+              {% if property_size > 0 %}
+                {% for p in item.properties %}
+
+
+                  {% unless p.last == blank %}
+                  <div class="info-item">  {{ p.first }}:
+                  {% if p.last contains '/uploads/' %}
+                    <a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                {% else %}
+                {{ p.last }}</span>
+                {% endif %}
+              </div>
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+          <!-- place checkbox here for terms and conditions dh-edit 6/9/17 -->
+
+
+        </div>
+        </div>
+          <div class="actions medium-4 large-2 columns quant">
+            <span class="quantity">
+            <input type="number" class="{{ bold_qty_class }}" name="updates[]" id="updates_{{ item.id }}" {{ bold_qty_attr }} value="{{ item.quantity }}" min="0" onfocus="this.select();"/>
+            </span>
+
+
+            <!-- finds line items that have tag 'bundle option' and hides the "remove" button from crat page - jQuery logic on bottom of this file -->
+            {% if item.product.tags contains 'bundle-option' %}
+            <a class="remove-from-cart bundle-option-hidden {{ bold_remove_class }}" data-variant-id="{{ item.variant.id }}" href="{{ bold_remove_href }}" {{ bold_remove_attr }}><i class="fa fa-trash-o"></i></a>
+            <div class='add-bundle-msg'>Please re-add your bundle to purchase these discounted products.</div>
+            <!-- finds line-item that is a bundle set and, if deleted, will delete 'bundle-optiom' line-items - jQuery below in file -->
+
+          {%else%}
+            <a class="remove-from-cart {{ bold_remove_class }}" data-variant-id="{{ item.variant.id }}" href="{{ bold_remove_href }}" {{ bold_remove_attr }}><i class="fa fa-trash-o"></i></a>
+            {%endif%}
+          </div>
+
+
+
+          <div class="pricing medium-3 large-2 columns">
+            <div class="price line-price">{{ bold_item_line_price | money }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- /.details -->
+    </div>
+    {% if item.product.type == 'Extended Warranty'%}
+    <!-- accepts t and c checkbox --> <div id="accept-from-cart"> <input type="checkbox" name="terms and conditions" id="t-and-c" >
+    <label class="tc" for="t-and-c" style="color:#4e4949 !important;">I acknowledge and accept the <a href="/pages/extended-warranty-terms" target="_blank">Terms and Conditions</a>.<br>Delivered via email after purchase.</label>
+  </div>
+  {% endif %}
+  </div>
+  <!-- /.line-item -->
+
+  {% endfor %}
+</div>
+
+{{ bold_edit_in_cart }}
+
+<!-- /.line-items -->
+
+<script>
+
+console.log('line-item-cart');
+$('.line-item-property').css('display', 'none');
+
+$(function() {
+
+  deleteWholeBundle();
+   hidePriceforZero();
+     putCribFirst();
+     hidePriceforGuardrail();
+});
+
+
+//this function basically disallows a customer from adding a bunch of bundles, then deleting the crib of one bundle(which has the total bundle price), and still being able to purchase the associated bundle products that are at a highly reduced cost.
+function deleteWholeBundle(){
+  $(".ex-info-holder").hide();
+  //wraps function in an if statement so function doesn't run and take up performance time if there are no bundle products in cart
+  if($(".line-item .title:contains('Dresser'):contains('bundle'), .line-item .title:contains('Dresser'):contains('Bundle')").is(':visible')){
+    //looks for a "Dresser" "bundle" in cart and grabs the _builder_ID from it
+    $(".line-item .title:contains('Dresser'):contains('bundle'), .line-item .title:contains('Dresser'):contains('Bundle')").each(function(){
+      bundleId = $(this).siblings('.ex-info-holder').children(":first").text();
+        //if an item in the cart is a "Bundle Crib", then apply these customizations for security of bundle sale, if not, then make all associated bundle products, with that particular bundle, unpurchasable.
+        if($('.info-item:contains("'+bundleId+'")').parent().siblings('.title:not(:contains("Mattress")):contains("Crib"):contains("bundle")').is(':visible')){
+          //for all line_items in cart that contain the "_builder_ID" do this
+          $(".line-item .ex-info-holder .info-item:contains('"+bundleId+"')").each(function(){
+            $(this).parent().parent().next().children('.bundle-option-hidden').css('display', 'none');
+            $(this).parent().parent().next().children('.quantity').children('input').val(1);
+            $(this).parent().parent().next().children('.quantity').children('input').prop('readonly', true);
+            $(this).parent().parent().next().children('.add-bundle-msg').hide();
+            $(this).parent().siblings(".title:not(:contains('Mattress')):contains('Crib'):contains('bundle')").parent().next().children('.bundle-option-hidden').show();
+          });
+        // console.log('crib is visible');
+        }
+      else{
+        //for all line_items in cart that contain the "_builder_ID", but don't have a crib in their associated bundle, do this
+        $(".line-item .ex-info-holder .info-item:contains('"+bundleId+"')").each(function(){
+          $(this).parent().parent().next().children('.bundle-option-hidden').css('display', 'none');
+          $(this).parent().parent().next().children('.quantity').children('input').val(0);
+          $(this).parent().parent().next().children('.quantity').children('input').prop('readonly', true);
+          $(this).parent().parent().next().children('.add-bundle-msg').show();
+        });
+        $('.checkout-actions input#update-cart').click();
+      }
+    });
+    //turns off the links to product pages for all bundle products
+    $(".line-item .title:contains('bundle')").each(function(){
+      $(this).removeAttr("href");
+    });
+    $(".line-item .title:contains('Bundle')").each(function(){
+      $(this).removeAttr("href");
+    });
+  }
+}
+//hides price for bundle items that are zero
+function hidePriceforZero(){
+  $(".line-item .title:contains('bundle'), .line-item .title:contains('Bundle')").each(function(){
+    priceSection = $(this).parent().next().next('.pricing').children('.line-price');
+    price = priceSection.text();
+    if(price === '$ 0.00'){
+      priceSection.hide();
+    }
+  });
+}
+
+//hides price for guardrails in bundle. Refactor this
+function hidePriceforGuardrail(){
+    var sum = 0
+    $(".line-item .title:contains('Extended Warranty')").each(function(){
+      warrantyPrice = $(this).parent().next().next('.pricing').children('.line-price').text().split("$")[1] //refactor
+      sum += parseFloat(warrantyPrice)
+    });
+    var totalPrice = $(".checkout-actions h2 .price").children().text().split("$")[1]
+    // debugger;
+    var subTotal = parseFloat(totalPrice.replace(/,/g, '')) - sum
+    var guardrailTotal = 0
+    $(".line-item .title:contains('Toddler Guardrail')").each(function(){
+        var guardrailPrice = $(this).parent().next().next('.pricing').children('.line-price').text().split("$")[1] // refactor
+        guardrailTotal += parseFloat(guardrailPrice.replace(/,/g, ''))
+    })
+    var guardrailSection = $(".line-item .title:contains('Toddler Guardrail')").parent().next().next('.pricing').children('.line-price');
+    if(guardrailTotal === subTotal){
+      guardrailSection.hide();
+    }
+}
+
+function putCribFirst(){
+  $(".title:not(:contains('Mattress')):contains('Crib'):contains('bundle')").closest('.line-item').prependTo('#cartform .line-items');
+}
+
+
+</script>

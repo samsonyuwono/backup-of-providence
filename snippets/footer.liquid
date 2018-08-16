@@ -1,0 +1,255 @@
+<style>
+
+h5#reg{
+  text-align: center;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 25px;
+  font-size: 100%;
+  font-style: bold;
+}
+h5#reg a{
+  color: white !important;
+}
+.footer-widgets .widgets .row .large-5{
+  padding-left: 5% !important;
+}
+.footer-widgets .widgets .row .large-3{
+  top: 70px;
+}
+.widget-social-links .widget-inner{
+  margin-left: 1.1em;
+}
+.widget-social-links header.widget-header{
+  display: none;
+}
+.widget-newsletter h2{
+  margin-bottom: 5px !important;
+  letter-spacing: 1px;
+  font-size: 90% !important;
+}
+.widget-newsletter p{
+  font-size: 70%;
+  letter-spacing: 1px;
+}
+.widget-newsletter form{
+  width: 80%;
+}
+#fine-print{
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 1rem !important;
+}
+#footer-widget-container{
+  padding: 0;
+}
+#site-ui-footer{
+  padding-top: 30px;
+}
+#country-container{
+  text-align: center;
+  color: white !important;
+}
+#country-container a{
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white !important;
+}
+#country-container span{
+  padding-left: 2px;
+}
+/*medium-sized screens*/
+@media only screen and (max-width: 1025px){
+  .footer-widgets .widgets .row .large-5{
+    padding-left: 0 !important;
+    margin-left: 1.1rem !important;
+  }
+  .footer-widgets .widgets .row .large-3{
+    top: 0;
+  }
+}
+
+
+</style>
+
+{% include 'path_footer'%}
+{% assign widget_area = 'footer'%}
+{% assign footer_widgets_class = 'footer-widgets' %}
+
+{% if show_footer_widgets_small == false %}
+  {% assign footer_widgets_class = footer_widgets_class | append: ' show-for-small-up' %}
+{% endif %}
+
+{% if settings.footer_columns != "0" %}
+  <!-- BEGIN #footer-widgets -->
+  <aside class="{{ footer_widgets_class }}" id="site-ui-footer">
+    <div class="row padded" id="footer-widget-container">
+      <div class="large-12 columns">
+
+        <div class="widgets">
+          <div class="row">
+            {% for i in (1..settings.footer_columns) %}
+              {% assign span_width = 'footer_column_width_0' | append: i %}
+              <div class="large-{{settings[span_width]}} columns">
+                {% include 'get-widget' with i | newline_to_br %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+  <!-- /#footer-widgets -->
+{% endif %}
+
+
+<!-- BEGIN #site-footer -->
+<footer id="site-footer">
+  {% if template == 'index' %}
+  <div class="row path-p-container">
+	<div id="path-paragraph" class="small-12 medium-12 large-12">
+    <p>Delta Children has over 50 years of experience creating safe and stylish products for babies,
+      toddlers, and teens.
+      The leading manufacturer of cribs and toddler beds also
+      specializes in a wide range of furniture for kids of all ages, including: gliders,
+      changing tables, dressers, bookcases, playroom accessories, toy storage, kids’ chairs,
+      twin &amp; full-sized beds, and much more. Along with their own furniture collections, Delta Children
+      also has partnerships with the most prestigious and well-known brands. From Disney to Nickelodeon,
+      Warner Brothers, Major League Baseball (MLB), Sesame Street, Marvel, Entertainment One, Jeep, Simmons Kids,
+      Beautyrest, and Serta – Delta Children has it all!
+    </p>
+    <p>Parents also love Delta Children’s expansive line of baby gear, including strollers & joggers,
+      bassinets, high chairs, and walkers. To help babies and kids sleep better, top of the line crib and
+      toddler mattresses by Delta Children, Beautyrest, and Serta feature the newest innovations in sleep
+      technology. Make sure your nursery is able to grow with your child, with Delta Children’s guardrails
+      and bedrails that instantly convert your crib into a toddler bed or full-size bed. And don’t forget about
+      Delta Children’s practical yet stylish storage items, sure to keep any bedroom organized.
+    </p>
+    <p>Delta Children is the most trusted name in baby and children’s furniture for a reason: the safety of kids
+      always comes first. All products are tested above and beyond the standards for your child’s safety.
+      Delta Children has also donated $3 million to families in need as part of their Safe Sleep Campaign,
+      dedicated to finding a safe place for every baby to sleep.
+    </p>
+
+
+
+  </div>
+</div>
+  {%endif%}
+
+
+
+
+
+
+  <div class="row padded-h">
+
+
+
+
+
+
+
+    <div class="small-12 columns">
+
+      <!-- <h5 class="show-for-small-only" id="reg"><a href="/pages/product-registration">Register your Product</a></h5> -->
+
+      {% if settings.multicurrency_enabled %}
+      <div class="hide-for-medium-up">
+      {% include 'currency-select' %}
+      </div>
+      {% endif %}
+
+      <!-- removed  include 'mobile-nav-select' -->
+
+<!--         <div id="country-container">
+        <span>Choose Country:</span>
+        <a href="https://www.deltachildren.eu"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/uk-flag.png"><span>UK</span></a>
+        <a href="https://www.deltachildren.fr"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/france-flag.png"><span>FRANCE</span></a>
+        <a href="https://www.deltachildren.de"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/germany-flag.png"><span>GERMANY</span></a>
+        <a href="https://www.deltachildren.es"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/Spain-flag.png"><span>SPAIN</span></a>
+        <a href="https://www.deltachildren.it"><img src="//cdn.shopify.com/s/files/1/0578/7201/files/italy-flag.png"><span>ITALY</span></a>
+      </div> -->
+
+      <div id="fine-print" class="text-color-quiet">
+
+        <!-- BEGIN #copyright -->
+        <div id="copyright">
+        <p>Copyright &copy; {{ 'now' | date: "%Y" }} Delta Children's Products Corp. All Rights Reserved.
+        <a href="http://shop.deltachildren.com/pages/privacy-policy/">Privacy Policy</a> • <a href="http://shop.deltachildren.com/pages/terms-of-use/">Terms of Use</a> • <a href="/pages/returns-exchanges/">Returns & Exchanges</a>
+        Taxes apply for the following states: AR, CA, IL, NJ, NY, PA, MI, WI. We ship only to the US contiguous 48 states.
+    </div>
+
+    </div>
+  </div>
+</div>
+
+
+</footer>
+<!-- /#site-footer -->
+<style>
+.widgets p {
+  letter-spacing: 1px;
+}
+
+/*header.widget-header h2{
+  text-align: center;
+}
+
+.widget-social-links ul {
+padding-left: 20%;
+}
+
+.widget-inner ul.side-nav{
+  text-align: center;
+}*/
+
+section.widget.widget-social-links header.widget-header h2 {
+  display: block;
+}
+
+section.widget.widget-newsletter header.widget-header h2 {
+  display: block;
+}
+
+section.widget.widget-links.02 div.widget-inner header.widget-header h2 {
+  display: block !important;
+  color: white;
+}
+
+aside.footer-widgets li.nav-item {
+  float: none !important;
+color: white;
+}
+aside.footer-widgets li.nav-item a {
+  color: white !important;
+  line-height: inherit !important;
+  padding-left: 0 !important;
+
+}
+
+section.widget.widget-social-links i.fa{
+  color: white;
+}
+
+
+
+</style>
+
+<script>
+//reorganizes social icons in footer
+$(function() {
+
+  //selector variables
+  instagram = $('#footer-widget-container .fa-instagram').parents('li');
+  facebook = $('#footer-widget-container .fa-facebook').parents('li');
+  youtube =   $('#footer-widget-container .fa-youtube').parents('li');
+  //selector movement
+  instagram.prependTo('.social-links');
+  facebook.insertAfter(instagram);
+  youtube.appendTo('.social-links');
+
+
+});
+</script>
