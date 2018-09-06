@@ -36,10 +36,6 @@ if(window.location.href.indexOf("productbuilder") > -1) {
     outOfStock();
 
     function outOfStock(){
-     if(window.location.href.indexOf("bundle-29-tivoli-antique-white") > -1) {
-       $('.option_inv_msg').remove();
-     }
-      else{
 
       $("<div id='outofstock-pop-up'><h2>This nursery set is currently unavailable. Please return to the previous page and select another option.<br><a href='/pages/bundles'><button>< Go Back</button></a></h2></div>").appendTo('#container');
       $('#outofstock-pop-up').hide();
@@ -57,7 +53,6 @@ if(window.location.href.indexOf("productbuilder") > -1) {
 
         }
       });
-      }
     }
   });
 
@@ -890,10 +885,10 @@ if(window.location.href.indexOf("productbuilder") > -1) {
     function chloeGlider(){
       $('#step_options_2 .choices .option_name:contains("Chloe"), #step_options_2 .choices .option_name:contains("Charlotte")').each(function(){
         //places color swatches on all Ava styles by appending to the "add to bundle" div
-        $(this).parent().next().next().append("<div class='swatch-g cc-swatch-sand border'></div>");
-        $(this).parent().next().next().append("<div class='swatch-g cc-swatch-charcoal'></div>");
+        // $(this).parent().next().next().append("<div class='swatch-g cc-swatch-sand border'></div>");
+        // $(this).parent().next().next().append("<div class='swatch-g cc-swatch-charcoal'></div>");
         $(this).parent().next().next().append("<div class='swatch-g cc-swatch-dove-grey'></div>");
-        $(this).parent().next().next().append("<div class='swatch-g cc-swatch-frozen-blue'></div>");
+        // $(this).parent().next().next().append("<div class='swatch-g cc-swatch-frozen-blue'></div>");
 
         //hides title of option
         $(this).hide();
@@ -905,9 +900,10 @@ if(window.location.href.indexOf("productbuilder") > -1) {
         if($(this).is(':contains("Sand")')){
         }
         else{
-          $(this).parent().hide();
-          $(this).parent().next().hide();
-          $(this).parent().next().next().hide();
+          //commented out for other chloe gliders which are sold out - SY 9/6/2018
+          // $(this).parent().hide();
+          // $(this).parent().next().hide();
+          // $(this).parent().next().next().hide();
         }
       });
     }
@@ -1338,7 +1334,7 @@ if(window.location.href.indexOf("productbuilder") > -1) {
       }
       if($(this).is(':contains("Naturally Sleepy")')){
         $(this).parent().prepend("<div class='gotham-black dark-grey op-label'>Natural</div>");
-        $(this).parent().append("<div class='glider-price gotham-light light-grey'>$39.99<br><span class='glider-orig-price ultra'>Originally: $150</span></div>");
+        $(this).parent().append("<div class='glider-price gotham-light light-grey'>$39.99<br><span class='glider-orig-price ultra'>Originally: $160</span></div>");
       }
       if($(this).is(':contains("iComfort Dawn")')){
         $(this).parent().prepend("<div class='gotham-black dark-grey op-label'>Luxury</div>");
@@ -1858,15 +1854,15 @@ if(window.location.href.indexOf("productbuilder") > -1) {
       $('#nursery-set-text').text('Avery in Charcoal Grey 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("ainsworth-storm") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$525');
       $('#nursery-set-text').text('Ainsworth in Storm 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("ainsworth-antique-white") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$525');
       $('#nursery-set-text').text('Ainsworth in Antique White 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("ainsworth-antique-chestnut") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$525');
       $('#nursery-set-text').text('Ainsworth in Antique Chestnut 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("bedford-antique-white") > -1) {
@@ -1878,27 +1874,27 @@ if(window.location.href.indexOf("productbuilder") > -1) {
       $('#nursery-set-text').text('Bedford in Storm 5-Piece Nursery Set');
     }
      if(window.location.href.indexOf("bedford-antique-chestnut") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$525');
       $('#nursery-set-text').text('Bedford in Antique Chestnut 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("fontana-antique-white") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$535');
       $('#nursery-set-text').text('Fontana in Antique White 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("fontana-storm") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$535');
       $('#nursery-set-text').text('Fontana in Storm 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("fontana-antique-chestnut") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$535');
       $('#nursery-set-text').text('Fontana in Antique Chestnut 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("franklin-antique-white") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$513');
       $('#nursery-set-text').text('Franklin in Antique White 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("franklin-storm") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$513');
       $('#nursery-set-text').text('Franklin in Storm 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("franklin-antique-white") > -1) {
@@ -1906,31 +1902,31 @@ if(window.location.href.indexOf("productbuilder") > -1) {
       $('#nursery-set-text').text('Franklin in Antique White 5-Piece Nursery Set');
     }
      if(window.location.href.indexOf("franklin-antique-chestnut") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$513');
       $('#nursery-set-text').text('Franklin in Antique Chestnut 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("aden-antique-white") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$503');
       $('#nursery-set-text').text('Aden in Antique White 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("aden-storm") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$503');
       $('#nursery-set-text').text('Aden in Storm 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("aden-antique-chestnut") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$503');
       $('#nursery-set-text').text('Aden in Antique Chestnut 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("bristol-antique-white") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$493');
       $('#nursery-set-text').text('Bristol in Antique White 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("bristol-storm") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$493');
       $('#nursery-set-text').text('Bristol in Storm 5-Piece Nursery Set');
     }
     if(window.location.href.indexOf("bristol-antique-chestnut") > -1) {
-      $('#you-save span').text('$349');
+      $('#you-save span').text('$493');
       $('#nursery-set-text').text('Bristol in Antique Chestnut 5-Piece Nursery Set');
     }
   }

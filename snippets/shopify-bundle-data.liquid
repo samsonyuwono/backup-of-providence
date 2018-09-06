@@ -1756,24 +1756,24 @@
 {%for product in collections.bundle-62-aden-antique-white.products %}
 {%if product.title contains 'Glider' or product.title contains 'Rocking' or product.title contains 'Mattress' or product.title contains 'Digital Audio' %}
 {%else%}
-  <div class="for-info-popup bundle-62" id="{{product.title}}">
-    <h6 class="title-bundle">{{product.title}}</h6>
-    <p class="description-bundle">{{product.description}}</p>
-      {% if product.tags contains 'bundle-set'%}
-        {%for image in product.images limit:1 %}
-          <img alt="{{product.title}}" class="lazy bundle-set-img" id="{{product.title}}" src="" data-src="{{ image.src | product_img_url: 'original' }}">
+<div class="for-info-popup bundle-62" id="{{product.title}}">
+  <h6 class="title-bundle">{{product.title}}</h6>
+  <p class="description-bundle">{{product.description}}</p>
+    {% if product.tags contains 'bundle-set'%}
+      {%for image in product.images limit:1 %}
+        <img alt="{{product.title}}" class="lazy bundle-set-img" id="{{product.title}}" src="" data-src="{{ image.src | product_img_url: 'original' }}">
+      {%endfor%}
+    {%endif%}
+    {% if product.tags contains 'bundle-option'%}
+      {%for image in product.images %}
+        {% if image.alt contains "pop-up" %}
+        <img alt="{{product.title}}" class="lazy pop-up-img" id="{{ product.variants.first.sku }}" src="" data-src="{{ image.src | product_img_url: 'large' }}">
+        {%else%}
+        <img alt="{{product.title}}" class="lazy bundle-option-img" id="{{ product.variants.first.sku }}" src="" data-src="{{ image.src | product_img_url: 'original' }}">
+        {%endif%}
         {%endfor%}
       {%endif%}
-      {% if product.tags contains 'bundle-option'%}
-        {%for image in product.images %}
-          {% if image.alt contains "pop-up" %}
-          <img alt="{{product.title}}" class="lazy pop-up-img" id="{{ product.variants.first.sku }}" src="" data-src="{{ image.src | product_img_url: 'large' }}">
-          {%else%}
-          <img alt="{{product.title}}" class="lazy bundle-option-img" id="{{ product.variants.first.sku }}" src="" data-src="{{ image.src | product_img_url: 'original' }}">
-          {%endif%}
-          {%endfor%}
-        {%endif%}
-  </div>
+</div>
   {%endif%}
 {%endfor%}
 

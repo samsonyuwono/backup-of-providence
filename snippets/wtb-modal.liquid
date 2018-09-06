@@ -10,7 +10,7 @@
 
 
   {% if product.type != "Discontinued" %}
-  <p><a href="#wtb-modal" id="test" rel="modal:open"><button class="button large retailers">Buy from Retailers</button></a></p>
+  <!-- <p><a href="#wtb-modal" id="test" rel="modal:open"><button class="button large retailers">Buy from Retailers</button></a></p> -->
   {% endif %}
 
 
@@ -19,6 +19,14 @@
 <script>
 $(function(){
   $('button.button.large.retailers').hide();
+});
+</script>
+{% endif %}
+
+{% if product.tags contains "UpholsteredToddlerChair" %}
+<script>
+$(function(){
+$('button.button.large.retailers').hide();
 });
 </script>
 {% endif %}

@@ -76,7 +76,7 @@ assets/custom-styles.css.liquid:
 assets/custom.js:
   development: 2016-01-15T10:03:21-05:00   2b343290370a2fce705783a050a3886f
 assets/customizeBundles.js:
-  development: 2018-08-16T10:33:29-04:00   bf67041a8a9157790284851376a7c261
+  development: 2018-08-21T09:27:46-04:00   a1c68b6a697fc680c4b08039a132e419
 assets/down_arrow.png:
   development: 2017-09-28T09:34:50-04:00   bdf71ece6bd746910f65f3da9330564d
 assets/facebook.png:
@@ -576,7 +576,7 @@ snippets/product-price.liquid:
 snippets/product-related.liquid:
   development: 2015-04-23T21:30:57-04:00   76c96f0917a6603ff5ca92e6555b1541
 snippets/product-small.liquid:
-  development: 2018-08-09T15:38:15-04:00   adf61ee4a59e19f0a7043fbf1ea691c3
+  development: 2018-08-16T11:53:04-04:00   adf61ee4a59e19f0a7043fbf1ea691c3
 snippets/product-tabs.liquid:
   development: 2015-06-26T23:42:27-04:00   cfaed19d009b130069cee4aaeb2cb2da
 snippets/product-variants.liquid:
@@ -678,7 +678,7 @@ snippets/widget-tags-products.liquid:
 snippets/widget-twitter-feed.liquid:
   development: 2015-04-23T21:30:58-04:00   2a92b750b07b5f9b1437a48a8dc5b019
 snippets/wtb-modal.liquid:
-  development: 2017-06-21T15:09:08-04:00   836dd2a9a893e5d51c9e2eb6d5b16d86
+  development: 2018-08-21T10:11:58-04:00   6a52ca89519803d7fd9e39c89eb64c6b
 templates/404.liquid:
   development: 2017-05-03T15:11:16-04:00   91c599584416b8ca37fff8274e8470ff
 templates/analytics.txt.liquid:
