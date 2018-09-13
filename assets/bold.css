@@ -245,6 +245,7 @@
 
 .shappify_product_builder{
   padding-bottom: 0 !important;
+  display: relative !important;
 }
 
 /*header*/

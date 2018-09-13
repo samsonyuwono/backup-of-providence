@@ -535,6 +535,8 @@ if(window.location.href.indexOf("productbuilder") > -1) {
   $('#navigation_buttons').css('top', '-70px');
 
 
+
+
   //step 6
   //styles notice on bottom of purchase summary
   $("<div id='total-p-row' class='gotham-medium'>TOTAL PRICE OF BUNDLE:<span class='gotham-medium' id='t-p-holder'></span></div>").appendTo('#step_6 .verify_pane');
@@ -2023,7 +2025,7 @@ if(window.location.href.indexOf("productbuilder") > -1) {
     $('#step_4 .swatch-g').click(function(){
           $('#step_options_4 .add-swatch .option_stock').each(function(){
             if($(this).text() === '0'){
-        console.log('out of stock!');
+              console.log('out of stock!');
             $(this).parent().next().next().children('.purchase-text').text('Out of Stock');
         $(this).parent().next().next().children('.purchase-text').css('color', 'black').css('border-color', 'black').css('pointer-events', 'none');
       		}
